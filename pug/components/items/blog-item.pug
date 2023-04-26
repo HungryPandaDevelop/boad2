@@ -1,0 +1,12 @@
+mixin blogItem(name, text, data)
+	.blog-item
+		a(href="#").blog-item-img
+			.img-cover
+				img(src="/images/temp/1.jpg", alt="")
+		.blog-item-info
+			.blog-item-date=data
+			h3
+				a(href="#")=name
+			.blog-item-text=text
+			.btn-container
+				a(href="#").btn.btn--blue-border Подробнее

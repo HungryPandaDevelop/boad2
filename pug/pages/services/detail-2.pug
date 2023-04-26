@@ -1,0 +1,59 @@
+include ../../default/build-header
+
+// header end
+.stub
+.services-main.services-main-blue
+	.main-full
+		.breadcrumbs
+			a(href="#") Главная
+			em /
+			span Wake
+	.main-grid.services-main-front
+		.col-7.col-sm-12.col-xs-12.services-main-info 
+			.services-main-info-container
+				.services-main-price  от 850 AED/час
+				h1 Активные водные развлечения 2 
+				.btn-container 
+					a.btn.btn--yellow(href="#") Забронировать услугу
+	.services-main-img-full.img-cover 
+		img(src="/images/temp/serv/7.jpg", alt="")
+section.services-water
+	.main-full.head-section
+		h2 услуги водных развлечений
+	.catalog-grid.services-water-catalog
+		.col-4.col-sm-6.col-xs-12
+			+servicesItem('Кейтеринг на яхте','от 850 AED/час','/images/temp/serv/1.jpg')
+		.col-4.col-sm-6.col-xs-12 
+			+servicesItem('Кейтеринг на яхте','от 850 AED/час','/images/temp/serv/1.jpg')
+		.col-4.col-sm-12.col-xs-12
+			+servicesItem('Кейтеринг на яхте','от 850 AED/час','/images/temp/serv/1.jpg')
+		.col-12
+			.video-detail
+				.main-grid
+					.col-6.col-xs-12.vertical-align
+						.video-info
+							h2 Вейксерфинг в Дубае
+							.video-text Покорение моря, соленые брызги, ветер в волосах, плюс куча адреналина и веселья — это лучший способ провести свободное время в Дубае! Все, что вам нужно, это позвонить нам, и мы поможем вам поймать волну и наслаждаться каждой секундой на доске!
+							.btn-container 
+								a.btn.btn--yellow(href="#") подробнее
+				.video-container 
+					img(src="/images/temp/boad/1.jpg", alt='/images/temp/boad/1.jpg')
+					.video-btn
+						span
+						i
+include ../detail/datail-price.pug
+
+include ../detail/detail-content.pug
+.stub-section
+- var titleForm = 'Забронировать водное развлечение'
+include ../../blocks/feedback/reserve-services.pug
+include ../detail/simple-about.pug
+include ../home/faq.pug
+include ../home/reviews.pug
+include ../detail/serv-adv.pug
+.stub-section
+include ../../blocks/feedback/free.pug
+// footer start 
+include ../../blocks/footer.pug
+
+// footer end   

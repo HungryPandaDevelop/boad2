@@ -1,0 +1,12 @@
+section.blog-home.owl-home
+	.main-full
+		.head-section
+			h2
+				| Блог
+			.btn-container
+				a(href="#").btn.btn--blue Смотреть все статьи 
+			.stab-arrow
+	.main-full.owl-second.owl-carousel
+		-for(var x = 0; x < 7; x++)
+			+blogItem("Добавьте пленительного шарма вашему празднику","Профессиональный танец живота неизменно удивляет, очаровывает и погружает в атмосферу восточной сказки. Отныне и у наших гостей появилась…","10 октября 2022")
+	

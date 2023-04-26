@@ -1,0 +1,21 @@
+.preload
+  @include positionElement(100%,100%,0,0,left,top,5, fixed, flex)
+.preload-part
+  transition: ease-out 2s
+.preload-left
+  @include positionElement(50%,100%,0,0)
+  background-color: $whiteColor
+.preload-right
+  @include positionElement(50%,100%,50%,0, left,bottom)
+  background-color: $whiteColor
+.preload
+  .home-banner
+    @include bgImageEl("../images/home-banner-blue.svg")
+    margin: auto
+.preload.load
+  .preload-part
+    height: 0
+  .home-banner
+    opacity: 0
+.preload.hide
+  visibility: hidden

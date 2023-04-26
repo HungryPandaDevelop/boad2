@@ -1,0 +1,27 @@
+.search-popup
+  @include positionElement(420px, auto,0,calc(100% + 12px),left,top,3)
+  background-color: $whiteColor
+  padding: 30px 20px 15px
+  box-shadow: $shadowOne
+  transition: ease-out 0.5s
+  opacity: 0
+  visibility: hidden
+  &.active
+    opacity: 1
+    visibility: visible
+  h3
+    font-weight: 600
+    font-size: $smallSize
+    color: $grayColor
+    text-transform: uppercase
+    margin: 0 0 8px 8px
+  li
+    margin-bottom: 10px
+    &:last-child
+      margin-bottom: 0
+.search-popup-line
+  padding-bottom: 8px
+  margin-bottom: 8px
+  border-bottom: 1px solid $whiteColorSecond
+  &:last-child
+    border-bottom: 0

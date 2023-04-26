@@ -1,0 +1,87 @@
+.routes-home
+  .main-grid
+    gap: 30px
+.routes-item-main
+  background-color: $whiteColorSecond
+  position: relative
+  height: 660px
+  display: flex
+  flex-direction: column
+  .time-tag,
+  .price-tag
+    margin-bottom: 0
+  .time-tag
+    margin-right: 0
+  .btn-container
+    display: none
+  a
+    text-decoration: none
+    &:hover
+      color: $yellowColor
+  h3
+    margin: 15px 0 0
+    max-width: 500px
+    a
+      display: -webkit-box
+      -webkit-line-clamp: 2
+      -webkit-box-orient: vertical
+      line-clamp: 2
+      position: relative
+      overflow: hidden
+  &:hover
+    .routes-item-main-text
+      max-height: 500px
+      margin-top: 15px
+      opacity: 1
+
+.routes-item-main-img
+  position: relative
+  display: block
+  height: 100%
+  overflow: hidden
+  transition: ease-out 0.5s
+  .img-cover
+    @include positionElement(100%,100%,0,0)
+    transform: scale(1)
+    transition: ease-out 0.5s
+  img
+    @include positionElement(100%,100%,0,0)
+  &:hover
+    .img-cover
+      transform: scale(1.1)
+
+.routes-item-main-info
+  padding: 30px
+  height: auto
+  transition: ease-out 0.5s
+.routes-item-main-text
+  position: relative
+  transition: ease-out 0.5s
+  max-height: 0px
+  overflow: hidden
+  margin-top: 0
+  opacity: 0
+
+@media (max-width: 992px)
+  .routes-item-main
+    .btn-container
+      margin-top: 30px
+      display: block
+      .btn
+        width: 210px
+  .routes-item-main-img
+    height: 50%
+    .img-cover
+      height: 360px
+  .routes-item-main-text
+    opacity: 1
+    visibility: visible
+    max-height: none
+    margin-top: 15px
+  .routes-item-main-info
+    top: 50%
+@media (max-width: 576px)
+  .routes-item-main-about
+    display: flex
+  .routes-item-main-info
+    padding: 30px 15px

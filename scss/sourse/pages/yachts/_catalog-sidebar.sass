@@ -1,0 +1,77 @@
+/*.catalog-sidebar*/
+.catalog-sidebar
+  margin-top: -87px
+  .search-main
+    margin-bottom: 45px
+  .btn
+    width: 100%
+.sidebar-search
+  margin-bottom: 60px
+
+.sidebar-search-item
+  position: relative
+  border-bottom: 1px solid $grayColorSecond
+  padding: 0 0 25px
+  margin: 0 0 30px
+  i
+    cursor: pointer
+    @include positionElement(15px,15px,0,2px,right)
+    @include bgImageEl("../images/arrows/carret-down-blue.svg", 30px)
+    transition: ease-out 0.25s
+    &:hover
+      background-image: url("../images/arrows/carret-down-yellow.svg")
+  .checkbox
+    display: block
+  h3
+    text-transform: uppercase
+    transition: ease-out 0.5s
+    font-size: $smallSize
+    font-weight: 700
+    cursor: pointer
+    &:hover
+      color: $yellowColor
+  &.active
+    h3
+      color: $yellowColor
+      margin: 0 0 10px
+    i
+      transform: rotate(90deg)
+      background-image: url("../images/arrows/carret-down-yellow.svg")
+    .sidebar-item-container
+      max-height: 500px
+.sidebar-item-container
+  transition: ease-out 0.5s
+  position: relative
+  overflow: hidden
+  max-height: 0
+
+.search-tabs
+  display: flex
+  position: relative
+  border-bottom: 1px solid $grayColorSecond
+  margin: 0 0 30px
+  span
+    display: inline-block
+    width: 50%
+    text-align: center
+    text-transform: uppercase
+    font-weight: 700
+    cursor: pointer
+    padding: 12px
+    position: relative
+    &.active
+      color: $yellowColor
+      &::after
+        content: ""
+        @include positionElement(100%,2px,0,0,left,bottom)
+        background-color: $yellowColor
+
+/*.catalog-sidebar*/
+@media (max-width: 1280px)
+  .catalog-sidebar
+    margin-top: 0px
+@media (max-width: 768px)
+  .catalog-sidebar-container
+    display: none
+  .catalog-sort
+    display: none

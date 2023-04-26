@@ -1,0 +1,61 @@
+.team-slider
+  padding-bottom: 60px
+  .owl-nav
+    top: 43%
+.team-slider-item
+  max-width: 1080px
+  margin: 0 auto
+  height: 365px
+  position: relative
+  background-color: $whiteColorSecond
+  display: flex
+.team-slider-img,
+.team-slider-text-container
+  height: 100%
+.team-slider-img
+  width: 33%
+.team-slider-text-container
+  width: 67%
+  display: flex
+  padding: 15px
+.team-slider-text
+  max-width: 660px
+  margin: auto
+@media (max-width: 768px)
+  .team-slider
+
+  .team-slider-item
+    display: block
+  .team-slider-img
+    width: 100%
+  .team-slider-container
+    max-width: 510px
+    padding-bottom: 0
+    .owl-nav
+      top: 320px
+    .owl-prev
+      left: -40px
+    .owl-next
+      right: -40px
+
+  .team-slider-img
+    height: 320px
+  .team-slider-item
+    height: auto
+  .team-slider-text-container
+    width: 100%
+    padding: 80px 30px
+@media (max-width: 576px)
+  .team-slider-container
+    padding-bottom: 70px
+    margin-bottom: 50px
+    .owl-nav
+      top: auto
+      bottom: 0
+      width: 120px
+      left: 50%
+      transform: translateX(-50%)
+    .owl-prev
+      left: 0px
+    .owl-next
+      right: 0px

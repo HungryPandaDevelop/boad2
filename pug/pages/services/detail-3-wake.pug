@@ -1,0 +1,60 @@
+include ../../default/build-header
+		
+// header end
+.stub
+.services-main
+	.main-full
+		.breadcrumbs
+			a(href="#") Главная
+			em /
+			span Wake
+	.services-main-wather
+	.main-grid 
+		.col-5.col-md-6.col-sm-12.services-main-info 
+			.services-main-info-container
+				.services-main-price  от 850 AED/час
+				h1 Wake Dubai
+				.services-main-text  Аренда яхт в Дубае — лучшее место для аренды роскошных яхт в Дубае. Мы предлагаем широкий выбор яхт для аренды по разумным ценам, предоставляя посетителям и жителям всего мира изысканный опыт.
+				.btn-container.btn-couple
+					a.btn.btn--blue(href="#") Забронировать услугу
+					a.btn.btn--white(href="#") Задать вопрос
+	.services-main-img.img-cover 
+		img(src="/images/temp/serv/6.jpg", alt="")
++datailTabs(['Описание','Цены и бронирование','Наши катера','Видеоотчеты клиентов','Вопросы','Другие услуги'], 'tabs-routes',[1,2,3,4,5,6])
+include ../detail/detail-slider.pug
+
+.point-1
+include ../detail/simple-about.pug
+include parts/adv-wake.pug
+.point-2
+include ../detail/datail-price.pug
+.point-3
+section.yachts-second-section
+	.main-full.head-section
+		h2 Наши катера для вейксерфинга 1
+		h3. 
+			Если вы хотите арендовать лодку для вейксерфинга в Дубае, 
+			выберите её из списка ниже и заполните форму, нажав на кнопку “Забронировать”. 
+			Вы также можете задать любой возникший вопрос по вейксёрфингу или любой другой из наших услуг. 
+			Для этого воспользуйтесь формой “Задать вопрос”, либо просто позвоните нам по телефону <a href="#">+971 56 115 16 24</a>
+			или напишите в <a href="#">WhatsApp</a>. Мы с радостью проконсультируем вас по любому вопросу и учтём все ваши пожелания!
+	.main-full
+		+yachtsItemSecondList("Аренда Azimut 62 Lucky Star","850 AED/час")
+		+yachtsItemSecondList("Аренда Azimut 62 Lucky Star","850 AED/час")
+		+yachtsItemSecondList("Аренда Azimut 62 Lucky Star","850 AED/час")
+		+yachtsItemSecondList("Аренда Azimut 62 Lucky Star","850 AED/час")
+		+yachtsItemSecondList("Аренда Azimut 62 Lucky Star","850 AED/час")
+- var titleForm = 'Забронировать катание на вейксёрфе'
+.stub-section
+include ../../blocks/feedback/reserve-services.pug
+.point-4
+include ../detail/report.pug
+.point-5
+include ../home/faq.pug
+.point-6
+include ../detail/serv-adv.pug
+.stub-footer
+// footer start 
+include ../../blocks/footer.pug
+ 
+// footer end

@@ -1,0 +1,25 @@
+include ../../default/build-header
+		
+// header end
+.stub
+
++roofContent("Блог")
+	.main-full.blog-tags 	
+		a(href="#").btn.btn--blue-border.active все
+		a(href="#").btn.btn--blue-border вейксерфинг
+		a(href="#").btn.btn--blue-border аренда яхт
+		a(href="#").btn.btn--blue-border Дубай
+		a(href="#").btn.btn--blue-border праздники
+		a(href="#").btn.btn--blue-border новости
+	.catalog-grid
+		-for(var i=0;i<8;i++)
+			.col-4
+				+blogItem("Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum","Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum","10 октября 2022")
+	.main-full 
+		+pagination()
+	include ../home/feedback.pug
+// footer start  
+
+include ../../blocks/footer.pug
+
+// footer end  

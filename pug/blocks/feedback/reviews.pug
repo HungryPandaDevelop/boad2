@@ -1,0 +1,38 @@
+section.feedback-home.feedback-reviews
+	.main-grid
+		.col-12
+			h2  Оставить отзыв
+		.col-12.form-default
+			.main-grid
+				.input-box.col-4.col-sm-6.col-xs-12   
+					input(type="text" id="name"  class='input-decorate' autocomplete="off")
+					label.label-animate(for="name" ) Ваше имя
+				.input-box-phone.input-box.col-4.col-sm-6.col-xs-12  
+					.country-select
+						span.country-select-box 
+							.rus-flag 
+							em  +7
+							i
+						ul.ln
+							li.rus-select
+								.rus-flag 
+								em +7
+							li.oae-select
+								.oae-flag 
+								em +971
+					input.input-decorate.phone-mask-choise(type="text" id="phone" onkeypress='return event.charCode >= 48 && event.charCode <= 57')
+					label.label-animate(for="phone") номер телефона*
+				.input-box.col-4.col-sm-6.col-xs-12   
+					input(type="text" id="name"  class='input-decorate' autocomplete="off")
+					label.label-animate(for="name" ) Email *
+				.input-box.col-12
+					textarea(class='input-decorate check-mail' autocomplete="off")
+					label.label-animate Ваше пожелания и комментарии
+				.col-6
+					+inputFile(false, 'Загрузите изображение', false)
+				.checkbox.agreement.col-6
+					label Согласен (на) на обработку 
+						a(href="#") персональных данных 
+						input(type="checkbox" checked)
+						span
+				+inputSubmit('Поделиться впечатлением', 'btn--yellow', 'col-12') 

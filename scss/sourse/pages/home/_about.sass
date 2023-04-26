@@ -1,0 +1,106 @@
+.about-home
+  height: 705px
+
+  padding: 0
+  background-color: $whiteColorSecond
+  .img-cover
+    height: 100%
+  h2
+    text-transform: uppercase
+    font-size: $hugeSize
+    margin: 0 0 30px
+  .arrow-stub
+    height: 140px
+  .owl-nav
+    width: 110px
+    top: calc(100% - 100px)
+    left: calc(50% + 90px)
+
+.about-carousel,
+.about-home-item
+  height: 100%
+  display: flex
+
+.about-home-item
+  font-size: $largeSize
+  font-weight: 700
+.about-home-item-extra
+  .about-home-description
+    background-color: $blueColor
+    color: $whiteColor
+    font-size: $standartSize
+    font-weight: 500
+.about-home-img,
+.about-home-description
+  width: 50%
+  height: 100%
+.about-home-container
+  max-width: 430px
+  margin: auto 90px
+.about-home-description
+  display: flex
+.about-home-img
+  position: relative
+
+.about-home-logo
+  @include positionElement(280px, 320px,50%,50%)
+  transform: translateX(-50%) translateY(-50%)
+  @include bgImageEl("../images/logo-about.svg")
+  opacity: 0.5
+@media (max-width: 992px)
+  .about-home
+    height: 600px
+    h2
+      font-size: 28px
+      margin-bottom: 15px
+    .owl-nav
+      left: calc(50% + 50px)
+      top: auto
+      bottom: 30px
+
+    .arrow-stub
+      height: 90px
+  .about-home-container
+    margin: auto 50px
+@media (max-width: 768px)
+  .about-home-img
+    width: 40%
+  .about-home-description
+    width: 60%
+  .about-home-logo
+    width: 210px
+    height: 210px
+@media (max-width: 576px)
+  .about-home
+    height: auto
+    // height: 1175px
+    .owl-nav
+      left: 30px
+      bottom: 30px
+      transform: translateY(0)
+    .arrow-stub
+      height: 48px
+      // display: none
+  .about-home-item
+    display: block
+  .about-home-img,
+  .about-home-description
+    width: 100%
+
+  .about-home-img
+    height: 440px
+    // display: none
+  .about-home-description
+    height: 700px
+    padding: 30px 15px 45px
+    font-size: $standartSize
+    font-weight: 400
+    position: relative
+    &::before
+      content: ""
+      @include positionElement(100%,100%,0,0)
+      // background: red
+    // height: calc(100% - 440px)
+  .about-home-container
+    max-width: initial
+    margin: 0

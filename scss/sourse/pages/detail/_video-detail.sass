@@ -1,0 +1,56 @@
+
+.video-detail
+	background-color: $blueColor
+	color: $whiteColor
+	position: relative
+	height: 425px
+	display: flex
+	padding: 0
+	.video-container
+		@include positionElement(50%, 100%,50%,0)
+	.video-wather
+		@include positionElement(80%,80%,10%,10%)
+
+		@include bgImageEl("../images/wather-sign.svg")
+		opacity: 0.6
+	.video-info
+		// padding: 0 30px
+		// display: flex
+		// height: 100%
+	h2
+		color: inherit
+		text-transform: uppercase
+		margin: 0 0 15px
+		font-size: 28px
+	h3
+		color: inherit
+	.video-text
+		margin-bottom: 30px
+	.btn
+		width: 220px
+.video-container
+	position: relative
+	background-color: $blueColor
+	video,
+	img
+		@include positionElement(100%,100%)
+		object-fit: cover
+		opacity: 0.7
+.services-water-catalog
+	.main-grid
+		padding: 0
+	.video-info
+		padding: 30px 30px
+@media (max-width: 576px)
+	.video-detail
+		padding-top: 320px
+		height: auto
+		text-align: center
+		h3
+			font-size: 18px
+		.video-container
+			width: 100%
+			height: 320px
+			left: 0
+	.video-info
+		padding: 90px 15px

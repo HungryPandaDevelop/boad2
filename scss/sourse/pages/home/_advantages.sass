@@ -1,0 +1,107 @@
+.advantages-home
+  background-color: $whiteColorSecond
+  padding-bottom: 90px
+  .main-grid
+    gap: 60px 30px
+.advantages-item
+  text-align: center
+  width: 260px
+  margin: 0 auto
+  // text-transform: uppercase
+  img
+    width: 100px
+    margin: 0 0 15px
+  h3
+    font-size: $largeSize
+    text-transform: initial
+    margin: 0
+    color: $blueColor
+    vertical-align: middle
+  &:hover
+    .advantages-hint
+      opacity: 1
+      visibility: visible
+
+.advantages-item-text
+  position: relative
+  padding-right: 30px
+  margin-right: -30px
+  i
+    position: absolute
+    right: 0
+    bottom: 3px
+    cursor: pointer
+    // margin-left: 8px
+    // margin-right: -30px
+    @include icoEl(26px,26px, '../images/icons/warning-fill-gray.svg')
+.advantages-hint
+  @include positionElement(560px, auto, 50%,50px, left, bottom)
+  transform: translateX(-50%)
+  border-radius: 4px
+  box-shadow: $shadowOne
+  padding: 30px
+  font-style: normal
+  background-color: $whiteColorSecond
+  transition: ease-out 0.5s
+  opacity: 0
+  visibility: hidden
+  &::after
+    content: ""
+    @include positionElement(20px,20px, 50%, -9px, left, bottom)
+    transform: translateX(-50%) rotate(45deg)
+    background-color: $whiteColorSecond
+    box-shadow: $shadowOne
+
+.advantages-item--simple
+  width: auto
+  .advantages-item-text
+    padding: 0
+    margin: 0
+
+@media (max-width: 1720px)
+  .advantages-item-text i
+    top: 8px
+    bottom: auto
+  .advantages-item-text
+    margin: 0
+    padding-left: 30px
+  .advantages-item-extra-1,
+  .advantages-item-extra-2
+    .advantages-hint
+      left: auto
+      right: -15px
+      transform: translateX(0)
+      &::after
+        left: calc(100% - 28px)
+@media (max-width: 992px)
+  .advantages-hint
+    width: 350px
+@media (max-width: 768px)
+  .advantages-hint
+    width: 350px
+  .advantages-item
+    .advantages-hint
+      width: 200px
+      left: auto
+      right: -15px
+      transform: translateX(0)
+      &::after
+        left: calc(100% - 28px)
+  .adv-wake
+    .main-grid
+      gap: 45px 30px
+@media (max-width: 576px)
+
+  .advantages-item
+    width: 100%
+    margin-bottom: 30px
+    h3
+      font-size: 16px
+    .advantages-hint
+      right: auto
+      left: 50%
+      transform: translateX(-50%)
+      &::after
+        left: 50%
+  .advantages-item-text i
+    position: relative

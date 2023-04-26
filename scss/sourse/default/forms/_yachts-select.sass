@@ -1,0 +1,75 @@
+/*yachts-select-popup*/
+.yachts-select
+	position: relative
+	i
+		@include bgImageEl("../images/arrows/carret-down-white.svg", 36px)
+		@include positionElement(36px, 36px, 5px, 50%, right, top, 2)
+		transform: translateY(-50%)
+		margin-top: 12px
+.yachts-select-popup
+	@include positionElement(100%, auto,0,100%,left,top,2)
+	max-height: 300px
+	background-color: $whiteColor
+	overflow-y: auto
+	display: none
+.yachts-select-popup.active
+	display: block
+.yachts-select-popup-item
+	// height: 100px
+	display: flex
+	color: $blueColor
+	font-size: $microSize
+	padding: 13px
+	border-bottom: 1px solid $whiteColorSecond
+	cursor: pointer
+	&:hover
+		background-color: $whiteColorSecond
+	&:last-child
+		border: 0
+	h3
+		font-size: inherit
+		text-transform: uppercase
+		margin-bottom: 6px
+.yachts-select-img
+	width: 80px
+	height: 80px
+	background-image: url("../images/logo.svg")
+	background-size: cover
+.yachts-select-info
+	padding-left: 15px
+.yachts-select-char-box
+	display: grid
+	grid-template-columns: repeat(2,1fr)
+	gap: 7px
+.char-popup-ico
+	margin-right: 8px
+.char-popup-ico-1
+	@include icoEl(25px,25px, "../images/characteristic/char-popup-1.svg")
+.char-popup-ico-2
+	@include icoEl(25px,25px, "../images/characteristic/char-popup-2.svg")
+.char-popup-ico-3
+	@include icoEl(25px,25px, "../images/characteristic/char-popup-3.svg")
+.char-popup-ico-4
+	@include icoEl(25px,25px, "../images/characteristic/char-popup-4.svg")
+.yachts-select-arr
+	width: 30px
+	height: inherit
+	@include bgImageEl("../images/arrows/arrow-right-blue-big.svg", 20px 30px)
+	margin-left: auto
+
+/*yachts-select-popup*/
+@media (max-width: 992px)
+	.yachts-select-img
+		width: 60px
+		height: 60px
+	.yachts-select-arr
+		width: 15px
+		background-size: 10px 15px
+	.yachts-select-char-box
+		gap: 4px
+	.char-popup-ico
+		width: 20px
+		height: 20px
+		margin-right: 2px
+		span
+			display: inline-block

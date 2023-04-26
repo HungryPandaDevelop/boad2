@@ -1,0 +1,77 @@
+.faq-delimetr-container
+  position: relative
+.faq-delimetr
+  @include positionElement(1px, 100%, 50%, 0)
+  background-color: $grayColorSecond
+.faq-item
+  border-bottom: 1px solid $grayColorSecond
+  font-size: $smallSize
+  position: relative
+  &:first-child
+    border-top: 1px solid $grayColorSecond
+.faq-head
+  padding-top: 30px
+  display: flex
+  margin-bottom: -1px
+  h3
+    font-size: $largeSize
+    color: $blueColor
+    cursor: pointer
+    text-transform: initial
+    &:hover
+      color: $yellowColor
+  span
+    display: inline-block
+    margin: auto 0 auto auto
+    width: 60px
+  i
+    cursor: pointer
+    @include positionElement(48px, 48px, 0, 25px , right)
+    @include bgImageEl("../images/arrows/carret-down-gray.svg", 48px, center 2px)
+    transform: rotate(0deg)
+    border: 1px solid $grayColor
+    border-radius: 100%
+    transition: linear 0.25s
+    &:hover
+      background-color: $yellowColor
+      border-color: $yellowColor
+      // background-image: url("../images/arrows/carret-down-white.svg")
+  em
+    transform: rotate(0deg)
+    border-radius: 100%
+    transition: linear 0.25s
+    opacity: 0
+    visibility: hidden
+    display: inline-block
+    @include positionElement(48px, 48px, 0, 25px , right)
+    @include bgImageEl("../images/arrows/carret-down-white.svg", 48px, center 2px)
+.faq-content
+  position: relative
+  overflow: hidden
+  padding-top: 30px
+  max-height: 0
+  // text-align: justify
+  transition: ease-out 0.5s
+.faq-item--active
+  h3
+    color: $yellowColor
+  i
+    // @include bgImageEl("../images/arrows/carret-down-white.svg", 48px, center 2px)
+    background-image: url("../images/arrows/carret-down-white.svg")
+    transform: rotate(90deg)
+    background-color: $yellowColor
+    border-color: $yellowColor
+  em
+    background-color: $yellowColor
+    border-color: $yellowColor
+
+    opacity: 1
+    visibility: visible
+    transform: rotate(90deg)
+  .faq-content
+    max-height: 700px
+    padding-top: 15px
+    padding-bottom: 30px
+@media (max-width: 768px)
+  .faq-container
+    max-width: 510px

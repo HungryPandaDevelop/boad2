@@ -1,0 +1,6 @@
+mixin popup-template(num, addClass)
+  .popup.element-show(data-element=num  class=addClass)
+    .popup-overlay.popup-overlay-js
+    .popup-container 
+      .close-btn.close-btn_popup.close-js
+      block

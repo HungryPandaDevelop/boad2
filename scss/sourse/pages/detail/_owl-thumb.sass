@@ -1,0 +1,26 @@
+.gallery-thumb-main
+  height: 600px
+  position: relative
+  overflow: hidden
+  .owl-carousel,
+  .owl-item
+    height: 100%
+  img
+    @include positionElement(100%,100%,0,0)
+    object-fit: cover
+  .owl-nav
+    left: 30px
+    width: calc(100% - 60px)
+.gallery-thumb-thumbnails
+  height: 120px
+  margin-top: 10px
+  .owl-carousel,
+  .owl-item
+    height: 100%
+  .owl-item
+    border: 2px solid $whiteColor
+  img
+    @include positionElement(100%,100%,0,0)
+    object-fit: cover
+  .owl-item.current
+    border: 2px solid $yellowColor

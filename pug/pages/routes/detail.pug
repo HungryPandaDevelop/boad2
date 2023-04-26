@@ -1,0 +1,76 @@
+include ../../default/build-header
+		
+// header end
+.stub-second
++roofContent("Lorem impusm", false)
+	.main-full
+		h1 Тур Dubai Marina, JBR and Atlantis
+	.routes-main-detail
+		.main-grid
+			.col-8.col-md-7.col-sm-6.col-xs-12.routes-main-detail-cell
+				.routes-detail-img.img-cover 
+					img(src="/images/temp/boad/1.jpg", alt="")
+			.col-4.col-md-5.col-sm-6.col-xs-12.routes-main-detail-cell
+				.routes-detail-info
+					.routes-detail-info-container
+						h3 детали круиза
+						.routes-detail-tags 
+							.price-tag  от 690 AED
+							.time-tag 
+								i
+								span 6-7 часов
+						.routes-detail-adv 
+							.routes-detail-adv-item 
+								img(src="/images/popular/1.svg", alt="")
+								span  Marina Walk Waterbus Station 3
+							.routes-detail-adv-item 
+								img(src="/images/popular/2.svg", alt="")
+								span  16–40 человек
+							.routes-detail-adv-item 
+								img(src="/images/popular/3.svg", alt="")
+								span  Бесплатная питьевая вода
+							.routes-detail-adv-item 
+								img(src="/images/popular/4.svg", alt="")
+								span  Бесплатные полотенца
+						.btn-container
+							.btn.btn--yellow забронировать
+							.btn.btn--blue-border задать вопрос
+								//- include parts/detail-about.pug
+	+datailTabs(['Описание','Цены','Галерея','Другие туры','Отзывы','Дополнительные услуги'], 'tabs-routes', [1,2,3,4,5,6])
+	include parts/stage-adv.pug
+	.point-1
+	.main-grid.detail-content
+		.col-6.col-sm-12.col-xs-12  
+			h3 Аренда флай борда Dubai
+			p В Дубае каждый найдет что-то для себя. Кто-то приезжает за покупками, а кто-то за приключениями. После того, как вы понаблюдаете за образом жизни и пообщаетесь с местными жителями, вы сможете получить больше удовольствия, взяв напрокат Fly Board в Дубае. Это позволит вам исследовать город с совершенно другой точки зрения. Это только заставит вас полюбить Дубай еще больше. В Dubriani мы предоставляем лучшие услуги по аренде Fly Board.
+			img(src="/images/temp/boad/1.jpg", alt="")
+			p Лучшее в побережье Дубая то, что вы можете исследовать его в любое время. Погода всегда благоприятная, а вода создает идеальные условия для катания на флайборде. Взяв напрокат летающие доски в Дубае, вы ощутите настоящую красоту побережья.
+			h3 Наслаждайтесь чистым выбросом адреналина
+			p Катание на Fly Board обеспечивает непревзойденный прилив чистого адреналина. Взяв напрокат Fly Board, вы удовлетворите свою жажду адреналина. Это лучший способ начать или завершить поездку в Дубай. Когда ветер дует на ваше лицо, вы почувствуете себя помолодевшим. Мы позаботимся о том, чтобы вы получили удовольствие от катания на Fly Board. Нет лучшего способа поднять свой день.
+			p Удар по воде на полной скорости не похож ни на что другое. Вы почувствуете себя прекрасно и забудете обо всех заботах. Ощущение, что вы находитесь на воде и едете, не беспокоясь о том, что кто-то встретится на вашем пути, просто феноменально.
+		.col-6.col-sm-12.col-xs-12  
+			img(src="/images/temp/boad/1.jpg", alt="")
+			p Путешествие в Дубай можно сравнить с посещением сказки в неповторимом восточном колорите. Но получить еще больше удовольствия от поездки можно, посетив прогулки и экскурсии или какие-либо виды активностей. Для многих рыбалка – это один из лучших способов провести время. Отправившись на катере подальше от берега, Вы сможете насладиться ловлей различной экзотической рыбы.
+			img(src="/images/temp/boad/1.jpg", alt="")
+	.point-2
+	include ../detail/datail-price.pug
+	include ../../blocks/feedback/reserve-yachts.pug
+	include parts/capability.pug
+	.main-full.point-3
+		include ../detail/default-slider.pug	
+	include ../home/banner.pug
+	.point-4
+	include ../detail/routes-last.pug
+	include ../../blocks/feedback/free.pug
+	.point-5
+	include ../home/reviews.pug
+	.point-6
+	include ../detail/serv-adv.pug
+	//- include ../detail/reviews.pug
+
+	//- include ../home/blog.pug
+// footer start 
+.stub-footer
+include ../../blocks/footer.pug
+
+// footer end   

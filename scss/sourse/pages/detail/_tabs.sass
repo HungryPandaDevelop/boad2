@@ -1,0 +1,76 @@
+.detail-tabs
+  padding: 0
+  padding-bottom: 90px
+  position: relative
+  background-color: $whiteColorSecond
+  // position: sticky
+  // top: 137px
+  // background-color: $whiteColor
+  // z-index: 2
+.detail-tabs-nav
+  color: $grayColor
+  font-weight: 700
+  border-bottom: 1px solid
+  padding-top: 15px
+  padding-bottom: 15px
+  margin-bottom: 60px
+  margin-top: 75px
+  font-size: 18px
+  position: relative
+  ul
+    display: flex
+    justify-content: space-between
+  li
+    display: inline-block
+    // padding-right: 45px
+    cursor: pointer
+    &:hover,
+    &.active
+      color: $yellowColor
+.detail-tabs-carriage
+  transition: ease-out 0.5s
+  @include positionElement(2px, 4px, 0,0, left, bottom)
+  transform: translateY(50%)
+  background-color: $yellowColor
+.detail-tabs-container
+  p
+    margin: 0 0 15px
+  h3
+    margin: 0px 0 30px
+    font-size: 28px
+    text-transform: uppercase
+  table
+    width: 100%
+    border-spacing: 0
+    border-collapse: collapse
+  td
+    border: 1px solid $grayColorSecond
+    padding: 15px
+  img
+    width: 100%
+.detail-tabs-item
+  display: none
+  &.active
+    display: block
+  .main-grid
+    padding: 0
+.detail-tabs-grid
+  display: grid
+  grid-template-columns: repeat(12, 1fr)
+  gap: 60px 30px
+@media (max-width: 1280px)
+  .detail-tabs-nav
+    font-size: 16px
+    position: relative
+    overflow-x: auto
+    ul
+      width: 1000px
+  .detail-tabs-carriage
+    transform: translateY(0)
+@media (max-width: 768px)
+  .detail-tabs-nav
+    margin-top: 45px
+    margin-bottom: 30px
+  .detail-tabs
+    padding-bottom: 30px
+@media (max-width: 576px)

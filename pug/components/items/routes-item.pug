@@ -1,0 +1,42 @@
+mixin routesItem(name, price, data)
+	.routes-item
+		.main-grid
+			.col-6.col-sm-12
+				.yachts-item-img.routes-item-img
+					.yachts-item-img-owl.owl-carousel
+						.yachts-img.img-cover
+							img(src="/images/main-bg.jpg", alt="")
+						.yachts-img.img-cover
+							img(src="/images/main-bg.jpg", alt="")
+						.yachts-img.img-cover
+							img(src="/images/main-bg.jpg", alt="")
+			.col-6.col-sm-12
+				.routes-item-info 
+					.price-tag=price
+					.time-tag
+						i 
+						span= price
+					h3
+						a(href="#")=name
+					.routes-item-description
+						| 4–6 часовая поездка до Нового водного канала Дубая до водопада с посещением самых главных достопримечательностей Дубая: Дубай Марина, остров Блю Уотер, резиденция Джумейра Бич и многое другое!
+					.routes-item-adv
+						.routes-adv-icons 
+							img(src="/images/popular/1.svg", alt="")
+							span 
+								|18,9 м.(62 ft.)
+						.routes-adv-icons 
+							img(src="/images/popular/2.svg", alt="")
+							span 
+								|29 гостей 
+						.routes-adv-icons 
+							img(src="/images/popular/3.svg", alt="")
+							span 
+								|3 человека
+						.routes-adv-icons 
+							img(src="/images/popular/4.svg", alt="")
+							span 
+								|3 каюты
+					.btn-routes-container
+						a(href="#").btn.btn--blue Получить консультацию
+						a(href="#").btn.btn--blue-border Подробнее

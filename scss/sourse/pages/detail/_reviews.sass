@@ -1,0 +1,66 @@
+.reviews-detail
+
+  // .form-btn-container
+  //   text-align: right
+  //   font-size: $smallSize
+.stub-rew-page
+  height: 90px
+.reviews-item
+  h2
+    font-size: $standartSize
+    color: $blueColor
+    margin: 0
+    text-transform: uppercase
+    display: inline-block
+    vertical-align: middle
+.reviews-text
+  background-color: $whiteColorSecond
+  padding: 45px 15px
+  font-weight: 500
+  color: $blueColor
+  text-align: center
+  margin: 0 0 30px
+  border-radius: 15px
+  position: relative
+  &::after
+    content: ""
+    @include positionElement(20px,20px,22px,calc(100% - 11px))
+    background-color: $whiteColorSecond
+    transform: rotate(45deg)
+
+.reviews-img
+  width: 62px
+  height: 62px
+  border-radius: 100%
+  overflow: hidden
+  position: relative
+  display: inline-block
+  margin-right: 15px
+  vertical-align: top
+  vertical-align: middle
+
+.reviews-video-box
+  position: relative
+  height: 230px
+  margin: 0 0 20px
+  background-color: $blueColor
+  img
+    opacity: 0.7
+    @include positionElement(100%,100%,0,0)
+    object-fit: cover
+  .video-btn
+.reviews-video-info
+  display: flex
+.reviews-video-text
+  margin: auto 0
+.reviews-date
+  color: $grayColor
+  font-size: $smallSize
+  font-weight: 600
+.socrew-item
+  height: 540px
+  position: relative
+  background-color: $blueColor
+  .socrew-item-img
+    @include positionElement(100%,100%,0,0)
+    opacity: 0.7

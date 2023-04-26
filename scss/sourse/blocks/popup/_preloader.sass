@@ -1,0 +1,12 @@
+.preloader-popup
+  @include positionElement(100%, 100%, 0, 0, left, top, 4, fixed)
+  background-color: $blackColor
+  .preloader
+    left: 50%
+    top: 50%
+    transform: translateX(-50%) translateY(-50%) translateZ(0)
+    background: linear-gradient(to right, $orangeColor 10%, rgba(101, 171, 248, 0) 42%)
+    &::after
+      background-color: $blackColor
+    &:before
+      background-color: $orangeColor

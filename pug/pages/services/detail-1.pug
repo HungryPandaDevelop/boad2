@@ -1,0 +1,38 @@
+include ../../default/build-header
+		
+// header end
+.stub
+.services-main 
+	.main-full
+		.breadcrumbs
+			a(href="#") Главная
+			em /
+			span Wake
+	.services-main-wather
+	.main-grid 
+		.col-5.col-md-6.col-sm-12.services-main-info 
+			.services-main-info-container
+				.services-main-price  от 850 AED/час
+				h1 Рыбалка на яхте
+				.services-main-text  Аренда яхт в Дубае — лучшее место для аренды роскошных яхт в Дубае. Мы предлагаем широкий выбор яхт для аренды по разумным ценам, предоставляя посетителям и жителям всего мира изысканный опыт.
+				.btn-container 
+					a.btn.btn--blue(href="#") Забронировать услугу
+	.services-main-img.img-cover 
+		img(src="/images/temp/serv/4.jpg", alt="")
++datailTabs(['Описание','Цены','Форма бронирования','Часто задаваемые вопросы','Отзывы','Дополнительные услуги'], 'tabs-routes',[1,2,3,4,5,6])
+include ../detail/detail-content.pug
+include ../detail/datail-price.pug
+.stub-section
+-var titleReserve = 'Получите хорошо организованное мероприятие на яхте'
+include ../../blocks/feedback/reserve-yachts.pug
+include ../detail/advantages-detail.pug
+include ../detail/simple-about.pug
+include ../home/faq.pug
+include ../home/reviews.pug
+include ../detail/serv-adv.pug
+.stub-section
+include ../../blocks/feedback/free.pug
+// footer start 
+include ../../blocks/footer.pug
+
+// footer end   

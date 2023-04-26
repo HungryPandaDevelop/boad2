@@ -1,0 +1,67 @@
+.about-main
+	background-color: $blueColor
+	color: $whiteColor
+	height: calc(100vh - 140px)
+	position: relative
+	// margin-top: -60px
+	h1
+		text-align: left
+		color: inherit
+		text-transform: uppercase
+		font-size: 70px
+		margin: 0 0 20px
+		padding: 0
+	h2
+		font-size: 24px
+		color: inherit
+		margin: 0 0 25px
+		text-transform: initial
+	.btn
+		width: 280px
+	.main-grid,
+	.about-main-info
+		height: 100%
+	.breadcrumbs
+		margin-top: 78px
+.about-main-info
+	display: flex
+	position: relative
+.about-main-info-container
+	margin: auto 0
+
+.about-main-text
+	margin-bottom: 30px
+.about-main-img
+	@include positionElement( 50%, 100%, 0)
+.about-main-blue
+	background-color: $blueColor
+.about-main-img-full
+	@include positionElement(100%, 100%)
+	opacity: 0.7
+.about-main-wather
+	@include positionElement(50%, 100%, 50%)
+	@include bgImageEl("../images/wather-sign.svg", 60%, center)
+.about-water
+	text-align: left
+	padding: 90px 0 0px
+	.head-section
+		margin-bottom: 45px
+@media (max-width: 768px)
+	.about-main
+		height: auto
+		h1
+			font-size: 48px
+			margin: 0 0 15px
+	.about-main-img
+		width: 100%
+		height: 380px
+	.about-main-img-stub
+		height: 380px
+	.about-main-info-container
+		padding-top: 60px
+	.about-main-wather
+		top: 420px
+		left: 0
+		width: 100%
+		height: calc(100% - 460px)
+		background-size: contain

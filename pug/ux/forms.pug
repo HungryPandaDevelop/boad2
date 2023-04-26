@@ -1,0 +1,46 @@
+doctype html
+html
+	// head start
+	include ../default/head.pug 
+	// head end
+	include ../components/connect-mixins.pug  
+	body 
+		// header start
+		include ../blocks/header.pug
+		// header end
+	.stub
+	.stub
+	.stub
+	.stub
+	.main-full
+		form.form-default
+			h2 Обратная связь
+			.form-line
+				+inputText('Ваше имя')
+			.form-line
+				+inputPhone('+7 (___) ___ - __ - __')
+			.form-line
+				+inputEmail('Ваш email')
+			.form-line
+				+inputCheckbox('Опции checkbox', ['Опция 1', 'Опция 2'])  
+			.form-line
+				+inputRadio('Опции radio', ['Опция 1', 'Опция 2'])  
+			.form-line
+				+inputFile(0, 'Выбрать файл')   
+			.form-line
+				+inputFile(1, 'Выбрать файлы', 'Нужен не большой файл')   
+			.main-grid
+				.form-line.col-3
+					.input-photo
+						+inputFile(0, 'Выбрать фото',)   
+						img.input-user-ico(src="/images/icons/avatar-black.svg", alt="")
+						img.input-photo-ico(src="/images/icons/cabinet/photo-add-black.svg", alt="")
+						.edit-photo-hint Изображение формата jpg,png не менее 150x150 px, не более 8Мб
+			.form-line 
+				+inputSelect('Выбрать селект', ['селект 1','селект 2','селект 3','селект 4','селект 5',])
+			.form-line 
+				+inputSubmit('Отправить', 'btn--orange')
+	.stub
+	.stub
+	.stub
+	.stub

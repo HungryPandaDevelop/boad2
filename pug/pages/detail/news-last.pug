@@ -1,0 +1,11 @@
+section.blog-last.owl-home
+	.main-full
+		.head-section.owl-home-head
+			h2.title-section Другие статьи
+			.btn-container 
+				a.btn.btn--blue(href="#") СМОТРЕТЬ ВСЕ статьи
+			.stab-arrow
+	.main-full.owl-three.owl-carousel
+		-for (var i=0; i < 7; i++)
+			.col-3
+				+blogItem("Lorem ipsum","Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum","11.12.2022")

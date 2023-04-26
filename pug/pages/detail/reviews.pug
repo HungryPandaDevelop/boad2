@@ -1,0 +1,11 @@
+section.reviews-detail.owl-home
+	.main-full
+		.head-section
+			h2.title-section 
+				| Впечатления и отзывы
+			.btn-container
+				a(href="#").btn.btn--blue Смотреть все статьи 
+			.stab-arrow
+	.main-full.owl-second.owl-carousel
+		-for(var x = 0; x < 7; x++)
+			+reviewsItem("Alex But","10/10/10") 

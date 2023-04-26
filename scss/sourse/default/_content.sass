@@ -1,0 +1,116 @@
+
+$gridCount: 12
+$indent: 15px
+$maxWidth: 1280px
+$gap: 30px
+
+.main-grid
+	display: grid
+	grid-template-columns: repeat($gridCount, 1fr)
+	grid-column-gap: $gap
+	padding: 0 $indent
+	max-width: $maxWidth
+	margin: 0 auto
+	position: relative
+.form-grid
+	display: grid
+	grid-template-columns: repeat($gridCount, 1fr)
+	grid-column-gap: $gap
+
+.catalog-grid
+	display: grid
+	grid-template-columns: repeat($gridCount, 1fr)
+	max-width: $maxWidth
+	grid-gap: $gap
+	max-width: $maxWidth
+	margin: 0 auto
+	position: relative
+.catalog-main
+	padding-bottom: 90px
+.main-full
+	padding: 0 $indent
+	max-width: $maxWidth
+	margin: 0 auto
+.main-full-abs
+	padding: 0 $indent
+	max-width: $maxWidth
+	@include positionElement(100%, auto,50%,0,left, top, 2)
+	transform: translateX(-50%)
+.main-full-abs-top
+	top: 0
+.main-full-abs-bottom
+	top: auto
+	bottom: 0
+
+section
+	padding: 75px 0 0px
+	position: relative
+	overflow: hidden
+.stub-section
+	height: 90px
+.head-section
+	margin-bottom: 39px
+	text-align: center
+	h2
+		text-align: center
+	h3
+		font-size: $standartSize
+		color: $grayDarkColor
+		font-weight: 500
+		a
+			color: $yellowColor
+			text-decoration: none
+			&:hover
+				text-decoration: underline
+.btn-container-section
+	padding: 40px 0 0px
+	text-align: center
+	.btn
+		width: 260px
+.breadcrumbs
+	font-size: $smallSize
+	margin: 15px 0 10px
+	padding: 0 8px
+	color: $grayColor
+	position: relative
+	z-index: 2
+	background-color: $whiteColor
+	border-radius: 15px
+	display: inline-block
+	em
+		font-size: 0
+		margin-left: 5px
+		@include icoEl(20px, 20px, "../images/arrows/carret-right-gray.svg", middle, 130%)
+		vertical-align: middle
+	a
+		text-decoration: none
+		color: $blackColor
+		vertical-align: middle
+		&:hover
+			text-decoration: underline
+	span
+		vertical-align: middle
+		margin: 0 5px
+		&:first-child
+			margin-left: 0
+.content
+	position: relative
+	min-height: calc(100vh - 130px)
+	h1
+		padding: 10px 0 30px
+		color: $blueColor
+		text-align: center
+		text-transform: uppercase
+
+@media (max-width: 768px)
+	section
+		padding: 57px 0 0px
+	.head-section
+		margin-bottom: 25px
+
+@media (max-width: 576px)
+	.content h1
+		padding: 25px 0 15px
+
+	.head-section
+		margin-bottom: 9px

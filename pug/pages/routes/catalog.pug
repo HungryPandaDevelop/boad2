@@ -1,0 +1,19 @@
+include ../../default/build-header
+		
+// header end
+.stub
++roofContent("Популярные маршруты в Дубае")
+	.main-full
+		-for(var i=0;i<2;i++)
+			+routesItem("Аренда Azimut 62 Lucky Star","850 AED/час")
+	.main-full.btn-container-section
+		a.btn.btn--yellow(href="#") Показать еще
+	.stub-section
+	include ../home/feedback.pug
+
+	include ../detail/reviews.pug
+// footer start  
+
+include ../../blocks/footer.pug
+
+// footer end  v

@@ -1,0 +1,16 @@
+mixin servicesItem(name, price, img)
+	.services-item
+		a(href="#").services-item-img
+			.img-cover
+				img(src=img, alt="")
+			.services-item-info
+				h3
+					= name
+				.services-item-price=price 
+				.services-item-text Для по-настоящему безмятежного отдыха на яхте мы возьмем на себя организацию питания и обслуживания на борту. Предлагаем вашему вниманию Life station BBQ menu
+				.btn-container-adv
+					.btn-adv-more
+			.btn-item-plus
+				.btn-item-plus-content
+					span +
+			.services-item-stub

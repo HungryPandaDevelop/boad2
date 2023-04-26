@@ -1,0 +1,28 @@
+include ../../default/build-header
+		
+// header end
+.stub
++roofContent("Поиск")
+	.main-grid.search-panel 
+			.col-10
+				input.input-search(type="text" placeholder="Поиск")
+			.col-2
+				a.btn.btn--yellow.btn-search(href="#") Найти
+			.col-12 
+				h3 По вашему запросу ничего не найдено
+				.hint Задайте другой запрос или посмотрите информацию на страницах сайта:
+			.col-12.search-tags 
+				a(href="#").btn.btn--blue-border АРЕНДА ЯХТ И КАТЕРОВ 
+				a(href="#").btn.btn--blue-border МАРШРУТЫ
+				a(href="#").btn.btn--blue-border ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ
+				a(href="#").btn.btn--blue-border WAKE DUBAI
+				a(href="#").btn.btn--blue-border О КОМПАНИИ 
+				a(href="#").btn.btn--blue-border блог
+				a(href="#").btn.btn--blue-border отзывы
+				a(href="#").btn.btn--blue-border контакты
+	include ../home/yachts.pug
+// footer start  
+
+include ../../blocks/footer.pug
+
+// footer end  

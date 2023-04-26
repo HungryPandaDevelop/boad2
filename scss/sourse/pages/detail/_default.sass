@@ -1,0 +1,105 @@
+
+.detail-content
+  img
+    width: 100%
+    margin: 0 0 45px
+    &:last-child
+      margin-bottom: 0
+  h2
+    margin: 0 0 30px
+  h3
+    font-size: $largeSize
+    text-transform: uppercase
+    margin: 45px 0 15px
+  h4
+    font-size: 24px
+    margin: 0 0 15px
+  p
+    margin: 0 0 30px
+    &:last-child
+      margin-bottom: 0
+  h2,h3
+    &:first-child
+      margin-top: 0
+.simple-item-about
+  margin-bottom: 45px
+  position: relative
+
+  h3
+    text-transform: uppercase
+    font-size: $largeSize
+    margin: 45px 0 15px
+    &:first-child
+      margin-top: 0
+  p
+    margin: 0 0 15px
+  .simple-item-text-container
+    position: relative
+  &:last-child
+    margin-bottom: 0
+.simple-item-about-bg
+  @include positionElement(calc(100% - 30px),100%,15px,0)
+  background-color: $grayColorSecond
+.simple-item-text
+  padding: 60px
+
+.detail-owl
+  padding-bottom: 90px
+  .owl-nav
+    width: 120px
+    bottom: 0
+    top: auto
+    left: 50%
+    transform: translateX(-50%)
+.detail-owl-item
+  height: 310px
+  img
+    width: 100%
+.owl-default
+  padding-bottom: 60px
+  .owl-nav
+    width: calc(100% - 60px)
+    left: 30px
+    top: calc(50% - 30px)
+.owl-default-item
+  height: 600px
+
+.btn-container-favorites
+  text-align: right
+  margin-top: -168px
+  margin-bottom: 118px
+  .btn
+    width: 180px
+
+.routes-section
+  padding-bottom: 90px
+
+@media (max-width: 768px)
+  .detail-content
+    h2
+      margin-bottom: 15px
+  .simple-item-about
+    margin-bottom: 18px
+  .simple-item-img
+    height: 400px
+  .simple-item-text
+    padding: 45px
+  .simple-item-img
+    grid-row: start 1
+  .simple-item-text-container
+    grid-row: start 2
+
+  .detail-owl-item
+    height: 170px
+@media (max-width: 576px)
+  .detail-content
+    h2
+      margin-bottom: 8px
+  .owl-default-item
+    height: 460px
+  .simple-item-text
+    padding: 30px
+  .simple-item-about
+    margin-bottom: 0
+  .detail-owl-item
+    height: 110px

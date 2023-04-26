@@ -1,0 +1,102 @@
+.suitable-home
+  .main-grid
+    gap: 30px
+.suitable-item
+  background-color: $whiteColor
+  height: 355px
+  display: flex
+  h3
+    color: inherit
+    margin: 8px 0 15px
+  &.extra
+    .suitable-item-price
+      color: $whiteColor
+    .suitable-item-img
+      width: 67%
+    .suitable-item-info
+      width: 33%
+      background-color: $yellowColor
+  .btn-adv-more
+    display: none
+  // .btn
+  //   width: 150px
+.suitable-item-info
+  width: 49%
+  padding: 30px
+  background-color: $blueColor
+  color: $whiteColor
+  display: flex
+.suitable-item-container
+  width: 100%
+  max-width: 236px
+  margin: auto
+.suitable-item-price
+  font-weight: 600
+  color: $yellowColor
+  text-transform: uppercase
+.suitable-item-text
+  overflow: hidden
+  display: -webkit-box
+  -webkit-line-clamp: 2
+  -webkit-box-orient: vertical
+  line-clamp: 2
+  margin: 0 0 15px
+  font-size: $smallSize
+.suitable-item-img
+  width: 51%
+  height: 100%
+  display: block
+  position: relative
+  overflow: hidden
+  .img-cover
+    @include positionElement(100%,100%,0,0)
+    transform: scale(1)
+    transition: ease-out 0.5s
+  img
+    @include positionElement(100%,100%,0,0)
+  &:hover
+    .img-cover
+      transform: scale(1.1)
+
+@media (max-width: 992px)
+  .suitable-item
+    display: block
+    height: auto
+  .suitable-item-img
+    width: 100%
+    height: 310px
+  .suitable-item-info
+    width: 100%
+    height: 280px
+  .suitable-item-container
+    max-width: none
+  .suitable-item.extra
+    display: flex
+    height: 300px
+    .suitable-item-img
+      width: 52%
+      height: 100%
+    .suitable-item-info
+      width: 48%
+      height: 100%
+@media (max-width: 576px)
+  .suitable-home-desktop
+    display: none
+  .suitable-home-mobile
+    display: block
+    .btn-container
+      display: none
+    .btn-adv-more
+      display: block
+  .suitable-item-text
+    display: none
+  .suitable-item-info
+    height: 180px
+  .suitable-item.extra
+    display: block
+    .suitable-item-img
+      width: 100%
+      height: 310px
+    .suitable-item-info
+      width: 100%
+      height: 180px

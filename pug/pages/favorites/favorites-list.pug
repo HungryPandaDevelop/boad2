@@ -1,0 +1,32 @@
+include ../../default/build-header
+		
+// header end
+.stub
++roofContent("Избранное")
+	.main-full.btn-container-favorites
+		a.btn.btn--blue-border(href="#") Очиситить поиск 
+	.main-grid.main-grid-indent
+		.col-12
+			.catalog-sorting-container
+				.catalog-total-ifno
+					| Всего яхт: 6
+				.catalog-sort
+					b Сортировать по:
+					.sort-select-container
+						+inputSelect('год постройки: по уменьшению', ['селект 1','селект 2','селект 3','селект 4','селект 5',],'sort-select')
+				.catalog-view 
+					.listing-tile-btn.active
+					.listing-list-btn
+			.catalog-main
+				-for(var i=0;i<1;i++)
+					+yachtsItemList("Аренда Azimut 62 Lucky Star","850 AED/час", true)
+
+
+
+include ../../blocks/feedback/free.pug
+
+// footer start  
+
+include ../../blocks/footer.pug
+
+// footer end  

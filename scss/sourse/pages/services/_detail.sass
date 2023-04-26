@@ -1,0 +1,112 @@
+
+.services-main
+	background-color: $yellowColor
+	color: $whiteColor
+	// height: calc(100vh - 172px)
+	height: calc(100vh - 140px)
+	min-height: 620px
+	position: relative
+	.breadcrumbs
+		margin-top: 100px
+		background: none
+		color: $whiteColor
+		a
+			color: inherit
+		em
+			background-image: url("../images/arrows/carret-right-white.svg")
+	h1
+		text-align: left
+		color: inherit
+		padding-top: 30px
+		padding-bottom: 30px
+	.btn
+		width: 280px
+	.btn-couple
+		.btn
+			width: 190px
+		.btn--blue
+			margin-right: 10px
+.services-main-front
+	position: relative
+	z-index: 2
+.services-main-info
+	display: flex
+	position: relative
+.services-main-info-container
+	margin: auto 0
+.services-main-price
+	display: inline-block
+	color: $blueColor
+	background-color: $whiteColor
+	padding: 3px 30px
+	border-radius: 30px
+.services-main-text
+	margin-bottom: 30px
+.services-main-img
+	@include positionElement( calc(55.5% - 15px), 100%, calc(44.5% + 15px))
+.services-main-blue
+	background-color: $blueColor
+	.breadcrumbs
+		margin-bottom: 45px
+.services-main-img-full
+	@include positionElement(100%, 100%)
+	opacity: 0.7
+.services-main-wather
+	@include positionElement(calc(44.5% + 15px), 100%, 0)
+	@include bgImageEl("../images/wather-sign.svg", 60%, center)
+.services-water
+	text-align: left
+
+@media (max-width: 992px)
+	.services-main-img
+		width: 50%
+		left: 50%
+@media (max-width: 768px)
+	.services-main
+		height: calc(100vh - 67px)
+		.breadcrumbs
+			margin-top: 50px
+		h1
+			padding-top: 15px
+		.main-grid
+			height: calc(50% - 85px)
+		.breadcrumbs-grid
+			height: auto
+	.services-main-text
+		margin-bottom: 15px
+	.services-main-wather
+		width: 100%
+		height: 50%
+
+		// .services-main-info
+		// 	height: 50%
+	.services-main-img
+		width: 100%
+		left: 0
+		// top: 55%
+		height: 50%
+		top: 0
+		position: relative
+@media (max-width: 576px)
+	.services-main
+		h1
+			font-size: 28px
+		.main-grid
+			height: auto
+			padding-bottom: 30px
+		.btn
+			width: 100%
+	.services-main
+		.btn-couple
+			.btn
+				width: 100%
+				margin-bottom: 8px
+	.services-water
+		.catalog-grid
+			padding: 0 15px
+	.services-main-blue
+		height: 460px
+	.services-water
+		padding: 60px 0 0px
+		.head-section
+			margin-bottom: 15px

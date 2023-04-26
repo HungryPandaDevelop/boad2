@@ -1,0 +1,69 @@
+mixin inputText(placeholder, className) 
+	input(type="text" placeholder=placeholder class='input-decorate '+ className)
+mixin inputPhone(placeholder, className) 
+	input(type="phone" placeholder=placeholder class='input-decorate phone-mask '+ className)
+mixin inputEmail(placeholder, className) 
+	input(type="email" placeholder=placeholder class='input-decorate check-mail '+ className)
+mixin inputPassword(placeholder, className) 
+	.password-field(class=className )
+		input(type="password" placeholder=placeholder class='input-decorate')
+		i.view-ico(data-visibility="false")
+mixin inputTextarea(placeholder, className) 
+	textarea(placeholder=placeholder class='input-decorate '+className)
+mixin inputCheckbox(label, options, className ) 
+	if label
+		.checkbox-container
+			h3=label
+	each val in options 
+		.checkbox(class=className)
+			label= val 
+				input(type="checkbox")
+				span
+mixin inputRadio(labelText, options,  className, name ) 
+	.checkbox-container
+		if labelText 
+			h3=labelText
+	each val, index in options
+		.checkbox(class=className)
+			label= val[0]
+				input(type="radio" name=name value=val[1])
+				span
+mixin inputFile(multy, textchoise, hint, className ) 
+	.input-file-container(class=className)
+		input.input-file(type="file" data-multy=multy data-textchoise=textchoise data-hint=hint accept="image/jpeg,image/png,image/gif"  )
+mixin inputPhoto(multy, textchoise, hint, className ) 
+	.input-file-container(class=className)
+		input.input-file(type="file" data-multy=multy data-textchoise=textchoise data-hint=hint accept="image/jpeg,image/png,image/gif"  )
+mixin inputSelect(firstText, options, className)
+	select.style-select(data-text=firstText data-class=className)
+		each val in options
+			option= val
+mixin rangeSliderOne(name, range) 
+	h3=name
+	.range-slider-container.style-range-container
+		.slider-track
+		input(type="range" class="range" min="0" max=range value="0")
+		.range-num 0
+mixin rangeSliderTwo(name, rangeMax, rangeFrom, rangeTo) 
+	h3=name
+	.range-sliders-container.style-range-container
+		.slider-track
+		input(type="range" class="slider-1" min="0" max=rangeMax value=rangeFrom name='a')
+		.range-num.range-num-1(data-name='a') 0
+		input(type="range" class="slider-2" min="0" max=rangeMax value=rangeTo name='b')
+		.range-num.range-num-2(data-name='b') 0
+mixin rangeSliderThree(rangeMin, rangeMax, rangeFrom, rangeTo, nameInputFrom, nameInputTo)
+	.range-sliders-outer
+		.range-sliders-input
+			input.input-decorate.range-input-from(type="text" value=rangeFrom name=nameInputFrom)
+			span -
+			input.input-decorate.range-input-to(type="text" value=rangeTo name=nameInputTo)
+	.range-sliders-container.style-range-container.range-slider-second
+		.slider-track
+		.slider-track.slider-track-color
+		input(type="range" class="slider-1" min=rangeMin max=rangeMax value=rangeFrom)
+		input(type="range" class="slider-2" min=rangeMin max=rangeMax value=rangeTo )
+
+mixin inputSubmit(textBtn, className, wrapClassName)
+	.form-btn-container(class=wrapClassName)
+		input(type="submit" class='btn '+className  value=textBtn)

@@ -1,0 +1,103 @@
+
+/*catalog-filter*/
+.catalog-sorting-container
+  display: flex
+  justify-content: space-between
+  margin: 0 0 45px
+  .btn-sort,
+  .btn-sidebar
+    margin: auto 0
+    display: none
+.catalog-filter
+  &>div
+    display: inline-block
+  .btn
+    width: auto
+    margin-right: 5px
+    &:hover,
+    &.active
+      background-color: $blueColor
+      border-color: $blueColor
+      color: $whiteColor
+.catalog-total-ifno
+  font-weight: 700
+  font-size: $largeSize
+.catalog-sort
+  width: 380px
+  display: flex
+  font-size: $microSize
+  b
+    width: 170px
+    display: inline-block
+    font-weight: 600
+    color: $grayColor
+    text-transform: uppercase
+    margin: auto 0
+  ul
+    font-weight: 600
+    top: 41px
+    li
+      padding: 10px 14px
+      border-bottom: 1px solid $whiteColorSecond
+      &:hover
+        background-color: $whiteColor
+        color: $yellowColor
+.sort-select-container
+  width: 100%
+.sort-select
+  border: 1px solid $grayColorSecond
+  border-radius: 30px
+  font-size: inherit
+  padding: 10px 12px
+  width: 100%
+  margin: auto 0
+.catalog-view
+  padding: 5px 0 5px 5px
+.listing-tile-btn
+  @include icoEl(30px,30px,"../images/icons/listing-tile-gray.svg")
+  cursor: pointer
+  &.active,
+  &:hover
+    background-image: url("../images/icons/listing-tile-yellow.svg")
+.listing-list-btn
+  @include icoEl(30px,30px,"../images/icons/listing-list-gray.svg")
+  margin-left: 8px
+  cursor: pointer
+  &.active,
+  &:hover
+    background-image: url("../images/icons/listing-list-yellow.svg")
+/*catalog-filter*/
+@media (max-width: 992px)
+  .catalog-sort
+    width: 230px
+    b
+      display: none
+
+@media (max-width: 768px)
+  .catalog-sorting-container
+    .btn-sort,
+    .btn-sidebar
+      display: inline-block
+@media (max-width: 576px)
+  .catalog-view
+    display: none
+  .catalog-sorting-container
+    // display: block
+    position: relative
+    height: 80px
+    .catalog-filter
+      margin: 0 auto
+      display: flex
+      justify-content: space-between
+    .btn-sidebar,
+    .btn-sort
+      position: absolute
+      bottom: 0
+    .btn-sidebar
+      left: 0
+    .btn-sort
+      right: 0
+@media (max-width: 440px)
+  .catalog-filter .btn
+    font-size: $microSize
+    padding: 11px 7px

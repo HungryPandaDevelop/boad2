@@ -1,0 +1,148 @@
+
+.close-btn
+	@include icoEl(30px, 30px, "../images/icons/close-white.svg")
+	cursor: pointer
+	&:hover
+		background-image: url("../images/icons/close-yellow.svg")
+
+.hamburger-btn
+	@include icoEl(30px, 30px, "../images/icons/hamburger-gray.svg", middle, contain, center right)
+	cursor: pointer
+	&:hover
+		background-image: url("../images/icons/hamburger-yellow.svg")
+
+.btn-back
+	&:hover
+		color: $greenColor
+
+.whatsapp-btn
+	font-size: $smallSize
+	i,span
+		display: inline-block
+		vertical-align: middle
+	i
+		@include icoEl(24px, 24px, "../images/social/whatsapp-color.svg")
+		margin-right: 8px
+.whatsapp-btn--large
+	width: 330px
+.whatsapp-btn--single
+	@include icoEl(36px, 36px, "../images/social/whatsapp-color.svg")
+.phone-btn
+	i,span
+		display: inline-block
+		vertical-align: middle
+	i
+		@include icoEl(24px, 24px, "../images/icons/phone-blue.svg")
+		margin-right: 8px
+.phone-btn--yellow
+	background-color: $yellowColor
+	border-radius: 100%
+	@include icoEl(36px, 36px, "../images/icons/phone-white-border.svg", middle, 18px)
+	&:hover
+		background-color: $blueColor
+
+.liked-btn
+	@include icoEl(36px, 36px, "../images/icons/heart-white.svg", middle, 21px, center 10px)
+	background-color: $blueColor
+	border-radius: 100%
+	position: relative
+	&:hover
+		background-color: $yellowColor
+	span
+		@include positionElement(17px,17px,-5px,-5px,right,bottom)
+		background-color: $yellowColor
+		color: $whiteColor
+		border-radius: 100%
+		text-align: center
+		font-weight: 600
+		font-size: $microSize
+		visibility: hidden
+	&.added
+		span
+			visibility: visible
+	&.active
+		background-color: $yellowColor
+.btn-new-site
+	cursor: pointer
+	width: 168px
+	height: 56px
+	color: $whiteColor
+	display: flex
+	padding-left: 60px
+	padding-right: 10px
+	font-size: $microSize
+	background-color: $blueColor
+	border-radius: 30px
+	position: relative
+	span
+		display: inline-block
+		margin: auto
+	i
+		@include positionElement(48px, 48px, 4px, 4px)
+		@include bgImageEl("../images/logo-white.svg")
+		display: inline-block
+.video-btn
+	cursor: pointer
+	span
+		border-radius: 100%
+		@include positionElement(76px, 76px, 50%, 50%)
+		transform: translateX(-50%) translateY(-50%)
+		border: 2px solid $yellowColor
+		transition: ease-out 0.5s
+	i
+		border-radius: 100%
+		@include positionElement(54px, 54px, 50%, 50%)
+		transform: translateX(-50%) translateY(-50%)
+		background-color: $yellowColor
+		@include bgImageEl("../images/icons/play-white.svg", 15px, 22px)
+		transition: ease-out 0.5s
+	&:hover
+		span
+			width: 80px
+			height: 80px
+		i
+			width: 50px
+			height: 50px
+			background-position: 19px
+.add-btn
+	cursor: pointer
+	border-radius: 100%
+	@include positionElement(83px, 83px, 50%, 50%)
+	transform: translateX(-50%) translateY(-50%) scale(1)
+	background-color: $yellowColor
+	transition: ease-out 0.5s
+	display: flex
+	i
+		font-style: normal
+		margin: auto
+		font-size: 60px
+		color: $whiteColor
+		font-weight: 300
+		line-height: 1
+
+	&:hover
+		transform: translateX(-50%) translateY(-50%) scale(0.8)
+.delete-btn
+	background-color: $blueColor
+	cursor: pointer
+	border-radius: 100%
+	@include icoEl(40px, 40px, "../images/icons/trash-white.svg", middle, 18px)
+	&:hover
+		background-color: $yellowColor
+.call-mobile-btn
+	cursor: pointer
+	@include icoEl(46px, 46px, "../images/icons/call-mobile.svg")
+.btn-adv-more
+	@include icoEl(46px, 46px, "../images/arrows/carret-right-white.svg")
+	border: 2px solid $whiteColor
+	border-radius: 100%
+.btn-sort
+	@include icoEl(30px, 30px, "../images/icons/sort-btn-blue.svg")
+	cursor: pointer
+	&:hover
+		background-image: url("../images/icons/sort-btn-yellow.svg")
+.btn-sidebar
+	@include icoEl(30px, 30px, "../images/icons/sidebar-btn-blue.svg")
+	cursor: pointer
+	&:hover
+		background-image: url("../images/icons/sidebar-btn-yellow.svg")

@@ -1,0 +1,131 @@
+.yachts-list-wrapper
+  margin-bottom: 90px
+
+.yachts-item-grid
+  display: grid
+  grid-template-columns: repeat(9,1fr)
+  grid-column-gap: 30px
+  border: 1px solid $grayColorSecond
+  margin: 0 auto 30px
+  position: relative
+  max-width: $maxWidth
+  .delete-btn
+    position: absolute
+    right: 0
+    top: 0
+    margin: 15px
+  &:last-child
+    margin-bottom: 0px
+  a
+    text-decoration: none
+  h3
+    font-size: $largeSize
+    margin: 0 0 15px
+    &:hover
+      color: $yellowColor
+  .yachts-item-img
+    height: 290px
+  .yachts-item-adv
+    border: 0
+  .yachts-item-info
+    padding-left: 0
+    padding-right: 0
+.yachts-item-middle
+  display: flex
+  .yachts-item-description
+    width: 40%
+  .yachts-item-adv
+    margin: 0 auto
+    padding: 0
+    width: 100%
+    max-width: 300px
+.yachts-item-middle-delimetr
+  width: 1px
+  height: 100px
+  background-color: $grayColorSecond
+.yachts-item-bottom
+  display: flex
+  border-top: 1px solid $grayColorSecond
+  padding-top: 20px
+  .yachts-item-price
+    width: 30%
+    padding-top: 6px
+  .btn-yachts-container
+    width: 60%
+
+/*second yachts item*/
+
+.yachts-item-second
+  background-color: $whiteColorSecond
+  margin: 0 0 30px
+  position: relative
+  overflow: hidden
+  &:last-child
+    margin-bottom: 0px
+  a
+    text-decoration: none
+  .main-grid
+    padding: 0
+  h3
+    font-size: 28px
+    margin: 0 0 15px
+    text-transform: uppercase
+    &:hover
+      color: $yellowColor
+  h4
+    font-size: inherit
+    text-transform: uppercase
+    margin: 0 0 5px
+  .yachts-item-img
+    height: 100%
+
+.yachts-item-second-info
+  padding: 45px 15px
+  max-width: 520px
+  margin: 0 auto
+
+.yachts-item-second-description
+  margin: 0 0 15px
+.yachts-item-second-list
+  margin: 0 0 15px
+  ul,li
+    padding: 0
+    margin: 0
+  li
+    display: inline-block
+    position: relative
+    padding-left: 15px
+    margin-right: 25px
+    vertical-align: top
+    &::before
+      content: ""
+      @include positionElement(4px,4px, 0 ,50%)
+      transform: translateY(-50%)
+      background-color: $blueColor
+      border-radius: 100%
+.yachts-item-second-adv
+  display: flex
+  justify-content: space-between
+  margin-bottom: 30px
+@media (max-width: 768px)
+  .yachts-item-second
+    .main-grid
+      padding: 0
+    .yachts-item-img
+      height: 300px
+
+  .yachts-item-second-list
+    li
+      width: 42%
+      margin-bottom: 8px
+  .yachts-item-second-info
+    padding: 30px 15px
+    max-width: 100%
+@media (max-width: 586px)
+  .yachts-item-second
+    .btn-yachts-container
+      display: block
+      .btn
+        width: 100%
+        &:first-child
+          margin-bottom: 15px

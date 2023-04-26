@@ -1,0 +1,82 @@
+.owl-home
+	.head-section
+		display: flex
+	h2,
+	h3
+		text-align: left
+		margin: 0
+	h2
+		display: flex
+		span
+			display: inline-block
+			margin: auto 0
+	.btn
+		width: 270px
+	.btn-container
+		margin: auto
+		margin-right: 0
+	.stab-arrow
+		width: 140px
+
+	.owl-nav
+		width: 110px
+		top: -76px
+		left: auto
+		right: 15px
+	.owl-carousel
+		padding-bottom: 56px
+
+@media (max-width:992px)
+	.owl-home
+		.btn
+			width: 180px
+		.owl-nav
+			top: -89px
+@media (max-width:768px)
+	.owl-home
+		.head-section
+			// margin-bottom: 25px
+			h2
+				display: block
+		.owl-nav
+			top: -50px
+@media (max-width: 576px)
+	.hide-home-desktop
+		display: none
+	.owl-home
+		.owl-nav
+			top: auto
+			bottom: 60px
+			left: 56%
+			right: auto
+			transform: translateX(-50%)
+		.head-section
+			display: block
+			.btn-container
+				@include positionElement(100%,auto,0,0px,left,bottom, 2)
+			.btn
+				width: 270px
+		.stab-arrow
+			display: none
+		.owl-four,
+		.owl-second
+			padding-bottom: 129px
+			width: 92%
+			margin: 0
+		.owl-stage-outer
+			overflow: visible
+	.slider-home-mobile
+		width: 92%
+		margin: 0
+		.owl-carousel
+			padding-bottom: 75px
+
+		.owl-stage-outer
+			overflow: visible
+		.owl-nav
+			width: 110px
+			top: auto
+			bottom: 0px
+			left: 56%
+			right: auto
+			transform: translateX(-50%)

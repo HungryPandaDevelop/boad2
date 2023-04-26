@@ -1,0 +1,28 @@
+.price-tag,
+.time-tag
+  background-color: $yellowColor
+  color: $whiteColor
+  font-weight: 600
+  border-radius: 30px
+  display: inline-block
+  padding: 0 14px
+  margin: 0 8px 15px 0
+.time-tag
+  background-color: $whiteColor
+  color: $grayColor
+  span
+    vertical-align: middle
+  i
+    @include icoEl(16px, 16px, '../images/icons/time-gray.svg')
+    margin-right: 6px
+.phone-ico
+  @include icoEl(18px, 22px, '../images/icons/phone-blue.svg')
+.mail-ico
+  @include icoEl(18px, 20px, '../images/icons/mail-blue.svg')
+.marker-ico
+  @include icoEl(20px, 16px, '../images/icons/marker-blue.svg')
+.rus-flag
+  @include icoEl(22px, 22px, '../images/rus-flag.svg')
+.oae-flag
+  @include icoEl(22px, 22px, '../images/rus2-flag.jpg')
+// +971-#-###-####

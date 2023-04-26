@@ -1,0 +1,56 @@
+
+.popup
+  @include positionElement(100%, 100%, 0, 0, left, top, 4, fixed, flex)
+  color: $whiteColor
+  a
+    &:hover
+      color: $blackColor
+  h2,h3
+    color: inherit
+    text-align: center
+  .form-default
+    max-width: 380px
+    margin: 0 auto
+  .btn
+    width: 100%
+
+.popup-hint
+  text-align: center
+.popup-overlay
+  @include positionElement(100%, 100%, 0, 0)
+  background-color: $blueColor
+  opacity: 0.3
+.close-btn_popup
+  position: absolute
+  right: 0
+  top: 0
+  margin: 15px
+  z-index: 2
+.popup-container
+  position: relative
+  background-color: $blueColor
+  max-width: 600px
+  width: 100%
+  height: auto
+  margin: auto
+  padding: 90px 30px
+  transition: ease-out 0.5s
+
+  overflow-y: auto
+  max-height: 100%
+.element-show
+  transition: ease-out 0.25s
+  opacity: 0
+  visibility: hidden
+  &.show
+    opacity: 1
+    visibility: visible
+.large-popup
+  .form-default
+    max-width: none
+  .popup-container
+    max-width: 800px
+@media (max-width: 576px)
+  .popup-container
+    margin: auto
+    padding: 30px 15px

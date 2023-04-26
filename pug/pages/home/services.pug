@@ -1,0 +1,21 @@
+section.services-home
+	.main-full.head-section
+		h2
+			| Дополнительные услуги
+	.main-grid.hide-home-desktop
+		.col-3.col-md-6
+			+servicesItem('Кейтеринг на яхте','от 850 AED/час','/images/temp/serv/1.jpg')
+		.col-3.col-md-6
+			+servicesItem('Оформление яхты','от 850 AED/час','/images/temp/serv/2.jpg')
+		.col-6.col-md-12
+			+servicesItem('Wake Dubai','от 850 AED/час','/images/temp/serv/3.jpg')
+		.col-6.col-md-6
+			+servicesItem('Активные развлечения на воде','от 850 AED/час','/images/temp/serv/1.jpg')
+		.col-3.col-md-6
+			+servicesItem('рыбалка на яхте','от 850 AED/час','/images/temp/serv/2.jpg')
+		.col-3.col-md-12
+			+servicesItem('Гриль для готовки свежепойманной рыбы','от 850 AED/час','/images/temp/serv/3.jpg')
+	.main-full.slider-home-mobile
+		.owl-mobile.owl-carousel
+			-for (x=0;x<10;x++) 
+				+servicesItem('рыбалка на яхте','от 850 AED/час','/images/temp/serv/2.jpg')

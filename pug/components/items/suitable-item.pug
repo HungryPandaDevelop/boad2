@@ -1,0 +1,14 @@
+mixin suitableItem(name, text, price,img, newClass)
+	div(class=`suitable-item ${newClass ? newClass : ''}`)
+		.suitable-item-img
+			a(href="#").img-cover
+				img(src=img, alt="")
+		.suitable-item-info
+			.suitable-item-container
+				.suitable-item-price=price
+				h3 
+					=name
+				.suitable-item-text=text
+				.btn-container
+					a(href="#").btn.btn--white-border  Узнать больше
+				.btn-adv-more

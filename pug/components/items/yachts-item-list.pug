@@ -1,0 +1,51 @@
+mixin yachtsItemList(name, text, deleteBtn)
+	.yachts-item-grid
+		.col-3
+			.yachts-item-img
+				.yachts-item-img-owl.owl-carousel
+					.yachts-img.img-cover
+						img(src="/images/main-bg.jpg", alt="")
+					.yachts-img.img-cover
+						img(src="/images/main-bg.jpg", alt="")
+					.yachts-img.img-cover
+						img(src="/images/main-bg.jpg", alt="")
+				.yachts-logo 
+					span Full refit 2022
+				.yachts-item-liked 
+		.col-6
+			.yachts-item-info 
+				h3
+					a(href="#")=name
+				.yachts-item-middle
+					ul.ln.yachts-item-description
+						li
+							b Назначение:
+							div Круизы по Дубаю, вечеринки, рекреационная деятельность
+						li
+							b Вервь:
+							div Azimut, Италия
+					.yachts-item-middle-delimetr
+					.yachts-item-adv
+						.yachts-adv-icons 
+							.yachts-adv-icon.yachts-adv-icon-1
+							span 
+								|18,9 м.(62 ft.)
+						.yachts-adv-icons 
+							.yachts-adv-icon.yachts-adv-icon-2
+							span 
+								|29 гостей 
+						.yachts-adv-icons 
+							.yachts-adv-icon.yachts-adv-icon-3
+							span 
+								|3 человека
+						.yachts-adv-icons 
+							.yachts-adv-icon.yachts-adv-icon-4
+							span 
+								|3 каюты
+				.yachts-item-bottom
+					.yachts-item-price=text
+					.btn-yachts-container
+						a(href="#").btn.btn--blue Забронировать
+						a(href="#").btn.btn--blue-border Подробнее
+			if deleteBtn
+				.delete-btn

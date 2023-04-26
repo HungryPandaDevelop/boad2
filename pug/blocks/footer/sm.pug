@@ -1,0 +1,76 @@
+footer.footer-sm
+	.main-grid
+		.col-sm-6.nav-1-container
+			.nav
+				h3 
+					a(href="#") Аренда яхт и катеров
+				ul
+					each val in ["Катера","Ренгенология","Яхты стандарт","VIP Яхты "]
+						li  
+							a(href="#") 
+								= val
+			.nav
+				h3 
+					a(href="#") Морские круизы
+				ul
+					each val in ["Тур по Дубай Марине","Тур Dubai Marina и JBR","Тур Dubai Marina, JBR and Atlantis","Тур Dubai Marina, JBR and Palm Jumeirah","Тур Dubai Marina, JBR and Burj Al Arab"]
+						li  
+							a(href="#") 
+								= val
+			a.logo(href="./index.html")
+				img(src="/images/logo-footer.svg")
+
+			.logo-text Все яхты, представленные на данном сайте, имеют государственную регистрицию и лицензию на совершение чартерных рейсов.
+
+		.col-sm-6
+			.nav
+				h3 
+					a(href="#") Дополнительные услуги
+				ul
+					each val in ["Кайтеринг на яхте","Оформление яхты для торжественного события","Аренда катера для рыбалки","Водные активности","Трансфер"]
+						li
+							a(href="#")=val
+			.nav.nav-second
+				ul
+					each val in ["wake Dubai","Блог","о компании","Отзывы","контакты"]
+						li  
+							a(href="#") 
+								= val
+			.feedback
+				h3 
+					a(href="#") Наши Контакты
+				.feedback-footer-marker.feedback-footer-item
+					a(href="#") 
+						i
+						span Dubai Harbour Marina
+				.feedback-footer-mail.feedback-footer-item
+					a(href="#")
+						i
+						span mail@mail.ru
+				.feedback-footer-phone.feedback-footer-item
+					a(href="#") 
+						i
+						span + 971 56 115 16 24
+				.btn-container 
+					a.btn.btn--yellow.btn-element(href="#").element-btn(data-element="1")
+						span перезвоните мне
+						i
+				.social-default
+					a.whatsapp-btn(href="") 
+						i 
+						span WhatsApp
+					+social(["fc","i"])
+				a.btn-new-site(href="#") 	
+					span Продажа, обслуживание яхт
+		.col-sm-12
+			.search-main 
+				input.input-search(type="text" placeholder="Поиск")
+				.search-ico
+		.col-sm-12
+			ul.footer-links.ln
+				li
+					a(href="#") Карта сайта
+				li
+					a(href="#") Политика конфиденциальности
+				li
+					| © 2022 Luxury Sea Boats Charter 

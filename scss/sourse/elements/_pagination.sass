@@ -1,0 +1,119 @@
+/*pagination page start*/
+.pagination-container
+  min-height: 90px
+.pagination
+  text-align: center
+  margin: 45px 0 90px
+  position: relative
+  z-index: 2
+  li
+    padding: 0
+    margin: 0
+    display: inline-block
+
+  a, span
+    width: 30px
+    height: 30px
+    display: inline-block
+    text-align: center
+    font-weight: 500
+    text-decoration: none
+    line-height: 27px
+    border: 1px solid $grayColorSecond
+    font-size: $smallSize
+    vertical-align: middle
+    margin: 0 6px
+    // background-color: $whiteColor
+    transition: ease-out 0.25s
+    color: $grayColor
+    cursor: pointer
+  li:hover a,
+  a:hover
+    color: $yellowColor
+    border-color: $yellowColor
+  span
+    background-color: $yellowColor
+    color: $whiteColor
+  li.selected a
+    color: $whiteColor
+    background-color: $yellowColor
+
+  .previous,
+  .next
+    a
+      background-size: 100%
+      font-size: 0
+      border-color: rgb( $grayColor, 0 )
+    &.disabled
+      opacity: 0
+      visibility: hidden
+  .previous
+    a
+      @include icoEl(30px, 30px, "../images/arrows/carret-left-yellow.svg")
+
+      &:hover
+        background-color: $yellowColor
+        background-image: url("../images/arrows/carret-left-white.svg")
+
+  .next
+    a
+      @include icoEl(30px, 30px, "../images/arrows/carret-right-yellow.svg")
+      &:hover
+        background-color: $yellowColor
+        background-image: url("../images/arrows/carret-right-white.svg")
+
+.ico-in
+  i,span
+    vertical-align: middle
+    display: inline-block
+  i
+    font-size: 0
+    position: relative
+
+  .back-ico
+    visibility: hidden
+
+  .front-ico
+    position: absolute
+    left: 0
+    top: 0
+  &.active,
+  &:hover
+    text-decoration: none
+
+    .back-ico
+      visibility: visible
+    .front-ico
+      visibility: hidden
+.ico-in--right
+  i
+    margin-left: 7px
+.ico-in--left
+  i
+    margin-right: 7px
+/*pagination page end*/
+.page-numbers
+
+a.next.page-numbers,
+a.prev.page-numbers,
+a.pagination-prev,
+a.pagination-next
+  background-size: 100%
+  font-size: 0
+  background-color: $whiteColor
+  border-color: $whiteColor
+.pagination-dotted
+  background-color: initial
+  color: inherit
+.prev.page-numbers,
+a.pagination-prev
+  @include icoEl(30px, 30px, "../images/arrows/carret-left-yellow.svg")
+  &:hover
+    background-color: $yellowColor
+    background-image: url("../images/arrows/carret-left-white.svg")
+.next.page-numbers,
+a.pagination-next
+  @include icoEl(30px, 30px, "../images/arrows/carret-right-yellow.svg")
+  &:hover
+    background-color: $yellowColor
+    background-image: url("../images/arrows/carret-right-white.svg")

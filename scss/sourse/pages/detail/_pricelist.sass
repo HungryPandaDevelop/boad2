@@ -1,0 +1,62 @@
+.pricelist-section
+
+  .btn
+    margin-bottom: 15px
+  .btn-container
+    text-align: center
+.btn-hint
+  a
+    text-decoration: none
+    color: $yellowColor
+.pricelist-list
+  max-width: 920px
+  margin: 0 auto 45px
+  padding: 0 15px
+  li
+    display: flex
+    justify-content: space-between
+    border-top: 1px solid $grayColorSecond
+    padding: 25px 0
+    &:last-child
+      border-bottom: 1px solid $grayColorSecond
+  h3
+    font-size: $largeSize
+    text-transform: initial
+    span
+      display: inline-block
+      margin-right: 15px
+
+.pricelist-price
+  font-size: $largeSize
+  font-weight: 700
+.question-ico
+  @include icoEl(28px, 28px, "../images/icons/question.svg")
+  cursor: pointer
+  position: relative
+  &:hover
+    .question-popup
+      opacity: 1
+      visibility: visible
+.question-popup
+  @include positionElement(560px, auto, 50%,50px, left, bottom)
+  transform: translateX(-50%)
+  border-radius: 4px
+  box-shadow: $shadowOne
+  padding: 30px
+  font-style: normal
+  background-color: $grayColorSecond
+  transition: ease-out 0.5s
+  opacity: 0
+  visibility: hidden
+  font-size: $standartSize
+  font-weight: 500
+  &::after
+    content: ""
+    @include positionElement(20px,20px, 50%, -9px, left, bottom)
+    transform: translateX(-50%) rotate(45deg)
+    background-color: $grayColorSecond
+    box-shadow: $shadowOne
+@media (max-width: 576px)
+  .pricelist-list h3,
+  .pricelist-price
+    font-size: 16px

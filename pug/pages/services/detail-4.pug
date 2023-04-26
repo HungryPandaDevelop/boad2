@@ -1,0 +1,37 @@
+include ../../default/build-header
+		
+// header end
+.stub
+.services-main 
+	.main-full
+		.breadcrumbs
+			a(href="#") Главная
+			em /
+			span Wake
+	.services-main-wather
+	.main-grid 
+		.col-5.col-md-6.col-sm-12.services-main-info 
+			.services-main-info-container
+				.services-main-price  от 850 AED/час
+				h1 FLY BOARD
+				.services-main-text  После того, как вы понаблюдаете за образом жизни и пообщаетесь с местными жителями, вы сможете получить больше удовольствия, взяв напрокат Fly Board в Дубае. Это позволит вам исследовать город с совершенно другой точки зрения. Это только заставит вас полюбить Дубай еще больше.
+				.btn-container 
+					a.btn.btn--blue(href="#") Забронировать услугу
+	.services-main-img.img-cover 
+		img(src="/images/temp/serv/3.jpg", alt="")
++datailTabs(['Описание','Цены','Форма бронирования','Часто задаваемые вопросы','Отзывы','Дополнительные услуги'], 'tabs-routes',[1,2,3,4,5,6])
+include ../detail/detail-content.pug
+include ../detail/datail-price.pug
+.stub-section
+- var titleForm = 'Забронировать полёт на флай борде'
+include ../../blocks/feedback/reserve-services.pug
+include ../detail/simple-about.pug
+
+include ../home/faq.pug
+include ../home/reviews.pug
+include ../detail/serv-adv.pug
+// footer start 
+.stub-footer
+include ../../blocks/footer.pug
+
+// footer end   

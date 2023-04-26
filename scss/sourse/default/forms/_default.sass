@@ -1,0 +1,156 @@
+
+input
+	-webkit-appearance: none
+	-webkit-border-radius: 0
+
+.input-decorate,
+.custom-select
+	padding: 12px 0px
+	border: 0
+	font-family: inherit
+	font-size: $standartSize
+	font-weight: 500
+	resize: none
+	width: 100%
+	background: none
+	color: $blackColor
+	text-transform: uppercase
+	border-bottom: 1px solid $whiteColor
+	transition: ease-out 0.5s
+	&:focus
+		outline: 0
+		border-bottom-color: $yellowColor
+		color: $yellowColor
+	&::placeholder
+		font-weight: 300
+		color: rgb($whiteColor, 0.5 )
+.input-search
+	font-size: $smallSize
+	background-color: $whiteColorSecond
+	border-radius: 30px
+	text-transform: initial
+	font-weight: 600
+	border: 0
+	padding: 14px 12px
+	width: 100%
+	color: $blueColor
+	&:focus
+		outline: 0
+	&::placeholder
+		font-weight: 500
+.file-decorate-error span,
+.input-error
+	border-color: $redColor
+.mail-error
+	border-color: $orangeColor
+.error-hint
+	color: $redColor
+	margin-top: 2px
+.form-default
+	h2,h3
+		margin: 0 0 15px
+	b, label
+		display: block
+		margin: 0 0 8px
+		font-size: $standartSize
+	.form-line
+		margin: 0 0 15px
+	button
+		margin: 0 0 15px
+	.form-btn-container
+		margin-top: 15px
+		position: relative
+	.main-grid
+		padding: 0
+	a
+		color: $yellowColor
+.input-box
+	position: relative
+	padding-top: 30px
+	margin: 0 0 30px
+	// outline: 1px solid red
+	input
+		// outline: 1px solid green
+	label
+		position: absolute
+		transition: all 0.3s ease
+		top: 39px
+		left: 0px
+		font-size: 13px
+		cursor: pointer
+		// outline: 1px solid white
+
+		text-transform: uppercase
+		font-weight: 500
+	textarea:focus + label,
+	textarea.input-empty + label,
+	input:focus + label,
+	input.input-empty + label
+		top: 0px
+		opacity: 0.5
+.agreement-box
+	text-align: right
+	.wpcf7-acceptance
+		display: inline-block
+.input-box-phone
+	position: relative
+	input
+		padding-left: 100px
+		&::placeholder
+			color: red
+
+	&.input-box
+		.country-select
+			top: 29px
+		label
+			left: 100px
+
+.date-input-container
+	&:after
+		content: ''
+		@include positionElement(18px,18px,0,14px,right, bottom)
+		@include bgImageEl("../images/icons/calendar-white.svg")
+
+.country-select
+	@include positionElement(80px, 42px, 0, 0, left,top, 1, absolute, flex)
+	cursor: pointer
+	span
+		display: block
+		margin: auto 0
+		position: relative
+		width: 100%
+	em
+		font-style: normal
+		margin-left: 2px
+		vertical-align: middle
+	&:after
+		content: ""
+		@include positionElement(1px, 40px, 100%, 2px)
+		background-color: rgba($whiteColor, 0.5)
+	ul
+		display: none
+		background-color: $blueColor
+		z-index: 2
+		position: absolute
+		width: 100%
+		border: 1px solid white
+		top: 100%
+		li
+			padding: 2px 2px
+			cursor: pointer
+			&:hover
+				background-color: #2f2f6a
+	i
+		@include bgImageEl("../images/arrows/carret-down-white.svg",30px)
+		@include positionElement(24px,30px,0,-2px,right)
+	&.active ul
+		display: block
+.feedback-mini
+	position: relative
+	.wpcf7-response-output
+		width: 250px
+		z-index: 2
+	a
+		color: $yellowColor
+.country-list
+	color: $blackColor

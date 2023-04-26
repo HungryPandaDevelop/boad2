@@ -1,0 +1,39 @@
+include ../../default/build-header
+		
+// header end
+.stub
++roofContent("Аренда яхт в Дубае")
+	.main-grid.main-grid-indent
+		.col-3
+			.catalog-sidebar
+				include parts/sidebar-search.pug
+				include parts/feedback-mini.pug
+		.col-9 
+			.catalog-sorting-container
+				.catalog-filter
+					a.btn.btn--blue-border.active(href="#") Все яхты
+					a.btn.btn--blue-border(href="#") Катера
+					a.btn.btn--blue-border(href="#") Яхты стандарт
+					a.btn.btn--blue-border(href="#") Vip яхты
+				.catalog-sort 
+					b Сортировать по:
+					+inputSelect('год постройки: по уменьшению', ['селект 1','селект 2','селект 3','селект 4','селект 5',],'sort-select')
+				.catalog-view 
+					.listing-tile-btn.active
+					.listing-list-btn
+			.catalog-main
+				-for(var i=0;i<8;i++)
+					+yachtsItemList("Аренда Azimut 62 Lucky Star","850 AED/час")
+	.main-full.btn-container-section
+		a.btn.btn--yellow(href="#") Показать еще
+
+	include ../detail/stage-adv.pug
+	include ../home/routes.pug
+	include ../home/services.pug
+	include ../home/feedback.pug
+
+// footer start  
+
+include ../../blocks/footer.pug
+
+// footer end  

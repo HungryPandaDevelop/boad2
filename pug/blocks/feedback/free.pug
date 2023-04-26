@@ -1,0 +1,37 @@
+section.feedback-home
+	.main-grid
+		.col-5.col-md-12
+			h2 бесплатная консультация по подбору яхты
+			.feedback-text.
+				Свяжитесь с нами по телефону <a href="#">+971 56 115 16 24</a>, <a href="#">WhatsApp</a> или заполните эту контактную форму, и мы свяжемся с Вами в ближайшее время
+		.col-7.col-md-12.form-default
+			.main-grid
+				.input-box.col-6.col-xs-12
+					input(type="text" id="name"  class="input-decorate" autocomplete="off")
+					label.label-animate(for="name" ) Ваше имя
+				//- .input-box-phone.input-box.col-6.col-xs-12
+				//- 	.country-select
+				//- 		span.country-select-box 
+				//- 			.rus-flag 
+				//- 			em  +7
+				//- 			i
+				//- 		ul.ln
+				//- 			li.rus-select
+				//- 				.rus-flag 
+				//- 				em +7
+				//- 			li.oae-select
+				//- 				.oae-flag 
+				//- 				em +971
+				//- 	input.input-decorate.phone-mask-choise(type="text" id="phone" onkeypress="return event.charCode >= 48 && event.charCode <= 57")
+				//- 	label.label-animate(for="phone") номер телефона*
+				.input-box.col-6.col-xs-12
+					input(type="text" id="phone-flag"  class="phone input-decorate" autocomplete="off")
+				.input-box.col-12
+					textarea( class='input-decorate check-mail' autocomplete="off")
+					label.label-animate Ваше сообщение
+				.checkbox.agreement.col-12
+					label Согласен (на) на обработку 
+						a(href="#") персональных данных 
+						input(type="checkbox" checked)
+						span
+				+inputSubmit('отправить сообщение', 'btn--yellow', 'col-12')

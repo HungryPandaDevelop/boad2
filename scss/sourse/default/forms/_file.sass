@@ -1,0 +1,173 @@
+/*-file-upload-*/
+.input-file-container
+	margin-top: -4px
+.file-input-container,
+.file-input-item
+	position: relative
+.file-input-item
+	display: inline-block
+.input-file
+	// height: $heightContainerFile
+	opacity: 0
+	cursor: pointer
+	@include positionElement(100%,100%)
+	z-index: 1
+.input-file-second
+	opacity: 0
+	width: 0
+	height: 0
+
+.file-decorate
+	// height: $heightContainerFile
+	cursor: pointer
+
+	padding: 9px 12px
+	border: 0
+	font-family: inherit
+	font-size: $standartSize
+	font-weight: 500
+	resize: none
+	width: 100%
+	background: none
+	color: $whiteColor
+	border-radius: 30px
+	box-shadow: $shadowFive
+	border: 1px solid $whiteColor
+
+	span
+		padding-left: 25px
+		position: relative
+		display: inline-block
+
+		&::before
+			content: ""
+			@include positionElement(20px, 20px, 0, 2px)
+			@include bgImageEl("../images/icons/file-white.svg", 20px)
+
+	i
+		@include positionElement(30px, 30px, 0, 2px, right, top, 2, absolute, none)
+		@include bgImageEl("../images/controls/close-black.svg")
+		cursor: pointer
+
+.file-decorate-full i
+	display: block
+.hiddened-file
+	opacity: 0
+.notice-file
+	position: absolute
+	right: 0
+	top: 0
+	display: none
+
+	i
+		@include icoEl(30px, 30px, "../images/icons/danger-sign-black.svg")
+		margin-left: 15px
+.notice-file--show
+	display: block
+.hint-input-file
+	color: $grayColor
+	padding: 5px
+	border: 1px solid
+	border-bottom: 0
+
+.file-uploaded
+	position: relative
+	font-size: 0
+	box-shadow: $shadowThree
+	display: inline-block
+.file-uploaded-container
+	border-radius: 8px
+	position: relative
+	overflow: hidden
+	img
+		width: 100%
+
+/*-file-upload-*/
+
+/*-photo-upload-*/
+.input-photo-container
+	height: 1px
+.input-photo
+	width: 80%
+	padding-bottom: 80%
+	border-radius: 8px
+	box-shadow: $shadowThree
+	background-color: $whiteColor
+	position: relative
+	cursor: pointer
+	position: relative
+	.input-file-container,
+	.input-file
+		@include positionElement(100%, 100% ,0,0, left,top, 1)
+		margin: 0
+	.file-decorate
+	.file-input-container
+		height: 100%
+	.input-file,
+	.file-decorate
+		visibility: visible
+		opacity: 0
+	.notice-file
+		font-size: 14px
+		text-align: center
+		padding: 8px
+		background-color: rgba($redColor, 0.9)
+		color: $whiteColor
+		border-radius: 8px
+		box-shadow: $shadowFive
+		top: 30px
+		i
+			margin: 0
+			background-image: url(../images/icons/danger-sign-white.svg)
+		span
+			display: block
+	img
+		position: absolute
+	.input-user-ico
+		@include positionElement(80%,80%,10%,10%)
+		opacity: 0.18
+	.input-photo-ico
+		@include positionElement(30px,30px, 50%, 10px, left, border-bottom)
+		transform: translateX(-50%)
+	.input-photo-uploaded
+		@include positionElement(100%,100%,0,0)
+		background-size: cover
+		background-position: center
+		border-radius: 8px
+	&:hover
+		.edit-photo-hint
+			opacity: 1
+			visibility: visible
+			box-shadow: $shadowFour
+.file-uploaded-delete,
+.input-photo-clear
+	@include positionElement(30px,30px, 0%, 0%, right, top, 2)
+	margin: -15px
+
+	border-radius: 100%
+	background-color: $redColor
+	border: 2px solid $whiteColor
+	@include bgImageEl("../images/controls/close-white.svg")
+	transition: ease-out 0.25s
+	cursor: pointer
+	&:hover
+		background-color: $whiteColor
+		background-image: url("../images/controls/close-red.svg")
+		border-color: $redColor
+.edit-photo-hint
+	position: absolute
+	background-color: rgba($blackColor, 0.7)
+	box-shadow: $shadowFive
+	color: $whiteColor
+	padding: 5px
+	z-index: 2
+	border-radius: 4px
+	width: 110%
+	font-size: 12px
+	top: 85%
+	left: 50%
+	transform: translateX(-50%)
+	text-align: center
+	transition: ease-out 0.25s
+	opacity: 0
+	visibility: hidden

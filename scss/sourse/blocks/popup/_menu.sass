@@ -1,0 +1,139 @@
+.hamburger-btn
+	&.active
+		background-image: url("../images/icons/close-gray.svg")
+		&:hover
+			background-image: url("../images/icons/close-yellow.svg")
+.popup-nav
+	.close-btn
+		background-image: url("../images/icons/close-gray.svg")
+.menu-hamburger
+	top: 70px
+	height: calc(100% - 70px)
+	.popup-container
+		background-color: $whiteColor
+		width: 50%
+		height: 100%
+		max-width: 460px
+		margin: 0
+		margin-left: auto
+		color: $blackColor
+		display: flex
+		flex-direction: column
+		border-radius: 0px
+		padding: 45px 30px 60px
+		overflow-y: auto
+	.close-btn
+		display: none
+		background-image: url("../images/icons/close-gray.svg")
+	.search-main
+		display: none
+	h3
+		font-size: $standartSize
+		text-align: left
+		margin: 0 0 12px
+	li
+		margin: 0 0 8px
+	.social
+		margin-top: 30px
+		margin-bottom: 30px
+		a
+			border-color: $blackColor
+
+	.language-select
+		display: inline-block
+		border: 1px solid $grayColorSecond
+		border-radius: 30px
+		padding: 9px 43px 9px 15px
+		i
+			right: 12px
+			top: 12px
+.popup-nav
+	a
+		color: $blueColor
+		text-decoration: none
+		&:hover
+			color: $yellowColor
+	.search-main
+		display: none
+.menu-hamburger,
+.menu-tablet,
+.menu-mobile
+	display: none
+@media (max-width: 992px)
+	.menu-hamburger
+		display: block
+	.menu-tablet
+		display: block
+	.close-btn
+
+@media (max-width: 768px)
+	.menu-hamburger
+		.search-main
+			display: block
+			margin-top: 45px
+
+@media (max-width: 576px)
+	.hamburger-btn
+		&.active
+			background-image: url("../images/icons/hamburger-gray.svg")
+			&:hover
+				background-image: url("../images/icons/hamburger-yellow.svg")
+	.menu-tablet
+		display: none
+	.menu-mobile
+		display: block
+	.menu-hamburger
+		top: 0
+		height: 100%
+		.popup-container
+			width: 100%
+			padding: 60px 15px 30px
+			max-width: none
+		.close-btn
+			display: block
+
+		.phone-btn
+			font-size: 18px
+			font-weight: 700
+			color: $blueColor
+	.popup-nav
+		li
+			margin: 0
+			position: relative
+			text-transform: uppercase
+			font-weight: 600
+			border-bottom: 1px solid $grayColorSecond
+			a
+				padding: 11px 0
+			i
+				@include positionElement(30px, 30px,0,9px, right)
+				@include bgImageEl('../images/arrows/carret-right-gray.svg', 30px)
+			&:first-child
+				border-top: 1px solid $grayColorSecond
+			li
+				border: 0
+				padding-left: 15px
+				background-color: rgb($blueColor, 0.025 )
+				border-bottom: 1px solid $grayColorSecond
+				&:last-child
+					border: 0
+			ul
+				display: none
+				font-size: 14px
+				padding: 0
+			&.active
+				ul
+					display: block
+	.social-mobile-popup
+		a
+			margin: 0 15px
+		.social
+			margin-top: 0px
+			margin-bottom: 0px
+	.menu-footer
+		margin-top: 30px
+		text-align: center
+		.btn--yellow
+			color: $whiteColor
+	.menu-footer-item
+		margin-bottom: 30px

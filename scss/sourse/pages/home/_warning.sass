@@ -1,0 +1,86 @@
+.warning-home
+  .main-grid
+    gap: 0
+.warning-item
+  background-color: $blueColor
+  padding: 30px
+  height: 630px
+  text-align: center
+  display: flex
+  border-right: 1px solid rgb($whiteColor , 0.1)
+  font-size: $smallSize
+  position: relative
+  h3
+    font-size: $largeSize
+    color: inherit
+    text-transform: uppercase
+    margin: 0px 0 30px
+  &.active
+    .warning-item-img
+      .back
+        opacity: 0
+        visibility: hidden
+      .front
+        opacity: 1
+        visibility: visible
+    .warning-item-text
+      margin: 0
+    .warning-hidden-text
+      max-height: 500px
+    .btn
+      opacity: 0
+      visibility: hidden
+    .warning-close
+      opacity: 1
+      visibility: visible
+    h3
+      color: $yellowColor
+.warning-item-container
+  margin: auto
+.warning-item-info
+  color: $whiteColor
+.warning-hidden-text
+  position: relative
+  overflow: hidden
+  transition: ease-out 0.5s
+  max-height: 0
+.warning-close
+  @include positionElement(20px,20px,0,0,right)
+  @include bgImageEl("../images/icons/close-white.svg")
+  cursor: pointer
+  margin: 15px
+  opacity: 0
+  visibility: hidden
+  &:hover
+    background-image: url("../images/icons/close-yellow.svg")
+.warning-item-text
+  margin: 0 0 30px
+.warning-item-img
+  width: 70px
+  height: 70px
+  margin: 0 auto 40px
+  position: relative
+  img
+    @include positionElement(100%,100%,0,0)
+    transition: ease-out 0.5s
+    &.front
+      opacity: 0
+      visibility: hidden
+@media (max-width: 992px)
+  .warning-item-img
+    margin-bottom: 18px
+  .warning-item
+    height: 540px
+    h3
+      margin-bottom: 15px
+  .warning-item-container-1
+    .warning-item
+      border-bottom: 1px solid rgb($whiteColor , 0.1)
+      height: 380px
+@media (max-width: 576px)
+  .warning-item-container-1 .warning-item,
+  .warning-item
+    height: 480px
+    border-bottom: 1px solid rgb($whiteColor , 0.1)
+  .warning-item-img
+    margin-bottom: 0

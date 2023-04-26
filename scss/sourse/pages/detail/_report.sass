@@ -1,0 +1,12 @@
+.report-item
+  height: 540px
+  position: relative
+  background-color: $blueColor
+  .report-item-img,
+  video
+    @include positionElement(100%,100%,0,0)
+    opacity: 0.7
+    object-fit: cover
+@media (max-width: 768px)
+  .report-item
+    height: 370px

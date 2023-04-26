@@ -1,0 +1,20 @@
+mixin routesItemMain(name, route, time, img)
+	.routes-item-main
+		a(href="#").routes-item-main-img
+			.img-cover
+				img(src=img, alt="")
+		.routes-item-main-info
+			.routes-item-main-about
+				.price-tag
+					=route
+				.time-tag
+					i
+					span 
+						=time
+			h3
+				a(href="#") 
+					= name
+			.routes-item-main-text
+				| Наилучший способ открыть для себя все самые известные места Дубая с водной глади. 
+			.btn-container 
+				a.btn.btn--blue-border(href="#") Подробнее 

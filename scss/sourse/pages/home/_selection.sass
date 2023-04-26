@@ -1,0 +1,56 @@
+.selection-home
+  // padding: 38px 0 85px
+  padding: 30px 0 35px
+  background-color: $blueColor
+  color: $whiteColor
+  h2, h3
+    color: inherit
+.selection-item
+  margin: 0 0 43px
+  h3
+    font-size: $smallSize
+    text-transform: uppercase
+
+.selection-btn-container
+  padding-top: 28px
+  .btn
+    width: 100%
+.boad-select
+  background-color: $blueColor
+  border-radius: 0
+  border: 0
+  border-bottom: 1px solid $whiteColor
+  padding-left: 0
+  padding-top: 0
+  padding-bottom: 26px
+  font-weight: 600
+  text-transform: uppercase
+  font-size: $smallSize
+  i
+    background-image: url("../images/arrows/carret-down-white.svg")
+    width: 15px
+    height: 15px
+    top: 12px
+  span
+    color: $whiteColor
+    font-size: $smallSize
+  ul
+    background-color: $blueColor
+    color: $whiteColor
+    border: 1px solid $whiteColor
+    @include  styleScroll
+    li
+      border-bottom: 1px solid rgba($grayColorSecond , 0.2)
+      padding: 18px 15px
+      &:hover
+        background-color: rgba($grayColorSecond , 0.2)
+@media (max-width: 768px)
+
+@media (max-width: 576px)
+  .selection-home
+    padding: 51px 0 44px
+    .main-grid
+      max-width: 390px
+
+  .selection-item
+    margin: 0 0 29px

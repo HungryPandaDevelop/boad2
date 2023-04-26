@@ -1,0 +1,164 @@
+.stub-footer
+  height: 90px
+footer
+  position: relative
+  overflow: hidden
+  background-color: $whiteColor
+  color: $blueColor
+  font-size: $smallSize
+  display: none
+  .main-grid
+    border-top: 1px solid $grayColorSecond
+    padding: 70px 15px 30px
+  ul,li
+    list-style: none
+    padding: 0
+    margin: 0
+  a
+    text-decoration: none
+    &:hover
+      color: $yellowColor
+  .logo-container
+    margin: 0 0 15px
+  .logo img
+    max-width: 140px
+    margin: 0 0 31px
+  .search-main
+    margin-bottom: 30px
+  .logo-text
+    font-size: $smallSize
+    margin: 0 0 45px
+  .footer-links
+    li
+      margin-bottom: 11px
+  .social
+    margin-top: 15px
+  .ico-box
+    display: inline-block
+  .nav
+    font-size: $standartSize
+    margin-bottom: 50px
+    li
+      margin-bottom: 12px
+  .nav-second
+    text-transform: uppercase
+    a
+      font-weight: 600
+  h3
+    font-size: $mediumSize
+    color: inherit
+    margin: 0 0 13px
+    text-transform: uppercase
+    a
+      font-weight: 600
+  .ico-box
+    margin-right: 15px
+  .social-default
+    margin-top: 30px
+    margin-bottom: 45px
+.footer-lg
+  display: block
+.feedback-footer-mail
+  i
+    @include icoEl(25px, 25px, "../images/icons/mail-blue.svg")
+  &:hover i
+    background-image: url("../images/icons/mail-yellow.svg")
+.feedback-footer-marker
+  i
+    @include icoEl(25px, 25px, "../images/icons/marker-blue.svg")
+  &:hover i
+    background-image: url("../images/icons/marker-yellow.svg")
+.feedback-footer-phone
+  i
+    @include icoEl(25px, 25px, "../images/icons/phone-blue.svg")
+  &:hover i
+    background-image: url("../images/icons/phone-yellow.svg")
+
+.feedback-footer-item
+  display: flex
+  margin: 0 0 15px
+  i
+    margin-right: 10px
+
+@media (max-width: 992px)
+  .footer-lg
+    display: none
+  .footer-md
+    display: block
+@media (max-width: 786px)
+  .footer-md
+    display: none
+  .footer-sm
+    display: block
+  footer
+    .logo
+      margin-top: 180px
+    .logo-text
+      margin-bottom: 0
+    .search-main
+      margin-top: 30px
+  .footer-links
+    display: flex
+    justify-content: space-between
+  .social-footer
+    margin-top: 15px
+    margin-bottom: 45px
+
+@media (max-width: 576px)
+  .footer-sm
+    display: none
+  .footer-xs
+    display: block
+  footer
+    text-align: center
+    .btn
+      width: 100%
+      max-width: 330px
+    .logo
+      display: block
+      width: 100%
+      margin: 0
+      img
+        max-width: 90px
+        margin-bottom: 30px
+    .logo-text
+      max-width: 300px
+      margin: 0 auto 30px
+  .feedback-footer-item
+    display: block
+  .social-footer
+    margin-top: 30px
+    margin-bottom: 35px
+  .btn-new-site
+    position: relative
+    width: 100%
+    max-width: 300px
+    margin: 0 auto 30px
+    i
+      position: relative
+      margin-left: -30px
+      margin-right: -20px
+  .footer-links
+    display: block
+  .footer-hidden-nav
+    margin-bottom: 45px
+    li
+      position: relative
+      margin-top: -1px
+    span
+      display: block
+      width: 100%
+      text-transform: uppercase
+      font-weight: 600
+      border-top: 1px solid $grayColorSecond
+      border-bottom: 1px solid $grayColorSecond
+      font-size: $standartSize
+      position: relative
+
+      padding: 19px 5px
+    i
+      @include positionElement(30px, 30px, 15px, 50%, right)
+      @include bgImageEl("../images/arrows/carret-down-black.svg")
+      transform: translateY(-50%)
+    ul
+      display: none

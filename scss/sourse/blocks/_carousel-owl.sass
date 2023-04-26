@@ -1,0 +1,69 @@
+.slider-owl
+
+  .item-content
+    position: relative
+
+  .owl-item,
+  .item
+    height: 100%
+.owl-nav
+  @include positionElement(100%,48px,0,50%)
+  transform: translateY(-50%)
+.owl-prev,
+.owl-next
+  @include positionElement(48px, 48px, auto, 0%)
+  background-color: $whiteColor
+  font-size: 0
+  border: 1px solid $grayColor
+  border-radius: 100%
+  &:hover
+    background-color: $yellowColor
+    border-color: $yellowColor
+.owl-prev
+  left: 0
+  @include bgImageEl("../images/arrows/carret-left-gray.svg")
+  &:hover
+    background-image: url("../images/arrows/carret-left-white.svg")
+.owl-next
+  right: 0
+  @include bgImageEl("../images/arrows/carret-right-gray.svg")
+  &:hover
+    background-image: url("../images/arrows/carret-right-white.svg")
+.owl-dots
+  @include positionElement(100%, auto, 0, 0px, left, bottom)
+  text-align: center
+  font-size: 0
+  .owl-dot
+    width: 27px
+    height: 27px
+    display: inline-block
+    border-radius: 100%
+    margin: 0 10px
+    cursor: pointer
+    position: relative
+    border: 2px solid rgba($yellowColor, 0)
+    transition: ease-out 0.5s
+    &::after
+      content: ""
+      @include positionElement(5px, 5px, 50%, 50%)
+      border-radius: 100%
+      background-color: $grayColor
+      transform: translateX(-50%) translateY(-50%)
+    &.active,
+    &:hover
+      border-color: rgba($yellowColor, 1)
+      &::after
+        background-color: $yellowColor
+@media (max-width: 768px)
+  .owl-tablet
+    padding: 0
+@media (max-width: 576px)
+  .owl-mobile,
+  .owl-tablet
+    width: 100%
+    margin: 0
+    padding-bottom: 45px
+    .owl-dots
+      bottom: 0
+      .owl-dot
+        margin: 0 10px

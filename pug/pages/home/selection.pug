@@ -1,0 +1,22 @@
+section.selection-home
+	.head-section.main-full
+		h2 Подобрать яхту
+	.main-grid
+		.col-4.col-xs-12
+			.selection-item 
+				+inputSelect('ТИП СУДНА', ['селект 1','селект 2','селект 3','селект 4','селект 5',], 'boad-select')
+		.col-4.col-xs-12
+			.selection-item 
+				+rangeSliderOne('КОЛИЧЕСТВО КАЮТ', 10)
+		.col-4.col-xs-12  
+			.selection-item 
+				+rangeSliderTwo('ЦЕНА (AED/час)', 100, 0, 100)
+		.col-4.col-xs-12  
+			.selection-item 
+				+rangeSliderTwo('ДЛИНА (м.)', 60, 0, 60)
+		.col-4.col-xs-12  
+			.selection-item 
+				+rangeSliderTwo('ВМЕСТИМОСТЬ (чел.)', 40, 0, 40)
+		.col-4.col-xs-12  
+			.selection-btn-container
+				.btn.btn--yellow Поиск яхт

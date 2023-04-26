@@ -1,0 +1,34 @@
+.menu-tablet
+	nav.popup-nav
+		h3 
+			a(href="#") Аренда яхт и катеров
+		ul.ln
+			each val in ["Катера", "Яхты стандарт","VIP Яхты"]
+				li
+						a(href="#")= val
+	nav.popup-nav
+		h3 
+			a(href="#") Морские круизы
+		ul.ln
+			each val in ["Тур по Дубай Марине", "Тур Dubai Marina и JBR","Тур Dubai Marina, JBR and Atlantis","Тур Dubai Marina, JBR and Palm Jumeirah","Тур Dubai Marina, JBR and Burj Al Arab","Плавательный тур","Тур Dubai Water Canal ","Пятничное путешествие"]
+				li
+						a(href="#")= val
+	nav.popup-nav
+		h3 
+			a(href="#") Морские круизы
+		ul.ln
+			each val in ["Дополнительные услуги", "Оформление яхты для торжественного события","Аренда катера для рыбалки","Водные активности","Трансфер"]
+				li
+						a(href="#")= val
+	.search-main 
+		input.input-search(type="text" placeholder="Поиск")
+		.search-ico
+	.social-default
+			a.whatsapp-btn(href="") 
+				i 
+				span WhatsApp
+			+social(["fc","i"])
+	.popup-lang 
+		.language-select
+			span RU 
+			i

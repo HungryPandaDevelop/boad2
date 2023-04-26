@@ -1,0 +1,45 @@
+mixin yachtsItemSecondList(name, price, data)
+	.yachts-item-second
+		.main-grid
+			.col-6.col-sm-12.col-xs-12
+				.yachts-item-img
+					.yachts-item-img-owl.owl-carousel
+						.yachts-img.img-cover
+							img(src="/images/main-bg.jpg", alt="")
+						.yachts-img.img-cover
+							img(src="/images/main-bg.jpg", alt="")
+						.yachts-img.img-cover
+							img(src="/images/main-bg.jpg", alt="")
+			.col-6.col-sm-12.col-xs-12
+				.yachts-item-second-info 
+					.price-tag= price
+					h3
+						a(href="#")=name
+					.yachts-item-second-description
+						| Centurion Ri265 не просто большой ради того, чтобы быть большим, он также был усовершенствован благодаря впечатляющей посадке и отделке, а также новым инновационным технологиям, таким как первая функция измерения расхода топлива в реальном времени, встроенная в новое программное обеспечение на приборной панели Revo Side by Side.
+					h4 Что включено:
+					ul.ln.yachts-item-second-list
+						li Вейкборд
+						li Вейкборд
+						li Вейкборд
+						li Вейкборд
+					.yachts-item-second-adv
+						.yachts-adv-icons 
+							img(src="/images/popular/1.svg", alt="")
+							span 
+								|18,9 м.(62 ft.)
+						.yachts-adv-icons 
+							img(src="/images/popular/2.svg", alt="")
+							span 
+								|29 гостей 
+						.yachts-adv-icons 
+							img(src="/images/popular/3.svg", alt="")
+							span 
+								|3 человека
+						.yachts-adv-icons 
+							img(src="/images/popular/4.svg", alt="")
+							span 
+								|3 каюты
+					.btn-yachts-container
+						a(href="#").btn.btn--blue Забронировать
+						a(href="#").btn.btn--blue-border Задать вопрос

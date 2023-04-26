@@ -1,0 +1,96 @@
+include ../../default/build-header
+.stub-second
+// contacts page content start
++roofContent("Контакты")
+	.page.main-grid.contacts-items-container
+		.col-4.col-xs-12
+			.contacts-item
+				.contacts-item-img 
+					img(src="/images/contacts/1.svg", alt="")
+				h3 Главный офис:
+				ul.ln.contacts-item-list
+					li.contacts-item-list-phone
+						.contacts-ico-box
+							i.phone-ico
+						.contacts-item-text
+							a(href="#") +971 56 115 16 24
+					li
+						.contacts-ico-box
+							.marker-ico
+						.contacts-item-text
+							Dubai Harbour Marina
+							Dubai Harbour Master Building
+							Office # 7
+					li
+						.contacts-ico-box
+							i.mail-ico
+						.contacts-item-text
+							a(href="#") charter@luxuryseaboats.com
+					li
+						.contacts-ico-box
+							i.stub-ico
+						.contacts-item-text
+							b PR и Маркетинг
+							a(href="#") pr@luxuryseaboats.com
+				.btn-container 
+					a.btn.btn--yellow(href="#")  Показать на карте
+		.col-4.col-xs-12
+			.contacts-item
+				.contacts-item-img 
+					img(src="/images/contacts/2.svg", alt="")
+				h3 Киоск:
+				ul.ln.contacts-item-list
+					li.contacts-item-list-phone
+						.contacts-ico-box
+							i.phone-ico
+						.contacts-item-text
+							a(href="#") +971 56 577 14 66
+
+					li
+						.contacts-ico-box
+							.marker-ico
+						.contacts-item-text
+							| Dubai Marina Walk, внутри галереи напротив Stefano's Restaurant, рядом с Basilico Restaurant and Baskin Robbins
+					li
+						.contacts-ico-box
+						.contacts-item-text
+							| 25°05'00.8"N 55°08'52.8"E
+				.btn-container 
+					a.btn.btn--yellow(href="#")  Показать на карте
+		.col-4.col-xs-12
+			.contacts-item
+				.contacts-item-img 
+					img(src="/images/contacts/3.svg", alt="")
+				h3 Место стоянки яхт:
+				ul.ln.contacts-item-list
+					li.contacts-item-list-phone
+						.contacts-ico-box
+							i.phone-ico
+						.contacts-item-text
+							a(href="#") +971 56 577 14 66
+					li
+						.contacts-ico-box
+							.marker-ico
+						.contacts-item-text
+							| Dubai Marina Walk, внутри галереи напротив Stefano's Restaurant, рядом с Basilico Restaurant and Baskin Robbins
+					li
+						.contacts-ico-box
+						.contacts-item-text
+							| 25°05'00.8"N 55°08'52.8"E
+				.btn-container 
+					a.btn.btn--yellow(href="#")  Показать на карте
+	.main-full.contacts-social 
+		h3 Социальные сети:
+		+social(["fc","i","wz"])
+	.main-grid.contacts-info-container
+		.col-12
+			include ../../blocks/map.pug
+	include ../../blocks/feedback/feedback.pug
+// contacts page content end
+
+// footer start 
+
+
+include ../../blocks/footer.pug
+
+// footer end 

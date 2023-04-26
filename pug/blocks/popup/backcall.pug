@@ -1,0 +1,26 @@
++popup-template(1,) 
+	.form-default
+		h3 ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
+		.popup-hint Оставьте заявку, и мы свяжемся с вами в ближайшее время
+		.form
+			.input-box-phone.input-box
+				.country-select
+					span.country-select-box 
+						.rus-flag 
+						em  +7
+						i
+					ul.ln
+						li.rus-select
+							.rus-flag 
+							em +7
+						li.oae-select
+							.oae-flag 
+							em +971
+				input.input-decorate.phone-mask-choise(type="text" id="phone" onkeypress='return event.charCode >= 48 && event.charCode <= 57')
+				label.label-animate(for="phone") номер телефона*
+			.checkbox.agreement
+				label Согласен (на) на обработку 
+					a(href="#") персональных данных 
+					input(type="checkbox" checked)
+					span
+			+inputSubmit('отправить', 'btn--yellow', 'col-12')

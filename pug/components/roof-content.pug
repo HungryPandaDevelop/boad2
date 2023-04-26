@@ -1,0 +1,12 @@
+mixin roofContent(topic, offTopic)
+  .main-full
+    .breadcrumbs
+      a(href="#") Главная
+      em /
+      span= topic
+  .content
+    if offTopic !=false
+      .main-full
+        h1= topic
+    if block
+      block

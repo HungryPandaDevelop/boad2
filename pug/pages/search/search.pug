@@ -1,0 +1,41 @@
+include ../../default/build-header
+		
+// header end
+.stub
++roofContent("Поиск")
+	.main-grid.search-panel 
+			.col-10
+				input.input-search(type="text" placeholder="Поиск")
+			.col-2
+				a.btn.btn--yellow(href="#") Найти
+			.col-12 
+				h3 Совпадения по запросу «Azimut»
+	.search-result-item
+		.main-full
+			.search-result-topic Аренда ЯхТ
+		.catalog-grid
+			-for(var i=0;i<4;i++)
+				.col-4
+					+yachtsItem("Аренда Azimut 62 Lucky Star","850 AED/час", true, true)
+	.search-result-item
+		.main-full
+			.search-result-topic Услуги Luxury Sea Boats Charter 
+		.catalog-grid 
+			-for(var i=0;i<3;i++)
+				.col-4
+					+servicesItem('Кейтеринг на яхте','от 850 AED/час','/images/temp/serv/1.jpg')
+	.search-result-item
+		.main-full
+			.search-result-topic круизы
+		.catalog-grid
+			.col-6
+				+routesItemMain("Dubai Marina, JBR and Palm Jumeirah tour","Маршрут 1","6-7 часов","/images/temp/boad/1.jpg")
+			.col-6
+				+routesItemMain("Dubai Marina, JBR and Palm Jumeirah tour","Маршрут 1","6-7 часов","/images/temp/boad/1.jpg")
+
+
+// footer start  
+
+include ../../blocks/footer.pug
+
+// footer end  

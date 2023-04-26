@@ -1,0 +1,12 @@
+section.routes-section.owl-home
+	.main-full
+		.head-section
+			h2.title-section 
+				| Другие туры
+			.btn-container
+				a(href="#").btn.btn--blue СМОТРЕТЬ ВСЕ туры
+			.stab-arrow
+	.main-full.owl-four.owl-carousel
+		-for(var x = 0; x < 7; x++)
+			+routesItemMain("Dubai Marina, JBR and Palm Jumeirah tour","Маршрут 4","6-7 часов","/images/temp/boad/1.jpg")
+	

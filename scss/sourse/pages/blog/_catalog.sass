@@ -1,0 +1,59 @@
+.blog-tags
+  padding-bottom: 30px
+  display: flex
+  justify-content: space-between
+  .btn
+    padding: 10px 15px
+    &.active
+      background-color: $blueColor
+      color: $whiteColor
+.blog-item
+  background-color: $whiteColor
+  a
+    text-decoration: none
+
+  h3
+    font-size: $largeSize
+    text-transform: initial
+    margin: 0 0 15px
+    a
+      display: -webkit-box
+      -webkit-line-clamp: 2
+      -webkit-box-orient: vertical
+      line-clamp: 2
+      position: relative
+      overflow: hidden
+      &:hover
+        color: $yellowColor
+.blog-item-info
+  padding: 30px 15px
+  border: 1px solid $grayColorSecond
+
+.blog-item-text
+  overflow: hidden
+  display: -webkit-box
+  -webkit-line-clamp: 4
+  -webkit-box-orient: vertical
+  line-clamp: 4
+  margin: 0 0 30px
+  font-size: $smallSize
+.blog-item-img
+  height: 250px
+  display: block
+  position: relative
+  overflow: hidden
+  .img-cover
+    @include positionElement(100%,100%,0,0)
+    transform: scale(1)
+    transition: ease-out 0.5s
+  img
+    @include positionElement(100%,100%,0,0)
+  &:hover
+    .img-cover
+      transform: scale(1.1)
+.blog-item-date
+  font-size: 13px
+  text-transform: uppercase
+  color: $yellowColor
+  margin: 0 0 13px
+  font-weight: 600

@@ -1,0 +1,60 @@
+mixin social(val)
+	.social
+		- for (var i=0; i<val.length; i++)
+				case val[i]
+					when 'v'
+						a(href="#")
+							img(src="/images/social/vk-black.svg", alt="")
+							img.ico-hover(src="/images/social/vk-orange.svg", alt="")
+					when 'vg'
+						a(href="#").social-ico--white
+							img(src="/images/social/vk-gray.svg", alt="")
+							img.ico-hover(src="/images/social/vk-white.svg", alt="")
+					when 'y'
+						a(href="#")
+							img(src="/images/social/youtube-black.svg", alt="")
+							img.ico-hover(src="/images/social/youtube-orange.svg", alt="")
+					when 'yg'
+						a(href="#").social-ico--white
+							img(src="/images/social/youtube-gray.svg", alt="")
+							img.ico-hover(src="/images/social/youtube-orange.svg", alt="")
+					when 'g'
+						a(href="#")
+							img(src="/images/social/google-black.svg", alt="")
+							img.ico-hover(src="/images/social/google-orange.svg", alt="")
+					when 'gg'
+						a(href="#").social-ico--white
+							img(src="/images/social/google-gray.svg", alt="")
+							img.ico-hover(src="/images/social/google-orange.svg", alt="")
+					when 'tl'
+						a(href="#")
+							img(src="/images/social/telegram-black.svg", alt="")
+							img.ico-hover(src="/images/social/telegram-orange.svg", alt="")
+					when 'tlg'
+						a(href="#").social-ico--white
+							img(src="/images/social/telegram-gray.svg", alt="")
+							img.ico-hover(src="/images/social/telegram-white.svg", alt="")
+					when 'i'
+						a(href="#").social-ico--white
+							img(src="/images/social/instagram-blue.svg", alt="")
+							img.ico-hover(src="/images/social/instagram-white.svg", alt="")
+					when 'ig'
+						a(href="#").social-ico--white
+							img(src="/images/social/instagram-blue.svg", alt="")
+							img.ico-hover(src="/images/social/instagram-white.svg", alt="")
+					when 'wz'
+						a(href="#").social-ico--white
+							img(src="/images/social/whatsapp-blue.svg", alt="")
+							img.ico-hover(src="/images/social/whatsapp-white.svg", alt="")
+					when 'wzg'
+						a(href="#").social-ico--white
+							img(src="/images/social/whatsapp-gray.svg", alt="")
+							img.ico-hover(src="/images/social/whatsapp-white-fill.svg", alt="")
+					when 'fc'
+						a(href="#").social-ico--white
+							img(src="/images/social/facebook-blue.svg", alt="")
+							img.ico-hover(src="/images/social/facebook-white.svg", alt="")
+					when 'fcg'
+						a(href="#").social-ico--white
+							img(src="/images/social/facebook-gray.svg", alt="")
+							img.ico-hover(src="/images/social/facebook-white-fill.svg", alt="")

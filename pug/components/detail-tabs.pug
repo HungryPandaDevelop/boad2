@@ -1,0 +1,14 @@
+mixin datailTabs(arrTabs, addClass, arrIndex)
+  .detail-tabs(class=addClass)
+    .main-full
+      .detail-tabs-nav
+        ul.ln
+          each val,index in arrTabs
+            -if(arrIndex) 
+              li(data-point=arrIndex[index])= val
+            -else
+              li 
+                =val
+        .detail-tabs-carriage
+    if block
+      block

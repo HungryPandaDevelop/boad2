@@ -1,0 +1,209 @@
+
+.stub
+	// height: 190px
+	height: 140px
+.stub-second
+	// height: 190px
+	height: 240px
+header
+	@include positionElement(100%, auto, 0, auto, left, top, 3, fixed )
+	color: $blueColor
+	background-color: $whiteColor
+	min-width: 320px
+	// font-size: $smallSize
+	.main-grid
+		height: 100%
+	.logo-container
+		height: 70px
+	a
+		text-decoration: none
+		&:hover
+			color: $yellowColor
+	.btn
+		// width: 150px
+		padding: 9px 5px
+	.hamburger-btn,
+	.call-mobile-container
+		display: none
+.border-header
+	@include positionElement(100%, 1px, 0,0,left, bottom)
+	background-color: $whiteColorSecond
+.search-main
+	width: 300px
+	position: relative
+	.search-ico
+		@include positionElement(21px, 21px, 0, 0, right)
+		margin: 12px 13px
+		@include bgImageEl("../images/icons/loop-gray.svg")
+	&.search-on
+		.search-ico
+			background-image: url("../images/icons/close-gray.svg")
+			cursor: pointer
+			&:hover
+				background-image: url("../images/icons/close-yellow.svg")
+.line-top-container
+	// height: 70px
+	justify-content: space-between
+.nav-header
+	width: 100%
+	ul
+		display: flex
+		justify-content: space-between
+		width: 100%
+		text-transform: uppercase
+		font-weight: 600
+		font-size: $smallSize
+		list-style: none
+		padding: 0
+	li
+		position: relative
+		ul
+			display: block
+			position: absolute
+			left: 50%
+			transform: translateX(-50%) translateY(10px)
+			background-color: $whiteColor
+			padding: 0
+			width: 260px
+			border: 1px solid $grayColorSecond
+			box-shadow: $shadowOne
+			font-weight: 400
+			transition: ease-out 0.25s
+			opacity: 0
+			visibility: hidden
+			li
+				border-bottom: 1px solid $grayColorSecond
+				display: block
+				&:last-child
+					border: 0
+			a
+				padding: 16px 20px
+				text-transform: initial
+			&::before
+				content: ""
+				@include positionElement(20px,20px,50%,-10px)
+				transform: translateX(-50%) rotate(45deg)
+				background-color: $whiteColor
+		&:hover
+			ul
+				opacity: 1
+				visibility: visible
+				transform: translateX(-50%) translateY(0)
+	a
+		position: relative
+		padding: 23px 0
+		padding-right: 20px
+		i
+			@include positionElement(20px,20px, -3px, 50%,right)
+			transform: translateY(-50%)
+			@include bgImageEl("../images/arrows/carret-down-blue.svg",25px)
+		.dashicons
+			top: calc(50% + 5px)
+		&:hover
+			color: $yellowColor
+			i
+				background-image: url("../images/arrows/carret-down-yellow.svg")
+.current-menu-item
+	color: $yellowColor
+.logo
+	position: relative
+	display: flex
+	width: 190px
+	z-index: 1
+	a
+		margin: auto 0
+
+	img
+		transition: ease-out 0.25s
+		width: 100%
+.stick
+	.logo
+		img
+			width: 131px
+.feedback-header
+	margin-left: auto
+	a
+		margin-left: 15px
+.language-select
+	font-weight: 600
+	position: relative
+	padding-right: 20px
+	cursor: pointer
+	ul
+		list-style: none
+		padding: 0
+		margin: 0
+	li
+		display: block
+	.current-lang
+		display: none
+	i
+		@include positionElement(20px,20px, 0,2px,right)
+		@include bgImageEl("../images/arrows/carret-down-blue.svg",25px)
+	&:hover
+		color: $yellowColor
+		i
+			background-image: url("../images/arrows/carret-down-yellow.svg")
+
+@media (max-width: 1280px)
+	.search-main
+		width: auto
+	.logo
+		width: 90%
+@media (max-width: 1140px)
+	header
+		.main-grid
+			column-gap: 15px
+		.social a
+			margin-right: 0
+	.nav-header
+		ul
+			font-size: 12px
+@media (max-width: 992px)
+	header
+		.social,
+		.language-select,
+		.border-header
+			display: none
+		.hamburger-btn
+			display: block
+	.line-header-nav
+		display: none
+	.stub
+		height: 70px
+	.stick .logo img
+		width: 68px
+@media (max-width: 880px)
+	header
+		.search-main
+			width: 120px
+		.search-ico
+			display: none
+
+@media (max-width: 768px)
+	header
+		.search-main
+			display: none
+@media (max-width: 640px)
+	header
+		.whatsapp-btn
+			display: none
+@media (max-width: 576px)
+	header
+		.logo
+			width: 100px
+			margin: 0 auto
+			display: block
+			text-align: center
+		.phone-btn
+			display: none
+		.btn-header
+			display: none
+		.call-mobile-container
+			display: flex
+		.logo-container
+			height: 56px
+	.stub
+		height: 56px
+	.stub-second
+		height: 90px

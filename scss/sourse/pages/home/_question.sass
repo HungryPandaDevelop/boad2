@@ -1,0 +1,69 @@
+.question-home
+
+.question-home-tabs
+  color: $blueColor
+  text-transform: uppercase
+  font-size: $microSize
+  width: 500px
+  margin: 0 auto 41px
+  display: flex
+  text-align: center
+  border: 1px solid $grayColorSecond
+  border-radius: 60px
+  font-weight: 700
+  cursor: pointer
+  position: relative
+  overflow: hidden
+  line-height: 1.05
+  em
+    font-style: normal
+    display: inline-block
+    margin: auto
+  span
+    display: inline-flex
+    padding: 0px 30px
+    width: 50%
+    height: 50px
+
+    margin: auto 0
+    &.active,
+    &:hover
+      color: $whiteColor
+      background-color: $yellowColor
+.question-home-item
+  display: none
+  img
+    width: 100%
+    margin: 0 0 30px
+  p
+    margin: 0 0 15px
+  h2
+    color: $yellowColor
+    margin: 0 0 18px
+  h3
+    color: $grayColor
+    margin: 0 0 15px
+  &.active
+    display: block
+  .btn-more
+    display: none
+.question-home-footer
+  h3
+    color: $grayColor
+    margin: 0 0 15px
+@media (max-width: 786px)
+  .question-home-tabs
+    margin-bottom: 45px
+  .question-home
+    h2
+      font-size: 28px
+      margin: 0 0 15px
+@media (max-width: 576px)
+  .question-home-tabs
+    width: 100%
+  // .question-home-item
+  //   height: 360px
+  //   position: relative
+  //   overflow: hidden
+    // .btn-more
+      // display: block

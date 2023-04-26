@@ -1,0 +1,47 @@
+.services-yachts-item
+  // height: 328px
+  background-color: $whiteColor
+  display: flex
+.services-yachts-item-img
+  width: 50%
+  display: block
+.services-yachts-item-info
+  width: 50%
+  height: 100%
+
+  padding: 30px
+  h3
+    font-size: $largeSize
+    margin: 0 0 15px
+    text-transform: initial
+    a
+      text-decoration: none
+      &:hover
+        color: $yellowColor
+.services-yachts-item-price
+  font-weight: 600
+  color: $yellowColor
+  margin: 0 0 7px
+  text-transform: uppercase
+.services-yachts-item-text
+  margin: 0 0 30px
+  display: -webkit-box
+  -webkit-line-clamp: 5
+  -webkit-box-orient: vertical
+  line-clamp: 5
+  position: relative
+  overflow: hidden
+@media (max-width: 576px)
+  .services-yachts-item
+    display: block
+
+  .services-yachts-item-img,
+  .services-yachts-item-info
+    width: 100%
+    height: auto
+  .services-yachts-item-img
+    height: 240px
+  .services-yachts-item-info
+    padding: 20px 25px
+  .gallery-thumb-main
+    height: 300px

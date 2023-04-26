@@ -1,0 +1,31 @@
+include ../../default/build-header
+    
+// header end
+.stub-second
+
++roofContent("Аренда яхт в Дубае")
+  .main-grid.main-grid-indent.yachts-list-wrapper
+    .col-3.hidden-lg
+    .col-9.col-lg-12
+      include parts/catalog-sorting-container.pug
+    .col-3.catalog-sidebar-container
+      .catalog-sidebar
+        include parts/sidebar-search.pug
+        include parts/feedback-mini.pug
+    .col-9.col-sm-12.col-xs-12
+      .catalog-grid.catalog-yachts.lang-yachts(data-lang="ru")
+      .main-full.btn-container-section
+        a.btn.btn--yellow.btn-more-ajax(href="#") Показать еще
+
+  include ../detail/stage-adv.pug
+  include ../home/routes.pug
+  include ../home/services.pug
+  include ../home/feedback.pug
+
+// footer start  
+
+
+
+include ../../blocks/footer.pug
+
+// footer end  

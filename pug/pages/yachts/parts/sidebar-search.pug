@@ -1,0 +1,49 @@
+.sidebar-search
+	form.search-yachts-form(action="/html/pages/yachts/list.html") 
+		.search-main
+			input.input-search(type="text" name="title" placeholder="Введите название яхты" )
+			.search-ico
+		.sidebar-search-item.active
+			i
+			h3 тип судна
+			.sidebar-item-container
+				.form-line
+					+inputRadio(false, [['Все','type0'], ['Катер','type1'],['Моторная яхта','type2']], false, 'typeBoad')
+		.sidebar-search-item.active
+			i
+			h3 длина
+			.sidebar-item-container
+				.search-tabs
+					span.active(data-from="longFromF" data-to="longToF" data-type="longF") Футы
+					span(data-from="longFromM" data-to="longToM"  data-type="longM") Метры
+				+rangeSliderThree(0, 500, 0, 500, 'longFromF', 'longToF')
+		.sidebar-search-item
+			i
+			h3 цена за час
+			.sidebar-item-container
+				.search-tabs
+					span.active(data-from="priceFromA" data-to="priceToA") AED
+					span(data-from="priceFromR" data-to="priceToR") RUB
+				+rangeSliderThree(0, 2800, 0, 2800, 'priceFromA', 'priceToA')
+		.sidebar-search-item
+			i
+			h3 количество гостей
+			.sidebar-item-container
+				+rangeSliderThree(0, 40, 0, 40, 'guestFrom', 'guestTo')
+		.sidebar-search-item
+			i
+			h3 количество кают
+			.sidebar-item-container
+				+rangeSliderThree(0, 20, 0, 20, 'cabinFrom', 'cabinTo')
+		.sidebar-search-item
+			i
+			h3 год постройки
+			.sidebar-item-container
+				+rangeSliderThree(2000, 2022, 2000, 2022, 'yearFrom', 'yearTo')
+		.sidebar-search-item
+			i
+			h3 год рефита
+			.sidebar-item-container
+				+rangeSliderThree(2012, 2022, 2012, 2022, 'refitFrom', 'refitTo')
+		.btn-container 
+			a.btn.btn--blue.reset-filters(href="/html/pages/yachts/list-tile.html") Сбросить фильтры
