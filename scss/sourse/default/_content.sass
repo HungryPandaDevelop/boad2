@@ -12,6 +12,14 @@ $gap: 30px
 	max-width: $maxWidth
 	margin: 0 auto
 	position: relative
+.main-grid-list
+	display: grid
+	grid-template-columns: repeat($gridCount, 1fr)
+	grid-gap: $gap
+	padding: 0 $indent
+	max-width: $maxWidth
+	margin: 0 auto
+	position: relative
 .form-grid
 	display: grid
 	grid-template-columns: repeat($gridCount, 1fr)
@@ -27,6 +35,7 @@ $gap: 30px
 	position: relative
 .catalog-main
 	padding-bottom: 90px
+
 .main-full
 	padding: 0 $indent
 	max-width: $maxWidth
@@ -114,3 +123,5 @@ section
 
 	.head-section
 		margin-bottom: 9px
+	section
+		padding: 45px 0 0px

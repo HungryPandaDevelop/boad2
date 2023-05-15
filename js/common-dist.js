@@ -45,10 +45,11 @@ owlDetail.owlCarousel({
 
   nav: true,
   dots: false,
-  margin:10,
+  loop: true,
+  margin: 10,
   responsive:{
     0:{
-      items: 3,
+      items: 2,
       margin: 8,
       nav: true,
       stagePadding: 30,
@@ -362,7 +363,7 @@ function createNewFileContainer(textChoiseParam, flagFileMultiParam, hintParam){
 
 ObjfieldFile.each(function(){
 		let appendFlag = 0;
-		textChoise = $(this).data('textchoise') ? $(this).data('textchoise') :  'Загрузите изображение';
+		textChoise = $(this).data('textchoise') ? $(this).data('textchoise') : $(this).hasClass('rew-file-en') ? 'Upload an image' : 'Загрузите изображение';
 		flagFileMulti = $(this).data('multy') ?  $(this).data('multy') : 0;
 		textHint = $(this).data('hint');
 
@@ -582,7 +583,24 @@ function phone_mask(){
 		//nationalMode:false,
 		//onlyCountries:['us','gb','ch','ca','do'],
 	});
-  $('.phone').after('<label class="label-animate" for="phone-flag">Ваш телефон</label>')
+
+	let textPhone = 'Ваш телефон';
+	let textPhoneEn = 'Your phone';
+  $('.phone-null').after('<label class="label-animate" for="phone-flag-null">'+textPhone+'</label>');
+  $('.phone-main').after('<label class="label-animate" for="phone-flag">'+textPhone+'</label>');
+  $('.phone-second').after('<label class="label-animate" for="phone-second">'+textPhone+'</label>');
+  $('.phone-three').after('<label class="label-animate" for="phone-three">'+textPhone+'</label>');
+  $('.phone-four').after('<label class="label-animate" for="phone-four">'+textPhone+'</label>');
+  $('.phone-five').after('<label class="label-animate" for="phone-five">'+textPhone+'</label>');
+
+  $('.phone-null-en').after('<label class="label-animate" for="phone-flag-null">'+textPhoneEn+'</label>');
+  $('.phone-main-en').after('<label class="label-animate" for="phone-flag">'+textPhoneEn+'</label>');
+  $('.phone-second-en').after('<label class="label-animate" for="phone-second">'+textPhoneEn+'</label>');
+  $('.phone-three-en').after('<label class="label-animate" for="phone-three">'+textPhoneEn+'</label>');
+  $('.phone-four-en').after('<label class="label-animate" for="phone-four">'+textPhoneEn+'</label>');
+  $('.phone-five-en').after('<label class="label-animate" for="phone-five">'+textPhoneEn+'</label>');
+
+
 	$('.phone').on('close:countrydropdown',function(e,countryData){
 		console.log('countryData', phoneObj.dialCode)
 		$(this).val('');
@@ -881,7 +899,10 @@ let yachtsItemTileTemplate = ({
   naznachenie,
   yachts_harakteristiki,
   yachts_galereya,
+  lang,
+  refit_text
 },isFavorites) => {
+  console.log('l', yachts_harakteristiki)
   return (`
   <div class="col-4 col-lg-6 col-sm-6 col-xs-12 yachts-item-wrapper">
     <div class="yachts-item">
@@ -896,7 +917,7 @@ let yachtsItemTileTemplate = ({
         </div>`
       ): ''}
         
-        <div class="yachts-logo"> <span>Full refit ${god_refit}</span></div>
+        <div class="yachts-logo"> <span>${refit_text}</span></div>
         ${!isFavorites ? (`<div class="yachts-item-liked ${getCount && getCount.includes(id) && 'active'}" data-id="${id}"> </div>`) : (`<div class="delete-btn" data-id="${id}"></div>`)}
       </div>
       <div class="yachts-item-info"> 
@@ -904,48 +925,59 @@ let yachtsItemTileTemplate = ({
         <ul class="ln yachts-item-description">
        
           <li>
-            <b>Назначение:</b>
+            <b>${lang === 'ru' ? 'Назначение' : 'Purpose'}:</b>
             <div>${naznachenie}</div>
           </li>
           <li>
-            <b>Вервь:</b>
+            <b>${lang === 'ru' ? 'Вервь' : 'Rope'}:</b>
             <div>${yachts_harakteristiki.yachts_char_element_1}</div>
           </li>
         </ul>
-        <div class="yachts-item-price">${yachts_price} AED/час</div>
+        <div class="yachts-item-price">${yachts_price} AED/${lang === 'ru' ? 'час' : 'hour'}</div>
         <div class="yachts-item-adv">
           <div class="yachts-adv-icons"> 
             <div class="yachts-adv-icon yachts-adv-icon-1"></div>
             <span>
-              ${yachts_harakteristiki.yachts_char_element_4} м. <br/>
-              (${yachts_harakteristiki.yachts_char_element_3} ft.)
+
+            ${lang === 'ru' ? 
+              `
+              ${yachts_harakteristiki.yachts_char_element_32} м.
+              <br> (${yachts_harakteristiki.yachts_char_element_3}ft.)
+              `
+              :
+              `
+              ${yachts_harakteristiki.yachts_char_element_3}  / ft. 
+              <br> (${yachts_harakteristiki.yachts_char_element_32} m.)
+              `
+              }
+              
             </span>
           </div>
           <div class="yachts-adv-icons"> 
             <div class="yachts-adv-icon yachts-adv-icon-2"></div>
             <span>
               ${yachts_harakteristiki.yachts_char_element_5} <br/>
-              гостей
+              ${lang === 'ru' ? 'гостей' : 'guests'}
             </span>
           </div>
           <div class="yachts-adv-icons"> 
             <div class="yachts-adv-icon yachts-adv-icon-3"></div>
               <span>
                 ${yachts_harakteristiki.yachts_char_element_8} <br/>
-                человека
+                ${lang === 'ru' ? 'человека' : 'human'}
               </span>
           </div>
           <div class="yachts-adv-icons"> 
             <div class="yachts-adv-icon yachts-adv-icon-4"></div>
             <span>
               ${yachts_harakteristiki.yachts_char_element_6}<br/>
-              каюты
+              ${lang === 'ru' ? 'каюты' : 'cabins'}
             </span>
           </div>
         </div>
         <div class="btn-yachts-container">
-          <a class="btn btn--blue element-btn element-btn-yachts" data-element="3" href="#">Забронировать</a>
-          <a class="btn btn--blue-border" href="${link}">Подробнее</a>
+          <a class="btn btn--blue element-btn element-btn-yachts" data-element="3" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
+          <a class="btn btn--blue-border" href="${link}">${lang === 'ru' ? 'Подробнее' : 'More'}</a>
         </div>
       </div>
     </div>
@@ -962,6 +994,7 @@ let yachtsItemListTemplate =({
   naznachenie,
   yachts_harakteristiki,
   yachts_galereya,
+  lang
 }, isFavorites)=>{
   return(
     `
@@ -983,15 +1016,15 @@ let yachtsItemListTemplate =({
     </div>
     <div class="col-6">
       <div class="yachts-item-info"> 
-        ${isFavorites && (`<div class="delete-btn" data-id="${id}"></div>`)}
+        ${isFavorites ? (`<div class="delete-btn" data-id="${id}"></div>`) : ''}
         <h3><a href="${link}">${title}</a></h3>
         <div class="yachts-item-middle">
           <ul class="ln yachts-item-description">
           <li>
-            <b>Назначение:</b>
+            <b>${lang === 'ru' ? 'Назначение' : 'Purpose'}:</b>
             <div>${naznachenie}</div>
           </li>
-          <li><b>Вервь:</b>
+          <li><b>${lang === 'ru' ? 'Вервь' : 'Rope'}:</b>
             <div>${yachts_harakteristiki.yachts_char_element_1}</div>
           </li>
           </ul>
@@ -1008,21 +1041,21 @@ let yachtsItemListTemplate =({
               <div class="yachts-adv-icon yachts-adv-icon-2"></div>
               <span>
                 ${yachts_harakteristiki.yachts_char_element_5} <br/>
-                гостей
+                ${lang === 'ru' ? 'гостей' : 'guests'}
               </span>
             </div>
             <div class="yachts-adv-icons"> 
               <div class="yachts-adv-icon yachts-adv-icon-3"></div>
                 <span>
                   ${yachts_harakteristiki.yachts_char_element_8} <br/>
-                  человека
+                  ${lang === 'ru' ? 'человека' : 'human'}
                 </span>
             </div>
             <div class="yachts-adv-icons"> 
               <div class="yachts-adv-icon yachts-adv-icon-4"></div>
               <span>
                 ${yachts_harakteristiki.yachts_char_element_6}<br/>
-                каюты
+                ${lang === 'ru' ? 'каюты' : 'cabins'}
               </span>
             </div>
           </div>
@@ -1030,8 +1063,8 @@ let yachtsItemListTemplate =({
         <div class="yachts-item-bottom">
           <div class="yachts-item-price">${yachts_price} AED/час</div>
           <div class="btn-yachts-container">
-            <a class="btn btn--blue element-btn element-btn-yachts" data-element="3" href="#">Забронировать</a>
-            <a class="btn btn--blue-border" href="${link}">Подробнее</a>
+            <a class="btn btn--blue element-btn element-btn-yachts" data-element="3" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
+            <a class="btn btn--blue-border" href="${link}">${lang === 'ru' ? 'Подробнее' : 'More'}</a>
           </div>
         </div>
       </div>
@@ -1115,7 +1148,7 @@ $('.input-search').on('keyup',function(){
   }
 });
 
-$('.search-main').on('click','.search-ico',function(){
+$('.search-main').on('click','.close-ico',function(){
   $(this).parents('.search-main').removeClass('search-on');
   $(this).parents('.search-main').find('.input-search').val('');
   mainBox.removeClass('active');
@@ -1151,9 +1184,9 @@ $('.input-search-ajax').on('keyup',function(){
 
 let fullUrl = window.location.href.split('?')[0];
 let paramUrl = window.location.href.split('?')[1];
-// console.log('paramUrl',paramUrl)
+console.log('paramUrl 1 point',paramUrl)
 let countUpload = 0;
-let sizeUpload = 6;
+let sizeUpload = 30;
 let allPostSize = 0;
 
 
@@ -1205,7 +1238,8 @@ const ajaxUpload = (paramUrl, plusElements, typelist, containerAppend, isFavorit
     countUpload++;
   }
   $(containerAppend).append(spinner);
-  // console.log('paramUrl', paramUrl)
+
+  console.log('paramUrl', paramUrl)
   $.ajax({
     type: "GET",
     url: "http://boad.panda-dev.ru/wp-json/search/yachts?"+paramUrl+'&lang='+$('.lang-yachts').data('lang'),
@@ -1239,6 +1273,7 @@ const ajaxUpload = (paramUrl, plusElements, typelist, containerAppend, isFavorit
 };
 // let categoryName;
 let changeCategory = ()=>{
+  console.log('paramUrl 2 point',paramUrl)
   let yachtsCategory = $('.catalog-filter').find('.btn.active').data('href');
   // categoryName = yachtsCategory;
   // console.log('yachtsCategory',yachtsCategory);
@@ -1255,7 +1290,10 @@ let changeCategory = ()=>{
       
     }
 
+  }else{
+    downloadUrl = paramUrl
   }
+  console.log('paramUrl 3 point',yachtsCategory, downloadUrl)
   ajaxUpload(downloadUrl, true, urlParams.get('typelist'), '.catalog-yachts');
 }
 

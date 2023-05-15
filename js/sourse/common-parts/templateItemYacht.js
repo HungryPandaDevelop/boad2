@@ -20,7 +20,10 @@ let yachtsItemTileTemplate = ({
   naznachenie,
   yachts_harakteristiki,
   yachts_galereya,
+  lang,
+  refit_text
 },isFavorites) => {
+  console.log('l', yachts_harakteristiki)
   return (`
   <div class="col-4 col-lg-6 col-sm-6 col-xs-12 yachts-item-wrapper">
     <div class="yachts-item">
@@ -35,7 +38,7 @@ let yachtsItemTileTemplate = ({
         </div>`
       ): ''}
         
-        <div class="yachts-logo"> <span>Full refit ${god_refit}</span></div>
+        <div class="yachts-logo"> <span>${refit_text}</span></div>
         ${!isFavorites ? (`<div class="yachts-item-liked ${getCount && getCount.includes(id) && 'active'}" data-id="${id}"> </div>`) : (`<div class="delete-btn" data-id="${id}"></div>`)}
       </div>
       <div class="yachts-item-info"> 
@@ -43,48 +46,59 @@ let yachtsItemTileTemplate = ({
         <ul class="ln yachts-item-description">
        
           <li>
-            <b>Назначение:</b>
+            <b>${lang === 'ru' ? 'Назначение' : 'Purpose'}:</b>
             <div>${naznachenie}</div>
           </li>
           <li>
-            <b>Вервь:</b>
+            <b>${lang === 'ru' ? 'Вервь' : 'Rope'}:</b>
             <div>${yachts_harakteristiki.yachts_char_element_1}</div>
           </li>
         </ul>
-        <div class="yachts-item-price">${yachts_price} AED/час</div>
+        <div class="yachts-item-price">${yachts_price} AED/${lang === 'ru' ? 'час' : 'hour'}</div>
         <div class="yachts-item-adv">
           <div class="yachts-adv-icons"> 
             <div class="yachts-adv-icon yachts-adv-icon-1"></div>
             <span>
-              ${yachts_harakteristiki.yachts_char_element_4} м. <br/>
-              (${yachts_harakteristiki.yachts_char_element_3} ft.)
+
+            ${lang === 'ru' ? 
+              `
+              ${yachts_harakteristiki.yachts_char_element_32} м.
+              <br> (${yachts_harakteristiki.yachts_char_element_3}ft.)
+              `
+              :
+              `
+              ${yachts_harakteristiki.yachts_char_element_3}  / ft. 
+              <br> (${yachts_harakteristiki.yachts_char_element_32} m.)
+              `
+              }
+              
             </span>
           </div>
           <div class="yachts-adv-icons"> 
             <div class="yachts-adv-icon yachts-adv-icon-2"></div>
             <span>
               ${yachts_harakteristiki.yachts_char_element_5} <br/>
-              гостей
+              ${lang === 'ru' ? 'гостей' : 'guests'}
             </span>
           </div>
           <div class="yachts-adv-icons"> 
             <div class="yachts-adv-icon yachts-adv-icon-3"></div>
               <span>
                 ${yachts_harakteristiki.yachts_char_element_8} <br/>
-                человека
+                ${lang === 'ru' ? 'человека' : 'human'}
               </span>
           </div>
           <div class="yachts-adv-icons"> 
             <div class="yachts-adv-icon yachts-adv-icon-4"></div>
             <span>
               ${yachts_harakteristiki.yachts_char_element_6}<br/>
-              каюты
+              ${lang === 'ru' ? 'каюты' : 'cabins'}
             </span>
           </div>
         </div>
         <div class="btn-yachts-container">
-          <a class="btn btn--blue element-btn element-btn-yachts" data-element="3" href="#">Забронировать</a>
-          <a class="btn btn--blue-border" href="${link}">Подробнее</a>
+          <a class="btn btn--blue element-btn element-btn-yachts" data-element="3" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
+          <a class="btn btn--blue-border" href="${link}">${lang === 'ru' ? 'Подробнее' : 'More'}</a>
         </div>
       </div>
     </div>
@@ -101,6 +115,7 @@ let yachtsItemListTemplate =({
   naznachenie,
   yachts_harakteristiki,
   yachts_galereya,
+  lang
 }, isFavorites)=>{
   return(
     `
@@ -122,15 +137,15 @@ let yachtsItemListTemplate =({
     </div>
     <div class="col-6">
       <div class="yachts-item-info"> 
-        ${isFavorites && (`<div class="delete-btn" data-id="${id}"></div>`)}
+        ${isFavorites ? (`<div class="delete-btn" data-id="${id}"></div>`) : ''}
         <h3><a href="${link}">${title}</a></h3>
         <div class="yachts-item-middle">
           <ul class="ln yachts-item-description">
           <li>
-            <b>Назначение:</b>
+            <b>${lang === 'ru' ? 'Назначение' : 'Purpose'}:</b>
             <div>${naznachenie}</div>
           </li>
-          <li><b>Вервь:</b>
+          <li><b>${lang === 'ru' ? 'Вервь' : 'Rope'}:</b>
             <div>${yachts_harakteristiki.yachts_char_element_1}</div>
           </li>
           </ul>
@@ -147,21 +162,21 @@ let yachtsItemListTemplate =({
               <div class="yachts-adv-icon yachts-adv-icon-2"></div>
               <span>
                 ${yachts_harakteristiki.yachts_char_element_5} <br/>
-                гостей
+                ${lang === 'ru' ? 'гостей' : 'guests'}
               </span>
             </div>
             <div class="yachts-adv-icons"> 
               <div class="yachts-adv-icon yachts-adv-icon-3"></div>
                 <span>
                   ${yachts_harakteristiki.yachts_char_element_8} <br/>
-                  человека
+                  ${lang === 'ru' ? 'человека' : 'human'}
                 </span>
             </div>
             <div class="yachts-adv-icons"> 
               <div class="yachts-adv-icon yachts-adv-icon-4"></div>
               <span>
                 ${yachts_harakteristiki.yachts_char_element_6}<br/>
-                каюты
+                ${lang === 'ru' ? 'каюты' : 'cabins'}
               </span>
             </div>
           </div>
@@ -169,8 +184,8 @@ let yachtsItemListTemplate =({
         <div class="yachts-item-bottom">
           <div class="yachts-item-price">${yachts_price} AED/час</div>
           <div class="btn-yachts-container">
-            <a class="btn btn--blue element-btn element-btn-yachts" data-element="3" href="#">Забронировать</a>
-            <a class="btn btn--blue-border" href="${link}">Подробнее</a>
+            <a class="btn btn--blue element-btn element-btn-yachts" data-element="3" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
+            <a class="btn btn--blue-border" href="${link}">${lang === 'ru' ? 'Подробнее' : 'More'}</a>
           </div>
         </div>
       </div>

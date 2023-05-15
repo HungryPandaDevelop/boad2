@@ -63,7 +63,7 @@ $('.input-search').on('keyup',function(){
   }
 });
 
-$('.search-main').on('click','.search-ico',function(){
+$('.search-main').on('click','.close-ico',function(){
   $(this).parents('.search-main').removeClass('search-on');
   $(this).parents('.search-main').find('.input-search').val('');
   mainBox.removeClass('active');

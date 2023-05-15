@@ -19,8 +19,12 @@
 		color: inherit
 		padding-top: 30px
 		padding-bottom: 30px
+		font-size: 50px
 	.btn
 		width: 280px
+		&:hover
+			background: none
+			border-color: $whiteColor
 	.btn-couple
 		.btn
 			width: 190px
@@ -42,6 +46,11 @@
 	border-radius: 30px
 .services-main-text
 	margin-bottom: 30px
+	p
+		margin-top: 0
+		margin-bottom: 15px
+		&:last-child
+			margin-bottom: 0
 .services-main-img
 	@include positionElement( calc(55.5% - 15px), 100%, calc(44.5% + 15px))
 .services-main-blue
@@ -87,20 +96,32 @@
 		height: 50%
 		top: 0
 		position: relative
-@media (max-width: 576px)
+@media (max-width: 1280px)
 	.services-main
 		h1
+			font-size: 38px
+@media (max-width: 992px)
+	.services-main
+		h1
+			font-size: 32px
+@media (max-width: 576px)
+	.services-main
+		height: auto
+		h1
 			font-size: 28px
+			padding-bottom: 15px
 		.main-grid
 			height: auto
 			padding-bottom: 30px
+			display: block
 		.btn
 			width: 100%
-	.services-main
 		.btn-couple
 			.btn
 				width: 100%
 				margin-bottom: 8px
+	.services-main-img
+		height: 400px
 	.services-water
 		.catalog-grid
 			padding: 0 15px

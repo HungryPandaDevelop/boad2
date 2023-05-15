@@ -2,9 +2,9 @@
 	.btn-sidebar
 	.catalog-filter
 		div
-			a.btn.btn--blue-border(href="#") Все яхты
+			a.btn.btn--blue-border.active(href="#") Все яхты
 		div
-			a.btn.btn--blue-border.active(href="#" data-href="katera") Катера
+			a.btn.btn--blue-border(href="#" data-href="katera") Катера
 		div
 			a.btn.btn--blue-border(href="#" data-href="yahty-standart") Яхты стандарт
 		div
@@ -12,11 +12,11 @@
 	.catalog-sort 
 		b Сортировать по:
 		//- +inputSelect('год постройки: по уменьшению', ['по популярности','длина: по уменьшению','длина: по убыванию','цена: по уменьшению','цена: по убыванию','год постройки: по уменьшению','год постройки: по убыванию'],'sort-select')
-		select.style-select.order-select-box(data-text='год постройки: по уменьшению' data-class='sort-select select-order-ajax')
-			option(value="longToMaxM") длина: по уменьшению
-			option(value="longToMinM") длина: по увеличению
+		select.style-select.order-select-box(data-text='цена: по уменьшению' data-class='sort-select select-order-ajax')
 			option(value="priceToMaxA") цена: по уменьшению
 			option(value="priceToMinA") цена: по увеличению
+			option(value="longToMaxM") длина: по уменьшению
+			option(value="longToMinM") длина: по увеличению
 			option(value="yearToMax") год постройки: по уменьшению
 			option(value="yearToMin") год постройки: по увеличению
 	.btn-sort

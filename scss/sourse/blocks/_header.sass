@@ -4,9 +4,9 @@
 	height: 140px
 .stub-second
 	// height: 190px
-	height: 240px
+	height: 200px
 header
-	@include positionElement(100%, auto, 0, auto, left, top, 3, fixed )
+	@include positionElement(100%, auto, 0, auto, left, top, 5, fixed )
 	color: $blueColor
 	background-color: $whiteColor
 	min-width: 320px
@@ -31,16 +31,19 @@ header
 .search-main
 	width: 300px
 	position: relative
-	.search-ico
-		@include positionElement(21px, 21px, 0, 0, right)
+	.search-ico,
+	.close-ico
 		margin: 12px 13px
-		@include bgImageEl("../images/icons/loop-gray.svg")
+		position: absolute
+		right: 0
+		top: 0
+	.close-ico
+		display: none
 	&.search-on
 		.search-ico
-			background-image: url("../images/icons/close-gray.svg")
-			cursor: pointer
-			&:hover
-				background-image: url("../images/icons/close-yellow.svg")
+			display: none
+		.close-ico
+			display: block
 .line-top-container
 	// height: 70px
 	justify-content: space-between
@@ -150,6 +153,8 @@ header
 		width: auto
 	.logo
 		width: 90%
+	.stub-second
+		height: 160px
 @media (max-width: 1140px)
 	header
 		.main-grid
@@ -173,6 +178,8 @@ header
 		height: 70px
 	.stick .logo img
 		width: 68px
+	.stub-second
+		height: 130px
 @media (max-width: 880px)
 	header
 		.search-main
@@ -184,6 +191,9 @@ header
 	header
 		.search-main
 			display: none
+	.stub-second
+		height: 100px
+
 @media (max-width: 640px)
 	header
 		.whatsapp-btn

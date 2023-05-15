@@ -11,10 +11,10 @@
   color: $grayColor
   font-weight: 700
   border-bottom: 1px solid
-  padding-top: 15px
+  // padding-top: 15px
   padding-bottom: 15px
-  margin-bottom: 60px
-  margin-top: 75px
+  margin-bottom: 0px
+  padding-top: 60px
   font-size: 18px
   position: relative
   ul
@@ -48,10 +48,17 @@
     padding: 15px
   img
     width: 100%
+.detail-tabs-container
+  position: relative
 .detail-tabs-item
-  display: none
+  // display: none
+  position: absolute
+  width: 100%
+  visibility: hidden
+  padding-top: 30px
   &.active
-    display: block
+    visibility: visible
+    position: relative
   .main-grid
     padding: 0
 .detail-tabs-grid
@@ -63,14 +70,15 @@
     font-size: 16px
     position: relative
     overflow-x: auto
+    padding-top: 45px
     ul
       width: 1000px
   .detail-tabs-carriage
     transform: translateY(0)
 @media (max-width: 768px)
   .detail-tabs-nav
-    margin-top: 45px
-    margin-bottom: 30px
-  .detail-tabs
-    padding-bottom: 30px
+    // margin-top: 45px
+    // margin-bottom: 30px
+  // .detail-tabs
+  //   padding-bottom: 30px
 @media (max-width: 576px)

@@ -21,7 +21,7 @@ function createNewFileContainer(textChoiseParam, flagFileMultiParam, hintParam){
 
 ObjfieldFile.each(function(){
 		let appendFlag = 0;
-		textChoise = $(this).data('textchoise') ? $(this).data('textchoise') :  'Загрузите изображение';
+		textChoise = $(this).data('textchoise') ? $(this).data('textchoise') : $(this).hasClass('rew-file-en') ? 'Upload an image' : 'Загрузите изображение';
 		flagFileMulti = $(this).data('multy') ?  $(this).data('multy') : 0;
 		textHint = $(this).data('hint');
 

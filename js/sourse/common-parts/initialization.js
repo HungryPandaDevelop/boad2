@@ -39,10 +39,11 @@ owlDetail.owlCarousel({
 
   nav: true,
   dots: false,
-  margin:10,
+  loop: true,
+  margin: 10,
   responsive:{
     0:{
-      items: 3,
+      items: 2,
       margin: 8,
       nav: true,
       stagePadding: 30,

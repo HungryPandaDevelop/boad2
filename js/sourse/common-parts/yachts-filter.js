@@ -2,9 +2,9 @@
 
 let fullUrl = window.location.href.split('?')[0];
 let paramUrl = window.location.href.split('?')[1];
-// console.log('paramUrl',paramUrl)
+console.log('paramUrl 1 point',paramUrl)
 let countUpload = 0;
-let sizeUpload = 6;
+let sizeUpload = 30;
 let allPostSize = 0;
 
 
@@ -56,7 +56,8 @@ const ajaxUpload = (paramUrl, plusElements, typelist, containerAppend, isFavorit
     countUpload++;
   }
   $(containerAppend).append(spinner);
-  // console.log('paramUrl', paramUrl)
+
+  console.log('paramUrl', paramUrl)
   $.ajax({
     type: "GET",
     url: "http://boad.panda-dev.ru/wp-json/search/yachts?"+paramUrl+'&lang='+$('.lang-yachts').data('lang'),
@@ -90,6 +91,7 @@ const ajaxUpload = (paramUrl, plusElements, typelist, containerAppend, isFavorit
 };
 // let categoryName;
 let changeCategory = ()=>{
+  console.log('paramUrl 2 point',paramUrl)
   let yachtsCategory = $('.catalog-filter').find('.btn.active').data('href');
   // categoryName = yachtsCategory;
   // console.log('yachtsCategory',yachtsCategory);
@@ -106,7 +108,10 @@ let changeCategory = ()=>{
       
     }
 
+  }else{
+    downloadUrl = paramUrl
   }
+  console.log('paramUrl 3 point',yachtsCategory, downloadUrl)
   ajaxUpload(downloadUrl, true, urlParams.get('typelist'), '.catalog-yachts');
 }
 
