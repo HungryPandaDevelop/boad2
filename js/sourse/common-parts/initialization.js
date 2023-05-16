@@ -160,29 +160,6 @@ owlDefault.owlCarousel({
 });
 
 
-// if($(window).width() < 786){
-//   let owlTablet = $('.owl-tablet');
-
-//   owlTablet.owlCarousel({
-//     dots: false,
-//     margin: 0,
-//     stagePadding: 45,
-//     responsive:{
-//       0:{
-//         items:1,
-//         margin: 15
-//       },
-//       576:{
-//         items: 2,
-//         margin: 15
-//       },
-//       786:{
-//         items: 4,
-//         margin: 15
-//       }
-//     }
-//   });
-// }
 
 if($(window).width() < 576){
   let owlMobile = $('.owl-mobile');
@@ -229,3 +206,6 @@ $('.input-date').each(function(){
 })
 
 
+// ------------------
+
+$(".group2").colorbox({rel:'group2', transition:"fade"});

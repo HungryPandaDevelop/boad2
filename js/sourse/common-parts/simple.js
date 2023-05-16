@@ -132,7 +132,7 @@ $('.input-box').each(function(){
 
 // video play rew
 
-$('.video-btn').on('click',function(){
+$('.video-play').on('click',function(){
   $(this).hide();
   $(this).prev()[0].play();
 });
