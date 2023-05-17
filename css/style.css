@@ -6041,7 +6041,6 @@ footer .social-default {
 .socrew-item {
   height: 540px;
   position: relative;
-  background-color: #14143C;
 }
 .socrew-item .socrew-item-img {
   width: 100%;
@@ -6049,7 +6048,6 @@ footer .social-default {
   height: 100%;
   left: 0;
   top: 0;
-  opacity: 0.7;
 }
 
 .detail-tabs {
@@ -8229,9 +8227,9 @@ footer .social-default {
 }
 .blog-item h3 a {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-  line-clamp: 2;
+  line-clamp: 1;
   position: relative;
   overflow: hidden;
 }
@@ -8251,6 +8249,7 @@ footer .social-default {
   -webkit-box-orient: vertical;
   line-clamp: 4;
   margin: 0 0 30px;
+  min-height: 84px;
   font-size: 14px;
 }
 
@@ -8300,10 +8299,8 @@ footer .social-default {
   }
 }
 .blog-detail h2 {
-  text-align: center;
-  color: #03ac9f;
-  font-size: 18px;
-  padding: 30px 0;
+  padding: 0;
+  margin: 0;
 }
 
 .blog-content-container {
@@ -8318,8 +8315,8 @@ footer .social-default {
   font-size: 28px;
   margin: 60px 0 30px;
 }
-.blog-content-container h4 {
-  margin: 0 0 30px;
+.blog-content-container h2, .blog-content-container h3, .blog-content-container h4, .blog-content-container h5, .blog-content-container h6 {
+  margin-bottom: 30px;
 }
 
 .post-views {

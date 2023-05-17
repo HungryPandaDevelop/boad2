@@ -112,10 +112,18 @@ owlThree.owlCarousel({
       margin: 15
     },
     576:{
-      items: 3,
+      items: 2,
       margin: 15
     },
     786:{
+      items: 3,
+      margin: 15
+    },
+    992:{
+      items: 4,
+      margin: 15
+    },
+    1920:{
       items: 4,
       margin: 15
     }
