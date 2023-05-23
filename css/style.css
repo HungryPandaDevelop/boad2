@@ -329,11 +329,11 @@ section {
 .breadcrumbs a:hover {
   text-decoration: underline;
 }
-.breadcrumbs span {
-  vertical-align: middle;
+.breadcrumbs > span {
+  vertical-align: bottom;
   margin: 0 5px;
 }
-.breadcrumbs span:first-child {
+.breadcrumbs > span:first-child {
   margin-left: 0;
 }
 
@@ -6150,12 +6150,14 @@ footer .social-default {
     overflow-x: auto;
     padding-top: 45px;
   }
-  .detail-tabs-nav ul {
-    width: 1000px;
-  }
   .detail-tabs-carriage {
     -webkit-transform: translateY(0);
             transform: translateY(0);
+  }
+}
+@media (max-width: 992px) {
+  .detail-tabs-nav ul {
+    width: 1000px;
   }
 }
 .pricelist-section .btn {
@@ -6959,9 +6961,9 @@ footer .social-default {
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("../images/404.svg");
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-size: 140px;
   font-weight: 700;
 }
@@ -6979,6 +6981,30 @@ footer .social-default {
   }
   .page-404 {
     text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  .page-404-img {
+    width: 200px;
+    height: 200px;
+    font-size: 30px;
+  }
+}
+@media (max-height: 860px) {
+  .page-404-img {
+    height: 360px;
+  }
+}
+@media (max-height: 760px) {
+  .page-404-img {
+    height: 260px;
+    font-size: 70px;
+  }
+}
+@media (max-height: 660px) {
+  .page-404-img {
+    height: 200px;
+    font-size: 50px;
   }
 }
 /*-----404-end-----*/
@@ -8221,15 +8247,15 @@ footer .social-default {
   text-decoration: none;
 }
 .blog-item h3 {
-  font-size: 24px;
+  font-size: 18px;
   text-transform: initial;
   margin: 0 0 15px;
 }
 .blog-item h3 a {
   display: -webkit-box;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  line-clamp: 1;
+  line-clamp: 2;
   position: relative;
   overflow: hidden;
 }
@@ -8258,6 +8284,7 @@ footer .social-default {
   display: block;
   position: relative;
   overflow: hidden;
+  background-color: #14143C;
 }
 .blog-item-img .img-cover {
   width: 100%;
@@ -8269,6 +8296,9 @@ footer .social-default {
           transform: scale(1);
   -webkit-transition: ease-out 0.5s;
   transition: ease-out 0.5s;
+}
+.blog-item-img.no-img .img-cover {
+  background-size: 100px;
 }
 .blog-item-img img {
   width: 100%;
@@ -8705,6 +8735,7 @@ footer .social-default {
   margin-top: 100px;
   background: none;
   color: #ffffff;
+  padding: 0;
 }
 .services-main .breadcrumbs a {
   color: inherit;

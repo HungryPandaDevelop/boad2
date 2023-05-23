@@ -4,7 +4,7 @@
   margin: 0 auto
 .page-404-img
   @include icoEl(470px, 470px, "../images/404.svg")
-  display: flex
+  display: inline-flex
   font-size: 140px
   font-weight: 700
   div
@@ -16,3 +16,19 @@
     margin: 0 auto 30px
   .page-404
     text-align: center
+@media (max-width: 576px)
+  .page-404-img
+    width: 200px
+    height: 200px
+    font-size: 30px
+@media (max-height: 860px)
+  .page-404-img
+    height: 360px
+@media (max-height: 760px)
+  .page-404-img
+    height: 260px
+    font-size: 70px
+@media (max-height: 660px)
+  .page-404-img
+    height: 200px
+    font-size: 50px
