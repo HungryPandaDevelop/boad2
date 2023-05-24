@@ -215,5 +215,6 @@ $('.input-date').each(function(){
 
 
 // ------------------
-
-$(".group2").colorbox({rel:'group2', transition:"fade"});
+if($('.group2').length > 0){
+  $(".group2").colorbox({rel:'group2', transition:"fade"});
+}

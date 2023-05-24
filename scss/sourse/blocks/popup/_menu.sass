@@ -49,6 +49,7 @@
 			top: 12px
 .popup-nav
 	a
+		position: relative
 		color: $blueColor
 		text-decoration: none
 		&:hover
@@ -97,33 +98,48 @@
 			font-weight: 700
 			color: $blueColor
 	.popup-nav
+		ul
+			padding: 0
+			list-style: none
+
 		li
 			margin: 0
-			position: relative
+			// position: relative
 			text-transform: uppercase
 			font-weight: 600
 			border-bottom: 1px solid $grayColorSecond
 			a
 				padding: 11px 0
+				width: 100%
 			i
 				@include positionElement(30px, 30px,0,9px, right)
 				@include bgImageEl('../images/arrows/carret-right-gray.svg', 30px)
+				&::before
+					display: none
 			&:first-child
 				border-top: 1px solid $grayColorSecond
 			li
-				border: 0
 				padding-left: 15px
-				background-color: rgb($blueColor, 0.025 )
-				border-bottom: 1px solid $grayColorSecond
-				&:last-child
-					border: 0
+				padding-right: 15px
+
+			.back-link
+				color: $grayColor
+				i
+					transform: rotate(-180deg)
 			ul
-				display: none
-				font-size: 14px
+				// display: none
+				position: absolute
+				top: 60px
+				left: 100%
+				background: #fff
+				width: 100%
+				height: 100%
+				z-index: 2
 				padding: 0
+				transition: ease-out 0.25s
 			&.active
 				ul
-					display: block
+					left: 0
 	.social-mobile-popup
 		a
 			margin: 0 15px

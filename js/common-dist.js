@@ -221,8 +221,10 @@ $('.input-date').each(function(){
 
 
 // ------------------
+if($('.group2').length > 0){
+  $(".group2").colorbox({rel:'group2', transition:"fade"});
+}
 
-$(".group2").colorbox({rel:'group2', transition:"fade"});
 		// check email
 		var r = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
 		var mailInput;
@@ -840,7 +842,10 @@ $('.menu-mobile li a').on('click',function(e){
       $(this).parent().addClass('active');
     }
     
-  
+    if($(this).hasClass('back-link')){
+      $('.menu-mobile li').removeClass('active');
+      $(this).parent().removeClass('active');
+    }
 });
 
 /*servises yachts add title to input popup*/

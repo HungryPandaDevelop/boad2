@@ -171,7 +171,10 @@ $('.menu-mobile li a').on('click',function(e){
       $(this).parent().addClass('active');
     }
     
-  
+    if($(this).hasClass('back-link')){
+      $('.menu-mobile li').removeClass('active');
+      $(this).parent().removeClass('active');
+    }
 });
 
 /*servises yachts add title to input popup*/
