@@ -3632,6 +3632,19 @@ footer .nav {
 footer .nav li {
   margin-bottom: 12px;
 }
+footer .menu-item-has-children > a {
+  font-size: 18px;
+  color: inherit;
+  margin: 0 0 13px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+footer .menu-item-has-children > a:hover {
+  color: #C19F56;
+}
+footer .menu-item-has-children.current-menu-item > a {
+  color: #C19F56;
+}
 footer .nav-second {
   text-transform: uppercase;
 }
@@ -4252,6 +4265,8 @@ footer .social-default {
     width: 100%;
     padding: 60px 15px 30px;
     max-width: none;
+    position: relative;
+    overflow: hidden;
   }
   .menu-hamburger .close-btn {
     display: block;
@@ -4296,7 +4311,7 @@ footer .social-default {
     padding-left: 15px;
     padding-right: 15px;
   }
-  .popup-nav li .back-link {
+  .popup-nav li .back-link a {
     color: #98A1A7;
   }
   .popup-nav li .back-link i {
@@ -4336,6 +4351,10 @@ footer .social-default {
     margin-bottom: 30px;
   }
 }
+.popup-lang .language-select {
+  padding: 0 30px;
+}
+
 /*-----menu----*/
 /*-----feedback----*/
 .popup-container .checkbox {

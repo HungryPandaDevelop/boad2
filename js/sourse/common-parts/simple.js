@@ -160,8 +160,8 @@ $('.hamburger-btn').on('click',function(){
   $('.menu-hamburger').toggleClass('show');
 });
 
-$('.menu-mobile li a').on('click',function(e){
-  e.preventDefault();
+$('.menu-mobile .menu-item-has-children > a').on('click',function(e){
+  // e.preventDefault();
 
     if( $(this).parent().hasClass('active')){
       $('.menu-mobile li').removeClass('active');
@@ -171,10 +171,14 @@ $('.menu-mobile li a').on('click',function(e){
       $(this).parent().addClass('active');
     }
     
-    if($(this).hasClass('back-link')){
-      $('.menu-mobile li').removeClass('active');
-      $(this).parent().removeClass('active');
-    }
+
+});
+$('.back-link').on('click',function(e){
+  e.preventDefault();
+  if($(this).hasClass('back-link')){
+    $('.menu-mobile li').removeClass('active');
+    $(this).parent().removeClass('active');
+  }
 });
 
 /*servises yachts add title to input popup*/

@@ -40,8 +40,20 @@ footer
     margin-bottom: 50px
     li
       margin-bottom: 12px
+  .menu-item-has-children> a
+    font-size: 18px
+    color: inherit
+    margin: 0 0 13px
+    text-transform: uppercase
+    font-weight: 600
+    &:hover
+      color: $yellowColor
+  .menu-item-has-children.current-menu-item
+    &>a
+      color: $yellowColor
   .nav-second
     text-transform: uppercase
+
     a
       font-weight: 600
   h3
