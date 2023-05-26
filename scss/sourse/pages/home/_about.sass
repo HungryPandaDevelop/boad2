@@ -1,5 +1,5 @@
 .about-home
-  height: 705px
+  height: 560px
 
   padding: 0
   background-color: $whiteColorSecond
@@ -10,10 +10,10 @@
     font-size: $hugeSize
     margin: 0 0 30px
   .arrow-stub
-    height: 140px
+    height: 60px
   .owl-nav
     width: 110px
-    top: calc(100% - 100px)
+    top: calc(100% - 70px)
     left: calc(50% + 90px)
 
 .about-carousel,
@@ -47,26 +47,33 @@
   transform: translateX(-50%) translateY(-50%)
   @include bgImageEl("../images/logo-about.svg")
   opacity: 0.5
+@media (max-width: 1280px)
+  .about-home-container
+    margin: auto 30px
+  .about-home .owl-nav
+    left: calc(50% + 30px)
+
 @media (max-width: 992px)
+  .about-home-img
+    width: 40%
+  .about-home-description
+    width: 60%
   .about-home
-    height: 600px
+    height: 650px
     h2
       font-size: 28px
       margin-bottom: 15px
     .owl-nav
-      left: calc(50% + 50px)
+      left: calc(40% + 30px)
       top: auto
       bottom: 30px
 
     .arrow-stub
       height: 90px
-  .about-home-container
-    margin: auto 50px
+
 @media (max-width: 768px)
-  .about-home-img
-    width: 40%
-  .about-home-description
-    width: 60%
+  .about-home-container
+    font-size: 15px
   .about-home-logo
     width: 210px
     height: 210px
@@ -75,8 +82,8 @@
     height: auto
     // height: 1175px
     .owl-nav
-      left: 30px
-      bottom: 30px
+      left: 15px
+      bottom: 22px
       transform: translateY(0)
     .arrow-stub
       height: 48px
@@ -91,7 +98,7 @@
     height: 440px
     // display: none
   .about-home-description
-    height: 700px
+    height: 550px
     padding: 30px 15px 45px
     font-size: $standartSize
     font-weight: 400

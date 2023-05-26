@@ -112,6 +112,13 @@ $('.form-go').on('click',function(e){
     scrollTop: $('.feedback-home').offset().top - offsetTop
   }, 500);
 });
+
+$('.go-tour-form').on('click',function(e){
+  e.preventDefault();
+  $("body, html").animate({
+    scrollTop: $('.feedback-origin').offset().top - offsetTop
+  }, 500);
+});
 /* tabs routes moving */
 
 

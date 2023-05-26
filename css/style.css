@@ -5364,7 +5364,7 @@ footer .social-default {
   }
 }
 .about-home {
-  height: 705px;
+  height: 560px;
   padding: 0;
   background-color: #f3f3f3;
 }
@@ -5377,11 +5377,11 @@ footer .social-default {
   margin: 0 0 30px;
 }
 .about-home .arrow-stub {
-  height: 140px;
+  height: 60px;
 }
 .about-home .owl-nav {
   width: 110px;
-  top: calc(100% - 100px);
+  top: calc(100% - 70px);
   left: calc(50% + 90px);
 }
 
@@ -5439,32 +5439,40 @@ footer .social-default {
   opacity: 0.5;
 }
 
+@media (max-width: 1280px) {
+  .about-home-container {
+    margin: auto 30px;
+  }
+  .about-home .owl-nav {
+    left: calc(50% + 30px);
+  }
+}
 @media (max-width: 992px) {
+  .about-home-img {
+    width: 40%;
+  }
+  .about-home-description {
+    width: 60%;
+  }
   .about-home {
-    height: 600px;
+    height: 650px;
   }
   .about-home h2 {
     font-size: 28px;
     margin-bottom: 15px;
   }
   .about-home .owl-nav {
-    left: calc(50% + 50px);
+    left: calc(40% + 30px);
     top: auto;
     bottom: 30px;
   }
   .about-home .arrow-stub {
     height: 90px;
   }
-  .about-home-container {
-    margin: auto 50px;
-  }
 }
 @media (max-width: 768px) {
-  .about-home-img {
-    width: 40%;
-  }
-  .about-home-description {
-    width: 60%;
+  .about-home-container {
+    font-size: 15px;
   }
   .about-home-logo {
     width: 210px;
@@ -5476,8 +5484,8 @@ footer .social-default {
     height: auto;
   }
   .about-home .owl-nav {
-    left: 30px;
-    bottom: 30px;
+    left: 15px;
+    bottom: 22px;
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
@@ -5495,7 +5503,7 @@ footer .social-default {
     height: 440px;
   }
   .about-home-description {
-    height: 700px;
+    height: 550px;
     padding: 30px 15px 45px;
     font-size: 16px;
     font-weight: 400;
@@ -5630,7 +5638,7 @@ footer .social-default {
 .team-home {
   height: 762px;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
