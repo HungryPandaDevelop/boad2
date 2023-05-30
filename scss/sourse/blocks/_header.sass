@@ -60,6 +60,7 @@ header
 		padding: 0
 	li
 		position: relative
+
 		ul
 			display: block
 			position: absolute
@@ -100,15 +101,16 @@ header
 		i
 			@include positionElement(20px,20px, -3px, 50%,right)
 			transform: translateY(-50%)
-			@include bgImageEl("../images/arrows/carret-down-blue.svg",25px)
-		// .dashicons
-		// 	top: calc(50% + 5px) 
+			// @include bgImageEl("../images/arrows/carret-down-blue.svg",25px)
 			&::before
-				display: none
+				// display: none
+				// contain: ""
 		&:hover
 			color: $yellowColor
 			i
-				background-image: url("../images/arrows/carret-down-yellow.svg")
+				// background-image: url("../images/arrows/carret-down-yellow.svg")
+				&::before
+
 .current-menu-item > a
 	color: $yellowColor
 .logo

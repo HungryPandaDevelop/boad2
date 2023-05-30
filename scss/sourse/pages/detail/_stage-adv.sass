@@ -54,8 +54,11 @@
   position: relative
   top: -70px
   // height: calc( 100% - 85px )
+  &.stage-up
+    padding-top: 68%
   .stage-adv-num
     position: relative
+    margin-top: 15px
     margin-bottom: 15px
   .stage-adv-text
     margin: 0
@@ -70,6 +73,7 @@
     margin-bottom: -36px
 .border-animate
   @include positionElement(100%, 100%,0,0)
+  // @include bgImageEl("../images/border-temp.svg", contain)
 @media (max-width: 786px)
   .stage-adv-item
     padding-top: 85px

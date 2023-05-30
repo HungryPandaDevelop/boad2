@@ -32,9 +32,16 @@ $('.question-home-tabs span').on('click',function(){
 
   $('.question-home-item').removeClass('active');
   $('.question-home-item').eq($(this).index()).addClass('active');
+
+  $('.question-hide').removeClass('show');
+  $('.question-more').removeClass('hide');
 });
 
-
+$('.question-more').on('click',function(e){
+  e.preventDefault();
+  $(this).addClass('hide');
+  $(this).parent().prev().addClass('show');
+});
 
 
 $('.warning-show').on('click',function(e){
@@ -209,3 +216,4 @@ $('.element-btn-yachts-second').on('click', function(){
 
 
 /*servises yachts add title to input popup*/
+
