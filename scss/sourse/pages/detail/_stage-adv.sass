@@ -36,6 +36,7 @@
 .stage-adv-item
   position: relative
   height: 100%
+  margin-bottom: 30px
   // height: 600px
   h3
     font-size: $largeSize
@@ -74,6 +75,12 @@
 .border-animate
   @include positionElement(100%, 100%,0,0)
   // @include bgImageEl("../images/border-temp.svg", contain)
+.border-stage
+  position: absolute
+  width: 430%
+  height: 400px
+  top: -20px
+  // @include bgImageEl("../images/border-dash.svg")
 @media (max-width: 786px)
   .stage-adv-item
     padding-top: 85px

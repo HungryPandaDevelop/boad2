@@ -6686,6 +6686,7 @@ footer .social-default {
 .stage-adv-item {
   position: relative;
   height: 100%;
+  margin-bottom: 30px;
 }
 .stage-adv-item h3 {
   font-size: 24px;
@@ -6743,6 +6744,13 @@ footer .social-default {
   height: 100%;
   left: 0;
   top: 0;
+}
+
+.border-stage {
+  position: absolute;
+  width: 430%;
+  height: 400px;
+  top: -20px;
 }
 
 @media (max-width: 786px) {
