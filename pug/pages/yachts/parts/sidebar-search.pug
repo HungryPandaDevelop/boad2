@@ -1,4 +1,7 @@
 .sidebar-search
+	.sidebar-search-controls
+		.sidebar-btn.active.close-sidebar-search
+		.close-btn--black.close-sidebar-search
 	form.search-yachts-form(action="/html/pages/yachts/list.html") 
 		.search-main
 			input.input-search(type="text" name="title" placeholder="Введите название яхты" )
@@ -45,5 +48,8 @@
 			h3 год рефита
 			.sidebar-item-container
 				+rangeSliderThree(2012, 2022, 2012, 2022, 'refitFrom', 'refitTo')
-		.btn-container 
+		.btn-container.btns-desktop
 			a.btn.btn--blue.reset-filters(href="/html/pages/yachts/list-tile.html") Сбросить фильтры
+		.btn-container.btns-mobile
+			a.btn.btn--blue.apply-filters(href="#") Преминить
+			a.btn.btn--white.reset-filters(href="/html/pages/yachts/list-tile.html") Сбросить фильтры

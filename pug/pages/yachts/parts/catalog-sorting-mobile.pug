@@ -1,0 +1,22 @@
+.catalog-sort-mobile
+
+	.catalog-sort-mobile-container
+		.sidebar-search-controls
+			.sort-btn.active.close-sort-mobile
+			.close-btn--black.close-sort-mobile
+		b Сортировать по:
+		ul.ln.order-select-box(data-text='цена: по уменьшению' data-class='sort-select select-order-ajax')
+			li
+				a(href="?priceToMaxA") цена: по уменьшению
+			li
+				a(href="?priceToMinA") цена: по увеличению
+			li
+				a(href="?longToMaxM") длина: по уменьшению
+			li
+				a(href="?longToMinM") длина: по увеличению
+			li
+				a(href="?yearToMax") год постройки: по уменьшению
+			li
+				a(href="?yearToMin") год постройки: по увеличению
+		.btn-container
+			a.btn.btn--blue(href="/html/pages/yachts/list-tile.html") Сбросить фильтры

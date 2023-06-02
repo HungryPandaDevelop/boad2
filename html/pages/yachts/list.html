@@ -197,6 +197,10 @@
       <div class="col-3"> 
         <div class="catalog-sidebar">
           <div class="sidebar-search">
+            <div class="sidebar-search-controls">
+              <div class="sidebar-btn active close-sidebar-search"></div>
+              <div class="close-btn--black close-sidebar-search"></div>
+            </div>
             <form class="search-yachts-form" action="/html/pages/yachts/list.html"> 
               <div class="search-main">
                 <input class="input-search" type="text" name="title" placeholder="Введите название яхты">
@@ -330,7 +334,8 @@
                     </div>
                 </div>
               </div>
-              <div class="btn-container"> <a class="btn btn--blue reset-filters" href="/html/pages/yachts/list-tile.html">Сбросить фильтры</a></div>
+              <div class="btn-container btns-desktop"><a class="btn btn--blue reset-filters" href="/html/pages/yachts/list-tile.html">Сбросить фильтры</a></div>
+              <div class="btn-container btns-mobile"><a class="btn btn--blue apply-filters" href="#">Преминить</a><a class="btn btn--white reset-filters" href="/html/pages/yachts/list-tile.html">Сбросить фильтры</a></div>
             </form>
           </div>
           <div class="feedback-mini"> 
@@ -367,6 +372,7 @@
       </div>
       <div class="col-9"> 
         <div class="catalog-sorting-container">
+          <div class="sidebar-btn"></div>
           <div class="catalog-filter"><a class="btn btn--blue-border active" href="#">Все яхты</a><a class="btn btn--blue-border" href="#">Катера</a><a class="btn btn--blue-border" href="#">Яхты стандарт</a><a class="btn btn--blue-border" href="#">Vip яхты</a></div>
           <div class="catalog-sort"> <b>Сортировать по:</b>
               <select class="style-select" data-text="год постройки: по уменьшению" data-class="sort-select">
@@ -377,6 +383,7 @@
                 <option>селект 5</option>
               </select>
           </div>
+          <div class="sort-btn"></div>
           <div class="catalog-view"> 
             <div class="listing-tile-btn active"></div>
             <div class="listing-list-btn"></div>

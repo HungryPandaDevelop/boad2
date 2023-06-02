@@ -10,6 +10,7 @@ include ../../default/build-header
 				include parts/feedback-mini.pug
 		.col-9 
 			.catalog-sorting-container
+				.sidebar-btn
 				.catalog-filter
 					a.btn.btn--blue-border.active(href="#") Все яхты
 					a.btn.btn--blue-border(href="#") Катера
@@ -18,6 +19,7 @@ include ../../default/build-header
 				.catalog-sort 
 					b Сортировать по:
 					+inputSelect('год постройки: по уменьшению', ['селект 1','селект 2','селект 3','селект 4','селект 5',],'sort-select')
+				.sort-btn
 				.catalog-view 
 					.listing-tile-btn.active
 					.listing-list-btn

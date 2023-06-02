@@ -197,7 +197,7 @@
       <div class="col-3 hidden-lg"></div>
       <div class="col-9 col-lg-12">
         <div class="catalog-sorting-container">
-          <div class="btn-sidebar"></div>
+          <div class="sidebar-btn"></div>
           <div class="catalog-filter">
             <div><a class="btn btn--blue-border active" href="#">Все яхты</a></div>
             <div><a class="btn btn--blue-border" href="#" data-href="katera">Катера</a></div>
@@ -214,13 +214,34 @@
               <option value="yearToMin">год постройки: по увеличению</option>
             </select>
           </div>
-          <div class="btn-sort"></div>
-          <div class="catalog-view"> <a class="listing-tile-btn listing-btn active" href="/html/pages/yachts/list-tile.html"></a><a class="listing-list-btn listing-btn" href="/html/pages/yachts/list-tile.html?typelist=list"></a></div>
+          <div class="catalog-sort-mobile">
+            <div class="catalog-sort-mobile-container">
+              <div class="sidebar-search-controls">
+                <div class="sort-btn active close-sort-mobile"></div>
+                <div class="close-btn--black close-sort-mobile"></div>
+              </div><b>Сортировать по:</b>
+              <ul class="ln order-select-box" data-text="цена: по уменьшению" data-class="sort-select select-order-ajax">
+                <li><a href="?priceToMaxA">цена: по уменьшению</a></li>
+                <li><a href="?priceToMinA">цена: по увеличению</a></li>
+                <li><a href="?longToMaxM">длина: по уменьшению</a></li>
+                <li><a href="?longToMinM">длина: по увеличению</a></li>
+                <li><a href="?yearToMax">год постройки: по уменьшению</a></li>
+                <li><a href="?yearToMin">год постройки: по увеличению</a></li>
+              </ul>
+              <div class="btn-container"><a class="btn btn--blue" href="/html/pages/yachts/list-tile.html">Сбросить фильтры</a></div>
+            </div>
+          </div>
+          <div class="sort-btn"></div>
+          <div class="catalog-view"><a class="listing-tile-btn listing-btn active" href="/html/pages/yachts/list-tile.html"></a><a class="listing-list-btn listing-btn" href="/html/pages/yachts/list-tile.html?typelist=list"></a></div>
         </div>
       </div>
       <div class="col-3 catalog-sidebar-container">
         <div class="catalog-sidebar">
           <div class="sidebar-search">
+            <div class="sidebar-search-controls">
+              <div class="sidebar-btn active close-sidebar-search"></div>
+              <div class="close-btn--black close-sidebar-search"></div>
+            </div>
             <form class="search-yachts-form" action="/html/pages/yachts/list.html"> 
               <div class="search-main">
                 <input class="input-search" type="text" name="title" placeholder="Введите название яхты">
@@ -354,7 +375,8 @@
                     </div>
                 </div>
               </div>
-              <div class="btn-container"> <a class="btn btn--blue reset-filters" href="/html/pages/yachts/list-tile.html">Сбросить фильтры</a></div>
+              <div class="btn-container btns-desktop"><a class="btn btn--blue reset-filters" href="/html/pages/yachts/list-tile.html">Сбросить фильтры</a></div>
+              <div class="btn-container btns-mobile"><a class="btn btn--blue apply-filters" href="#">Преминить</a><a class="btn btn--white reset-filters" href="/html/pages/yachts/list-tile.html">Сбросить фильтры</a></div>
             </form>
           </div>
           <div class="feedback-mini"> 

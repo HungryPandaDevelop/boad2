@@ -4,10 +4,11 @@
   display: flex
   justify-content: space-between
   margin: 0 0 45px
-  .btn-sort,
-  .btn-sidebar
+  .sort-btn,
+  .sidebar-btn
     margin: auto 0
     display: none
+
 .catalog-filter
   &>div
     display: inline-block
@@ -66,6 +67,8 @@
   &.active,
   &:hover
     background-image: url("../images/icons/listing-list-yellow.svg")
+.catalog-sort-mobile
+  display: none
 /*catalog-filter*/
 @media (max-width: 992px)
   .catalog-sort
@@ -75,13 +78,36 @@
 
 @media (max-width: 768px)
   .catalog-sorting-container
-    .btn-sort,
-    .btn-sidebar
+    .sort-btn,
+    .sidebar-btn
       display: inline-block
+  .catalog-sort-mobile
+    display: none
+    background-color: $whiteColor
+    padding: 15px
+    @include positionElement(100%,100%, 0,0,left,top,5,fixed)
+    &.active
+      display: block
+    ul
+      margin-bottom: 30px
+    li
+      border-bottom: 1px solid $grayColor
+      text-transform: uppercase
+    a
+      text-decoration: none
+      padding: 12px 0px
+
+    .btn
+      width: 100%
+  .catalog-sort-mobile-container
+    max-width: 500px
+    margin: 0 auto
+    font-weight: 500
+
 @media (max-width: 576px)
   .catalog-view
     display: none
-  .catalog-sorting-container
+  .catalog-sort-mobile-container
     // display: block
     position: relative
     height: 80px
@@ -89,13 +115,13 @@
       margin: 0 auto
       display: flex
       justify-content: space-between
-    .btn-sidebar,
-    .btn-sort
+    .sort-btn,
+    .sidebar-btn
       position: absolute
       bottom: 0
-    .btn-sidebar
+    .sidebar-btn
       left: 0
-    .btn-sort
+    .sort-btn
       right: 0
 @media (max-width: 440px)
   .catalog-filter .btn

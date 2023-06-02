@@ -4,6 +4,11 @@
 	cursor: pointer
 	&:hover
 		background-image: url("../images/icons/close-yellow.svg")
+.close-btn--black
+	@include icoEl(30px, 30px, "../images/icons/close-black.svg")
+	cursor: pointer
+	&:hover
+		background-image: url("../images/icons/close-yellow.svg")
 
 .hamburger-btn
 	@include icoEl(30px, 30px, "../images/icons/hamburger-gray.svg", middle, contain, center right)
@@ -136,13 +141,15 @@
 	@include icoEl(46px, 46px, "../images/arrows/carret-right-white.svg")
 	border: 2px solid $whiteColor
 	border-radius: 100%
-.btn-sort
+.sort-btn
 	@include icoEl(30px, 30px, "../images/icons/sort-btn-blue.svg")
 	cursor: pointer
+	&.active,
 	&:hover
 		background-image: url("../images/icons/sort-btn-yellow.svg")
-.btn-sidebar
+.sidebar-btn
 	@include icoEl(30px, 30px, "../images/icons/sidebar-btn-blue.svg")
 	cursor: pointer
+	&.active,
 	&:hover
 		background-image: url("../images/icons/sidebar-btn-yellow.svg")

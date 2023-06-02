@@ -2832,6 +2832,21 @@ a.pagination-next:hover {
   background-image: url("../images/icons/close-yellow.svg");
 }
 
+.close-btn--black {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../images/icons/close-black.svg");
+  cursor: pointer;
+}
+.close-btn--black:hover {
+  background-image: url("../images/icons/close-yellow.svg");
+}
+
 .hamburger-btn {
   display: inline-block;
   vertical-align: middle;
@@ -3101,7 +3116,7 @@ a.pagination-next:hover {
   border-radius: 100%;
 }
 
-.btn-sort {
+.sort-btn {
   display: inline-block;
   vertical-align: middle;
   width: 30px;
@@ -3112,11 +3127,11 @@ a.pagination-next:hover {
   background-image: url("../images/icons/sort-btn-blue.svg");
   cursor: pointer;
 }
-.btn-sort:hover {
+.sort-btn.active, .sort-btn:hover {
   background-image: url("../images/icons/sort-btn-yellow.svg");
 }
 
-.btn-sidebar {
+.sidebar-btn {
   display: inline-block;
   vertical-align: middle;
   width: 30px;
@@ -3127,7 +3142,7 @@ a.pagination-next:hover {
   background-image: url("../images/icons/sidebar-btn-blue.svg");
   cursor: pointer;
 }
-.btn-sidebar:hover {
+.sidebar-btn.active, .sidebar-btn:hover {
   background-image: url("../images/icons/sidebar-btn-yellow.svg");
 }
 
@@ -7646,8 +7661,8 @@ footer .social-default {
           justify-content: space-between;
   margin: 0 0 45px;
 }
-.catalog-sorting-container .btn-sort,
-.catalog-sorting-container .btn-sidebar {
+.catalog-sorting-container .sort-btn,
+.catalog-sorting-container .sidebar-btn {
   margin: auto 0;
   display: none;
 }
@@ -7746,6 +7761,10 @@ footer .social-default {
   background-image: url("../images/icons/listing-list-yellow.svg");
 }
 
+.catalog-sort-mobile {
+  display: none;
+}
+
 /*catalog-filter*/
 @media (max-width: 992px) {
   .catalog-sort {
@@ -7756,20 +7775,53 @@ footer .social-default {
   }
 }
 @media (max-width: 768px) {
-  .catalog-sorting-container .btn-sort,
-.catalog-sorting-container .btn-sidebar {
+  .catalog-sorting-container .sort-btn,
+.catalog-sorting-container .sidebar-btn {
     display: inline-block;
+  }
+  .catalog-sort-mobile {
+    display: none;
+    background-color: #ffffff;
+    padding: 15px;
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    z-index: 5;
+    left: 0;
+    top: 0;
+  }
+  .catalog-sort-mobile.active {
+    display: block;
+  }
+  .catalog-sort-mobile ul {
+    margin-bottom: 30px;
+  }
+  .catalog-sort-mobile li {
+    border-bottom: 1px solid #98A1A7;
+    text-transform: uppercase;
+  }
+  .catalog-sort-mobile a {
+    text-decoration: none;
+    padding: 12px 0px;
+  }
+  .catalog-sort-mobile .btn {
+    width: 100%;
+  }
+  .catalog-sort-mobile-container {
+    max-width: 500px;
+    margin: 0 auto;
+    font-weight: 500;
   }
 }
 @media (max-width: 576px) {
   .catalog-view {
     display: none;
   }
-  .catalog-sorting-container {
+  .catalog-sort-mobile-container {
     position: relative;
     height: 80px;
   }
-  .catalog-sorting-container .catalog-filter {
+  .catalog-sort-mobile-container .catalog-filter {
     margin: 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -7778,15 +7830,15 @@ footer .social-default {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .catalog-sorting-container .btn-sidebar,
-.catalog-sorting-container .btn-sort {
+  .catalog-sort-mobile-container .sort-btn,
+.catalog-sort-mobile-container .sidebar-btn {
     position: absolute;
     bottom: 0;
   }
-  .catalog-sorting-container .btn-sidebar {
+  .catalog-sort-mobile-container .sidebar-btn {
     left: 0;
   }
-  .catalog-sorting-container .btn-sort {
+  .catalog-sort-mobile-container .sort-btn {
     right: 0;
   }
 }
@@ -7805,6 +7857,9 @@ footer .social-default {
 }
 .catalog-sidebar .btn {
   width: 100%;
+}
+.catalog-sidebar .btns-mobile {
+  display: none;
 }
 
 .sidebar-search {
@@ -7900,6 +7955,10 @@ footer .social-default {
   background-color: #C19F56;
 }
 
+.sidebar-search-controls {
+  display: none;
+}
+
 /*.catalog-sidebar*/
 @media (max-width: 1280px) {
   .catalog-sidebar {
@@ -7907,11 +7966,55 @@ footer .social-default {
   }
 }
 @media (max-width: 768px) {
-  .catalog-sidebar-container {
+  .sidebar-search-controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 30px 0 15px;
+  }
+  .feedback-mini {
     display: none;
+  }
+  .catalog-sidebar-container {
+    width: 100%;
+    position: fixed;
+    height: 100vh;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    display: none;
+    background-color: #ffffff;
+  }
+  .catalog-sidebar-container.active {
+    display: block;
+  }
+  .catalog-sidebar-container .btn {
+    margin: 0 0 15px;
+  }
+  .catalog-sidebar-container .btns-mobile {
+    display: block;
+  }
+  .catalog-sidebar-container .btns-desktop {
+    display: none;
+  }
+  .catalog-sidebar {
+    max-width: 500px;
+    margin: 0 auto;
   }
   .catalog-sort {
     display: none;
+  }
+}
+@media (max-width: 576px) {
+  .sidebar-search {
+    margin-bottom: 30px;
+  }
+  .catalog-sidebar {
+    padding: 0 15px;
   }
 }
 .yachts-main-detail {

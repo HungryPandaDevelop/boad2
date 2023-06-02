@@ -1,5 +1,5 @@
 .catalog-sorting-container
-	.btn-sidebar
+	.sidebar-btn
 	.catalog-filter
 		div
 			a.btn.btn--blue-border.active(href="#") Все яхты
@@ -19,7 +19,8 @@
 			option(value="longToMinM") длина: по увеличению
 			option(value="yearToMax") год постройки: по уменьшению
 			option(value="yearToMin") год постройки: по увеличению
-	.btn-sort
-	.catalog-view 
+	include catalog-sorting-mobile.pug
+	.sort-btn
+	.catalog-view
 		a(href="/html/pages/yachts/list-tile.html").listing-tile-btn.listing-btn.active
 		a(href="/html/pages/yachts/list-tile.html?typelist=list").listing-list-btn.listing-btn

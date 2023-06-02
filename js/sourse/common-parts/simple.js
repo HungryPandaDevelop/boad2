@@ -217,3 +217,18 @@ $('.element-btn-yachts-second').on('click', function(){
 
 /*servises yachts add title to input popup*/
 
+$('.sidebar-btn').on('click',function(){
+  $('.catalog-sidebar-container').addClass('active');
+});
+$('.close-sidebar-search').on('click',function(){
+  $('.catalog-sidebar-container').removeClass('active');
+});
+$('.sort-btn').on('click',function(){
+  $('.catalog-sort-mobile').addClass('active');
+});
+$('.close-sort-mobile').on('click',function(){
+  $('.catalog-sort-mobile').removeClass('active');
+});
+$('.order-select-box').on('click',function(){
+  $('.catalog-sort-mobile').removeClass('active');
+});
