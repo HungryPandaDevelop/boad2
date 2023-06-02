@@ -1,7 +1,7 @@
 //
-$('h1').on('click',function(){
-  localStorage.clear();
-});
+// $('h1').on('click',function(){
+//   localStorage.clear();
+// });
 // console.log(localStorage.getItem('likedId'));
 let getCount = localStorage.getItem('likedId') ? localStorage.getItem('likedId') : [] ;
 if(getCount.length > 0){
@@ -23,7 +23,7 @@ let yachtsItemTileTemplate = ({
   lang,
   refit_text
 },isFavorites) => {
-  console.log('l', yachts_harakteristiki)
+  // console.log('l', yachts_harakteristiki)
   return (`
   <div class="col-4 col-lg-6 col-sm-6 col-xs-12 yachts-item-wrapper">
     <div class="yachts-item">

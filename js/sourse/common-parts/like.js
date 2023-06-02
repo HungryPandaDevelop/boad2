@@ -1,6 +1,6 @@
 
 let idLikeArr = getCount;
-console.log('getCount', idLikeArr);
+// console.log('getCount', idLikeArr);
 
 
 

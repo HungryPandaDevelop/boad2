@@ -1320,19 +1320,19 @@ input {
   padding-left: 100px;
 }
 .input-box-phone input::-webkit-input-placeholder {
-  color: red;
+  color: #14143C;
 }
 .input-box-phone input::-moz-placeholder {
-  color: red;
+  color: #14143C;
 }
 .input-box-phone input:-ms-input-placeholder {
-  color: red;
+  color: #14143C;
 }
 .input-box-phone input::-ms-input-placeholder {
-  color: red;
+  color: #14143C;
 }
 .input-box-phone input::placeholder {
-  color: red;
+  color: #14143C;
 }
 .input-box-phone.input-box .country-select {
   top: 29px;
@@ -7839,13 +7839,16 @@ footer .social-default {
     left: 0;
   }
   .catalog-sort-mobile-container .sort-btn {
-    right: 0;
+    right: auto;
+    bottom: auto;
+    position: relative;
   }
 }
 @media (max-width: 440px) {
   .catalog-filter .btn {
-    font-size: 12px;
-    padding: 11px 7px;
+    font-size: 10px;
+    padding: 11px 10px;
+    margin: 0;
   }
 }
 /*.catalog-sidebar*/

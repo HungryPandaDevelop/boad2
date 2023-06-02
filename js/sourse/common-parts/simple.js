@@ -220,7 +220,7 @@ $('.element-btn-yachts-second').on('click', function(){
 $('.sidebar-btn').on('click',function(){
   $('.catalog-sidebar-container').addClass('active');
 });
-$('.close-sidebar-search').on('click',function(){
+$('.close-sidebar-search, .apply-filters').on('click',function(){
   $('.catalog-sidebar-container').removeClass('active');
 });
 $('.sort-btn').on('click',function(){

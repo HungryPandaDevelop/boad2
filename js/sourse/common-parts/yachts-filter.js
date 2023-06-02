@@ -2,7 +2,7 @@
 
 let fullUrl = window.location.href.split('?')[0];
 let paramUrl = window.location.href.split('?')[1];
-console.log('paramUrl 1 point',paramUrl)
+// console.log('paramUrl 1 point',paramUrl)
 let countUpload = 0;
 let sizeUpload = 30;
 let allPostSize = 0;
@@ -91,7 +91,7 @@ const ajaxUpload = (paramUrl, plusElements, typelist, containerAppend, isFavorit
 };
 // let categoryName;
 let changeCategory = ()=>{
-  console.log('paramUrl 2 point',paramUrl)
+  // console.log('paramUrl 2 point',paramUrl)
   let yachtsCategory = $('.catalog-filter').find('.btn.active').data('href');
   // categoryName = yachtsCategory;
   // console.log('yachtsCategory',yachtsCategory);
@@ -111,7 +111,7 @@ let changeCategory = ()=>{
   }else{
     downloadUrl = paramUrl
   }
-  console.log('paramUrl 3 point',yachtsCategory, downloadUrl)
+  // console.log('paramUrl 3 point',yachtsCategory, downloadUrl)
   ajaxUpload(downloadUrl, true, urlParams.get('typelist'), '.catalog-yachts');
 }
 
@@ -128,6 +128,19 @@ $('.btn-more-ajax').on('click',function(e){
 });
 
 yachtsFormSearch.find('input').on('change',function(e){
+  e.preventDefault();
+
+  let formSerialize =yachtsFormSearch.serialize();
+
+
+  let finalUrl = fullUrl+"?"+formSerialize;
+
+  window.history.pushState("data","Title",finalUrl);
+
+
+  ajaxUpload(formSerialize, true, false, '.catalog-yachts');
+});
+$('.apply-filters').on('click',function(e){
   e.preventDefault();
 
   let formSerialize =yachtsFormSearch.serialize();
@@ -182,6 +195,7 @@ $('.select-order-ajax li').on('click',function(){
 
 
   let sortType = $(this).data('value');
+
   if(countKey === 1 && useSorting){
     window.history.pushState("data","Title",fullUrl + '?sort=' + sortType);
     ajaxUpload('sort=' + sortType, true, urlParams.get('typelist'), '.catalog-yachts');
@@ -202,6 +216,25 @@ $('.select-order-ajax li').on('click',function(){
   }
 });
 
+// if(useFilter === true){
+//   console.log('1')
+//   let addFormParam = yachtsFormSearch.serialize();
+
+//   // window.history.pushState("data","Title",fullUrl + '?' + addFormParam + 'sort=' + sortType);
+
+//   ajaxUpload('sort=' + sortType, true, urlParams.get('typelist'), '.catalog-yachts');
+// }
+// else if(useSorting === true){
+//   console.log('2')
+//   // window.history.pushState("data","Title",fullUrl + '?sort=' + sortType);
+//   ajaxUpload('sort=' + sortType, true, urlParams.get('typelist'), '.catalog-yachts');
+// }
+// else{
+//   console.log('3')
+//   // window.history.pushState("data","Title",fullUrl + '?sort=' + sortType);
+
+//   ajaxUpload('sort=' + sortType, true, urlParams.get('typelist'), '.catalog-yachts');
+// }
 if($('.catalog-yachts').length>0){
   changeCategory();
 }
