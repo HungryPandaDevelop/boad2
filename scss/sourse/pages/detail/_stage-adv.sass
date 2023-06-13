@@ -8,14 +8,14 @@
     color: inherit
   .subtitle-section
     margin-bottom: 65px
-.stage-adv-line
-  width: calc(80% - 15px)
-  height: 0
-  top: -33px
-  position: relative
-  // @include positionElement(calc(80% - 60px),1px,30px,50%)
-  border-bottom: 1px dashed $whiteColor
-  // display: none
+// .stage-adv-line
+//   width: calc(80% - 15px)
+//   height: 0
+//   top: -33px
+//   position: relative
+//   // @include positionElement(calc(80% - 60px),1px,30px,50%)
+//   border-bottom: 1px dashed $whiteColor
+//   // display: none
 .stage-adv-num
   width: 70px
   height: 70px
@@ -25,8 +25,8 @@
   font-size: 28px
   font-weight: 700
   border-radius: 100%
-  margin: 0 0 0px
-  position: absolute
+  margin: 0 0 15px
+  // position: absolute
   bottom: 0
   z-index: 2
   // display: none
@@ -44,34 +44,28 @@
     // height: 72px
 .stage-adv-text
   margin: 0 0 90px
-.stage-adv-item-last
-  h3
-    height: 76px
-    display: flex
-    span
-      display: inline-block
-      margin-top: auto
-.stage-offset
-  position: relative
-  top: -70px
-  // height: calc( 100% - 85px )
-  &.stage-up
-    padding-top: 68%
-  .stage-adv-num
-    position: relative
-    margin-top: 15px
-    margin-bottom: 15px
-  .stage-adv-text
-    margin: 0
 
-.stage-adv-item-bottom
-  top: 50%
-  .stage-adv-num
-    margin-top: -34px
-.stage-adv-item-top
-  bottom: 50%
-  .stage-adv-num
-    margin-bottom: -36px
+// .stage-offset
+//   position: relative
+//   top: -70px
+//   // height: calc( 100% - 85px )
+//   &.stage-up
+//     padding-top: 68%
+//   .stage-adv-num
+//     position: relative
+//     margin-top: 15px
+//     margin-bottom: 15px
+//   .stage-adv-text
+//     margin: 0
+
+// .stage-adv-item-bottom
+//   top: 50%
+//   .stage-adv-num
+//     margin-top: -34px
+// .stage-adv-item-top
+//   bottom: 50%
+//   .stage-adv-num
+//     margin-bottom: -36px
 .border-animate
   @include positionElement(100%, 100%,0,0)
   // @include bgImageEl("../images/border-temp.svg", contain)
@@ -79,45 +73,15 @@
   position: absolute
   width: 430%
   height: 400px
-  top: -20px
+  top: -150px
   // @include bgImageEl("../images/border-dash.svg")
-@media (max-width: 786px)
-  .stage-adv-item
-    padding-top: 85px
-    margin-bottom: 30px
-    .stage-adv-num
-      top: 0
-      position: absolute
-    .stage-adv-text
-      margin: 0
-  .stage-adv-item-1
-    // grid-column-start: 1
-    grid-row-start: 1
-  .stage-adv-item-3
-    // grid-column-start: 1
-    grid-column-start: 1
-    grid-row-start: 2
-  .stage-adv-item-4
-    // grid-column-start: 1
-    grid-row-start: 2
-    grid-column-start: 7
-  .stage-adv-item-last
-    h3
-      height: auto
-  .stage-offset
-    top: 0
-@media (max-width: 576px)
-  .stage-adv-item-1
-    grid-column-start: 1
-    grid-row-start: 1
-  .stage-adv-item-2
-    grid-column-start: 1
-    grid-row-start: 2
-  .stage-adv-item-3
-    grid-column-start: 1
-    grid-row-start: 3
+@media (max-width: 1140px)
+  .border-stage
+    width: 450%
+@media (max-width: 768px)
+  .border-stage
+    display: none
+  .stage-adv-text
+    margin: 0 0 30px
 
-  .stage-adv-item-4
-    // grid-column-start: 1
-    grid-column-start: 1
-    grid-row-start: 4
+@media (max-width: 576px)

@@ -45,7 +45,7 @@ const appendYachts = (item, typelist, containerAppend, isFavorites)=>{
 
 };
 
-const ajaxUpload = (paramUrl, plusElements, typelist, containerAppend, isFavorites)=>{
+const ajaxUpload = (paramUrl, plusElements, typelist2, containerAppend, isFavorites)=>{
   console.log('isFavorites', isFavorites)
 
   if(plusElements){
@@ -54,26 +54,31 @@ const ajaxUpload = (paramUrl, plusElements, typelist, containerAppend, isFavorit
   }
   else{
     countUpload++;
-  }
+  };
+
   $(containerAppend).append(spinner);
 
-  console.log('paramUrl', paramUrl)
+  const typelist =  $('.catalog-view').find('a.active').data('type');
+  // console.log('paramUrl', paramUrl)
   $.ajax({
     type: "GET",
-    url: "http://boad.panda-dev.ru/wp-json/search/yachts?"+paramUrl+'&lang='+$('.lang-yachts').data('lang'),
+    url: "http://boad.panda-dev.ru/wp-json/search/yachts?"+paramUrl,
     data: {
       // ...formObj,
       'countUpload': countUpload,
-      'sizeUpload': sizeUpload
+      'sizeUpload': sizeUpload,
+      'lang': $('.lang-yachts').data('lang'),
+      'yachtsCategory':  $('.catalog-filter').find('.btn.active').data('href'),
     },
     success: function(result){
       spinner.remove();
-      // console.log('retur',result);
+      console.log('retur',result);
       if(result.length > 0){
         result.map((item)=>{
           appendYachts(item, typelist, containerAppend, isFavorites);
         });
         allPostSize = result[0].sizePosts;
+        console.log('allPostSize', allPostSize)
         if (allPostSize <= (sizeUpload * countUpload)){
           $('.btn-more-ajax').hide();
         }else{
@@ -90,30 +95,31 @@ const ajaxUpload = (paramUrl, plusElements, typelist, containerAppend, isFavorit
 
 };
 // let categoryName;
-let changeCategory = ()=>{
-  // console.log('paramUrl 2 point',paramUrl)
-  let yachtsCategory = $('.catalog-filter').find('.btn.active').data('href');
-  // categoryName = yachtsCategory;
-  // console.log('yachtsCategory',yachtsCategory);
+// let changeCategory = ()=>{
+//   // console.log('paramUrl 2 point',paramUrl)
+//   let yachtsCategory = $('.catalog-filter').find('.btn.active').data('href');
+//   // categoryName = yachtsCategory;
+//   // console.log('yachtsCategory',yachtsCategory);
   
-  let downloadUrl;
-  if(yachtsCategory){
+//   let downloadUrl;
+  
+//   if(yachtsCategory){
 
-    if(paramUrl){
+//     if(paramUrl){
 
-      downloadUrl = paramUrl + '&yachtsCategory='  + yachtsCategory;
-    }else{
+//       // downloadUrl = paramUrl + '&yachtsCategory='  + yachtsCategory;
+//     }else{
 
-      downloadUrl = 'yachtsCategory='  + yachtsCategory;
+//       // downloadUrl = 'yachtsCategory='  + yachtsCategory;
       
-    }
+//     }
 
-  }else{
-    downloadUrl = paramUrl
-  }
-  // console.log('paramUrl 3 point',yachtsCategory, downloadUrl)
-  ajaxUpload(downloadUrl, true, urlParams.get('typelist'), '.catalog-yachts');
-}
+//   }else{
+//     downloadUrl = paramUrl
+//   }
+//   // console.log('paramUrl 3 point',yachtsCategory, downloadUrl)
+//   ajaxUpload(downloadUrl, true, urlParams.get('typelist'), '.catalog-yachts');
+// }
 
 
 let yachtsFormSearch = $('.search-yachts-form');
@@ -236,7 +242,8 @@ $('.select-order-ajax li').on('click',function(){
 //   ajaxUpload('sort=' + sortType, true, urlParams.get('typelist'), '.catalog-yachts');
 // }
 if($('.catalog-yachts').length>0){
-  changeCategory();
+  // changeCategory();
+  ajaxUpload(paramUrl, 0, false, '.catalog-yachts');
 }
 // ajaxUpload(paramUrl, true, urlParams.get('typelist'));
 

@@ -8,7 +8,8 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
   console.log('mail sent OK');
   // Stuff
   setTimeout(function(){
-    $('.element-show').removeClass('active');
+    $('.element-show').removeClass('show');
+    $('.wpcf7-form').addClass('init');
   },1500);
   
 }, false ); 

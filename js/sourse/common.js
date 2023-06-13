@@ -16,6 +16,8 @@
 // @prepros-append common-parts/yachts-filter.js
 // @prepros-append common-parts/like.js
 // @prepros-append common-parts/routes-popup.js
+// @prepros-append common-parts/templateBlog.js 
+// @prepros-append common-parts/blog.js 
 // @prepros-append common-parts/end.js
  
 

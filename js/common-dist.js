@@ -308,7 +308,8 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
   console.log('mail sent OK');
   // Stuff
   setTimeout(function(){
-    $('.element-show').removeClass('active');
+    $('.element-show').removeClass('show');
+    $('.wpcf7-form').addClass('init');
   },1500);
   
 }, false ); 
@@ -1253,7 +1254,7 @@ const appendYachts = (item, typelist, containerAppend, isFavorites)=>{
 
 };
 
-const ajaxUpload = (paramUrl, plusElements, typelist, containerAppend, isFavorites)=>{
+const ajaxUpload = (paramUrl, plusElements, typelist2, containerAppend, isFavorites)=>{
   console.log('isFavorites', isFavorites)
 
   if(plusElements){
@@ -1262,26 +1263,31 @@ const ajaxUpload = (paramUrl, plusElements, typelist, containerAppend, isFavorit
   }
   else{
     countUpload++;
-  }
+  };
+
   $(containerAppend).append(spinner);
 
-  console.log('paramUrl', paramUrl)
+  const typelist =  $('.catalog-view').find('a.active').data('type');
+  // console.log('paramUrl', paramUrl)
   $.ajax({
     type: "GET",
-    url: "http://boad.panda-dev.ru/wp-json/search/yachts?"+paramUrl+'&lang='+$('.lang-yachts').data('lang'),
+    url: "http://boad.panda-dev.ru/wp-json/search/yachts?"+paramUrl,
     data: {
       // ...formObj,
       'countUpload': countUpload,
-      'sizeUpload': sizeUpload
+      'sizeUpload': sizeUpload,
+      'lang': $('.lang-yachts').data('lang'),
+      'yachtsCategory':  $('.catalog-filter').find('.btn.active').data('href'),
     },
     success: function(result){
       spinner.remove();
-      // console.log('retur',result);
+      console.log('retur',result);
       if(result.length > 0){
         result.map((item)=>{
           appendYachts(item, typelist, containerAppend, isFavorites);
         });
         allPostSize = result[0].sizePosts;
+        console.log('allPostSize', allPostSize)
         if (allPostSize <= (sizeUpload * countUpload)){
           $('.btn-more-ajax').hide();
         }else{
@@ -1298,30 +1304,31 @@ const ajaxUpload = (paramUrl, plusElements, typelist, containerAppend, isFavorit
 
 };
 // let categoryName;
-let changeCategory = ()=>{
-  // console.log('paramUrl 2 point',paramUrl)
-  let yachtsCategory = $('.catalog-filter').find('.btn.active').data('href');
-  // categoryName = yachtsCategory;
-  // console.log('yachtsCategory',yachtsCategory);
+// let changeCategory = ()=>{
+//   // console.log('paramUrl 2 point',paramUrl)
+//   let yachtsCategory = $('.catalog-filter').find('.btn.active').data('href');
+//   // categoryName = yachtsCategory;
+//   // console.log('yachtsCategory',yachtsCategory);
   
-  let downloadUrl;
-  if(yachtsCategory){
+//   let downloadUrl;
+  
+//   if(yachtsCategory){
 
-    if(paramUrl){
+//     if(paramUrl){
 
-      downloadUrl = paramUrl + '&yachtsCategory='  + yachtsCategory;
-    }else{
+//       // downloadUrl = paramUrl + '&yachtsCategory='  + yachtsCategory;
+//     }else{
 
-      downloadUrl = 'yachtsCategory='  + yachtsCategory;
+//       // downloadUrl = 'yachtsCategory='  + yachtsCategory;
       
-    }
+//     }
 
-  }else{
-    downloadUrl = paramUrl
-  }
-  // console.log('paramUrl 3 point',yachtsCategory, downloadUrl)
-  ajaxUpload(downloadUrl, true, urlParams.get('typelist'), '.catalog-yachts');
-}
+//   }else{
+//     downloadUrl = paramUrl
+//   }
+//   // console.log('paramUrl 3 point',yachtsCategory, downloadUrl)
+//   ajaxUpload(downloadUrl, true, urlParams.get('typelist'), '.catalog-yachts');
+// }
 
 
 let yachtsFormSearch = $('.search-yachts-form');
@@ -1444,7 +1451,8 @@ $('.select-order-ajax li').on('click',function(){
 //   ajaxUpload('sort=' + sortType, true, urlParams.get('typelist'), '.catalog-yachts');
 // }
 if($('.catalog-yachts').length>0){
-  changeCategory();
+  // changeCategory();
+  ajaxUpload(paramUrl, 0, false, '.catalog-yachts');
 }
 // ajaxUpload(paramUrl, true, urlParams.get('typelist'));
 
@@ -1647,5 +1655,128 @@ $('body').on('click', function (evt) {
   if (!$(evt.target).is('.yachts-select-input, .yachts-select-popup  *')) {
       $('.yachts-select-popup').removeClass('active');
   }
+});
+let blogItemTileTemplate = ({
+  img,
+  title,
+  link,
+  text,
+  date,
+}) => {
+  // console.log('l', yachts_harakteristiki)
+  return (`
+  <div class="col-4 col-sm-6 col-xs-12">
+    <div class="blog-item">
+      <a class="blog-item-img " href="${link}">
+        <div class="img-cover" >
+          <img src="${img}" alt="">
+        </div>
+      </a>
+    <div class="blog-item-info">
+      <div class="blog-item-date">
+      ${date}
+      </div>
+      <h3>
+        <a href="${link}">
+        ${title}
+        </a>
+      </h3>
+      <div class="blog-item-text">
+      ${text}
+     </div>
+      <div class="btn-container">
+        <a class="btn btn--blue-border" href="${link}">
+          Прочитать      
+        </a>
+      </div>
+    </div>
+    </div>    
+  </div>
+`)
+};
+// console.log('blog-tags');
+
+let countBlogUpload = 1;
+
+$('.blog-tags').on('click','a',function(e){
+  e.preventDefault();
+
+  $('.blog-tags a').removeClass('active');
+  $(this).addClass('active');
+
+  let thisCat = $(this).data('href');
+  $('.blog-grid').empty();
+  countBlogUpload = 0;
+  ajaxBlogUpload(thisCat);
+}); 
+
+
+
+const ajaxBlogUpload = (category)=>{
+ 
+ 
+  let sizeUpload = 12;
+
+  $('.blog-grid').append(spinner);
+
+  const appendBlog = (item)=>{
+
+
+    $('.blog-grid').append(blogItemTileTemplate(item));
+    // $(containerAppend).removeClass('catalog-grid');
+
+    $('.img-cover').each(function(){
+      let imgSrc = $(this).find('img').attr('src');
+      //console.log(imgSrc);
+      
+      $(this).css('background-image', 'url('+imgSrc+')');
+    });
+  };
+
+  $.ajax({
+    type: "GET",
+    url: "http://boad.panda-dev.ru/wp-json/search/blog",
+    data: {
+      // ...formObj,
+      'lang': $('.blog-grid').data('lang'),
+      'countUpload': countBlogUpload,
+      'sizeUpload': sizeUpload,
+      'blogCategory': category
+    },
+    success: function(result){
+      countBlogUpload++;
+      spinner.remove();
+      console.log('retur',result);
+      if(result.length > 0){
+        result.map((item)=>{
+          appendBlog(item);
+        });
+        allPostSize = result[0].sizePosts;
+        console.log('allPostSize', allPostSize)
+        if (allPostSize <= (sizeUpload * countBlogUpload)){
+          $('.btn-more-ajax').hide();
+        }else{
+          // console.log('show btn')
+          $('.btn-more-ajax').show();
+        }
+      }else{
+        $('.btn-more-ajax').hide();
+        $('.blog-grid').append('<div class="empty-list col-12">Список пуст</div>')
+      }
+
+    }
+  });
+
+};
+ajaxBlogUpload();
+
+
+$('.btn-more-ajax').on('click',function(e){
+  e.preventDefault();
+  
+  // $('.search-yachts-form').submit()
+  // console.log('serialize', formObj)
+
+  ajaxBlogUpload();
 });
 });
