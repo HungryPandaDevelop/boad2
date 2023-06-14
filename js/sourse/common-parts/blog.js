@@ -36,7 +36,7 @@ const ajaxBlogUpload = (category)=>{
       $(this).css('background-image', 'url('+imgSrc+')');
     });
   };
-
+  let allBlogSize;
   $.ajax({
     type: "GET",
     url: "http://boad.panda-dev.ru/wp-json/search/blog",
@@ -50,14 +50,14 @@ const ajaxBlogUpload = (category)=>{
     success: function(result){
       countBlogUpload++;
       spinner.remove();
-      console.log('retur',result);
+      // console.log('retur',result);
       if(result.length > 0){
         result.map((item)=>{
           appendBlog(item);
         });
-        allPostSize = result[0].sizePosts;
-        console.log('allPostSize', allPostSize)
-        if (allPostSize <= (sizeUpload * countBlogUpload)){
+        allBlogSize = result[0].sizePosts;
+        // console.log('allPostSize', allBlogSize)
+        if (allBlogSize <= (sizeUpload * countBlogUpload)){
           $('.btn-more-ajax').hide();
         }else{
           // console.log('show btn')

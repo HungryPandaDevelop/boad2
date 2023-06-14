@@ -7149,6 +7149,63 @@ footer .social-default {
   }
 }
 /*-----faq-end-----*/
+/*-----mapsite-start-----*/
+.mapsite ul, .mapsite li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mapsite a {
+  text-decoration: none;
+}
+.mapsite a:hover {
+  color: #C19F56;
+}
+
+.mapsite-large {
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 0 45px;
+}
+.mapsite-large li {
+  margin: 0 0 15px;
+}
+
+.mapsite-default {
+  margin: 0 0 45px;
+}
+.mapsite-default > ul > li {
+  padding: 0;
+}
+.mapsite-default > ul > li::before {
+  display: none;
+}
+.mapsite-default > ul > li > a {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.mapsite-default li {
+  position: relative;
+  padding-left: 16px;
+  margin: 0 0 8px;
+}
+.mapsite-default li::before {
+  content: "";
+  width: 4px;
+  position: absolute;
+  height: 4px;
+  left: 0;
+  top: 10px;
+  background-color: #14143C;
+  border-radius: 100%;
+}
+
+.mapsite-img img {
+  width: 100%;
+}
+
+/*-----mapsite-end-----*/
 /*-----yachts-start-----*/
 .yachts-list-wrapper {
   margin-bottom: 90px;

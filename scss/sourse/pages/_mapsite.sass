@@ -1,0 +1,37 @@
+.mapsite
+  ul,li
+    list-style: none
+    margin: 0
+    padding: 0
+  a
+    text-decoration: none
+    &:hover
+      color: $yellowColor
+.mapsite-large
+  text-transform: uppercase
+  font-weight: 700
+  margin: 0 0 45px
+  li
+    margin: 0 0 15px
+.mapsite-default
+  margin: 0 0 45px
+  &>ul>li
+    padding: 0
+    &::before
+      display: none
+    &>a
+      margin: 0 0 8px
+      text-transform: uppercase
+      font-weight: 700
+  li
+    position: relative
+    padding-left: 16px
+    margin: 0 0 8px
+    &::before
+      content: ""
+      @include positionElement(4px,4px,0,10px)
+      background-color: $blueColor
+      border-radius: 100%
+.mapsite-img
+  img
+    width: 100%
