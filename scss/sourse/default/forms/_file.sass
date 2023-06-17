@@ -46,7 +46,7 @@
 
 	i
 		@include positionElement(30px, 30px, 0, 2px, right, top, 2, absolute, none)
-		@include bgImageEl("../images/controls/close-black.svg")
+		@include bgImageEl("../images/icons/close-black.svg")
 		cursor: pointer
 
 .file-decorate-full i
@@ -60,7 +60,7 @@
 	display: none
 
 	i
-		@include icoEl(30px, 30px, "../images/icons/danger-sign-black.svg")
+		@include icoEl(30px, 30px, "../images/icons/close-black.svg")
 		margin-left: 15px
 .notice-file--show
 	display: block
@@ -118,7 +118,6 @@
 		top: 30px
 		i
 			margin: 0
-			background-image: url(../images/icons/danger-sign-white.svg)
 		span
 			display: block
 	img
@@ -147,12 +146,12 @@
 	border-radius: 100%
 	background-color: $redColor
 	border: 2px solid $whiteColor
-	@include bgImageEl("../images/controls/close-white.svg")
+	@include bgImageEl("../images/icons/close-white.svg")
 	transition: ease-out 0.25s
 	cursor: pointer
 	&:hover
 		background-color: $whiteColor
-		background-image: url("../images/controls/close-red.svg")
+		background-image: url("../images/icons/close-black.svg")
 		border-color: $redColor
 .edit-photo-hint
 	position: absolute

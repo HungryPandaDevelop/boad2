@@ -45,30 +45,16 @@
 .stage-adv-text
   margin: 0 0 90px
 
-// .stage-offset
-//   position: relative
-//   top: -70px
-//   // height: calc( 100% - 85px )
-//   &.stage-up
-//     padding-top: 68%
-//   .stage-adv-num
-//     position: relative
-//     margin-top: 15px
-//     margin-bottom: 15px
-//   .stage-adv-text
-//     margin: 0
+.border-stub
+  @include positionElement(0%, 50%, 0,130px, right)
+  background-color: $blueColor
 
-// .stage-adv-item-bottom
-//   top: 50%
-//   .stage-adv-num
-//     margin-top: -34px
-// .stage-adv-item-top
-//   bottom: 50%
-//   .stage-adv-num
-//     margin-bottom: -36px
-.border-animate
-  @include positionElement(100%, 100%,0,0)
-  // @include bgImageEl("../images/border-temp.svg", contain)
+.border-stub-3
+  width: calc(100% - 70px)
+.border-stub-2
+  width: calc(75% - 70px)
+.border-stub-1
+  width: calc(50% - 70px)
 .border-stage
   position: absolute
   width: 430%
@@ -78,9 +64,11 @@
 @media (max-width: 1140px)
   .border-stage
     width: 450%
-@media (max-width: 768px)
+@media (max-width: 992px)
   .border-stage
     display: none
+@media (max-width: 768px)
+
   .stage-adv-text
     margin: 0 0 30px
 

@@ -41,13 +41,13 @@ const addLike = (thisEl)=>{
   showHideCountLike(idLikeArr);
 }
 
-$('.catalog-yachts').on('click','.yachts-item-liked',function(e){
+$('.catalog-yachts, .yachts-home').on('click','.yachts-item-liked',function(e){
 
   addLike($(this));
 });
 
 $('.liked-btn').not('header .liked-btn').on('click',function(e){
-
+  e.preventDefault();
   addLike($(this));
 });
 

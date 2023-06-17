@@ -72,7 +72,10 @@ const ajaxBlogUpload = (category)=>{
   });
 
 };
-ajaxBlogUpload();
+if(  $('.blog-grid').length > 0){
+  ajaxBlogUpload();
+}
+
 
 
 $('.btn-more-ajax').on('click',function(e){

@@ -202,12 +202,13 @@ owlPartners.owlCarousel({
 });
 
 $('.input-date').each(function(){
+  let thisEl = $(this);
   let dp = new AirDatepicker(this,{
     timepicker: true,
     timeFormat: 'hh:mm AA',
     onSelect({date}) {
-      $(this).addClass('input-empty');
-      // console.log('done', date) 
+      thisEl.addClass('input-empty');
+      console.log('done', date) 
     }
   },
   );

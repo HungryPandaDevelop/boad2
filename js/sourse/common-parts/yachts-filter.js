@@ -4,7 +4,7 @@ let fullUrl = window.location.href.split('?')[0];
 let paramUrl = window.location.href.split('?')[1];
 // console.log('paramUrl 1 point',paramUrl)
 let countUpload = 0;
-let sizeUpload = 30;
+let sizeUpload = 50;
 let allPostSize = 0;
 
 
@@ -45,10 +45,13 @@ const appendYachts = (item, typelist, containerAppend, isFavorites)=>{
 
 };
 
-const ajaxUpload = (paramUrls, plusElements, sortVal, containerAppend, isFavorites)=>{
+const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFavorites)=>{
 
   let paramUrl = window.location.href.split('?')[1];
-  console.log('p', paramUrl)
+  if(isFavorites){
+    paramUrl = insideUrlParam;
+  }
+
   if(plusElements){
     countUpload = 1;
     $(containerAppend).empty();
@@ -82,10 +85,12 @@ const ajaxUpload = (paramUrls, plusElements, sortVal, containerAppend, isFavorit
         });
 
         allPostSize = result[0].sizePosts;
-
+        console.log('allPostSize', allPostSize, countUpload, sizeUpload)
         if (allPostSize <= (sizeUpload * countUpload)){
+          console.log('hide')
           $('.btn-more-ajax').hide();
         }else{
+          console.log('show')
           $('.btn-more-ajax').show();
         }
       }else{
@@ -106,6 +111,12 @@ $('.btn-more-ajax').on('click',function(e){
   ajaxUpload(paramUrl, false, urlParams.get('typelist'), '.catalog-yachts');
 });
 
+$('.reset-filters').on('click',function(e){
+  e.preventDefault();
+
+  window.location.href = fullUrl;
+});
+ 
 yachtsFormSearch.find('input').on('change',function(e){
   e.preventDefault();
 
