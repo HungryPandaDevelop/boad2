@@ -4,6 +4,7 @@ let blogItemTileTemplate = ({
   link,
   text,
   date,
+  lang
 }) => {
   // console.log('l', yachts_harakteristiki)
   return (`
@@ -28,7 +29,7 @@ let blogItemTileTemplate = ({
      </div>
       <div class="btn-container">
         <a class="btn btn--blue-border" href="${link}">
-          Прочитать      
+        ${lang === 'ru' ? 'Прочитать' : 'Read'}      
         </a>
       </div>
     </div>

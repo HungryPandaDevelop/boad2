@@ -1315,7 +1315,7 @@ const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFa
 
 let yachtsFormSearch = $('.search-yachts-form');
 
-$('.btn-more-ajax').on('click',function(e){
+$('.btn-more-ajax-yachts').on('click',function(e){
   e.preventDefault();
 
   ajaxUpload(paramUrl, false, urlParams.get('typelist'), '.catalog-yachts');
@@ -1597,6 +1597,7 @@ let blogItemTileTemplate = ({
   link,
   text,
   date,
+  lang
 }) => {
   // console.log('l', yachts_harakteristiki)
   return (`
@@ -1621,7 +1622,7 @@ let blogItemTileTemplate = ({
      </div>
       <div class="btn-container">
         <a class="btn btn--blue-border" href="${link}">
-          Прочитать      
+        ${lang === 'ru' ? 'Прочитать' : 'Read'}      
         </a>
       </div>
     </div>
@@ -1632,6 +1633,7 @@ let blogItemTileTemplate = ({
 // console.log('blog-tags');
 
 let countBlogUpload = 1;
+let sizeUploadBlog = 12;
 
 $('.blog-tags').on('click','a',function(e){
   e.preventDefault();
@@ -1641,7 +1643,7 @@ $('.blog-tags').on('click','a',function(e){
 
   let thisCat = $(this).data('href');
   $('.blog-grid').empty();
-  countBlogUpload = 0;
+  countBlogUpload = 1;
   ajaxBlogUpload(thisCat);
 }); 
 
@@ -1650,7 +1652,7 @@ $('.blog-tags').on('click','a',function(e){
 const ajaxBlogUpload = (category)=>{
  
  
-  let sizeUpload = 12;
+  
 
   $('.blog-grid').append(spinner);
 
@@ -1675,20 +1677,21 @@ const ajaxBlogUpload = (category)=>{
       // ...formObj,
       'lang': $('.blog-grid').data('lang'),
       'countUpload': countBlogUpload,
-      'sizeUpload': sizeUpload,
+      'sizeUpload': sizeUploadBlog,
       'blogCategory': category
     },
     success: function(result){
-      countBlogUpload++;
+      
       spinner.remove();
       // console.log('retur',result);
       if(result.length > 0){
         result.map((item)=>{
+          // console.log('item',item)
           appendBlog(item);
         });
         allBlogSize = result[0].sizePosts;
         // console.log('allPostSize', allBlogSize)
-        if (allBlogSize <= (sizeUpload * countBlogUpload)){
+        if (allBlogSize <= (sizeUploadBlog * countBlogUpload)){
           $('.btn-more-ajax').hide();
         }else{
           // console.log('show btn')
@@ -1699,6 +1702,8 @@ const ajaxBlogUpload = (category)=>{
         $('.blog-grid').append('<div class="empty-list col-12">Список пуст</div>')
       }
 
+
+      countBlogUpload++;
     }
   });
 
@@ -1709,7 +1714,7 @@ if(  $('.blog-grid').length > 0){
 
 
 
-$('.btn-more-ajax').on('click',function(e){
+$('.btn-more-ajax-blog').on('click',function(e){
   e.preventDefault();
   
   // $('.search-yachts-form').submit()

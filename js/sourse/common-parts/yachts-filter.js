@@ -105,7 +105,7 @@ const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFa
 
 let yachtsFormSearch = $('.search-yachts-form');
 
-$('.btn-more-ajax').on('click',function(e){
+$('.btn-more-ajax-yachts').on('click',function(e){
   e.preventDefault();
 
   ajaxUpload(paramUrl, false, urlParams.get('typelist'), '.catalog-yachts');
