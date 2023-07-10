@@ -41,6 +41,7 @@
     z-index: 2
     transition: ease-out 0.5s
 
+    opacity: 0
   // input[type="range"]:active::-webkit-slider-thumb
     // transform: scale(2)
     // animation: useCircle 1s linear 2s infinite alternate
@@ -53,12 +54,15 @@ input[type="range"]:active + .range-num
     animation: useCircle 1s infinite
 @keyframes useCircle
   0%
-    transform: scale(1)
+    width: 20px
+    height: 20px
   50%
-    transform: scale(1.1)
+    width: 22px
+    height: 22px
+    margin: -1px
   100%
-    transform: scale(1)
-
+    width: 20px
+    height: 20px
 .range-sliders-input
   display: flex
   justify-content: space-between

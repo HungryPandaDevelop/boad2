@@ -19,7 +19,7 @@
     &:hover
       color: $yellowColor
   h3
-    margin: 15px 0 0
+    margin: 15px 0 15px
     max-width: 500px
     a
       display: -webkit-box
@@ -30,8 +30,8 @@
       overflow: hidden
   &:hover
     .routes-item-main-text
-      max-height: 500px
-      margin-top: 15px
+      max-height: 100px
+      // margin-top: 15px
       opacity: 1
 
 .routes-item-main-img
@@ -39,29 +39,27 @@
   display: block
   height: 100%
   overflow: hidden
-  transition: ease-out 0.5s
   .img-cover
     @include positionElement(100%,100%,0,0)
     transform: scale(1)
-    transition: ease-out 0.5s
   img
     @include positionElement(100%,100%,0,0)
-  &:hover
-    .img-cover
-      transform: scale(1.1)
+  // &:hover
+  //   .img-cover
+  //     transform: scale(1.1)
 
 .routes-item-main-info
   padding: 30px
   height: auto
-  transition: ease-out 0.5s
 .routes-item-main-text
   position: relative
-  transition: ease-out 0.5s
+  transition: linear 0.25s
   max-height: 0px
   overflow: hidden
   margin-top: 0
   opacity: 0
-
+  p
+    margin: 0
 @media (max-width: 992px)
   .routes-item-main
     .btn-container

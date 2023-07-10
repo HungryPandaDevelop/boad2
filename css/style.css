@@ -2120,6 +2120,7 @@ input {
   z-index: 2;
   -webkit-transition: ease-out 0.5s;
   transition: ease-out 0.5s;
+  opacity: 0;
 }
 
 input[type=range]:active + .range-num {
@@ -2134,31 +2135,33 @@ input[type=range]:active + .range-num::before {
 
 @-webkit-keyframes useCircle {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    width: 20px;
+    height: 20px;
   }
   50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    width: 22px;
+    height: 22px;
+    margin: -1px;
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    width: 20px;
+    height: 20px;
   }
 }
 
 @keyframes useCircle {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    width: 20px;
+    height: 20px;
   }
   50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    width: 22px;
+    height: 22px;
+    margin: -1px;
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    width: 20px;
+    height: 20px;
   }
 }
 .range-sliders-input {
@@ -5143,7 +5146,7 @@ footer .social-default {
   color: #C19F56;
 }
 .routes-item-main h3 {
-  margin: 15px 0 0;
+  margin: 15px 0 15px;
   max-width: 500px;
 }
 .routes-item-main h3 a {
@@ -5155,8 +5158,7 @@ footer .social-default {
   overflow: hidden;
 }
 .routes-item-main:hover .routes-item-main-text {
-  max-height: 500px;
-  margin-top: 15px;
+  max-height: 100px;
   opacity: 1;
 }
 
@@ -5165,8 +5167,6 @@ footer .social-default {
   display: block;
   height: 100%;
   overflow: hidden;
-  -webkit-transition: ease-out 0.5s;
-  transition: ease-out 0.5s;
 }
 .routes-item-main-img .img-cover {
   width: 100%;
@@ -5176,8 +5176,6 @@ footer .social-default {
   top: 0;
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: ease-out 0.5s;
-  transition: ease-out 0.5s;
 }
 .routes-item-main-img img {
   width: 100%;
@@ -5186,26 +5184,23 @@ footer .social-default {
   left: 0;
   top: 0;
 }
-.routes-item-main-img:hover .img-cover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
 
 .routes-item-main-info {
   padding: 30px;
   height: auto;
-  -webkit-transition: ease-out 0.5s;
-  transition: ease-out 0.5s;
 }
 
 .routes-item-main-text {
   position: relative;
-  -webkit-transition: ease-out 0.5s;
-  transition: ease-out 0.5s;
+  -webkit-transition: linear 0.25s;
+  transition: linear 0.25s;
   max-height: 0px;
   overflow: hidden;
   margin-top: 0;
   opacity: 0;
+}
+.routes-item-main-text p {
+  margin: 0;
 }
 
 @media (max-width: 992px) {
