@@ -2062,7 +2062,7 @@ input {
 /* range-sliders */
 .style-range-container {
   position: relative;
-  height: 20px;
+  height: 22px;
   margin: 20px 0 0;
 }
 .style-range-container .slider-track {
@@ -2196,6 +2196,7 @@ input[type=range]:active + .range-num::before {
 .range-slider-second input[type=range]::-webkit-slider-thumb {
   border: 1px solid #C19F56;
   background-color: #ffffff;
+  opacity: 1;
 }
 
 .preloader-container {
@@ -3537,8 +3538,8 @@ header .call-mobile-container {
 }
 @media (max-width: 992px) {
   header .social,
-  header .language-select,
-  header .border-header {
+header .language-select,
+header .border-header {
     display: none;
   }
   header .hamburger-btn {
@@ -4077,17 +4078,17 @@ footer .social-default {
 }
 @media (max-width: 576px) {
   .owl-mobile,
-  .owl-tablet {
+.owl-tablet {
     width: 100%;
     margin: 0;
     padding-bottom: 45px;
   }
   .owl-mobile .owl-dots,
-  .owl-tablet .owl-dots {
+.owl-tablet .owl-dots {
     bottom: 0;
   }
   .owl-mobile .owl-dots .owl-dot,
-  .owl-tablet .owl-dots .owl-dot {
+.owl-tablet .owl-dots .owl-dot {
     margin: 0 10px;
   }
 }
@@ -4571,7 +4572,7 @@ footer .social-default {
     display: none;
   }
   .owl-home .owl-four,
-  .owl-home .owl-second {
+.owl-home .owl-second {
     padding-bottom: 129px;
     width: 92%;
     margin: 0;
@@ -5105,7 +5106,7 @@ footer .social-default {
 }
 @media (max-width: 576px) {
   .warning-item-container-1 .warning-item,
-  .warning-item {
+.warning-item {
     height: 480px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
@@ -5337,14 +5338,14 @@ footer .social-default {
     padding-left: 30px;
   }
   .advantages-item-extra-1 .advantages-hint,
-  .advantages-item-extra-2 .advantages-hint {
+.advantages-item-extra-2 .advantages-hint {
     left: auto;
     right: -15px;
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
   .advantages-item-extra-1 .advantages-hint::after,
-  .advantages-item-extra-2 .advantages-hint::after {
+.advantages-item-extra-2 .advantages-hint::after {
     left: calc(100% - 28px);
   }
 }
@@ -5531,7 +5532,7 @@ footer .social-default {
     display: block;
   }
   .about-home-img,
-  .about-home-description {
+.about-home-description {
     width: 100%;
   }
   .about-home-img {
@@ -5784,7 +5785,7 @@ footer .social-default {
     height: auto;
   }
   .team-home-img,
-  .team-home-description {
+.team-home-description {
     width: 100%;
   }
   .team-home-img {
@@ -6399,7 +6400,7 @@ footer .social-default {
     width: calc(100% - 90px);
   }
   .pricelist-list h3,
-  .pricelist-price {
+.pricelist-price {
     font-size: 16px;
   }
   .question-popup {
@@ -7783,7 +7784,7 @@ footer .social-default {
 }
 @media (max-width: 768px) {
   .catalog-sorting-container .sort-btn,
-  .catalog-sorting-container .sidebar-btn {
+.catalog-sorting-container .sidebar-btn {
     display: inline-block;
   }
   .catalog-sort-mobile {
@@ -7838,7 +7839,7 @@ footer .social-default {
             justify-content: space-between;
   }
   .catalog-sort-mobile-container .sort-btn,
-  .catalog-sort-mobile-container .sidebar-btn {
+.catalog-sort-mobile-container .sidebar-btn {
     position: absolute;
     bottom: 0;
   }
@@ -8260,12 +8261,12 @@ footer .social-default {
     height: auto;
   }
   .yachts-detail-price,
-  .yachts-detail-controls {
+.yachts-detail-controls {
     width: 50%;
     padding: 15px 0;
   }
   .yachts-detail-price .btn,
-  .yachts-detail-controls .btn {
+.yachts-detail-controls .btn {
     display: none;
   }
   .yachts-detail-controls {
@@ -8394,7 +8395,7 @@ footer .social-default {
     display: block;
   }
   .services-yachts-item-img,
-  .services-yachts-item-info {
+.services-yachts-item-info {
     width: 100%;
     height: auto;
   }
@@ -8719,11 +8720,11 @@ footer .social-default {
     margin-bottom: 15px;
   }
   .blog-img-two,
-  .blog-img-three {
+.blog-img-three {
     display: block;
   }
   .blog-img-two img,
-  .blog-img-three img {
+.blog-img-three img {
     width: 100%;
   }
   .blog-images {
