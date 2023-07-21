@@ -149,14 +149,17 @@ $('.apply-filters').on('click',function(e){
 /* tab active */
 $('.search-tabs').on('click','span',function(){
   if( !$(this).hasClass('active') ){
-    $('.search-tabs span').removeClass('active');
+    $(this).parents('.search-tabs').find('span').removeClass('active');
     $(this).addClass('active');
-    
-    const fromEl = $(this).parents('.sidebar-item-container').find('.range-input-from');
-    const toEl = $(this).parents('.sidebar-item-container').find('.range-input-to');
+    let indexTab = $(this).index()
 
-    fromEl.attr('name', $(this).data('from'));
-    toEl.attr('name', $(this).data('to'));
+    $(this).parents('.sidebar-item-container').find('.tab-item').removeClass('active');
+    $(this).parents('.sidebar-item-container').find('.tab-item').eq(indexTab).addClass('active');
+    // const fromEl = $(this).parents('.sidebar-item-container').find('.range-input-from');
+    // const toEl = $(this).parents('.sidebar-item-container').find('.range-input-to');
+
+    // fromEl.attr('name', $(this).data('from'));
+    // toEl.attr('name', $(this).data('to'));
   
   }
 

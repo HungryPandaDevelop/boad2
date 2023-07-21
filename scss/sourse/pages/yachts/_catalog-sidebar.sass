@@ -46,7 +46,14 @@
   position: relative
   overflow: hidden
   max-height: 0
-
+  .tab-item
+    visibility: hidden
+    position: absolute
+    opacity: 0
+    &.active
+      visibility: visible
+      position: relative
+      opacity: 1
 .search-tabs
   display: flex
   position: relative
@@ -67,6 +74,7 @@
         content: ""
         @include positionElement(100%,2px,0,0,left,bottom)
         background-color: $yellowColor
+
 .sidebar-search-controls
   display: none
 /*.catalog-sidebar*/

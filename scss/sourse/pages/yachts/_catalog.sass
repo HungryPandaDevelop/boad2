@@ -30,6 +30,32 @@
   .yachts-item-info
     padding-left: 0
     padding-right: 0
+.border-yacths
+.stage-yachts
+  .stage-adv-text
+    margin: 0 0 30px
+  .stage-adv-item-1
+    position: relative
+  .stage-adv-item-1,
+  .stage-adv-item-3
+    margin-top: -70px
+    .stage-adv-num
+      margin: 0 0 15px
+  .stage-adv-item
+    margin: 0
+    position: relative
+    z-index: 2
+  .stage-adv-num
+    margin: 0
+  .stage-adv-item-2,
+  .stage-adv-item-4
+    display: flex
+    .stage-adv-item
+      margin-top: auto
+      height: auto
+  .stage-border-yachts
+    @include positionElement(calc(300% + 90px), 1px,0,33px)
+    border-top: 1px dashed $whiteColor
 .yachts-item-middle
   display: flex
   .yachts-item-description
@@ -123,6 +149,14 @@
   .yachts-item-second-info
     padding: 30px 15px
     max-width: 100%
+  .stage-yachts
+    .stage-adv-num
+      display: none
+    .stage-adv-item-1,
+    .stage-adv-item-3
+      margin: 0
+    .stage-border-yachts
+      display: none
 @media (max-width: 586px)
   .yachts-item-second
     .btn-yachts-container
