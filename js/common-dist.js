@@ -226,6 +226,35 @@ if($('.group2').length > 0){
   $(".group2").colorbox({rel:'group2', transition:"fade"});
 }
 
+function toInput (date) {
+  console.log(date)
+  console.log(date.from)
+  console.log(date.to)
+  
+  $(date.input).parents('.range-slider-box').find('.from').val(date.from)
+  $(date.input).parents('.range-slider-box').find('.to').val(date.to)
+}
+
+$(".range-slider").each(function(){
+  let type = $(this).data('type');
+  let min = $(this).data('min');
+  let max = $(this).data('max');
+  let from = $(this).data('from');
+  let to = $(this).data('to');
+
+  $(this).ionRangeSlider({
+    type: type,
+    min: min,
+    max: max,
+    from: from,
+    to: to,
+    skin: "round",
+    drag_interval: false,
+    grid_snap: true,
+    grid_num: 10,
+    onChange: toInput
+  });
+})
 		// check email
 		var r = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
 		var mailInput;
@@ -617,7 +646,7 @@ $('.range').on('change input', function (e) {
 
 });
 
-let minGap = 1;
+let minGap = 0;
 
 
 
@@ -672,6 +701,8 @@ $('.range-sliders-container').each(function(){
   setRangeNum('.range-sliders-container', '.range-num-2', $(this).find('.slider-2'), 'right');
 
 });
+
+// air-date
 
 var st = 0;
 window.addEventListener('scroll', function (e) {
@@ -952,11 +983,13 @@ let yachtsItemTileTemplate = ({
       <div class="yachts-item-info"> 
         <h3><a href="${link}">${title}</a></h3>
         <ul class="ln yachts-item-description">
-       
-          <li>
+          ${(naznachenie) && (
+            `<li>
             <b>${lang === 'ru' ? 'Назначение' : 'Purpose'}:</b>
             <div>${naznachenie}</div>
-          </li>
+          </li>`
+          )}
+          
           <li>
             <b>${lang === 'ru' ? 'Вервь' : 'Rope'}:</b>
             <div>${yachts_harakteristiki.yachts_char_element_1}</div>
@@ -1473,7 +1506,7 @@ idLikeArr.map(item=>{
 
 $('.yachts-item-liked').each(function(){
   let thisId = $(this).data('id');
-  console.log(thisId)
+  // console.log(thisId)
   idLikeArr.map(item=>{
     // console.log($('.yachts-detail-controls .liked-btn').data('id'), item)
     if( item ===  thisId){

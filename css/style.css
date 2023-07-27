@@ -150,7 +150,7 @@ h6 {
 }
 
 h1 {
-  font-size: 68px;
+  font-size: 52px;
   line-height: 1.2;
   text-transform: uppercase;
 }
@@ -2279,6 +2279,98 @@ input[type=range]:active + .range-num::before {
 
 .iti__country-list {
   color: #14143C;
+}
+
+/*.irs--round .irs-line*/
+.hidden-input-irs {
+  display: none;
+}
+
+.range-slider-box {
+  margin-top: 11px;
+}
+
+.irs--round .irs-line {
+  background-color: #E2E2E2;
+  top: 20px;
+  height: 1px;
+}
+
+.irs--round .irs-bar {
+  top: 20px;
+  height: 1px;
+}
+
+.irs--round .irs-handle {
+  top: 9px;
+}
+
+.irs-from, .irs-to, .irs-single {
+  top: 36px;
+}
+
+.irs--round .irs-min, .irs--round .irs-max {
+  top: 36px;
+}
+
+.irs--round .irs-bar,
+.irs--round .irs-single {
+  background-color: #ffffff;
+}
+
+.irs--round .irs-from,
+.irs--round .irs-to {
+  background: none;
+  color: #ffffff;
+  font-weight: 700;
+}
+.irs--round .irs-from::before,
+.irs--round .irs-to::before {
+  display: none;
+}
+
+.irs--round .irs-handle {
+  border-color: #ffffff;
+  width: 22px;
+  height: 22px;
+  background-color: #14143C;
+  cursor: pointer;
+  border: 1px solid;
+}
+
+.irs--round .irs-min, .irs--round .irs-max {
+  display: none;
+}
+
+.irs--round {
+  height: auto;
+}
+
+.range-slider-second {
+  height: 90px;
+}
+.range-slider-second .range-sliders-input {
+  margin-bottom: 10px;
+}
+.range-slider-second .irs--round .irs-line {
+  background-color: #98A1A7;
+  height: 4px;
+}
+.range-slider-second .irs--round .irs-bar {
+  background-color: #C19F56;
+  height: 4px;
+}
+.range-slider-second .irs-handle {
+  background-color: #ffffff;
+  border-color: #C19F56;
+  top: 11px;
+}
+.range-slider-second .irs-handle i {
+  display: none;
+}
+.range-slider-second .irs--round .irs-handle.state_hover,
+.range-slider-second .irs--round .irs-handle:hover {
+  background-color: #ffffff;
 }
 
 /*.wpcf7-form*/

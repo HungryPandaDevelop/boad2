@@ -5,7 +5,7 @@ $('.range').on('change input', function (e) {
 
 });
 
-let minGap = 1;
+let minGap = 0;
 
 
 
@@ -60,3 +60,5 @@ $('.range-sliders-container').each(function(){
   setRangeNum('.range-sliders-container', '.range-num-2', $(this).find('.slider-2'), 'right');
 
 });
+
+// air-date

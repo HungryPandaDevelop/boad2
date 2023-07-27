@@ -74,7 +74,7 @@ idLikeArr.map(item=>{
 
 $('.yachts-item-liked').each(function(){
   let thisId = $(this).data('id');
-  console.log(thisId)
+  // console.log(thisId)
   idLikeArr.map(item=>{
     // console.log($('.yachts-detail-controls .liked-btn').data('id'), item)
     if( item ===  thisId){

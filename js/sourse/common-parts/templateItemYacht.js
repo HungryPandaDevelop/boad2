@@ -44,11 +44,13 @@ let yachtsItemTileTemplate = ({
       <div class="yachts-item-info"> 
         <h3><a href="${link}">${title}</a></h3>
         <ul class="ln yachts-item-description">
-       
-          <li>
+          ${(naznachenie) && (
+            `<li>
             <b>${lang === 'ru' ? 'Назначение' : 'Purpose'}:</b>
             <div>${naznachenie}</div>
-          </li>
+          </li>`
+          )}
+          
           <li>
             <b>${lang === 'ru' ? 'Вервь' : 'Rope'}:</b>
             <div>${yachts_harakteristiki.yachts_char_element_1}</div>

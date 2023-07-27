@@ -219,3 +219,33 @@ $('.input-date').each(function(){
 if($('.group2').length > 0){
   $(".group2").colorbox({rel:'group2', transition:"fade"});
 }
+
+function toInput (date) {
+  console.log(date)
+  console.log(date.from)
+  console.log(date.to)
+  
+  $(date.input).parents('.range-slider-box').find('.from').val(date.from)
+  $(date.input).parents('.range-slider-box').find('.to').val(date.to)
+}
+
+$(".range-slider").each(function(){
+  let type = $(this).data('type');
+  let min = $(this).data('min');
+  let max = $(this).data('max');
+  let from = $(this).data('from');
+  let to = $(this).data('to');
+
+  $(this).ionRangeSlider({
+    type: type,
+    min: min,
+    max: max,
+    from: from,
+    to: to,
+    skin: "round",
+    drag_interval: false,
+    grid_snap: true,
+    grid_num: 10,
+    onChange: toInput
+  });
+})
