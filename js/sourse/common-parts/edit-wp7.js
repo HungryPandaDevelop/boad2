@@ -14,11 +14,13 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
   
 }, false ); 
 
-// document.addEventListener( 'wpcf7invalid', function( event ) {
+console.log('mail sent err');
+
+document.addEventListener( 'wpcf7invalid', function( event ) {
+  console.log('mail sent err');
+  // Stuff
+  setTimeout(function(){
+    $('.wpcf7-form').addClass('init');
+  },1500);
   
-//   // Stuff
-//   setTimeout(function(){
-//     $('.wpcf7-form').addClass('init');
-//   },1500);
-  
-// }, false ); 
+}, false ); 

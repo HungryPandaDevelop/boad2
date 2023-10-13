@@ -1,4 +1,5 @@
- 
+
+
 
 
 
@@ -254,7 +255,28 @@ $(".range-slider").each(function(){
     grid_num: 10,
     onChange: toInput
   });
-})
+});
+$(".range-slider-price").each(function(){
+  let type = $(this).data('type');
+  let min = $(this).data('min');
+  let max = $(this).data('max');
+  let from = $(this).data('from');
+  let to = $(this).data('to');
+
+  $(this).ionRangeSlider({
+    type: type,
+    min: min,
+    max: max,
+    from: from,
+    to: to,
+    skin: "round",
+    drag_interval: false,
+    grid_snap: true,
+    grid_num: 10,
+    onChange: toInput,
+    step: 100
+  });
+});
 		// check email
 		var r = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
 		var mailInput;
@@ -344,14 +366,16 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
   
 }, false ); 
 
-// document.addEventListener( 'wpcf7invalid', function( event ) {
+console.log('mail sent err');
+
+document.addEventListener( 'wpcf7invalid', function( event ) {
+  console.log('mail sent err');
+  // Stuff
+  setTimeout(function(){
+    $('.wpcf7-form').addClass('init');
+  },1500);
   
-//   // Stuff
-//   setTimeout(function(){
-//     $('.wpcf7-form').addClass('init');
-//   },1500);
-  
-// }, false ); 
+}, false ); 
 // img cover start
 $('.img-cover').each(function(){
   let imgSrc = $(this).find('img').attr('src');
@@ -571,13 +595,13 @@ function phone_mask(){
 	$.mask.definitions['d']='[0-9]';
   
 	// $('.phone').mask('+7 ddd ddd-dd-dd');
-	$('.phone').mask('+971 ddd ddd-dddd');
+	$('.phone').mask('+971 ddd ddd-ddd'); 
 	$('.phone').intlTelInput({
 		autoHideDialCode:false,
 		autoPlaceholder:'aggressive',
 		placeholderNumberType:'MOBILE',
 		preferredCountries:['ae','ru'],
-		separateDialCode:true,
+		separateDialCode:true, 
 		utilsScript:'/wp-content/themes/pandadev/frontend/js/sourse/other-js/phone/utils.js',
 		// utilsScript:'../js/sourse/other-js/phone/utils.js',
 		customPlaceholder:function(selectedCountryPlaceholder,selectedCountryData){
@@ -639,70 +663,6 @@ phone_mask();
 
 
 
-
-$('.range').on('change input', function (e) {
-  console.log('change',e)
-  setRangeNum('.range-slider-container', '.range-num', $(this));
-
-});
-
-let minGap = 0;
-
-
-
-function setRangeNum(wrap, num, thisEl, pos){
-  let rangeMin = thisEl.attr('max') - thisEl.attr('min');
-  
-  let offsetLeftRange = (100/(rangeMin))*(thisEl.val() - thisEl.attr('min'));
-  
-  let rangeNum = thisEl.parents(wrap).find(num);
-
-  //console.log(thisEl.val(), rangeNum.attr('data-name')); //rangeNum
-
-  rangeNum.html(thisEl.val());
-
-  // rangeNum.addClass('test');
-
-  rangeNum.css({left: offsetLeftRange+'%',transform: 'translateX(-'+offsetLeftRange+'%)'});
-  if(pos === 'left'){
-    thisEl.parents(wrap).find('.slider-track-color').css({left: offsetLeftRange+'%'});
-    thisEl.parents(wrap).prev().find('.range-input-from').val(thisEl.val());
-
-  }else if(pos === 'right') {
-    thisEl.parents(wrap).find('.slider-track-color').css({right: (100 - offsetLeftRange)+'%'});
-    thisEl.parents(wrap).prev().find('.range-input-to').val(thisEl.val());
-  }
-}
-
-
-
-$('.range-sliders-container').each(function(){
-
-  let sliderOne = $(this).find('.slider-1');
-  let sliderTwo = $(this).find('.slider-2');
-
-  sliderOne.on('change input', function () {
-    if(parseInt(sliderTwo.val()) - parseInt(sliderOne.val()) <= minGap){
-      sliderOne.val(parseInt(sliderTwo.val()) - minGap);
-    }
-    setRangeNum('.range-sliders-container', '.range-num-1', $(this), 'left');
-  });
-
-
-  sliderTwo.on('change input', function () {
-    if(parseInt(sliderTwo.val()) - parseInt(sliderOne.val()) <= minGap){
-      sliderTwo.val(parseInt(sliderOne.val()) + minGap);
-    }
-  
-    setRangeNum('.range-sliders-container', '.range-num-2', $(this), 'right');
-  });
-
-  setRangeNum('.range-sliders-container', '.range-num-1', $(this).find('.slider-1'), 'left');
-  setRangeNum('.range-sliders-container', '.range-num-2', $(this).find('.slider-2'), 'right');
-
-});
-
-// air-date
 
 var st = 0;
 window.addEventListener('scroll', function (e) {
@@ -1008,7 +968,7 @@ let yachtsItemTileTemplate = ({
               `
               :
               `
-              ${yachts_harakteristiki.yachts_char_element_3}  / ft. 
+              ${yachts_harakteristiki.yachts_char_element_3} ft. 
               <br> (${yachts_harakteristiki.yachts_char_element_32} m.)
               `
               }

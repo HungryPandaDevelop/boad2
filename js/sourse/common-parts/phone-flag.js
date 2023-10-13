@@ -4,13 +4,13 @@ function phone_mask(){
 	$.mask.definitions['d']='[0-9]';
   
 	// $('.phone').mask('+7 ddd ddd-dd-dd');
-	$('.phone').mask('+971 ddd ddd-dddd');
+	$('.phone').mask('+971 ddd ddd-ddd'); 
 	$('.phone').intlTelInput({
 		autoHideDialCode:false,
 		autoPlaceholder:'aggressive',
 		placeholderNumberType:'MOBILE',
 		preferredCountries:['ae','ru'],
-		separateDialCode:true,
+		separateDialCode:true, 
 		utilsScript:'/wp-content/themes/pandadev/frontend/js/sourse/other-js/phone/utils.js',
 		// utilsScript:'../js/sourse/other-js/phone/utils.js',
 		customPlaceholder:function(selectedCountryPlaceholder,selectedCountryData){

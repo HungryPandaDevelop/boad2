@@ -4200,7 +4200,7 @@ footer .social-default {
   color: #ffffff;
 }
 .popup a:hover {
-  color: #202020;
+  color: #C19F56;
 }
 .popup h2, .popup h3 {
   color: inherit;
@@ -4342,7 +4342,7 @@ footer .social-default {
 }
 .menu-hamburger .language-select i {
   right: 12px;
-  top: 12px;
+  top: 3px;
 }
 
 .popup-nav a {
@@ -4833,6 +4833,12 @@ footer .social-default {
 }
 .selection-home h2, .selection-home h3 {
   color: inherit;
+}
+.selection-home .irs-single {
+  color: #14143C;
+}
+.selection-home .irs-single:before {
+  display: none;
 }
 
 .selection-item {
@@ -8482,6 +8488,10 @@ footer .social-default {
   margin: 0;
   font-size: 24px;
 }
+.characteristic-item-info span {
+  font-size: #98A1A7;
+  font-size: 12px;
+}
 
 .characteristic-item-container {
   margin: auto 0;
@@ -9325,12 +9335,6 @@ footer .social-default {
 }
 
 .routes-item-adv {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   margin-top: 15px;
   margin-bottom: 30px;
 }
@@ -9339,6 +9343,8 @@ footer .social-default {
   text-align: center;
   font-size: 14px;
   padding: 0 15px;
+  display: inline-block;
+  width: 24%;
 }
 .routes-adv-icons img {
   width: 36px;

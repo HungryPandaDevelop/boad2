@@ -248,4 +248,25 @@ $(".range-slider").each(function(){
     grid_num: 10,
     onChange: toInput
   });
-})
+});
+$(".range-slider-price").each(function(){
+  let type = $(this).data('type');
+  let min = $(this).data('min');
+  let max = $(this).data('max');
+  let from = $(this).data('from');
+  let to = $(this).data('to');
+
+  $(this).ionRangeSlider({
+    type: type,
+    min: min,
+    max: max,
+    from: from,
+    to: to,
+    skin: "round",
+    drag_interval: false,
+    grid_snap: true,
+    grid_num: 10,
+    onChange: toInput,
+    step: 100
+  });
+});
