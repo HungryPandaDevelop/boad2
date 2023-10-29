@@ -64,13 +64,13 @@ let yachtsItemTileTemplate = ({
 
             ${lang === 'ru' ? 
               `
-              ${yachts_harakteristiki.yachts_char_element_32} м.
-              <br> (${yachts_harakteristiki.yachts_char_element_3}ft.)
+              ${yachts_harakteristiki.yachts_char_element_32} м
+              <br> (${yachts_harakteristiki.yachts_char_element_3}ft)
               `
               :
               `
-              ${yachts_harakteristiki.yachts_char_element_3} ft. 
-              <br> (${yachts_harakteristiki.yachts_char_element_32} m.)
+              ${yachts_harakteristiki.yachts_char_element_3} ft 
+              <br> (${yachts_harakteristiki.yachts_char_element_32} m)
               `
               }
               
