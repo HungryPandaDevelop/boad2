@@ -4324,9 +4324,6 @@ footer .social-default {
   text-align: left;
   margin: 0 0 12px;
 }
-.menu-hamburger li {
-  margin: 0 0 8px;
-}
 .menu-hamburger .social {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -4361,6 +4358,20 @@ footer .social-default {
 .menu-tablet,
 .menu-mobile {
   display: none;
+}
+
+.popup-nav-tablet {
+  margin-bottom: 30px;
+}
+.popup-nav-tablet ul, .popup-nav-tablet li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.popup-nav-tablet > ul > li > a {
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 @media (max-width: 992px) {
@@ -4398,6 +4409,10 @@ footer .social-default {
     width: 100%;
     padding: 60px 15px 30px;
     max-width: none;
+    position: relative;
+    overflow-y: auto;
+  }
+  .menu-hamburger .menu-mobile-body {
     position: relative;
     overflow: hidden;
   }
@@ -4453,7 +4468,7 @@ footer .social-default {
   }
   .popup-nav li ul {
     position: absolute;
-    top: 60px;
+    top: 15px;
     left: 100%;
     background: #fff;
     width: 100%;
@@ -4826,6 +4841,112 @@ footer .social-default {
     height: calc(100vh - 56px);
   }
 }
+.sale {
+  margin: 4px 0;
+}
+.sale .main-full {
+  padding: 0;
+}
+.sale .owl-nav {
+  width: calc(100% - 30px);
+  margin-left: 15px;
+  height: 1px;
+  margin-top: -15px;
+}
+
+.sale-item {
+  position: relative;
+  background-color: #14143C;
+  color: #ffffff;
+  padding: 30px 75px;
+  height: 440px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.sale-item h3 {
+  color: inherit;
+  padding-bottom: 15px;
+  font-size: 50px;
+}
+.sale-item ul, .sale-item li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sale-item li {
+  margin-bottom: 4px;
+}
+.sale-item ul {
+  margin-bottom: 15px;
+}
+.sale-item .img-cover {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0.6;
+}
+.sale-item .btn {
+  width: 200px;
+}
+.sale-item .btn-container {
+  margin-top: 30px;
+}
+.sale-item .main-full {
+  margin: auto;
+  width: 100%;
+}
+
+.sale-text {
+  margin-bottom: 15px;
+}
+
+.sale-tags {
+  display: inline-block;
+  color: #ffffff;
+  background-color: #14143C;
+  padding: 3px 30px;
+  border-radius: 30px;
+  margin: 0 0 8px;
+}
+
+.sale-price {
+  font-size: 21px;
+}
+
+.sale-description {
+  position: relative;
+}
+
+.sale .owl-dots {
+  bottom: 15px;
+}
+.sale .owl-dot.active,
+.sale .owl-dot:hover {
+  border-color: #14143C;
+}
+.sale .owl-dots .owl-dot::after {
+  background-color: #14143C;
+}
+
+@media (max-width: 998px) {
+  .sale-item {
+    height: 600px;
+  }
+  .sale-item h3 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 576px) {
+  .sale-item {
+    padding: 30px 15px 45px;
+  }
+  .sale-item h3 {
+    font-size: 24px;
+  }
+}
 .selection-home {
   padding: 30px 0 35px;
   background-color: #14143C;
@@ -4844,8 +4965,10 @@ footer .social-default {
 .selection-item {
   margin: 0 0 43px;
 }
-.selection-item h3 {
+.selection-item span, .selection-item h3 {
+  color: #ffffff;
   font-size: 14px;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -4873,10 +4996,6 @@ footer .social-default {
   width: 15px;
   height: 15px;
   top: 12px;
-}
-.boad-select span {
-  color: #ffffff;
-  font-size: 14px;
 }
 .boad-select ul {
   background-color: #14143C;
@@ -4911,7 +5030,10 @@ footer .social-default {
     max-width: 390px;
   }
   .selection-item {
-    margin: 0 0 29px;
+    margin: 0 0 70px;
+  }
+  .selection-item-first {
+    margin-bottom: 30px;
   }
 }
 .yachts-home .yachts-item-description {
@@ -6273,7 +6395,7 @@ footer .social-default {
   border-bottom: 1px solid;
   padding-bottom: 15px;
   margin-bottom: 0px;
-  padding-top: 60px;
+  padding-top: 20px;
   font-size: 18px;
   position: relative;
 }
@@ -7114,6 +7236,12 @@ footer .social-default {
   margin: 30px 0;
 }
 
+@media (max-width: 1280px) {
+  .page-404-img {
+    height: 360px;
+    width: 100%;
+  }
+}
 @media (max-width: 768px) {
   .img-404-container {
     margin: 0 auto 30px;
@@ -7924,6 +8052,14 @@ footer .social-default {
 }
 
 /*catalog-filter*/
+@media (max-width: 1280px) {
+  .catalog-filter {
+    margin-right: auto;
+  }
+  .catalog-sort {
+    margin: 0 auto;
+  }
+}
 @media (max-width: 992px) {
   .catalog-sort {
     width: 230px;
@@ -8923,6 +9059,7 @@ footer .social-default {
 .services-item h3 {
   color: #ffffff;
   margin-bottom: 8px;
+  font-size: 24px;
 }
 .services-item .services-item-price {
   display: inline-block;
@@ -8946,6 +9083,10 @@ footer .social-default {
 .services-item .btn-container {
   text-align: right;
   max-width: 80%;
+}
+
+.serv-extra-text {
+  margin: -15px 0 15px;
 }
 
 .services-item-stub {

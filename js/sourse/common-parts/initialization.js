@@ -15,6 +15,25 @@ owlAbout.owlCarousel({
   dots: false,
   // autoHeight:true
 });
+let owlSale = $('.sale-carousel');
+
+owlSale.owlCarousel({
+  items: 1,
+  loop: true,
+  dots: false,
+  // autoHeight:true
+  responsive:{
+    0:{
+      dots: true,
+      nav: false,
+    },
+    991:{
+      dots: false,
+      nav: true,
+      
+    }
+  }
+});
 
 let owlTeam = $('.owl-team');
 

@@ -1,0 +1,75 @@
+.sale
+  margin: 4px 0
+  .main-full
+    padding: 0
+  .owl-nav
+    width: calc( 100% - 30px )
+    margin-left: 15px
+    height: 1px
+    margin-top: -15px
+.sale-item
+  position: relative
+  background-color: $blueColor
+  color: $whiteColor
+  padding: 30px 75px
+  height: 440px
+  display: flex
+  h3
+    color: inherit
+    padding-bottom: 15px
+    font-size: 50px
+  ul,li
+    list-style: none
+    padding: 0
+    margin: 0
+  li
+    margin-bottom: 4px
+  ul
+    margin-bottom: 15px
+  .img-cover
+    @include positionElement(100%,100%,0,0)
+    opacity: 0.6
+  .btn
+    width: 200px
+  .btn-container
+    margin-top: 30px
+  .main-full
+    margin: auto
+    width: 100%
+.sale-text
+  margin-bottom: 15px
+.sale-tags
+  display: inline-block
+  color: $whiteColor
+  background-color: $blueColor
+  padding: 3px 30px
+  border-radius: 30px
+  margin: 0 0 8px
+  // color: $yellowColor
+  // font-weight: 700
+.sale-price
+  font-size: 21px
+.sale-description
+  position: relative
+.sale
+  .owl-dots
+    bottom: 15px
+  .owl-dot.active,
+  .owl-dot:hover
+    border-color: $blueColor
+  .owl-dots .owl-dot::after
+    background-color: $blueColor
+@media (max-width: 998px)
+  .sale-item
+    height: 600px
+    h3
+      font-size: 40px
+@media (max-width: 576px)
+
+  .sale-item
+    padding: 30px 15px 45px
+    // height: 600px
+    h3
+      font-size: 24px
+    .btn
+      // width: 100%

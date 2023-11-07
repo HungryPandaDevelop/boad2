@@ -32,7 +32,7 @@
 		text-align: left
 		margin: 0 0 12px
 	li
-		margin: 0 0 8px
+		// margin: 0 0 8px
 	.social
 		margin-top: 30px
 		margin-bottom: 30px
@@ -61,6 +61,16 @@
 .menu-tablet,
 .menu-mobile
 	display: none
+.popup-nav-tablet
+	margin-bottom: 30px
+	ul, li
+		list-style: none
+		padding: 0
+		margin: 0
+	&>ul>li>a
+		font-weight: 700
+		font-size: 20px
+		text-transform: uppercase
 @media (max-width: 992px)
 	.menu-hamburger
 		display: block
@@ -91,6 +101,9 @@
 			width: 100%
 			padding: 60px 15px 30px
 			max-width: none
+			position: relative
+			overflow-y: auto
+		.menu-mobile-body
 			position: relative
 			overflow: hidden
 		.close-btn
@@ -133,7 +146,7 @@
 			ul
 				// display: none
 				position: absolute
-				top: 60px
+				top: 15px
 				left: 100%
 				background: #fff
 				width: 100%

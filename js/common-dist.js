@@ -22,6 +22,25 @@ owlAbout.owlCarousel({
   dots: false,
   // autoHeight:true
 });
+let owlSale = $('.sale-carousel');
+
+owlSale.owlCarousel({
+  items: 1,
+  loop: true,
+  dots: false,
+  // autoHeight:true
+  responsive:{
+    0:{
+      dots: true,
+      nav: false,
+    },
+    991:{
+      dots: false,
+      nav: true,
+      
+    }
+  }
+});
 
 let owlTeam = $('.owl-team');
 
@@ -1265,7 +1284,9 @@ const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFa
   };
 
   $(containerAppend).append(spinner);
-
+  let pageLang = $('.lang-yachts').data('lang');
+  let emptyText = pageLang==='en' ? 'Empty List' : 'Список пуст'
+  // console.log('pageLang', pageLang)
   const typelist =  $('.catalog-view').find('a.active').data('type');
   // console.log('paramUrl', paramUrl)
   $.ajax({
@@ -1299,7 +1320,7 @@ const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFa
         }
       }else{
         $('.btn-more-ajax').hide();
-        $(containerAppend).append('<div class="empty-list col-12">Список пуст</div>')
+        $(containerAppend).append('<div class="empty-list col-12">'+emptyText+'</div>')
       }
 
     }
