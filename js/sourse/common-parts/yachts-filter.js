@@ -68,7 +68,7 @@ const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFa
   // console.log('paramUrl', paramUrl)
   $.ajax({
     type: "GET",
-    url: "http://boad.panda-dev.ru/wp-json/search/yachts?"+paramUrl,
+    url: "/wp-json/search/yachts?"+paramUrl,
     data: {
       // ...formObj,
       'countUpload': countUpload,

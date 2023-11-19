@@ -1129,7 +1129,7 @@ const ajaxSeatch = (searchVal)=>{
 
   $.ajax({
     type: "GET",
-    url: "http://boad.panda-dev.ru/wp-json/search/all",
+    url: "/wp-json/search/all",
     data: {'search': searchVal},
     success: function(result){
       console.log('run', result);
@@ -1291,7 +1291,7 @@ const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFa
   // console.log('paramUrl', paramUrl)
   $.ajax({
     type: "GET",
-    url: "http://boad.panda-dev.ru/wp-json/search/yachts?"+paramUrl,
+    url: "/wp-json/search/yachts?"+paramUrl,
     data: {
       // ...formObj,
       'countUpload': countUpload,
@@ -1573,7 +1573,7 @@ const appendYachtsPopup = (item)=>{
 const ajaxUploadYachtsLite =()=>{
   $.ajax({
     type: "GET",
-    url: "http://boad.panda-dev.ru/wp-json/search/yachts?lang=ru&sizeUpload=-1",
+    url: "/wp-json/search/yachts?lang=ru&sizeUpload=-1",
     success: function(result){
       console.log('result', result);
       $('.yachts-select-popup').empty();
@@ -1690,7 +1690,7 @@ const ajaxBlogUpload = (category)=>{
   let allBlogSize;
   $.ajax({
     type: "GET",
-    url: "http://boad.panda-dev.ru/wp-json/search/blog",
+    url: "/wp-json/search/blog",
     data: {
       // ...formObj,
       'lang': $('.blog-grid').data('lang'),

@@ -53,7 +53,7 @@ const appendYachtsPopup = (item)=>{
 const ajaxUploadYachtsLite =()=>{
   $.ajax({
     type: "GET",
-    url: "http://boad.panda-dev.ru/wp-json/search/yachts?lang=ru&sizeUpload=-1",
+    url: "/wp-json/search/yachts?lang=ru&sizeUpload=-1",
     success: function(result){
       console.log('result', result);
       $('.yachts-select-popup').empty();

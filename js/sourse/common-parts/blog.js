@@ -40,7 +40,7 @@ const ajaxBlogUpload = (category)=>{
   let allBlogSize;
   $.ajax({
     type: "GET",
-    url: "http://boad.panda-dev.ru/wp-json/search/blog",
+    url: "/wp-json/search/blog",
     data: {
       // ...formObj,
       'lang': $('.blog-grid').data('lang'),

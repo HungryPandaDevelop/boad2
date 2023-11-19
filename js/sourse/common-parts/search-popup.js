@@ -3,7 +3,7 @@ const ajaxSeatch = (searchVal)=>{
 
   $.ajax({
     type: "GET",
-    url: "http://boad.panda-dev.ru/wp-json/search/all",
+    url: "/wp-json/search/all",
     data: {'search': searchVal},
     success: function(result){
       console.log('run', result);

@@ -1449,6 +1449,12 @@ input {
   color: #202020;
 }
 
+@media (max-width: 576px) {
+  .agreement-box {
+    text-align: left;
+    margin-top: 30px;
+  }
+}
 /*-custom-select-*/
 .custom-select {
   cursor: pointer;
@@ -3531,8 +3537,8 @@ header .call-mobile-container {
   height: 20px;
   right: -3px;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transform: translateY(-20%);
+          transform: translateY(-20%);
 }
 .nav-header a:hover {
   color: #C19F56;
@@ -4750,6 +4756,7 @@ footer .social-default {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  text-decoration: none;
 }
 .home-banner i {
   width: 100%;
@@ -4886,7 +4893,7 @@ footer .social-default {
   height: 100%;
   left: 0;
   top: 0;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 .sale-item .btn {
   width: 200px;
@@ -6290,6 +6297,10 @@ footer .social-default {
   .detail-owl-item {
     height: 190px;
   }
+  .routes-section {
+    padding-bottom: 0px;
+    margin-bottom: 30px;
+  }
 }
 .stub-rew-page {
   height: 90px;
@@ -6336,6 +6347,10 @@ footer .social-default {
   margin-right: 15px;
   vertical-align: top;
   vertical-align: middle;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url("../images/logo.svg");
 }
 
 .reviews-video-box {
