@@ -4315,7 +4315,7 @@ footer .social-default {
       -ms-flex-direction: column;
           flex-direction: column;
   border-radius: 0px;
-  padding: 45px 30px 60px;
+  padding: 40px 30px 60px;
   overflow-y: auto;
 }
 .menu-hamburger .close-btn {
@@ -4391,7 +4391,7 @@ footer .social-default {
 @media (max-width: 768px) {
   .menu-hamburger .search-main {
     display: block;
-    margin-top: 45px;
+    margin-top: 15px;
   }
 }
 @media (max-width: 576px) {
@@ -4495,17 +4495,20 @@ footer .social-default {
     margin-bottom: 0px;
   }
   .menu-footer {
-    margin-top: 30px;
+    margin-top: 15px;
     text-align: center;
   }
   .menu-footer .btn--yellow {
     color: #ffffff;
   }
   .menu-footer-item {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
   footer ul.sub-menu {
     top: 0;
+  }
+  .social-default {
+    margin-top: -10px;
   }
 }
 .popup-lang .language-select {

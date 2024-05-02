@@ -22,15 +22,15 @@ owlSale.owlCarousel({
   loop: true,
   dots: false,
   // autoHeight:true
-  responsive:{
-    0:{
+  responsive: {
+    0: {
       dots: true,
       nav: false,
     },
-    991:{
+    991: {
       dots: false,
       nav: true,
-      
+
     }
   }
 });
@@ -41,13 +41,13 @@ owlTeam.owlCarousel({
   items: 1,
   nav: true,
   dots: true,
-  responsive:{
-    0:{
+  responsive: {
+    0: {
       dots: false,
     },
-    991:{
+    991: {
       dots: true,
-      
+
     }
   }
 });
@@ -60,27 +60,27 @@ owlDetail.owlCarousel({
   dots: false,
   loop: true,
   margin: 10,
-  responsive:{
-    0:{
+  responsive: {
+    0: {
       items: 2,
       margin: 8,
       nav: true,
       stagePadding: 30,
       loop: true
     },
-    577:{
+    577: {
       items: 3,
       margin: 15,
       nav: true,
       stagePadding: 50,
       loop: true
     },
-    991:{
+    991: {
       items: 5,
       margin: 15,
       stagePadding: 155,
       nav: true,
-      
+
     }
   }
 });
@@ -96,22 +96,22 @@ owlYachtsItemImg.owlCarousel({
 let owlSecond = $('.owl-second');
 
 owlSecond.owlCarousel({
-  
+
   margin: 30,
-  responsive:{
-    0:{
-      items:1,
+  responsive: {
+    0: {
+      items: 1,
       margin: 15,
       nav: true,
       dots: false,
     },
-    577:{
+    577: {
       items: 2,
       margin: 15,
       nav: true,
       dots: true,
     },
-    991:{
+    991: {
       items: 3,
       margin: 15,
       nav: true,
@@ -125,24 +125,24 @@ owlThree.owlCarousel({
   nav: true,
   dots: true,
   margin: 30,
-  responsive:{
-    0:{
-      items:1,
+  responsive: {
+    0: {
+      items: 1,
       margin: 15
     },
-    576:{
+    576: {
       items: 2,
       margin: 15
     },
-    786:{
+    786: {
       items: 3,
       margin: 15
     },
-    992:{
+    992: {
       items: 4,
       margin: 15
     },
-    1920:{
+    1920: {
       items: 4,
       margin: 15
     }
@@ -154,13 +154,13 @@ owlFour.owlCarousel({
   nav: true,
   dots: true,
   margin: 30,
-  responsive:{
-    0:{
+  responsive: {
+    0: {
       items: 1,
       margin: 15,
       dots: false,
     },
-    786:{
+    786: {
       items: 2,
       margin: 15
     }
@@ -188,13 +188,13 @@ owlDefault.owlCarousel({
 
 
 
-if($(window).width() < 576){
+if ($(window).width() < 576) {
   let owlMobile = $('.owl-mobile');
 
   owlMobile.owlCarousel({
     dots: false,
     nav: true,
-    items:1,
+    items: 1,
     margin: 15
   });
 }
@@ -202,32 +202,32 @@ if($(window).width() < 576){
 let owlPartners = $('.owl-partners');
 
 owlPartners.owlCarousel({
-  dots:  false,
+  dots: false,
   // autoplay: true,
   // autoplayTimeout: 1001,
   // smartSpeed: 500,
   loop: true,
-  responsive:{
-    0:{
-      items:2
+  responsive: {
+    0: {
+      items: 2
     },
-    567:{
+    567: {
       items: 4,
     },
-    992:{
+    992: {
       items: 5,
     }
-}
+  }
 });
 
-$('.input-date').each(function(){
+$('.input-date').each(function () {
   let thisEl = $(this);
-  let dp = new AirDatepicker(this,{
+  let dp = new AirDatepicker(this, {
     timepicker: true,
     timeFormat: 'hh:mm AA',
-    onSelect({date}) {
+    onSelect({ date }) {
       thisEl.addClass('input-empty');
-      console.log('done', date) 
+      console.log('done', date)
     }
   },
   );
@@ -235,20 +235,20 @@ $('.input-date').each(function(){
 
 
 // ------------------
-if($('.group2').length > 0){
-  $(".group2").colorbox({rel:'group2', transition:"fade"});
+if ($('.group2').length > 0) {
+  $(".group2").colorbox({ rel: 'group2', transition: "fade" });
 }
 
-function toInput (date) {
-  console.log(date)
-  console.log(date.from)
-  console.log(date.to)
-  
+function toInput(date) {
+  // console.log(date)
+  // console.log(date.from)
+  // console.log(date.to)
+
   $(date.input).parents('.range-slider-box').find('.from').val(date.from)
   $(date.input).parents('.range-slider-box').find('.to').val(date.to)
 }
 
-$(".range-slider").each(function(){
+$(".range-slider").each(function () {
   let type = $(this).data('type');
   let min = $(this).data('min');
   let max = $(this).data('max');
@@ -268,7 +268,7 @@ $(".range-slider").each(function(){
     onChange: toInput
   });
 });
-$(".range-slider-price").each(function(){
+$(".range-slider-price").each(function () {
   let type = $(this).data('type');
   let min = $(this).data('min');
   let max = $(this).data('max');
