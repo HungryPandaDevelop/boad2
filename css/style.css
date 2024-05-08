@@ -4331,8 +4331,8 @@ footer .social-default {
   margin: 0 0 12px;
 }
 .menu-hamburger .social {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .menu-hamburger .social a {
   border-color: #202020;
@@ -4503,6 +4503,9 @@ footer .social-default {
   }
   .menu-footer-item {
     margin-bottom: 15px;
+  }
+  .menu-footer-item .social-default {
+    margin: 0;
   }
   footer ul.sub-menu {
     top: 0;
@@ -4958,6 +4961,7 @@ footer .social-default {
   }
 }
 .selection-home {
+  overflow: visible;
   padding: 30px 0 35px;
   background-color: #14143C;
   color: #ffffff;
@@ -5011,6 +5015,7 @@ footer .social-default {
   background-color: #14143C;
   color: #ffffff;
   border: 1px solid #ffffff;
+  max-height: 200px;
 }
 .boad-select ul::-webkit-scrollbar {
   height: 12px;
@@ -5026,7 +5031,7 @@ footer .social-default {
 }
 .boad-select ul li {
   border-bottom: 1px solid rgba(226, 226, 226, 0.2);
-  padding: 18px 15px;
+  padding: 12px 15px;
 }
 .boad-select ul li:hover {
   background-color: rgba(226, 226, 226, 0.2);
