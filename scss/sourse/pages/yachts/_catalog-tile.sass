@@ -38,6 +38,8 @@
   font-size: 0
   transform: scale(1.01)
   @include bgImageEl("../images/logo.svg")
+  .owl-item.active
+    z-index: 2
   .yachts-img
     @include positionElement(100%,100%,0,0)
     transition: ease-out 0.5s
@@ -53,6 +55,7 @@
     right: 0
     margin: 15px
     z-index: 2
+
 .yachts-item-img-owl
   height: 100%
   .owl-dot
@@ -75,6 +78,7 @@
     margin: 0 0 10px
   div
     min-height: 21px
+    display: inline-block
 .yachts-logo
   @include positionElement(100px, 70px,0,0)
   z-index: 2
@@ -88,10 +92,10 @@
     color: $whiteColor
     font-size: $smallSize
 .yachts-item-liked
-  @include positionElement(20px,20px,0,0,right, top, 2)
+  @include positionElement(50px,50px,0,0,right, top, 2)
   cursor: pointer
-  margin: 15px
-  @include bgImageEl("../images/icons/heart-blue.svg")
+  margin: 0px
+  @include bgImageEl("../images/icons/heart-blue.svg", 20px)
   &.active
     background-image: url("../images/icons/heart-fill-blue.svg")
   &:hover

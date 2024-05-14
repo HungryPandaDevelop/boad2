@@ -78,7 +78,7 @@ const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFa
       // ...formObj,
       'countUpload': countUpload,
       'sizeUpload': sizeUpload,
-      // 'sort': sortVal,
+      'sort': sortVal,
       'lang': $('.lang-yachts').data('lang'),
       'yachtsCategory': $('.catalog-filter').find('.btn.active').data('href'),
     },
@@ -112,11 +112,11 @@ const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFa
 
 let yachtsFormSearch = $('.search-yachts-form');
 
-// $('.btn-more-ajax-yachts').on('click', function (e) {
-//   e.preventDefault();
+$('.btn-more-ajax-yachts').on('click', function (e) {
+  e.preventDefault();
 
-//   ajaxUpload(paramUrl, false, urlParams.get('typelist'), '.catalog-yachts');
-// });
+  ajaxUpload(paramUrl, false, urlParams.get('typelist'), '.catalog-yachts');
+});
 
 $('.reset-filters').on('click', function (e) {
   e.preventDefault();
@@ -139,7 +139,6 @@ function handleFormChange() {
 // Обработчик для события change
 yachtsFormSearch.find('input').on('change', function (e) {
   e.preventDefault();
-
   handleFormChange();
 });
 
@@ -150,9 +149,11 @@ $('.apply-filters').on('click', function (e) {
 
   let formSerialize = yachtsFormSearch.serialize();
 
+
   let finalUrl = fullUrl + "?" + formSerialize;
 
   window.history.pushState("data", "Title", finalUrl);
+
 
   ajaxUpload(formSerialize, true, false, '.catalog-yachts');
 });
@@ -181,14 +182,8 @@ const urlParametrs = new URLSearchParams(window.location.search);
 
 $('.select-order-ajax li').on('click', function () {
   let sortVal = $(this).data('value');
-
-  let formSerialize = yachtsFormSearch.serialize();
-  let finalUrl = fullUrl + "?" + formSerialize;
-
-  window.history.pushState("data", "Title", finalUrl + '&sort=' + sortVal);
-
-
-  ajaxUpload(fullUrl + '&sort=' + sortVal, 1, false, '.catalog-yachts');
+  console.log('sort', sortVal)
+  ajaxUpload(paramUrl, 1, sortVal, '.catalog-yachts');
 
 });
 

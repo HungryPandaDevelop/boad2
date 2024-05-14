@@ -92,13 +92,14 @@ owlDetail.owlCarousel({
   }
 });
 
-let owlYachtsItemImg = $('.yachts-item-img-owl');
+// let owlYachtsItemImg = $('.yachts-item-img-owl');
 
-owlYachtsItemImg.owlCarousel({
-  items: 1,
-  nav: false,
-  dots: true,
-});
+// owlYachtsItemImg.owlCarousel({
+//   items: 1,
+//   nav: false,
+//   dots: true,
+//   loop: true
+// });
 
 let owlSecond = $('.owl-second');
 
@@ -243,9 +244,13 @@ $('.input-date').each(function () {
 
 // ------------------
 if ($('.group2').length > 0) {
-  $(".group2").colorbox({ rel: 'group2', transition: "fade" });
+  $(".group2").colorbox({
+    rel: 'group2',
+    transition: "fade",
+    width: "95%"
+  });
 }
-
+let idSearchTime;
 function toInput(date) {
   // console.log(date)
   // console.log(date.from)
@@ -253,6 +258,10 @@ function toInput(date) {
 
   $(date.input).parents('.range-slider-box').find('.from').val(date.from)
   $(date.input).parents('.range-slider-box').find('.to').val(date.to)
+  clearTimeout(idSearchTime);
+  idSearchTime = setTimeout(() => {
+    handleFormChange();
+  }, 1500)
 }
 
 $(".range-slider").each(function () {
@@ -609,24 +618,24 @@ function changeStatePass(){
 
 
 let phoneObj = '';
-function phone_mask(){
-	$.mask.definitions['9']='';
-	$.mask.definitions['d']='[0-9]';
-  
+function phone_mask() {
+	$.mask.definitions['9'] = '';
+	$.mask.definitions['d'] = '[0-9]';
+
 	// $('.phone').mask('+7 ddd ddd-dd-dd');
-	$('.phone').mask('+971 ddd ddd-ddd'); 
+	$('.phone').mask('+971 ddd ddd-ddd');
 	$('.phone').intlTelInput({
-		autoHideDialCode:false,
-		autoPlaceholder:'aggressive',
-		placeholderNumberType:'MOBILE',
-		preferredCountries:['ae','ru'],
-		separateDialCode:true, 
-		utilsScript:'/wp-content/themes/pandadev/frontend/js/sourse/other-js/phone/utils.js',
+		autoHideDialCode: false,
+		autoPlaceholder: 'aggressive',
+		placeholderNumberType: 'MOBILE',
+		preferredCountries: ['ae', 'ru'],
+		separateDialCode: true,
+		utilsScript: '/wp-content/themes/pandadev/frontend/js/sourse/other-js/phone/utils.js',
 		// utilsScript:'../js/sourse/other-js/phone/utils.js',
-		customPlaceholder:function(selectedCountryPlaceholder,selectedCountryData){
+		customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
 			// console.log('selectedCountryData.dialCode 1', selectedCountryData, selectedCountryData)
 			phoneObj = selectedCountryData;
-			return '+'+selectedCountryData.dialCode+' '+selectedCountryPlaceholder.replace(/[0-9]/g,'_');
+			return '+' + selectedCountryData.dialCode + ' ' + selectedCountryPlaceholder.replace(/[0-9]/g, '_');
 		},
 		//allowDropdown:false,
 		//dropdownContainer:document.body,
@@ -635,10 +644,10 @@ function phone_mask(){
 		// geoIpLookup:function(callback,){
 		// 	$.get('http://ipinfo.io',function(){},'jsonp').always(function(resp){
 		// 		var countryCode =(resp&&resp.country)?resp.country:'';
-				
+
 		// 		callback(countryCode);
 		// 		// console.log('selectedCountryData 2', selectedCountryData, selectedCountryPlaceholder)
-				
+
 		// 	});
 		// },
 		//hiddenInput:'full_number',
@@ -650,30 +659,34 @@ function phone_mask(){
 
 	let textPhone = 'Ваш телефон';
 	let textPhoneEn = 'Your phone';
-  $('.phone-null').after('<label class="label-animate" for="phone-flag-null">'+textPhone+'</label>');
-  $('.phone-main').after('<label class="label-animate" for="phone-flag">'+textPhone+'</label>');
-  $('.phone-second').after('<label class="label-animate" for="phone-second">'+textPhone+'</label>');
-  $('.phone-three').after('<label class="label-animate" for="phone-three">'+textPhone+'</label>');
-  $('.phone-four').after('<label class="label-animate" for="phone-four">'+textPhone+'</label>');
-  $('.phone-five').after('<label class="label-animate" for="phone-five">'+textPhone+'</label>');
+	$('.phone-null').after('<label class="label-animate" for="phone-flag-null">' + textPhone + '</label>');
+	$('.phone-main').after('<label class="label-animate" for="phone-flag">' + textPhone + '</label>');
+	$('.phone-second').after('<label class="label-animate" for="phone-second">' + textPhone + '</label>');
+	$('.phone-three').after('<label class="label-animate" for="phone-three">' + textPhone + '</label>');
+	$('.phone-four').after('<label class="label-animate" for="phone-four">' + textPhone + '</label>');
+	$('.phone-five').after('<label class="label-animate" for="phone-five">' + textPhone + '</label>');
 
-  $('.phone-null-en').after('<label class="label-animate" for="phone-flag-null">'+textPhoneEn+'</label>');
-  $('.phone-main-en').after('<label class="label-animate" for="phone-flag">'+textPhoneEn+'</label>');
-  $('.phone-second-en').after('<label class="label-animate" for="phone-second">'+textPhoneEn+'</label>');
-  $('.phone-three-en').after('<label class="label-animate" for="phone-three">'+textPhoneEn+'</label>');
-  $('.phone-four-en').after('<label class="label-animate" for="phone-four">'+textPhoneEn+'</label>');
-  $('.phone-five-en').after('<label class="label-animate" for="phone-five">'+textPhoneEn+'</label>');
+	$('.phone-six').after('<label class="label-animate" for="phone-six">' + textPhone + '</label>');
+
+	$('.phone-null-en').after('<label class="label-animate" for="phone-flag-null">' + textPhoneEn + '</label>');
+	$('.phone-main-en').after('<label class="label-animate" for="phone-flag">' + textPhoneEn + '</label>');
+	$('.phone-second-en').after('<label class="label-animate" for="phone-second">' + textPhoneEn + '</label>');
+	$('.phone-three-en').after('<label class="label-animate" for="phone-three">' + textPhoneEn + '</label>');
+	$('.phone-four-en').after('<label class="label-animate" for="phone-four">' + textPhoneEn + '</label>');
+	$('.phone-five-en').after('<label class="label-animate" for="phone-five-en">' + textPhoneEn + '</label>');
+
+	$('.phone-six-en').after('<label class="label-animate" for="phone-six-en">' + textPhoneEn + '</label>');
 
 
-	$('.phone').on('close:countrydropdown',function(e,countryData){
+	$('.phone').on('close:countrydropdown', function (e, countryData) {
 		console.log('countryData', phoneObj.dialCode)
 		$(this).val('');
-		if(phoneObj.dialCode == 7){ 
-			$('input.phone').mask('+7 ddd ddd-dd-dd'); 
-		}else{
-			$(this).mask($(this).attr('placeholder').replace(/[_]/g,'d'));
+		if (phoneObj.dialCode == 7) {
+			$('input.phone').mask('+7 ddd ddd-dd-dd');
+		} else {
+			$(this).mask($(this).attr('placeholder').replace(/[_]/g, 'd'));
 		}
-		
+
 	});
 }
 
@@ -1124,9 +1137,11 @@ let spinner = $(`
     </div>
   </div>
 `);
+let lang = $('.search-main').data('lang');
+
 const ajaxSeatch = (searchVal) => {
 
-  let lang = $('.search-main').data('lang');
+
 
   $.ajax({
     type: "GET",
@@ -1154,7 +1169,7 @@ const generateContent = async (result) => {
   let templateHtml = (linkNum, titleNum, list) => {
 
     let linkMass = ['yachts', 'services', 'routes', 'blog'];
-    let titleMass = ['Яхты', 'Услуги', 'Маршруты', 'Блог'];
+    let titleMass = lang === 'ru' ? ['Яхты', 'Услуги', 'Маршруты', 'Блог'] : ['Yachts', 'Services', 'Cruises', 'Blog'];
 
     return (`
     <div class="search-popup-line">
@@ -1174,7 +1189,7 @@ const generateContent = async (result) => {
   let resCount = result.yachts.length + result.services.length + result.routes.length + result.blog.length;
 
   if (resCount === 0) {
-    mainBox.append('<div class="empty-list">Список пуст</div>');
+    mainBox.append(`<div class="empty-list">${lang === 'ru' ? 'Список пуст' : 'List empty'}</div>`);
   }
 }
 
@@ -1226,7 +1241,7 @@ $('.input-search-ajax').on('keyup', function () {
 
 let fullUrl = window.location.href.split('?')[0];
 let paramUrl = window.location.href.split('?')[1];
-// console.log('paramUrl 1 point',paramUrl)
+console.log('paramUrl 1 point', paramUrl)
 let countUpload = 0;
 let sizeUpload = 50;
 let allPostSize = 0;
@@ -1245,6 +1260,7 @@ const extraInit = () => {
     items: 1,
     nav: false,
     dots: true,
+    loop: true
   });
 
   $('.img-cover').each(function () {
@@ -1272,6 +1288,7 @@ const appendYachts = (item, typelist, containerAppend, isFavorites) => {
 const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFavorites) => {
 
   let paramUrl = window.location.href.split('?')[1];
+
   if (isFavorites) {
     paramUrl = insideUrlParam;
   }
@@ -1285,8 +1302,11 @@ const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFa
   };
 
   $(containerAppend).append(spinner);
+
   let pageLang = $('.lang-yachts').data('lang');
+
   let emptyText = pageLang === 'en' ? 'Empty List' : 'Список пуст'
+
   // console.log('pageLang', pageLang)
   const typelist = $('.catalog-view').find('a.active').data('type');
   // console.log('paramUrl', paramUrl)
@@ -1297,7 +1317,7 @@ const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFa
       // ...formObj,
       'countUpload': countUpload,
       'sizeUpload': sizeUpload,
-      'sort': sortVal,
+      // 'sort': sortVal,
       'lang': $('.lang-yachts').data('lang'),
       'yachtsCategory': $('.catalog-filter').find('.btn.active').data('href'),
     },
@@ -1331,11 +1351,11 @@ const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFa
 
 let yachtsFormSearch = $('.search-yachts-form');
 
-$('.btn-more-ajax-yachts').on('click', function (e) {
-  e.preventDefault();
+// $('.btn-more-ajax-yachts').on('click', function (e) {
+//   e.preventDefault();
 
-  ajaxUpload(paramUrl, false, urlParams.get('typelist'), '.catalog-yachts');
-});
+//   ajaxUpload(paramUrl, false, urlParams.get('typelist'), '.catalog-yachts');
+// });
 
 $('.reset-filters').on('click', function (e) {
   e.preventDefault();
@@ -1348,20 +1368,19 @@ function handleFormChange() {
   let formSerialize = yachtsFormSearch.serialize();
   let finalUrl = fullUrl + "?" + formSerialize;
   window.history.pushState("data", "Title", finalUrl);
+
+  $('.listing-tile-btn').attr('href', finalUrl)
+  $('.listing-list-btn').attr('href', finalUrl + '&typelist=list')
+
   ajaxUpload(formSerialize, true, false, '.catalog-yachts');
 }
 
 // Обработчик для события change
 yachtsFormSearch.find('input').on('change', function (e) {
   e.preventDefault();
+
   handleFormChange();
 });
-
-// Обработчик для события mouseup
-$('.irs-handle').on('mouseup', function () {
-  handleFormChange();
-});
-
 
 
 
@@ -1370,11 +1389,9 @@ $('.apply-filters').on('click', function (e) {
 
   let formSerialize = yachtsFormSearch.serialize();
 
-
   let finalUrl = fullUrl + "?" + formSerialize;
 
   window.history.pushState("data", "Title", finalUrl);
-
 
   ajaxUpload(formSerialize, true, false, '.catalog-yachts');
 });
@@ -1388,11 +1405,6 @@ $('.search-tabs').on('click', 'span', function () {
 
     $(this).parents('.sidebar-item-container').find('.tab-item').removeClass('active');
     $(this).parents('.sidebar-item-container').find('.tab-item').eq(indexTab).addClass('active');
-    // const fromEl = $(this).parents('.sidebar-item-container').find('.range-input-from');
-    // const toEl = $(this).parents('.sidebar-item-container').find('.range-input-to');
-
-    // fromEl.attr('name', $(this).data('from'));
-    // toEl.attr('name', $(this).data('to'));
 
   }
 
@@ -1408,8 +1420,14 @@ const urlParametrs = new URLSearchParams(window.location.search);
 
 $('.select-order-ajax li').on('click', function () {
   let sortVal = $(this).data('value');
-  console.log('sort', sortVal)
-  ajaxUpload(paramUrl, 1, sortVal, '.catalog-yachts');
+
+  let formSerialize = yachtsFormSearch.serialize();
+  let finalUrl = fullUrl + "?" + formSerialize;
+
+  window.history.pushState("data", "Title", finalUrl + '&sort=' + sortVal);
+
+
+  ajaxUpload(fullUrl + '&sort=' + sortVal, 1, false, '.catalog-yachts');
 
 });
 
@@ -1425,80 +1443,80 @@ let idLikeArr = getCount;
 
 
 
-const showHideCountLike = (idLikeArrParam)=>{
+const showHideCountLike = (idLikeArrParam) => {
 
-  if(idLikeArrParam.length > 0){
+  if (idLikeArrParam.length > 0) {
     $('header .liked-btn').addClass('added');
     $('header .liked-btn span').html(idLikeArrParam.length);
     $('.catalog-total-ifno span').html(idLikeArrParam.length);
-  }else{
+  } else {
     $('header .liked-btn').removeClass('added');
     $('header .liked-btn span').html(0);
     $('.catalog-total-ifno span').html(0);
   }
-  
+
 }
 
 
 showHideCountLike(idLikeArr);
 
-const addLike = (thisEl)=>{
+const addLike = (thisEl) => {
   let idLiked = thisEl.data('id');
 
-  if(thisEl.hasClass('active')){
+  if (thisEl.hasClass('active')) {
     thisEl.removeClass('active');
 
-    idLikeArr = idLikeArr.filter(item=> item !== idLiked);
-  }else{
+    idLikeArr = idLikeArr.filter(item => item !== idLiked);
+  } else {
     thisEl.addClass('active');
 
     idLikeArr = [...idLikeArr, idLiked];
-    
+
   };
-  
+
 
   localStorage.setItem('likedId', idLikeArr);
-  
+
   showHideCountLike(idLikeArr);
 }
 
-$('.catalog-yachts, .yachts-home').on('click','.yachts-item-liked',function(e){
+$('.catalog-yachts, .yachts-home').on('click', '.yachts-item-liked', function (e) {
 
   addLike($(this));
 });
 
-$('.liked-btn').not('header .liked-btn').on('click',function(e){
+$('.liked-btn').not('header .liked-btn').on('click', function (e) {
   e.preventDefault();
   addLike($(this));
 });
 
 
-$('.catalog-favorites').on('click','.delete-btn',function(){
+$('.catalog-favorites').on('click', '.delete-btn', function () {
 
   let idLiked = $(this).data('id');
   $(this).parents('.yachts-item-wrapper').remove();
 
-  idLikeArr = idLikeArr.filter(item=> item !== idLiked);
+  idLikeArr = idLikeArr.filter(item => item !== idLiked);
 
   localStorage.setItem('likedId', idLikeArr);
-  
+
   showHideCountLike(idLikeArr);
 
 });
 
-idLikeArr.map(item=>{
+idLikeArr.map(item => {
   // console.log($('.yachts-detail-controls .liked-btn').data('id'), item)
-  if( item ===  $('.yachts-detail-controls .liked-btn').data('id')){
+  if (item === $('.yachts-detail-controls .liked-btn').data('id')) {
     $('.yachts-detail-controls .liked-btn').addClass('active');
   };
 });
 
-$('.yachts-item-liked').each(function(){
+$('.yachts-item-liked').each(function () {
   let thisId = $(this).data('id');
   // console.log(thisId)
-  idLikeArr.map(item=>{
+  idLikeArr.map(item => {
     // console.log($('.yachts-detail-controls .liked-btn').data('id'), item)
-    if( item ===  thisId){
+    if (item === thisId) {
       $(this).addClass('active');
     };
   });
@@ -1507,25 +1525,39 @@ $('.yachts-item-liked').each(function(){
 
 
 
-$('.empty-favorites, .language-select a').on('click',function(e){
+$('.empty-favorites, .language-select a').on('click', function (e) {
   localStorage.clear();
 });
 
-const loadFavorites = ()=>{
+const loadFavorites = () => {
 
-  let idLikeString 
-  if(idLikeArr.length>0){
+  let idLikeString
+  if (idLikeArr.length > 0) {
     idLikeString = idLikeArr.toString();
-  }else{
+  } else {
     idLikeString = 'empty';
   }
-  ajaxUpload('favorites='+idLikeString, true, urlParams.get('typelist'), '.catalog-favorites', true);
+  ajaxUpload('favorites=' + idLikeString, true, urlParams.get('typelist'), '.catalog-favorites', true);
 };
 
-if($('.catalog-favorites').length>0){
+if ($('.catalog-favorites').length > 0) {
   loadFavorites();
 };
 
+$('.select-order-ajax-favorites li').on('click', function () {
+  let idLikeString
+  if (idLikeArr.length > 0) {
+    idLikeString = idLikeArr.toString();
+  } else {
+    idLikeString = 'empty';
+  }
+
+  let sortVal = $(this).data('value');
+  console.log('sort', sortVal)
+  ajaxUpload('favorites=' + idLikeString, true, sortVal, '.catalog-favorites', true);
+
+  // ajaxUpload('favorites=' + idLikeString, true, urlParams.get('typelist'), '.catalog-favorites', true);
+});
 const yachtsItemPopup = ({
   id,
   title,

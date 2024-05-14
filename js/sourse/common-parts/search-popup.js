@@ -1,6 +1,8 @@
+let lang = $('.search-main').data('lang');
+
 const ajaxSeatch = (searchVal) => {
 
-  let lang = $('.search-main').data('lang');
+
 
   $.ajax({
     type: "GET",
@@ -28,7 +30,7 @@ const generateContent = async (result) => {
   let templateHtml = (linkNum, titleNum, list) => {
 
     let linkMass = ['yachts', 'services', 'routes', 'blog'];
-    let titleMass = ['Яхты', 'Услуги', 'Маршруты', 'Блог'];
+    let titleMass = lang === 'ru' ? ['Яхты', 'Услуги', 'Маршруты', 'Блог'] : ['Yachts', 'Services', 'Cruises', 'Blog'];
 
     return (`
     <div class="search-popup-line">
@@ -48,7 +50,7 @@ const generateContent = async (result) => {
   let resCount = result.yachts.length + result.services.length + result.routes.length + result.blog.length;
 
   if (resCount === 0) {
-    mainBox.append('<div class="empty-list">Список пуст</div>');
+    mainBox.append(`<div class="empty-list">${lang === 'ru' ? 'Список пуст' : 'List empty'}</div>`);
   }
 }
 

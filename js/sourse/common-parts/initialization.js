@@ -85,13 +85,14 @@ owlDetail.owlCarousel({
   }
 });
 
-let owlYachtsItemImg = $('.yachts-item-img-owl');
+// let owlYachtsItemImg = $('.yachts-item-img-owl');
 
-owlYachtsItemImg.owlCarousel({
-  items: 1,
-  nav: false,
-  dots: true,
-});
+// owlYachtsItemImg.owlCarousel({
+//   items: 1,
+//   nav: false,
+//   dots: true,
+//   loop: true
+// });
 
 let owlSecond = $('.owl-second');
 
@@ -236,9 +237,13 @@ $('.input-date').each(function () {
 
 // ------------------
 if ($('.group2').length > 0) {
-  $(".group2").colorbox({ rel: 'group2', transition: "fade" });
+  $(".group2").colorbox({
+    rel: 'group2',
+    transition: "fade",
+    width: "95%"
+  });
 }
-
+let idSearchTime;
 function toInput(date) {
   // console.log(date)
   // console.log(date.from)
@@ -246,6 +251,10 @@ function toInput(date) {
 
   $(date.input).parents('.range-slider-box').find('.from').val(date.from)
   $(date.input).parents('.range-slider-box').find('.to').val(date.to)
+  clearTimeout(idSearchTime);
+  idSearchTime = setTimeout(() => {
+    handleFormChange();
+  }, 1500)
 }
 
 $(".range-slider").each(function () {

@@ -4,80 +4,80 @@ let idLikeArr = getCount;
 
 
 
-const showHideCountLike = (idLikeArrParam)=>{
+const showHideCountLike = (idLikeArrParam) => {
 
-  if(idLikeArrParam.length > 0){
+  if (idLikeArrParam.length > 0) {
     $('header .liked-btn').addClass('added');
     $('header .liked-btn span').html(idLikeArrParam.length);
     $('.catalog-total-ifno span').html(idLikeArrParam.length);
-  }else{
+  } else {
     $('header .liked-btn').removeClass('added');
     $('header .liked-btn span').html(0);
     $('.catalog-total-ifno span').html(0);
   }
-  
+
 }
 
 
 showHideCountLike(idLikeArr);
 
-const addLike = (thisEl)=>{
+const addLike = (thisEl) => {
   let idLiked = thisEl.data('id');
 
-  if(thisEl.hasClass('active')){
+  if (thisEl.hasClass('active')) {
     thisEl.removeClass('active');
 
-    idLikeArr = idLikeArr.filter(item=> item !== idLiked);
-  }else{
+    idLikeArr = idLikeArr.filter(item => item !== idLiked);
+  } else {
     thisEl.addClass('active');
 
     idLikeArr = [...idLikeArr, idLiked];
-    
+
   };
-  
+
 
   localStorage.setItem('likedId', idLikeArr);
-  
+
   showHideCountLike(idLikeArr);
 }
 
-$('.catalog-yachts, .yachts-home').on('click','.yachts-item-liked',function(e){
+$('.catalog-yachts, .yachts-home').on('click', '.yachts-item-liked', function (e) {
 
   addLike($(this));
 });
 
-$('.liked-btn').not('header .liked-btn').on('click',function(e){
+$('.liked-btn').not('header .liked-btn').on('click', function (e) {
   e.preventDefault();
   addLike($(this));
 });
 
 
-$('.catalog-favorites').on('click','.delete-btn',function(){
+$('.catalog-favorites').on('click', '.delete-btn', function () {
 
   let idLiked = $(this).data('id');
   $(this).parents('.yachts-item-wrapper').remove();
 
-  idLikeArr = idLikeArr.filter(item=> item !== idLiked);
+  idLikeArr = idLikeArr.filter(item => item !== idLiked);
 
   localStorage.setItem('likedId', idLikeArr);
-  
+
   showHideCountLike(idLikeArr);
 
 });
 
-idLikeArr.map(item=>{
+idLikeArr.map(item => {
   // console.log($('.yachts-detail-controls .liked-btn').data('id'), item)
-  if( item ===  $('.yachts-detail-controls .liked-btn').data('id')){
+  if (item === $('.yachts-detail-controls .liked-btn').data('id')) {
     $('.yachts-detail-controls .liked-btn').addClass('active');
   };
 });
 
-$('.yachts-item-liked').each(function(){
+$('.yachts-item-liked').each(function () {
   let thisId = $(this).data('id');
   // console.log(thisId)
-  idLikeArr.map(item=>{
+  idLikeArr.map(item => {
     // console.log($('.yachts-detail-controls .liked-btn').data('id'), item)
-    if( item ===  thisId){
+    if (item === thisId) {
       $(this).addClass('active');
     };
   });
@@ -86,21 +86,36 @@ $('.yachts-item-liked').each(function(){
 
 
 
-$('.empty-favorites, .language-select a').on('click',function(e){
+$('.empty-favorites, .language-select a').on('click', function (e) {
   localStorage.clear();
 });
 
-const loadFavorites = ()=>{
+const loadFavorites = () => {
 
-  let idLikeString 
-  if(idLikeArr.length>0){
+  let idLikeString
+  if (idLikeArr.length > 0) {
     idLikeString = idLikeArr.toString();
-  }else{
+  } else {
     idLikeString = 'empty';
   }
-  ajaxUpload('favorites='+idLikeString, true, urlParams.get('typelist'), '.catalog-favorites', true);
+  ajaxUpload('favorites=' + idLikeString, true, urlParams.get('typelist'), '.catalog-favorites', true);
 };
 
-if($('.catalog-favorites').length>0){
+if ($('.catalog-favorites').length > 0) {
   loadFavorites();
 };
+
+$('.select-order-ajax-favorites li').on('click', function () {
+  let idLikeString
+  if (idLikeArr.length > 0) {
+    idLikeString = idLikeArr.toString();
+  } else {
+    idLikeString = 'empty';
+  }
+
+  let sortVal = $(this).data('value');
+  console.log('sort', sortVal)
+  ajaxUpload('favorites=' + idLikeString, true, sortVal, '.catalog-favorites', true);
+
+  // ajaxUpload('favorites=' + idLikeString, true, urlParams.get('typelist'), '.catalog-favorites', true);
+});
