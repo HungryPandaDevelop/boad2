@@ -92,14 +92,14 @@ owlDetail.owlCarousel({
   }
 });
 
-// let owlYachtsItemImg = $('.yachts-item-img-owl');
+let owlYachtsItemImg = $('.yachts-item-img-owl');
 
-// owlYachtsItemImg.owlCarousel({
-//   items: 1,
-//   nav: false,
-//   dots: true,
-//   loop: true
-// });
+owlYachtsItemImg.owlCarousel({
+  items: 1,
+  nav: false,
+  dots: true,
+  loop: true
+});
 
 let owlSecond = $('.owl-second');
 
@@ -1241,7 +1241,7 @@ $('.input-search-ajax').on('keyup', function () {
 
 let fullUrl = window.location.href.split('?')[0];
 let paramUrl = window.location.href.split('?')[1];
-console.log('paramUrl 1 point', paramUrl)
+// console.log('paramUrl 1 point', paramUrl)
 let countUpload = 0;
 let sizeUpload = 50;
 let allPostSize = 0;
@@ -1291,6 +1291,7 @@ const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFa
 
   if (isFavorites) {
     paramUrl = insideUrlParam;
+    console.log(paramUrl);
   }
 
   if (plusElements) {
@@ -1331,7 +1332,9 @@ const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFa
         });
 
         allPostSize = result[0].sizePosts;
+
         console.log('allPostSize', allPostSize, countUpload, sizeUpload)
+
         if (allPostSize <= (sizeUpload * countUpload)) {
           console.log('hide')
           $('.btn-more-ajax').hide();
@@ -1369,8 +1372,8 @@ function handleFormChange() {
   let finalUrl = fullUrl + "?" + formSerialize;
   window.history.pushState("data", "Title", finalUrl);
 
-  $('.listing-tile-btn').attr('href', finalUrl)
-  $('.listing-list-btn').attr('href', finalUrl + '&typelist=list')
+  $('.listing-tile-btn').attr('href', finalUrl);
+  $('.listing-list-btn').attr('href', finalUrl + '&typelist=list');
 
   ajaxUpload(formSerialize, true, false, '.catalog-yachts');
 }
@@ -1422,12 +1425,14 @@ $('.select-order-ajax li').on('click', function () {
   let sortVal = $(this).data('value');
 
   let formSerialize = yachtsFormSearch.serialize();
-  let finalUrl = fullUrl + "?" + formSerialize;
+  let finalUrl = fullUrl + "?" + formSerialize + '&sort=' + sortVal;
 
-  window.history.pushState("data", "Title", finalUrl + '&sort=' + sortVal);
+  window.history.pushState("data", "Title", finalUrl);
 
+  $('.listing-tile-btn').attr('href', finalUrl);
+  $('.listing-list-btn').attr('href', finalUrl + '&typelist=list');
 
-  ajaxUpload(fullUrl + '&sort=' + sortVal, 1, false, '.catalog-yachts');
+  ajaxUpload(fullUrl, 1, false, '.catalog-yachts');
 
 });
 
@@ -1537,7 +1542,10 @@ const loadFavorites = () => {
   } else {
     idLikeString = 'empty';
   }
-  ajaxUpload('favorites=' + idLikeString, true, urlParams.get('typelist'), '.catalog-favorites', true);
+
+  console.log('fullUrl', fullUrl);
+
+  ajaxUpload('favorites=' + idLikeString, true, false, '.catalog-favorites', true);
 };
 
 if ($('.catalog-favorites').length > 0) {
@@ -1545,7 +1553,7 @@ if ($('.catalog-favorites').length > 0) {
 };
 
 $('.select-order-ajax-favorites li').on('click', function () {
-  let idLikeString
+  let idLikeString;
   if (idLikeArr.length > 0) {
     idLikeString = idLikeArr.toString();
   } else {
@@ -1553,8 +1561,13 @@ $('.select-order-ajax-favorites li').on('click', function () {
   }
 
   let sortVal = $(this).data('value');
-  console.log('sort', sortVal)
-  ajaxUpload('favorites=' + idLikeString, true, sortVal, '.catalog-favorites', true);
+  let finalUrl = "favorites=" + idLikeString + "&sort=" + sortVal;
+
+  // window.history.pushState("data", "Title", '?' + fullUrl + finalUrl);
+
+
+
+  ajaxUpload(finalUrl, true, false, '.catalog-favorites', true);
 
   // ajaxUpload('favorites=' + idLikeString, true, urlParams.get('typelist'), '.catalog-favorites', true);
 });

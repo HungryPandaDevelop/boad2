@@ -85,14 +85,14 @@ owlDetail.owlCarousel({
   }
 });
 
-// let owlYachtsItemImg = $('.yachts-item-img-owl');
+let owlYachtsItemImg = $('.yachts-item-img-owl');
 
-// owlYachtsItemImg.owlCarousel({
-//   items: 1,
-//   nav: false,
-//   dots: true,
-//   loop: true
-// });
+owlYachtsItemImg.owlCarousel({
+  items: 1,
+  nav: false,
+  dots: true,
+  loop: true
+});
 
 let owlSecond = $('.owl-second');
 

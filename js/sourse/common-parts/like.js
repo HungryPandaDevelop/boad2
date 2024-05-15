@@ -98,7 +98,10 @@ const loadFavorites = () => {
   } else {
     idLikeString = 'empty';
   }
-  ajaxUpload('favorites=' + idLikeString, true, urlParams.get('typelist'), '.catalog-favorites', true);
+
+  console.log('fullUrl', fullUrl);
+
+  ajaxUpload('favorites=' + idLikeString, true, false, '.catalog-favorites', true);
 };
 
 if ($('.catalog-favorites').length > 0) {
@@ -106,7 +109,7 @@ if ($('.catalog-favorites').length > 0) {
 };
 
 $('.select-order-ajax-favorites li').on('click', function () {
-  let idLikeString
+  let idLikeString;
   if (idLikeArr.length > 0) {
     idLikeString = idLikeArr.toString();
   } else {
@@ -114,8 +117,13 @@ $('.select-order-ajax-favorites li').on('click', function () {
   }
 
   let sortVal = $(this).data('value');
-  console.log('sort', sortVal)
-  ajaxUpload('favorites=' + idLikeString, true, sortVal, '.catalog-favorites', true);
+  let finalUrl = "favorites=" + idLikeString + "&sort=" + sortVal;
+
+  // window.history.pushState("data", "Title", '?' + fullUrl + finalUrl);
+
+
+
+  ajaxUpload(finalUrl, true, false, '.catalog-favorites', true);
 
   // ajaxUpload('favorites=' + idLikeString, true, urlParams.get('typelist'), '.catalog-favorites', true);
 });
