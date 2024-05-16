@@ -1,63 +1,65 @@
 // custom-select
 
 $('.style-select').each(function () {
-  let firstElOption = $(this).find('option:selected').text();
-  let dataText = $(this).data('text');
-  let dataClass = $(this).data('class');
-  $(this).find('option').each(function(index){
-    $(this).attr('data-index',index);
+  const select = $(this);
+  const selectedText = select.find('option:selected').text();
+
+
+  const dataText = select.data('text') || selectedText;
+  const dataClass = select.data('class') ?? '';
+
+  let selectOptions = '';
+
+  select.find('option').each(function (index, option) {
+    selectOptions +=
+      `<li
+          data-index="${index}" 
+          data-value="${$(option).val()}"
+          ${$(this).attr('selected') ? 'class="hide-selected"' : ''}
+          >
+          ${$(option).text()}
+        </li>`;
   });
-  if(dataText){
-      firstElOption = dataText;
-  }
 
-
-  let styleSelectBoxElement = 
-    $(`<div class='custom-select ${dataClass}'>
-        <span>${firstElOption}</span>
-        <ul class='ln'></ul>
+  const customSelectBox = $(
+    `<div class='custom-select ${dataClass}' >
+        <span>${dataText}</span>
+        <ul class='ln'>${selectOptions}</ul>
         <i></i>
-      </div>
-    `);
+      </div> `
+  );
 
-  $(this).before(styleSelectBoxElement).hide();
-
-  $(this).find('option').each(function (index) {
-      var optionText = $(this).text();
-      $(this).parent().prev().find('ul').append('<li data-index="'+index+'" data-value="'+$(this).val()+'">' + optionText + '</li>');
-  });
-});
-
-$(".custom-select").on('click', function (e) {
-  e.preventDefault();
-  if ($(this).hasClass('active')) {
-      $(this).removeClass('active');
-  } else {
-      $('.custom-select').removeClass('active');
-      $(this).addClass('active');
-  }
+  select.before(customSelectBox).hide();
 });
 
 $('body').on('click', function (evt) {
-  if (!$(evt.target).is('.custom-select, .custom-select > *')) {
-      $('.custom-select').removeClass('active');
+  const target = $(evt.target);
+  if (!target.closest('.custom-select').length) {
+    $('.custom-select').removeClass('active');
   }
 });
 
-let tempSelectVal;
-$('.custom-select').on('click', 'li', function () {
-  let liIndex = $(this).data('index');
-  let parentsEl = $(this).parents('.custom-select');
 
-  // if(!tempSelectVal){   
-  //   tempSelectVal = $(this).remove();
-  // }else{
-  //   $(this).after(tempSelectVal);
-  //   tempSelectVal = $(this).remove();
-  // }
-  
-  parentsEl.next().find('option[data-index="'+liIndex+'"]').prop('selected', true);
-
-  parentsEl.find('span').text($(this).text());
+$(document).on('click', '.custom-select', function (e) {
+  e.preventDefault();
+  const currentSelect = $(this);
+  $('.custom-select').not(currentSelect).removeClass('active');
+  currentSelect.toggleClass('active');
 });
+
+
+$(document).on('click', '.custom-select li', function () {
+  const li = $(this);
+  const index = li.data('index');
+  const parent = li.closest('.custom-select');
+  const select = parent.next('.style-select');
+
+  select.find('option').eq(index).prop('selected', true);
+  parent.find('span').text(li.text());
+
+  parent.find('li').removeClass('hide-selected');
+  li.addClass('hide-selected');
+});
+
+
 // custom-select

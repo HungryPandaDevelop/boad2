@@ -4517,6 +4517,9 @@ footer .social-default {
 .popup-lang .language-select {
   padding: 0 30px;
 }
+.popup-lang .language-select li {
+  border: 0;
+}
 
 /*-----menu----*/
 /*-----feedback----*/
@@ -7964,6 +7967,16 @@ footer .social-default {
 @media (max-width: 768px) {
   .yachts-item-img {
     height: 320px;
+  }
+}
+@media (max-width: 576px) {
+  .yachts-item-img .yachts-img {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .yachts-item-img .yachts-img:hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 /*catalog-filter*/

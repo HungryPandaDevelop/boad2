@@ -494,65 +494,67 @@ $("body").on("click", ".file-decorate i", function (e) {
 // custom-select
 
 $('.style-select').each(function () {
-  let firstElOption = $(this).find('option:selected').text();
-  let dataText = $(this).data('text');
-  let dataClass = $(this).data('class');
-  $(this).find('option').each(function(index){
-    $(this).attr('data-index',index);
+  const select = $(this);
+  const selectedText = select.find('option:selected').text();
+
+
+  const dataText = select.data('text') || selectedText;
+  const dataClass = select.data('class') ?? '';
+
+  let selectOptions = '';
+
+  select.find('option').each(function (index, option) {
+    selectOptions +=
+      `<li
+          data-index="${index}" 
+          data-value="${$(option).val()}"
+          ${$(this).attr('selected') ? 'class="hide-selected"' : ''}
+          >
+          ${$(option).text()}
+        </li>`;
   });
-  if(dataText){
-      firstElOption = dataText;
-  }
 
-
-  let styleSelectBoxElement = 
-    $(`<div class='custom-select ${dataClass}'>
-        <span>${firstElOption}</span>
-        <ul class='ln'></ul>
+  const customSelectBox = $(
+    `<div class='custom-select ${dataClass}' >
+        <span>${dataText}</span>
+        <ul class='ln'>${selectOptions}</ul>
         <i></i>
-      </div>
-    `);
+      </div> `
+  );
 
-  $(this).before(styleSelectBoxElement).hide();
-
-  $(this).find('option').each(function (index) {
-      var optionText = $(this).text();
-      $(this).parent().prev().find('ul').append('<li data-index="'+index+'" data-value="'+$(this).val()+'">' + optionText + '</li>');
-  });
-});
-
-$(".custom-select").on('click', function (e) {
-  e.preventDefault();
-  if ($(this).hasClass('active')) {
-      $(this).removeClass('active');
-  } else {
-      $('.custom-select').removeClass('active');
-      $(this).addClass('active');
-  }
+  select.before(customSelectBox).hide();
 });
 
 $('body').on('click', function (evt) {
-  if (!$(evt.target).is('.custom-select, .custom-select > *')) {
-      $('.custom-select').removeClass('active');
+  const target = $(evt.target);
+  if (!target.closest('.custom-select').length) {
+    $('.custom-select').removeClass('active');
   }
 });
 
-let tempSelectVal;
-$('.custom-select').on('click', 'li', function () {
-  let liIndex = $(this).data('index');
-  let parentsEl = $(this).parents('.custom-select');
 
-  // if(!tempSelectVal){   
-  //   tempSelectVal = $(this).remove();
-  // }else{
-  //   $(this).after(tempSelectVal);
-  //   tempSelectVal = $(this).remove();
-  // }
-  
-  parentsEl.next().find('option[data-index="'+liIndex+'"]').prop('selected', true);
-
-  parentsEl.find('span').text($(this).text());
+$(document).on('click', '.custom-select', function (e) {
+  e.preventDefault();
+  const currentSelect = $(this);
+  $('.custom-select').not(currentSelect).removeClass('active');
+  currentSelect.toggleClass('active');
 });
+
+
+$(document).on('click', '.custom-select li', function () {
+  const li = $(this);
+  const index = li.data('index');
+  const parent = li.closest('.custom-select');
+  const select = parent.next('.style-select');
+
+  select.find('option').eq(index).prop('selected', true);
+  parent.find('span').text(li.text());
+
+  parent.find('li').removeClass('hide-selected');
+  li.addClass('hide-selected');
+});
+
+
 // custom-select
 
 $('.close-js').on('click', function () {
@@ -934,8 +936,8 @@ $('.order-select-box').on('click',function(){
 //   localStorage.clear();
 // });
 // console.log(localStorage.getItem('likedId'));
-let getCount = localStorage.getItem('likedId') ? localStorage.getItem('likedId') : [] ;
-if(getCount.length > 0){
+let getCount = localStorage.getItem('likedId') ? localStorage.getItem('likedId') : [];
+if (getCount.length > 0) {
   getCount = getCount.split(',');
   getCount = getCount.map(Number);
 };
@@ -953,34 +955,35 @@ let yachtsItemTileTemplate = ({
   yachts_galereya,
   lang,
   refit_text
-},isFavorites) => {
+}, isFavorites) => {
   // console.log('l', yachts_harakteristiki)
   return (`
   <div class="col-4 col-lg-6 col-sm-6 col-xs-12 yachts-item-wrapper">
     <div class="yachts-item">
       <div class="yachts-item-img">
       ${yachts_galereya ? (
-        `<div class="yachts-item-img-owl owl-carousel">
-        ${yachts_galereya.map((item, index)=>{
-          if(index<3){
-            return(`<div class="yachts-img img-cover"><img src="${item.full_image_url}" alt=""></div>`)
-          }
-        }).join('')}
+      `<div class="yachts-item-img-owl owl-carousel">
+        ${yachts_galereya.map((item, index) => {
+        if (index < 3) {
+          return (`<div class="yachts-img img-cover"><img src="${item.full_image_url}" alt=""></div>`)
+        }
+      }).join('')}
         </div>`
-      ): ''}
+    ) : ''}
         
         <div class="yachts-logo"> <span>${refit_text}</span></div>
-        ${!isFavorites ? (`<div class="yachts-item-liked ${getCount && getCount.includes(id) && 'active'}" data-id="${id}"> </div>`) : (`<div class="delete-btn" data-id="${id}"></div>`)}
+        <div class="yachts-like-js yachts-item-liked ${getCount && getCount.includes(id) && 'active'}" data-id="${id}"> </div>
+        
       </div>
       <div class="yachts-item-info"> 
         <h3><a href="${link}">${title}</a></h3>
         <ul class="ln yachts-item-description">
           ${(naznachenie) && (
-            `<li>
+      `<li>
             <b>${lang === 'ru' ? 'Назначение' : 'Purpose'}:</b>
             <div>${naznachenie}</div>
           </li>`
-          )}
+    )}
           
           <li>
             <b>${lang === 'ru' ? 'Вервь' : 'Rope'}:</b>
@@ -993,17 +996,17 @@ let yachtsItemTileTemplate = ({
             <div class="yachts-adv-icon yachts-adv-icon-1"></div>
             <span>
 
-            ${lang === 'ru' ? 
-              `
+            ${lang === 'ru' ?
+      `
               ${yachts_harakteristiki.yachts_char_element_32} м
               <br> (${yachts_harakteristiki.yachts_char_element_3}ft)
               `
-              :
-              `
+      :
+      `
               ${yachts_harakteristiki.yachts_char_element_3} ft 
               <br> (${yachts_harakteristiki.yachts_char_element_32} m)
               `
-              }
+    }
               
             </span>
           </div>
@@ -1039,7 +1042,7 @@ let yachtsItemTileTemplate = ({
 `)
 };
 
-let yachtsItemListTemplate =({
+let yachtsItemListTemplate = ({
   id,
   title,
   link,
@@ -1049,23 +1052,23 @@ let yachtsItemListTemplate =({
   yachts_harakteristiki,
   yachts_galereya,
   lang
-}, isFavorites)=>{
-  return(
+}, isFavorites) => {
+  return (
     `
     <div class="yachts-item-grid yachts-item-wrapper">
     <div class="col-3">
       <div class="yachts-item-img">
         ${yachts_galereya && (
-          `<div class="yachts-item-img-owl owl-carousel">
-          ${yachts_galereya.map((item, index)=>{
-            if(index<3){
-              return(`<div class="yachts-img img-cover"><img src="${item.full_image_url}" alt=""></div>`)
-            }
-          }).join('')}
+      `<div class="yachts-item-img-owl owl-carousel">
+          ${yachts_galereya.map((item, index) => {
+        if (index < 3) {
+          return (`<div class="yachts-img img-cover"><img src="${item.full_image_url}" alt=""></div>`)
+        }
+      }).join('')}
           </div>`
-        )}
+    )}
         <div class="yachts-logo"> <span>Full refit ${god_postrojki}</span></div>
-        ${!isFavorites && (`<div class="yachts-item-liked ${getCount && getCount.includes(id) && 'active'}" data-id="${id}"> </div>`)}
+        <div class="yachts-like-js yachts-item-liked ${getCount && getCount.includes(id) && 'active'}" data-id="${id}"> </div>
       </div>
     </div>
     <div class="col-6">
@@ -1443,23 +1446,29 @@ if ($('.catalog-yachts').length > 0) {
 
 
 
-let idLikeArr = getCount;
-// console.log('getCount', idLikeArr);
+let idLikeArr = localStorage.getItem('likedId') ? JSON.parse(localStorage.getItem('likedId')) : [];
 
+console.log('id', idLikeArr)
+const headLikeBtn = $('header .liked-btn');
 
+const btnLikeSpan = headLikeBtn.find('span');
+const catalogTotalInfo = $('.catalog-total-ifno span');
 
 const showHideCountLike = (idLikeArrParam) => {
 
-  if (idLikeArrParam.length > 0) {
-    $('header .liked-btn').addClass('added');
-    $('header .liked-btn span').html(idLikeArrParam.length);
-    $('.catalog-total-ifno span').html(idLikeArrParam.length);
-  } else {
-    $('header .liked-btn').removeClass('added');
-    $('header .liked-btn span').html(0);
-    $('.catalog-total-ifno span').html(0);
-  }
+  const countLike = idLikeArrParam.length;
 
+  if (countLike > 0) {
+    headLikeBtn.addClass('added');
+
+    headLikeBtn.attr('href', '/favorites?ids=' + idLikeArrParam);
+
+  } else {
+    headLikeBtn.removeClass('added');
+    headLikeBtn.attr('href', '/favorites');
+  }
+  btnLikeSpan.html(countLike);
+  catalogTotalInfo.html(countLike);
 }
 
 
@@ -1470,61 +1479,65 @@ const addLike = (thisEl) => {
 
   if (thisEl.hasClass('active')) {
     thisEl.removeClass('active');
-
     idLikeArr = idLikeArr.filter(item => item !== idLiked);
   } else {
     thisEl.addClass('active');
-
     idLikeArr = [...idLikeArr, idLiked];
-
   };
 
 
-  localStorage.setItem('likedId', idLikeArr);
+  localStorage.setItem('likedId', JSON.stringify(idLikeArr));
+
+  console.log('idLikeArr', idLikeArr)
 
   showHideCountLike(idLikeArr);
 }
 
-$('.catalog-yachts, .yachts-home').on('click', '.yachts-item-liked', function (e) {
-
+$('.content').on('click', '.yachts-like-js', function (e) {
   addLike($(this));
 });
 
-$('.liked-btn').not('header .liked-btn').on('click', function (e) {
+
+
+$('.delete-btn').on('click', function (e) {
   e.preventDefault();
-  addLike($(this));
-});
-
-
-$('.catalog-favorites').on('click', '.delete-btn', function () {
-
   let idLiked = $(this).data('id');
-  $(this).parents('.yachts-item-wrapper').remove();
 
   idLikeArr = idLikeArr.filter(item => item !== idLiked);
 
-  localStorage.setItem('likedId', idLikeArr);
-
   showHideCountLike(idLikeArr);
 
+  localStorage.setItem('likedId', JSON.stringify(idLikeArr));
+
+  let finalUrl = fullUrl + '?ids=' + idLikeArr;
+
+  window.location.href = finalUrl;
 });
 
-idLikeArr.map(item => {
-  // console.log($('.yachts-detail-controls .liked-btn').data('id'), item)
-  if (item === $('.yachts-detail-controls .liked-btn').data('id')) {
-    $('.yachts-detail-controls .liked-btn').addClass('active');
-  };
-});
 
-$('.yachts-item-liked').each(function () {
-  let thisId = $(this).data('id');
-  // console.log(thisId)
-  idLikeArr.map(item => {
-    // console.log($('.yachts-detail-controls .liked-btn').data('id'), item)
-    if (item === thisId) {
-      $(this).addClass('active');
-    };
+
+setTimeout(() => {
+
+  $('.yachts-like-js').each(function () {
+
+    let thisId = $(this).data('id');
+
+    idLikeArr.forEach(item => {
+      if (item === thisId) {
+        $(this).addClass('active');
+      };
+    });
+
   });
+}, 1500);
+
+$('.select-order-ajax-favorites').on('click', 'li', function () {
+
+  let sort = $(this).data('value');
+
+  let newUrl = $(this).parents('.catalog-sorting-container').data('value');
+  window.location.href = newUrl + '&sort=' + sort;
+
 });
 
 
@@ -1534,43 +1547,6 @@ $('.empty-favorites, .language-select a').on('click', function (e) {
   localStorage.clear();
 });
 
-const loadFavorites = () => {
-
-  let idLikeString
-  if (idLikeArr.length > 0) {
-    idLikeString = idLikeArr.toString();
-  } else {
-    idLikeString = 'empty';
-  }
-
-  console.log('fullUrl', fullUrl);
-
-  ajaxUpload('favorites=' + idLikeString, true, false, '.catalog-favorites', true);
-};
-
-if ($('.catalog-favorites').length > 0) {
-  loadFavorites();
-};
-
-$('.select-order-ajax-favorites li').on('click', function () {
-  let idLikeString;
-  if (idLikeArr.length > 0) {
-    idLikeString = idLikeArr.toString();
-  } else {
-    idLikeString = 'empty';
-  }
-
-  let sortVal = $(this).data('value');
-  let finalUrl = "favorites=" + idLikeString + "&sort=" + sortVal;
-
-  // window.history.pushState("data", "Title", '?' + fullUrl + finalUrl);
-
-
-
-  ajaxUpload(finalUrl, true, false, '.catalog-favorites', true);
-
-  // ajaxUpload('favorites=' + idLikeString, true, urlParams.get('typelist'), '.catalog-favorites', true);
-});
 const yachtsItemPopup = ({
   id,
   title,

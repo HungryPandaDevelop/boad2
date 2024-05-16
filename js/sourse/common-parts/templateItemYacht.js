@@ -3,8 +3,8 @@
 //   localStorage.clear();
 // });
 // console.log(localStorage.getItem('likedId'));
-let getCount = localStorage.getItem('likedId') ? localStorage.getItem('likedId') : [] ;
-if(getCount.length > 0){
+let getCount = localStorage.getItem('likedId') ? localStorage.getItem('likedId') : [];
+if (getCount.length > 0) {
   getCount = getCount.split(',');
   getCount = getCount.map(Number);
 };
@@ -22,34 +22,35 @@ let yachtsItemTileTemplate = ({
   yachts_galereya,
   lang,
   refit_text
-},isFavorites) => {
+}, isFavorites) => {
   // console.log('l', yachts_harakteristiki)
   return (`
   <div class="col-4 col-lg-6 col-sm-6 col-xs-12 yachts-item-wrapper">
     <div class="yachts-item">
       <div class="yachts-item-img">
       ${yachts_galereya ? (
-        `<div class="yachts-item-img-owl owl-carousel">
-        ${yachts_galereya.map((item, index)=>{
-          if(index<3){
-            return(`<div class="yachts-img img-cover"><img src="${item.full_image_url}" alt=""></div>`)
-          }
-        }).join('')}
+      `<div class="yachts-item-img-owl owl-carousel">
+        ${yachts_galereya.map((item, index) => {
+        if (index < 3) {
+          return (`<div class="yachts-img img-cover"><img src="${item.full_image_url}" alt=""></div>`)
+        }
+      }).join('')}
         </div>`
-      ): ''}
+    ) : ''}
         
         <div class="yachts-logo"> <span>${refit_text}</span></div>
-        ${!isFavorites ? (`<div class="yachts-item-liked ${getCount && getCount.includes(id) && 'active'}" data-id="${id}"> </div>`) : (`<div class="delete-btn" data-id="${id}"></div>`)}
+        <div class="yachts-like-js yachts-item-liked ${getCount && getCount.includes(id) && 'active'}" data-id="${id}"> </div>
+        
       </div>
       <div class="yachts-item-info"> 
         <h3><a href="${link}">${title}</a></h3>
         <ul class="ln yachts-item-description">
           ${(naznachenie) && (
-            `<li>
+      `<li>
             <b>${lang === 'ru' ? 'Назначение' : 'Purpose'}:</b>
             <div>${naznachenie}</div>
           </li>`
-          )}
+    )}
           
           <li>
             <b>${lang === 'ru' ? 'Вервь' : 'Rope'}:</b>
@@ -62,17 +63,17 @@ let yachtsItemTileTemplate = ({
             <div class="yachts-adv-icon yachts-adv-icon-1"></div>
             <span>
 
-            ${lang === 'ru' ? 
-              `
+            ${lang === 'ru' ?
+      `
               ${yachts_harakteristiki.yachts_char_element_32} м
               <br> (${yachts_harakteristiki.yachts_char_element_3}ft)
               `
-              :
-              `
+      :
+      `
               ${yachts_harakteristiki.yachts_char_element_3} ft 
               <br> (${yachts_harakteristiki.yachts_char_element_32} m)
               `
-              }
+    }
               
             </span>
           </div>
@@ -108,7 +109,7 @@ let yachtsItemTileTemplate = ({
 `)
 };
 
-let yachtsItemListTemplate =({
+let yachtsItemListTemplate = ({
   id,
   title,
   link,
@@ -118,23 +119,23 @@ let yachtsItemListTemplate =({
   yachts_harakteristiki,
   yachts_galereya,
   lang
-}, isFavorites)=>{
-  return(
+}, isFavorites) => {
+  return (
     `
     <div class="yachts-item-grid yachts-item-wrapper">
     <div class="col-3">
       <div class="yachts-item-img">
         ${yachts_galereya && (
-          `<div class="yachts-item-img-owl owl-carousel">
-          ${yachts_galereya.map((item, index)=>{
-            if(index<3){
-              return(`<div class="yachts-img img-cover"><img src="${item.full_image_url}" alt=""></div>`)
-            }
-          }).join('')}
+      `<div class="yachts-item-img-owl owl-carousel">
+          ${yachts_galereya.map((item, index) => {
+        if (index < 3) {
+          return (`<div class="yachts-img img-cover"><img src="${item.full_image_url}" alt=""></div>`)
+        }
+      }).join('')}
           </div>`
-        )}
+    )}
         <div class="yachts-logo"> <span>Full refit ${god_postrojki}</span></div>
-        ${!isFavorites && (`<div class="yachts-item-liked ${getCount && getCount.includes(id) && 'active'}" data-id="${id}"> </div>`)}
+        <div class="yachts-like-js yachts-item-liked ${getCount && getCount.includes(id) && 'active'}" data-id="${id}"> </div>
       </div>
     </div>
     <div class="col-6">
