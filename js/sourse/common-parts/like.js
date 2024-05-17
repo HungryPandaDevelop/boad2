@@ -1,11 +1,13 @@
 
 let idLikeArr = localStorage.getItem('likedId') ? JSON.parse(localStorage.getItem('likedId')) : [];
 
-console.log('id', idLikeArr)
+
+
 const headLikeBtn = $('header .liked-btn');
 
 const btnLikeSpan = headLikeBtn.find('span');
 const catalogTotalInfo = $('.catalog-total-ifno span');
+const mainFavBox = $('.catalog-favorites');
 
 const showHideCountLike = (idLikeArrParam) => {
 
@@ -22,10 +24,20 @@ const showHideCountLike = (idLikeArrParam) => {
   }
   btnLikeSpan.html(countLike);
   catalogTotalInfo.html(countLike);
+
 }
 
 
 showHideCountLike(idLikeArr);
+
+
+
+if (idLikeArr && !paramUrl && mainFavBox.length > 0) {
+
+
+  let finalUrl = fullUrl + '?ids=' + idLikeArr;
+  window.location.href = finalUrl;
+}
 
 const addLike = (thisEl) => {
   let idLiked = thisEl.data('id');

@@ -1077,10 +1077,7 @@ let yachtsItemListTemplate = ({
         <h3><a href="${link}">${title}</a></h3>
         <div class="yachts-item-middle">
           <ul class="ln yachts-item-description">
-          <li>
-            <b>${lang === 'ru' ? 'Назначение' : 'Purpose'}:</b>
-            <div>${naznachenie}</div>
-          </li>
+
           <li><b>${lang === 'ru' ? 'Вервь' : 'Rope'}:</b>
             <div>${yachts_harakteristiki.yachts_char_element_1}</div>
           </li>
@@ -1244,17 +1241,16 @@ $('.input-search-ajax').on('keyup', function () {
 
 let fullUrl = window.location.href.split('?')[0];
 let paramUrl = window.location.href.split('?')[1];
-// console.log('paramUrl 1 point', paramUrl)
+
 let countUpload = 0;
 let sizeUpload = 50;
 let allPostSize = 0;
 
+let pageLang = $('.lang-yachts').data('lang');
 
+let emptyText = pageLang === 'en' ? 'Empty List' : 'Список пуст'
 
-
-
-const urlParams = new URLSearchParams(window.location.search);
-
+const typelist = $('.catalog-view').find('a.active').data('type');
 
 const extraInit = () => {
   let owlYachtsItemImg = $('.yachts-item-img-owl');
@@ -1268,60 +1264,39 @@ const extraInit = () => {
 
   $('.img-cover').each(function () {
     let imgSrc = $(this).find('img').attr('src');
-    //console.log(imgSrc);
 
     $(this).css('background-image', 'url(' + imgSrc + ')');
   });
 };
 
-const appendYachts = (item, typelist, containerAppend, isFavorites) => {
+const appendYachts = (item, typelist) => {
 
   if (typelist === 'list') {
-    $(containerAppend).append(yachtsItemListTemplate(item, isFavorites));
-    $(containerAppend).removeClass('catalog-grid');
+    $('.catalog-yachts').append(yachtsItemListTemplate(item));
+    $('.catalog-yachts').removeClass('catalog-grid');
   } else {
-    $(containerAppend).append(yachtsItemTileTemplate(item, isFavorites));
-    $(containerAppend).addClass('catalog-grid');
+    $('.catalog-yachts').append(yachtsItemTileTemplate(item));
+    $('.catalog-yachts').addClass('catalog-grid');
   }
 
   extraInit();
 
 };
 
-const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFavorites) => {
+const ajaxUpload = () => {
 
   let paramUrl = window.location.href.split('?')[1];
+  $('.catalog-yachts').empty();
+  $('.catalog-yachts').append(spinner);
 
-  if (isFavorites) {
-    paramUrl = insideUrlParam;
-    console.log(paramUrl);
-  }
+  console.log('ajax')
 
-  if (plusElements) {
-    countUpload = 1;
-    $(containerAppend).empty();
-  }
-  else {
-    countUpload++;
-  };
-
-  $(containerAppend).append(spinner);
-
-  let pageLang = $('.lang-yachts').data('lang');
-
-  let emptyText = pageLang === 'en' ? 'Empty List' : 'Список пуст'
-
-  // console.log('pageLang', pageLang)
-  const typelist = $('.catalog-view').find('a.active').data('type');
-  // console.log('paramUrl', paramUrl)
   $.ajax({
     type: "GET",
     url: "/wp-json/search/yachts?" + paramUrl,
     data: {
-      // ...formObj,
       'countUpload': countUpload,
       'sizeUpload': sizeUpload,
-      // 'sort': sortVal,
       'lang': $('.lang-yachts').data('lang'),
       'yachtsCategory': $('.catalog-filter').find('.btn.active').data('href'),
     },
@@ -1331,23 +1306,11 @@ const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFa
       if (result.length > 0) {
 
         result.map((item) => {
-          appendYachts(item, typelist, containerAppend, isFavorites);
+          appendYachts(item, typelist);
         });
 
-        allPostSize = result[0].sizePosts;
-
-        console.log('allPostSize', allPostSize, countUpload, sizeUpload)
-
-        if (allPostSize <= (sizeUpload * countUpload)) {
-          console.log('hide')
-          $('.btn-more-ajax').hide();
-        } else {
-          console.log('show')
-          $('.btn-more-ajax').show();
-        }
       } else {
-        $('.btn-more-ajax').hide();
-        $(containerAppend).append('<div class="empty-list col-12">' + emptyText + '</div>')
+        $('.catalog-yachts').append('<div class="empty-list col-12">' + emptyText + '</div>')
       }
 
     }
@@ -1356,12 +1319,6 @@ const ajaxUpload = (insideUrlParam, plusElements, sortVal, containerAppend, isFa
 };
 
 let yachtsFormSearch = $('.search-yachts-form');
-
-// $('.btn-more-ajax-yachts').on('click', function (e) {
-//   e.preventDefault();
-
-//   ajaxUpload(paramUrl, false, urlParams.get('typelist'), '.catalog-yachts');
-// });
 
 $('.reset-filters').on('click', function (e) {
   e.preventDefault();
@@ -1378,7 +1335,7 @@ function handleFormChange() {
   $('.listing-tile-btn').attr('href', finalUrl);
   $('.listing-list-btn').attr('href', finalUrl + '&typelist=list');
 
-  ajaxUpload(formSerialize, true, false, '.catalog-yachts');
+  ajaxUpload();
 }
 
 // Обработчик для события change
@@ -1399,7 +1356,7 @@ $('.apply-filters').on('click', function (e) {
 
   window.history.pushState("data", "Title", finalUrl);
 
-  ajaxUpload(formSerialize, true, false, '.catalog-yachts');
+  ajaxUpload();
 });
 
 /* tab active */
@@ -1422,7 +1379,6 @@ $('.search-tabs').on('click', 'span', function () {
 
 /* change template */
 
-const urlParametrs = new URLSearchParams(window.location.search);
 
 $('.select-order-ajax li').on('click', function () {
   let sortVal = $(this).data('value');
@@ -1435,24 +1391,26 @@ $('.select-order-ajax li').on('click', function () {
   $('.listing-tile-btn').attr('href', finalUrl);
   $('.listing-list-btn').attr('href', finalUrl + '&typelist=list');
 
-  ajaxUpload(fullUrl, 1, false, '.catalog-yachts');
+  ajaxUpload();
 
 });
 
 
 if ($('.catalog-yachts').length > 0) {
-  ajaxUpload(paramUrl, 0, false, '.catalog-yachts');
+  ajaxUpload();
 }
 
 
 
 let idLikeArr = localStorage.getItem('likedId') ? JSON.parse(localStorage.getItem('likedId')) : [];
 
-console.log('id', idLikeArr)
+
+
 const headLikeBtn = $('header .liked-btn');
 
 const btnLikeSpan = headLikeBtn.find('span');
 const catalogTotalInfo = $('.catalog-total-ifno span');
+const mainFavBox = $('.catalog-favorites');
 
 const showHideCountLike = (idLikeArrParam) => {
 
@@ -1469,10 +1427,20 @@ const showHideCountLike = (idLikeArrParam) => {
   }
   btnLikeSpan.html(countLike);
   catalogTotalInfo.html(countLike);
+
 }
 
 
 showHideCountLike(idLikeArr);
+
+
+
+if (idLikeArr && !paramUrl && mainFavBox.length > 0) {
+
+
+  let finalUrl = fullUrl + '?ids=' + idLikeArr;
+  window.location.href = finalUrl;
+}
 
 const addLike = (thisEl) => {
   let idLiked = thisEl.data('id');
