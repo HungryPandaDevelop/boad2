@@ -7978,6 +7978,9 @@ footer .social-default {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
+  .yachts-item-liked.active, .yachts-item-liked:hover {
+    background-image: url("../images/icons/heart-fill-blue.svg");
+  }
 }
 /*catalog-filter*/
 .catalog-sorting-container {

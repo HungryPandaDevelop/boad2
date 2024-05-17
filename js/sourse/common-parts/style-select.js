@@ -4,8 +4,8 @@ $('.style-select').each(function () {
   const select = $(this);
   const selectedText = select.find('option:selected').text();
 
-
-  const dataText = select.data('text') || selectedText;
+  console.log('selectedText', selectedText)
+  const dataText = selectedText ? selectedText : select.data('text');
   const dataClass = select.data('class') ?? '';
 
   let selectOptions = '';
