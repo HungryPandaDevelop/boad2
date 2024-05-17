@@ -7,8 +7,9 @@ let countUpload = 0;
 let sizeUpload = 50;
 let allPostSize = 0;
 
+const catalogYachts = $('.catalog-yachts');
 let pageLang = $('.lang-yachts').data('lang');
-
+let yachtsCategory = $('.catalog-filter').find('.btn.active').data('href');
 let emptyText = pageLang === 'en' ? 'Empty List' : 'Список пуст'
 
 const typelist = $('.catalog-view').find('a.active').data('type');
@@ -33,11 +34,11 @@ const extraInit = () => {
 const appendYachts = (item, typelist) => {
 
   if (typelist === 'list') {
-    $('.catalog-yachts').append(yachtsItemListTemplate(item));
-    $('.catalog-yachts').removeClass('catalog-grid');
+    catalogYachts.append(yachtsItemListTemplate(item));
+    catalogYachts.removeClass('catalog-grid');
   } else {
-    $('.catalog-yachts').append(yachtsItemTileTemplate(item));
-    $('.catalog-yachts').addClass('catalog-grid');
+    catalogYachts.append(yachtsItemTileTemplate(item));
+    catalogYachts.addClass('catalog-grid');
   }
 
   extraInit();
@@ -47,8 +48,9 @@ const appendYachts = (item, typelist) => {
 const ajaxUpload = () => {
 
   let paramUrl = window.location.href.split('?')[1];
-  $('.catalog-yachts').empty();
-  $('.catalog-yachts').append(spinner);
+
+  catalogYachts.empty();
+  catalogYachts.append(spinner);
 
   console.log('ajax')
 
@@ -58,20 +60,18 @@ const ajaxUpload = () => {
     data: {
       'countUpload': countUpload,
       'sizeUpload': sizeUpload,
-      'lang': $('.lang-yachts').data('lang'),
-      'yachtsCategory': $('.catalog-filter').find('.btn.active').data('href'),
+      'lang': pageLang,
+      'yachtsCategory': yachtsCategory,
     },
     success: function (result) {
       spinner.remove();
 
       if (result.length > 0) {
-
-        result.map((item) => {
-          appendYachts(item, typelist);
-        });
+        const yachtElements = result.map(item => appendYachts(item, typelist));
+        catalogYachts.append(yachtElements);
 
       } else {
-        $('.catalog-yachts').append('<div class="empty-list col-12">' + emptyText + '</div>')
+        catalogYachts.append('<div class="empty-list col-12">' + emptyText + '</div>')
       }
 
     }
