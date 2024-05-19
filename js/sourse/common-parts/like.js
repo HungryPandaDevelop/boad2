@@ -8,7 +8,7 @@ const headLikeBtn = $('header .liked-btn');
 const btnLikeSpan = headLikeBtn.find('span');
 const catalogTotalInfo = $('.catalog-total-ifno span');
 const mainFavBox = $('.catalog-favorites');
-
+const thisLink = headLikeBtn.attr('href');
 const showHideCountLike = (idLikeArrParam) => {
 
   const countLike = idLikeArrParam.length;
@@ -16,11 +16,11 @@ const showHideCountLike = (idLikeArrParam) => {
   if (countLike > 0) {
     headLikeBtn.addClass('added');
 
-    headLikeBtn.attr('href', '/favorites?ids=' + idLikeArrParam);
+    headLikeBtn.attr('href', thisLink + '?ids=' + idLikeArrParam);
 
   } else {
     headLikeBtn.removeClass('added');
-    headLikeBtn.attr('href', '/favorites');
+    headLikeBtn.attr('href', thisLink);
   }
   btnLikeSpan.html(countLike);
   catalogTotalInfo.html(countLike);
@@ -68,13 +68,18 @@ $('.delete-btn').on('click', function (e) {
   e.preventDefault();
   let idLiked = $(this).data('id');
 
+  let typeList = $('.listing-btn.active').data('type')
+  let sorting = $('.style-select option:selected').attr('value');
+
+  console.log('sorting 2', sorting)
+
   idLikeArr = idLikeArr.filter(item => item !== idLiked);
 
   showHideCountLike(idLikeArr);
 
   localStorage.setItem('likedId', JSON.stringify(idLikeArr));
 
-  let finalUrl = fullUrl + '?ids=' + idLikeArr;
+  let finalUrl = fullUrl + '?ids=' + idLikeArr + '&typelist=' + typeList + '&sort=' + sorting;
 
   window.location.href = finalUrl;
 });
