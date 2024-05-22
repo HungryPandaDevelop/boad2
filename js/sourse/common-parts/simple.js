@@ -237,8 +237,20 @@ $('.order-select-box').on('click', function () {
 
 // forma 7 submit
 
-$('#wpcf7-f1595-o6 form').attr("onsubmit", "ym(96996333,'reachGoal','send-booking-form-ru'); return true;");
-$('#wpcf7-f1688-o6 form').attr("onsubmit", "ym(96996333,'reachGoal','send-booking-form-en'); return true;");
+$('#wpcf7-f1595-o6 form').attr("onsubmit", "ym(96996333,'reachGoal','send-open-form-ru'); return true;");
+$('#wpcf7-f1591-o6 form').attr("onsubmit", "ym(96996333,'reachGoal','send-open-form-ru'); return true;");
+
+$('#wpcf7-f1688-o6 form').attr("onsubmit", "ym(96996333,'reachGoal','send-open-form-en'); return true;");
+$('#wpcf7-f2340-o6 form').attr("onsubmit", "ym(96996333,'reachGoal','send-open-form-en'); return true;");
+
+$('#wpcf7-f102-o1 form').attr("onsubmit", "ym(96996333,'reachGoal','send-consultation-form-ru'); return true;");
+$('#wpcf7-f1680-o1 form').attr("onsubmit", "ym(96996333,'reachGoal','send-consultation-form-en'); return true;");
+
 
 $('#wpcf7-f1592-o6 form').attr("onsubmit", "ym(96996333,'reachGoal','send-review-ru'); return true;");
 $('#wpcf7-f2339-o6 form').attr("onsubmit", "ym(96996333,'reachGoal','send-review-en'); return true;");
+
+
+$('#wpcf7-f1614-o4 form').attr("onsubmit", "ym(96996333,'reachGoal','send-booking-form-ru'); return true;");
+$('#wpcf7-f1732-o4 form').attr("onsubmit", "ym(96996333,'reachGoal','send-booking-form-en'); return true;");
+

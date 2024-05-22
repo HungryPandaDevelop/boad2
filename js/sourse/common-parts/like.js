@@ -58,7 +58,7 @@ const addLike = (thisEl) => {
   showHideCountLike(idLikeArr);
 }
 
-$('.content').on('click', '.yachts-like-js', function (e) {
+$('body').on('click', '.yachts-like-js', function (e) {
   addLike($(this));
 });
 

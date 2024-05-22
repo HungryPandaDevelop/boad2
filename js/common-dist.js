@@ -560,7 +560,7 @@ $(document).on('click', '.custom-select li', function () {
 $('.close-js').on('click', function () {
     $(this).parents('.element-show').removeClass('show');
 });
-$('.popup-overlay-js').on('click',function(e){
+$('.popup-overlay-js').on('click', function (e) {
     $(this).parents('.element-show').removeClass('show');
 });
 
@@ -570,26 +570,26 @@ $(document).on('keyup', (evt) => {
     }
 });
 
-$('body').on('click','.element-btn', function (e) {
+$('body').on('click', '.element-btn', function (e) {
     e.preventDefault();
-    
+
     $('.element-show').removeClass('show');
     let activeIndex = $(this).attr('data-element');
-  
+
     let text;
-    if(activeIndex == 6){
-        if($(this).parents('.offer-item').length){
+    if (activeIndex == 6) {
+        if ($(this).parents('.offer-item').length) {
             text = $(this).parents('.offer-item').find('h3').text();
-        }else if($(this).parents('.market-info').length){
+        } else if ($(this).parents('.market-info').length) {
             console.log('in');
             text = $(this).parents('.market-info ').find('h1').text();
-        }       
+        }
         $('.kp-form h2 span').text(text);
         $('.kp-form').find('[name="your-prod"]').val(text.trim());
     }
     $('[data-element="' + activeIndex + '"].element-show').addClass('show');
 
-    
+
 });
 
 $('.reviews-stars').on('click','i',function(){
@@ -936,11 +936,23 @@ $('.order-select-box').on('click', function () {
 
 // forma 7 submit
 
-$('#wpcf7-f1595-o6 form').attr("onsubmit", "ym(96996333,'reachGoal','send-booking-form-ru'); return true;");
-$('#wpcf7-f1688-o6 form').attr("onsubmit", "ym(96996333,'reachGoal','send-booking-form-en'); return true;");
+$('#wpcf7-f1595-o6 form').attr("onsubmit", "ym(96996333,'reachGoal','send-open-form-ru'); return true;");
+$('#wpcf7-f1591-o6 form').attr("onsubmit", "ym(96996333,'reachGoal','send-open-form-ru'); return true;");
+
+$('#wpcf7-f1688-o6 form').attr("onsubmit", "ym(96996333,'reachGoal','send-open-form-en'); return true;");
+$('#wpcf7-f2340-o6 form').attr("onsubmit", "ym(96996333,'reachGoal','send-open-form-en'); return true;");
+
+$('#wpcf7-f102-o1 form').attr("onsubmit", "ym(96996333,'reachGoal','send-consultation-form-ru'); return true;");
+$('#wpcf7-f1680-o1 form').attr("onsubmit", "ym(96996333,'reachGoal','send-consultation-form-en'); return true;");
+
 
 $('#wpcf7-f1592-o6 form').attr("onsubmit", "ym(96996333,'reachGoal','send-review-ru'); return true;");
 $('#wpcf7-f2339-o6 form').attr("onsubmit", "ym(96996333,'reachGoal','send-review-en'); return true;");
+
+
+$('#wpcf7-f1614-o4 form').attr("onsubmit", "ym(96996333,'reachGoal','send-booking-form-ru'); return true;");
+$('#wpcf7-f1732-o4 form').attr("onsubmit", "ym(96996333,'reachGoal','send-booking-form-en'); return true;");
+
 
 //
 // $('h1').on('click',function(){
@@ -1472,7 +1484,7 @@ const addLike = (thisEl) => {
   showHideCountLike(idLikeArr);
 }
 
-$('.content').on('click', '.yachts-like-js', function (e) {
+$('body').on('click', '.yachts-like-js', function (e) {
   addLike($(this));
 });
 
