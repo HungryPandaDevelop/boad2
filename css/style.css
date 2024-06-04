@@ -3422,6 +3422,13 @@ header .hamburger-btn,
 header .call-mobile-container {
   display: none;
 }
+header .logo {
+  background-color: #14143C;
+  padding: 3px 0;
+}
+header .logo img {
+  margin: auto;
+}
 
 .border-header {
   width: 100%;
