@@ -9295,7 +9295,7 @@ footer .social-default {
   padding-bottom: 90px;
 }
 .services-main .breadcrumbs {
-  margin-top: 100px;
+  margin-top: 73px;
   background: none;
   color: #ffffff;
   padding: 0;
@@ -9404,13 +9404,16 @@ footer .social-default {
 
 @media (max-width: 1280px) {
   .services-main .breadcrumbs {
-    margin-top: 60px;
+    margin-top: 35px;
   }
 }
 @media (max-width: 992px) {
   .services-main-img {
     width: 50%;
     left: 50%;
+  }
+  .services-main .breadcrumbs {
+    margin-top: 75px;
   }
 }
 @media (max-width: 768px) {
@@ -9853,6 +9856,11 @@ footer .social-default {
   margin-bottom: 45px;
 }
 
+@media (max-width: 1280px) {
+  .about-main .breadcrumbs {
+    margin-top: 38px;
+  }
+}
 @media (max-width: 768px) {
   .about-main {
     height: auto;

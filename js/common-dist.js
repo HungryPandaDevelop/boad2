@@ -1501,6 +1501,7 @@ const addLike = (thisEl) => {
 }
 
 $('body').on('click', '.yachts-like-js', function (e) {
+  e.preventDefault();
   addLike($(this));
 });
 
