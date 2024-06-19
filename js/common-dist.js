@@ -386,18 +386,18 @@ $('.wpcf7-form-control-wrap').each(function () {
 
 document.addEventListener('wpcf7mailsent', function (event) {
 
-  console.log('send wazap start', event.detail.contactFormId)
-  if (event.detail.contactFormId === 1595) { // Замените 1234 н
-    var phoneNumber = "+79852826532"; // Замените на ваш номер телефона в международном формате
-    var message = "Спасибо за вашу заявку. Мы свяжемся с вами в ближайшее время.";
+  // console.log('send wazap start', event.detail.contactFormId)
+  // if (event.detail.contactFormId === 1595) { // Замените 1234 н
+  //   var phoneNumber = "+79852826532"; // Замените на ваш номер телефона в международном формате
+  //   var message = "Спасибо за вашу заявку. Мы свяжемся с вами в ближайшее время.";
 
-    // Создайте ссылку для отправки сообщения через WhatsApp
-    var whatsappUrl = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message);
+  //   // Создайте ссылку для отправки сообщения через WhatsApp
+  //   var whatsappUrl = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message);
 
-    // Откройте ссылку в новом окне
-    console.log('send wazap ok')
-    window.open(whatsappUrl, '_blank');
-  }
+  //   // Откройте ссылку в новом окне
+  //   console.log('send wazap ok')
+  //   window.open(whatsappUrl, '_blank');
+  // }
 
 
 
