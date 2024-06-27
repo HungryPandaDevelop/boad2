@@ -711,25 +711,29 @@ function phone_mask() {
 		//onlyCountries:['us','gb','ch','ca','do'],
 	});
 
-	let textPhone = 'Ваш телефон';
-	let textPhoneEn = 'Your phone';
-	$('.phone-null').after('<label class="label-animate" for="phone-flag-null">' + textPhone + '</label>');
-	$('.phone-main').after('<label class="label-animate" for="phone-flag">' + textPhone + '</label>');
-	$('.phone-second').after('<label class="label-animate" for="phone-second">' + textPhone + '</label>');
-	$('.phone-three').after('<label class="label-animate" for="phone-three">' + textPhone + '</label>');
-	$('.phone-four').after('<label class="label-animate" for="phone-four">' + textPhone + '</label>');
-	$('.phone-five').after('<label class="label-animate" for="phone-five">' + textPhone + '</label>');
+	let textPhone = $('header').data('lang') === 'ru' ? 'Ваш телефон' : 'Your phone';
 
-	$('.phone-six').after('<label class="label-animate" for="phone-six">' + textPhone + '</label>');
+	$('.phone').after('<label class="label-animate" >' + textPhone + '</label>');
+	$('.phone').next().on('click', function () {
+		$(this).prev().focus();
+	});
+	// $('.phone-null').after('<label class="label-animate" for="phone-flag-null">' + textPhone + '</label>');
+	// $('.phone-main').after('<label class="label-animate" for="phone-flag">' + textPhone + '</label>');
+	// $('.phone-second').after('<label class="label-animate" for="phone-second">' + textPhone + '</label>');
+	// $('.phone-three').after('<label class="label-animate" for="phone-three">' + textPhone + '</label>');
+	// $('.phone-four').after('<label class="label-animate" for="phone-four">' + textPhone + '</label>');
+	// $('.phone-five').after('<label class="label-animate" for="phone-five">' + textPhone + '</label>');
 
-	$('.phone-null-en').after('<label class="label-animate" for="phone-flag-null">' + textPhoneEn + '</label>');
-	$('.phone-main-en').after('<label class="label-animate" for="phone-flag">' + textPhoneEn + '</label>');
-	$('.phone-second-en').after('<label class="label-animate" for="phone-second">' + textPhoneEn + '</label>');
-	$('.phone-three-en').after('<label class="label-animate" for="phone-three">' + textPhoneEn + '</label>');
-	$('.phone-four-en').after('<label class="label-animate" for="phone-four">' + textPhoneEn + '</label>');
-	$('.phone-five-en').after('<label class="label-animate" for="phone-five-en">' + textPhoneEn + '</label>');
+	// $('.phone-six').after('<label class="label-animate" for="phone-six">' + textPhone + '</label>');
 
-	$('.phone-six-en').after('<label class="label-animate" for="phone-six-en">' + textPhoneEn + '</label>');
+	// $('.phone-null-en').after('<label class="label-animate" for="phone-flag-null">' + textPhoneEn + '</label>');
+	// $('.phone-main-en').after('<label class="label-animate" for="phone-flag">' + textPhoneEn + '</label>');
+	// $('.phone-second-en').after('<label class="label-animate" for="phone-second">' + textPhoneEn + '</label>');
+	// $('.phone-three-en').after('<label class="label-animate" for="phone-three">' + textPhoneEn + '</label>');
+	// $('.phone-four-en').after('<label class="label-animate" for="phone-four">' + textPhoneEn + '</label>');
+	// $('.phone-five-en').after('<label class="label-animate" for="phone-five-en">' + textPhoneEn + '</label>');
+
+	// $('.phone-six-en').after('<label class="label-animate" for="phone-six-en">' + textPhoneEn + '</label>');
 
 
 	$('.phone').on('close:countrydropdown', function (e, countryData) {

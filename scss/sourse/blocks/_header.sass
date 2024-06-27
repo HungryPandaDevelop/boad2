@@ -1,7 +1,7 @@
 
 .stub
 	// height: 190px
-	height: 140px
+	height: 90px
 .stub-second
 	// height: 190px
 	height: 200px
@@ -14,14 +14,19 @@ header
 	.main-grid
 		height: 100%
 	.logo-container
-		height: 70px
+		height: 50px
 	a
 		text-decoration: none
 		&:hover
 			color: $yellowColor
 	.btn
 		// width: 150px
-		padding: 9px 5px
+		padding: 5px 5px
+	.input-search
+		padding: 8px 12px
+	.search-main .search-ico,
+	.search-main .close-ico
+		margin: 5px 13px
 	.hamburger-btn,
 	.call-mobile-container
 		display: none
@@ -101,7 +106,7 @@ header
 				transform: translateX(-50%) translateY(0)
 	a
 		position: relative
-		padding: 23px 0
+		padding: 10px 0
 		padding-right: 20px
 		i
 			@include positionElement(20px,20px, -3px, 50%,right)
@@ -211,7 +216,7 @@ header
 @media (max-width: 576px)
 	header
 		.logo
-			width: 100px
+			width: 80px
 			margin: 0 auto
 			display: block
 			text-align: center
