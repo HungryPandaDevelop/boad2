@@ -69,6 +69,10 @@ a {
   color: inherit;
   display: inline-block;
 }
+a:hover {
+  color: #C19F56;
+}
+
 .ln,
 .ln li {
   padding: 0;
@@ -3385,7 +3389,7 @@ a.pagination-next:hover {
  *
  * /*-----header-start----*/
 .stub {
-  height: 140px;
+  height: 90px;
 }
 
 .stub-second {
@@ -3407,7 +3411,7 @@ header .main-grid {
   height: 100%;
 }
 header .logo-container {
-  height: 70px;
+  height: 50px;
 }
 header a {
   text-decoration: none;
@@ -3416,7 +3420,14 @@ header a:hover {
   color: #C19F56;
 }
 header .btn {
-  padding: 9px 5px;
+  padding: 5px 5px;
+}
+header .input-search {
+  padding: 8px 12px;
+}
+header .search-main .search-ico,
+header .search-main .close-ico {
+  margin: 5px 13px;
 }
 header .hamburger-btn,
 header .call-mobile-container {
@@ -3535,7 +3546,7 @@ header .logo img {
 }
 .nav-header a {
   position: relative;
-  padding: 23px 0;
+  padding: 10px 0;
   padding-right: 20px;
 }
 .nav-header a i {
@@ -3686,7 +3697,7 @@ header .logo img {
 }
 @media (max-width: 576px) {
   header .logo {
-    width: 100px;
+    width: 80px;
     margin: 0 auto;
     display: block;
     text-align: center;
@@ -6527,6 +6538,11 @@ footer .social-default {
     width: 1000px;
   }
 }
+@media (max-width: 576px) {
+  .detail-tabs-nav ul {
+    width: 640px;
+  }
+}
 .pricelist-section .btn {
   margin-bottom: 15px;
 }
@@ -8425,7 +8441,7 @@ footer .social-default {
   background-color: rgba(255, 255, 255, 0.7);
 }
 .yachts-main-detail .breadcrumbs {
-  margin-top: 78px;
+  margin-top: 128px;
 }
 
 .breadcrumbs-yachts {
@@ -8570,7 +8586,7 @@ footer .social-default {
     width: 130px;
   }
   .yachts-main-detail .breadcrumbs {
-    margin-top: 37px;
+    margin-top: 87px;
   }
 }
 @media (max-width: 992px) {
@@ -9308,7 +9324,7 @@ footer .social-default {
   padding-bottom: 90px;
 }
 .services-main .breadcrumbs {
-  margin-top: 73px;
+  margin-top: 123px;
   background: none;
   color: #ffffff;
   padding: 0;
@@ -9417,7 +9433,7 @@ footer .social-default {
 
 @media (max-width: 1280px) {
   .services-main .breadcrumbs {
-    margin-top: 35px;
+    margin-top: 75px;
   }
 }
 @media (max-width: 992px) {
@@ -9731,7 +9747,7 @@ footer .social-default {
 
 .tabs-routes {
   position: sticky;
-  top: 137px;
+  top: 91px;
   background-color: #ffffff;
   z-index: 3;
   padding: 0;
