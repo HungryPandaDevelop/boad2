@@ -33,6 +33,7 @@ document.addEventListener('wpcf7mailsent', function (event) {
 
 
   let payload = {
+    // "chatId": "79852826532@c.us",
     "chatId": "97145254242@c.us",
     "message": messages
   }
@@ -45,7 +46,7 @@ document.addEventListener('wpcf7mailsent', function (event) {
     headers: headers,
     data: JSON.stringify(payload),
     success: function (response) {
-      console.log('Message sent successfully:', response);
+      console.log('Message sent successfully a:', response);
     },
     error: function (error) {
       console.error('Error sending message:', error);
