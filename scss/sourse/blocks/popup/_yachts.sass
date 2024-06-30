@@ -1,0 +1,87 @@
+.extra-order-popup
+  h3,
+  h4,
+  h5
+    text-align: left
+    color: $whiteColor
+  h3
+    font-size: 24px
+  h4
+    font-size: 16px
+    text-transform: uppercase
+  h5
+    font-size: 14px
+    font-weight: 400
+  .popup-container
+    max-width: 900px
+  .main-grid
+    padding: 0
+  .cell-form
+    margin-top: -30px
+  .cell-img
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+  .agreement
+    margin-bottom: 8px
+  .input-box
+    margin: 0
+  .couple-input-box
+    display: flex
+    gap: 30px
+    .input-box,
+    .yachts-order-btn
+      width: 50%
+  .btn-container
+    margin-top: 30px
+  .btn
+    width: 190px
+.extra-order-img
+  height: 234px
+  position: relative
+  margin-top: 30px
+  .img-cover
+    height: 100%
+.couple-btn-box
+  margin-top: 30px
+.yachts-order-btn
+  border-bottom: 1px solid $whiteColor
+  position: relative
+  text-transform: uppercase
+  cursor: pointer
+  i
+    @include positionElement(20px,20px,0,0,right)
+    @include bgImageEl("../images/arrows/carret-down-white.svg", 30px)
+  &:hover
+    color: $yellowColor
+    i
+      background-image: url("../images/arrows/carret-down-yellow.svg")
+
+.custom-checkbox
+  margin-bottom: 15px
+  cursor: pointer
+  i
+    display: inline-block
+    width: 26px
+    height: 26px
+    border: 1px solid $yellowColor
+    border-radius: 100%
+    position: relative
+    margin-right: 8px
+  em,
+  span
+    display: block
+  .custom-checkbox-name,
+  i
+    vertical-align: middle
+  .custom-checkbox-name
+    display: inline-block
+    width: calc( 100% - 45px )
+  &.active
+    color: $yellowColor
+    i
+      &::before
+        content: ""
+        @include positionElement(14px,14px,5px,5px)
+        background-color: $yellowColor
+        border-radius: 100%

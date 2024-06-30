@@ -4545,6 +4545,143 @@ footer .social-default {
   font-size: 14px;
 }
 
+.extra-order-popup h3,
+.extra-order-popup h4,
+.extra-order-popup h5 {
+  text-align: left;
+  color: #ffffff;
+}
+.extra-order-popup h3 {
+  font-size: 24px;
+}
+.extra-order-popup h4 {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.extra-order-popup h5 {
+  font-size: 14px;
+  font-weight: 400;
+}
+.extra-order-popup .popup-container {
+  max-width: 900px;
+}
+.extra-order-popup .main-grid {
+  padding: 0;
+}
+.extra-order-popup .cell-form {
+  margin-top: -30px;
+}
+.extra-order-popup .cell-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.extra-order-popup .agreement {
+  margin-bottom: 8px;
+}
+.extra-order-popup .input-box {
+  margin: 0;
+}
+.extra-order-popup .couple-input-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+.extra-order-popup .couple-input-box .input-box,
+.extra-order-popup .couple-input-box .yachts-order-btn {
+  width: 50%;
+}
+.extra-order-popup .btn-container {
+  margin-top: 30px;
+}
+.extra-order-popup .btn {
+  width: 190px;
+}
+
+.extra-order-img {
+  height: 234px;
+  position: relative;
+  margin-top: 30px;
+}
+.extra-order-img .img-cover {
+  height: 100%;
+}
+
+.couple-btn-box {
+  margin-top: 30px;
+}
+
+.yachts-order-btn {
+  border-bottom: 1px solid #ffffff;
+  position: relative;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.yachts-order-btn i {
+  width: 20px;
+  position: absolute;
+  height: 20px;
+  right: 0;
+  top: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-image: url("../images/arrows/carret-down-white.svg");
+}
+.yachts-order-btn:hover {
+  color: #C19F56;
+}
+.yachts-order-btn:hover i {
+  background-image: url("../images/arrows/carret-down-yellow.svg");
+}
+
+.custom-checkbox {
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.custom-checkbox i {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #C19F56;
+  border-radius: 100%;
+  position: relative;
+  margin-right: 8px;
+}
+.custom-checkbox em,
+.custom-checkbox span {
+  display: block;
+}
+.custom-checkbox .custom-checkbox-name,
+.custom-checkbox i {
+  vertical-align: middle;
+}
+.custom-checkbox .custom-checkbox-name {
+  display: inline-block;
+  width: calc(100% - 45px);
+}
+.custom-checkbox.active {
+  color: #C19F56;
+}
+.custom-checkbox.active i::before {
+  content: "";
+  width: 14px;
+  position: absolute;
+  height: 14px;
+  left: 5px;
+  top: 5px;
+  background-color: #C19F56;
+  border-radius: 100%;
+}
+
 /*-----feedback----*/
 .preloader-popup {
   width: 100%;
