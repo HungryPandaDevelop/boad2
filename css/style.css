@@ -4636,10 +4636,11 @@ footer .social-default {
   background-size: 30px;
   background-image: url("../images/arrows/carret-down-white.svg");
 }
-.yachts-order-btn:hover {
+.yachts-order-btn:hover, .yachts-order-btn.active {
   color: #C19F56;
+  border-color: #C19F56;
 }
-.yachts-order-btn:hover i {
+.yachts-order-btn:hover i, .yachts-order-btn.active i {
   background-image: url("../images/arrows/carret-down-yellow.svg");
 }
 
@@ -4680,6 +4681,21 @@ footer .social-default {
   top: 5px;
   background-color: #C19F56;
   border-radius: 100%;
+}
+
+.order-popup-part {
+  background-color: #14143C;
+  padding: 90px 30px;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  display: none;
+}
+.order-popup-part.show {
+  display: block;
 }
 
 /*-----feedback----*/

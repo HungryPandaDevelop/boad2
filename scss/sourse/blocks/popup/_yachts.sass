@@ -52,8 +52,10 @@
   i
     @include positionElement(20px,20px,0,0,right)
     @include bgImageEl("../images/arrows/carret-down-white.svg", 30px)
-  &:hover
+  &:hover,
+  &.active
     color: $yellowColor
+    border-color: $yellowColor
     i
       background-image: url("../images/arrows/carret-down-yellow.svg")
 
@@ -85,3 +87,11 @@
         @include positionElement(14px,14px,5px,5px)
         background-color: $yellowColor
         border-radius: 100%
+
+.order-popup-part
+  background-color: $blueColor
+  padding: 90px 30px
+  @include positionElement(100%,100%,0,0,left,top,2)
+  display: none
+  &.show
+    display: block
