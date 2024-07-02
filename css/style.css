@@ -4607,12 +4607,20 @@ footer .social-default {
 }
 
 .extra-order-img {
-  height: 234px;
   position: relative;
   margin-top: 30px;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../images/yacht-popup-logo.svg");
 }
-.extra-order-img .img-cover {
-  height: 100%;
+.extra-order-img img {
+  width: 100%;
+  display: none;
+}
+.extra-order-img img.show {
+  display: block;
 }
 
 .couple-btn-box {
@@ -4624,6 +4632,12 @@ footer .social-default {
   position: relative;
   text-transform: uppercase;
   cursor: pointer;
+}
+.yachts-order-btn span {
+  position: relative;
+  width: 80%;
+  overflow: hidden;
+  display: inline-block;
 }
 .yachts-order-btn i {
   width: 20px;
@@ -4642,6 +4656,21 @@ footer .social-default {
 }
 .yachts-order-btn:hover i, .yachts-order-btn.active i {
   background-image: url("../images/arrows/carret-down-yellow.svg");
+}
+
+.popup-yacht-head {
+  height: 90px;
+}
+
+.custom-checkbox-container,
+.custom-radio-container {
+  height: 450px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.cell-form-container {
+  height: 480px;
 }
 
 .custom-checkbox {

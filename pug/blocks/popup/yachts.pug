@@ -3,44 +3,45 @@
 	include yachts/routes
 	.main-grid
 		.col-6.cell-img
-			div 
-				h4 BOOK a YACHT
-				h3 AZIMUT 75 VIKTORIA
+			div
+				.popup-yacht-head
+					h4 BOOK a YACHT
+					h3 AZIMUT 75 VIKTORIA
 				.extra-order-img 
-					.img-cover 
-						img(src="/images/temp/boad/1.jpg", alt="")
+					//- img(src="/images/temp/boad/1.jpg", alt="")
 			.checkbox.agreement
 				label Согласен (на) на обработку 
 					a(href="#") персональных данных 
 					input(type="checkbox" checked)
 					span
 		.col-6.cell-form
-			input(type="hidden" name="serv" class="serv-input")
-			input(type="hidden" name="route"  class="route-input")
-			.input-box
-				input(type="text" id="name"  class='input-decorate' autocomplete="off")
-				label.label-animate(for="name" ) Ваше имя
-			.input-box
-				input(type="text" id="phone-flag-null"  class="phone input-decorate phone-null" autocomplete="off")
-			.input-box.date-input-container
-				input(type="text"  class='input-decorate input-date' id='date'  autocomplete="off")
-				label.label-animate(for="date" ) Дата и время
-			.couple-input-box
+			.cell-form-container
+				input(type="hidden" name="serv" class="serv-input")
+				input(type="hidden" name="route"  class="route-input")
 				.input-box
-					input(type="text" id="adult-guest"  class='input-decorate' autocomplete="off")
-					label.label-animate(for="adult-guest" ) Гости
+					input(type="text" id="name"  class='input-decorate' autocomplete="off")
+					label.label-animate(for="name" ) Ваше имя
 				.input-box
-					input(type="text" id="guest"  class='input-decorate' autocomplete="off")
-					label.label-animate(for="guest" ) Дети (3-12 лет)
-			.input-box
-				textarea(class='input-decorate check-mail' autocomplete="off")
-				label.label-animate Ваше пожелания и комментарии
-			.couple-input-box.couple-btn-box
-				.yachts-order-btn(data-id="services" data-text='Выбрать услугу' data-subtext='Выбрано' data-subsubtext='услуги')
-					span Выбрать услугу
-					i
-				.yachts-order-btn(data-id="routes" data-text='Выбрать маршрут')
-					span Выбрать маршрут
-					i
+					input(type="text" id="phone-flag-null"  class="phone input-decorate phone-null" autocomplete="off")
+				.input-box.date-input-container
+					input(type="text"  class='input-decorate input-date' id='date'  autocomplete="off")
+					label.label-animate(for="date" ) Дата и время
+				.couple-input-box
+					.input-box
+						input(type="text" id="adult-guest"  class='input-decorate' autocomplete="off")
+						label.label-animate(for="adult-guest" ) Гости
+					.input-box
+						input(type="text" id="guest"  class='input-decorate' autocomplete="off")
+						label.label-animate(for="guest" ) Дети (3-12 лет)
+				.input-box
+					textarea(class='input-decorate check-mail' autocomplete="off")
+					label.label-animate Ваше пожелания и комментарии
+				.couple-input-box.couple-btn-box
+					.yachts-order-btn(data-id="services" data-text='Выбрать услугу' data-subtext='Выбрано' data-subsubtext='услуги')
+						span Выбрать услугу
+						i
+					.yachts-order-btn(data-id="routes" data-text='Выбрать маршрут')
+						span Выбрать маршрут
+						i
 			.btn-container 
 				+inputSubmit('отправить', 'btn--yellow')

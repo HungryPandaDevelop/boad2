@@ -19,6 +19,7 @@ $('body').on('click', '.element-btn', function (e) {
     let activeIndex = $(this).attr('data-element');
 
     let text;
+    let img;
     if (activeIndex == 6) {
         if ($(this).parents('.offer-item').length) {
             text = $(this).parents('.offer-item').find('h3').text();
@@ -29,6 +30,22 @@ $('body').on('click', '.element-btn', function (e) {
         $('.kp-form h2 span').text(text);
         $('.kp-form').find('[name="your-prod"]').val(text.trim());
     }
+
+    if (activeIndex == 50) {
+
+        text = $(this).parents('.yachts-item').find('h3 a').text();
+        img = $(this).parents('.yachts-item').find('.yachts-img img').attr('src');
+
+
+        $('.popup-yacht-head-main h3').text(text);
+        $('.extra-order-img-yachts img').addClass('show').attr('src', img);
+        $('.yachts-input').val(text)
+        console.log('b', img)
+        // $('.kp-form').find('[name="your-prod"]').val(text.trim());
+    }
+
+
+
     $('[data-element="' + activeIndex + '"].element-show').addClass('show');
 
 

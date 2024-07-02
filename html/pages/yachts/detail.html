@@ -140,17 +140,17 @@
             <div class="main-grid">
               <div class="col-6 cell-img">
                 <div>
-                  <h4>Please select additional services.</h4>
-                  <h5>You can select several services.</h5>
-                  <div class="extra-order-img">
-                    <div class="img-cover"> <img src="/images/temp/boad/1.jpg" alt=""></div>
+                  <div class="popup-yacht-head">
+                    <h4>Please select additional services.</h4>
+                    <h5>You can select several services.</h5>
                   </div>
+                  <div class="extra-order-img extra-order-img-serv"><img src="#" alt=""></div>
                 </div>
               </div>
               <div class="col-6">
                 <div class="custom-checkbox-container"></div>
                 <div class="btn-container"> 
-                  <div class="btn btn--yellow book-form">Выбрать</div>
+                  <div class="btn btn--yellow book-form book-form-serv">Закрыть</div>
                 </div>
               </div>
             </div>
@@ -159,45 +159,28 @@
             <div class="main-grid">
               <div class="col-6 cell-img">
                 <div>
-                  <h4>Please select one of the routes you are interested in..</h4>
-                  <div class="extra-order-img">
-                    <div class="img-cover"> <img src="/images/temp/boad/1.jpg" alt=""></div>
+                  <div class="popup-yacht-head">
+                    <h4>Please select one of the routes you are interested in..</h4>
                   </div>
+                  <div class="extra-order-img extra-order-img-route"><img src="#" alt=""></div>
                 </div>
               </div>
-              <div class="col-6 custom-radio-container">
-                <div class="custom-checkbox custom-radio-js"><i></i>
-                  <div class="custom-checkbox-name"><b>YACHT 1</b><span>from 350 AED per person</span></div>
-                </div>
-                <div class="custom-checkbox custom-radio-js"><i></i>
-                  <div class="custom-checkbox-name"><b>YACHT 2</b><span>from 350 AED per person</span></div>
-                </div>
-                <div class="custom-checkbox custom-radio-js"><i></i>
-                  <div class="custom-checkbox-name"><b>YACHT 3</b><span>from 350 AED per person</span></div>
-                </div>
-                <div class="custom-checkbox custom-radio-js"><i></i>
-                  <div class="custom-checkbox-name"><b>YACHT 4</b><span>from 350 AED per person</span></div>
-                </div>
-                <div class="custom-checkbox custom-radio-js"><i></i>
-                  <div class="custom-checkbox-name"><b>YACHT 5</b><span>from 350 AED per person</span></div>
-                </div>
-                <div class="custom-checkbox custom-radio-js"><i></i>
-                  <div class="custom-checkbox-name"><b>YACHT 6</b><span>from 350 AED per person</span></div>
-                </div>
+              <div class="col-6">
+                <div class="custom-radio-container"></div>
                 <div class="btn-container"> 
-                  <div class="btn btn--yellow book-form">Выбрать</div>
+                  <div class="btn btn--yellow book-form book-form-route">Закрыть</div>
                 </div>
               </div>
             </div>
           </div>
           <div class="main-grid">
             <div class="col-6 cell-img">
-              <div> 
-                <h4>BOOK a YACHT</h4>
-                <h3>AZIMUT 75 VIKTORIA</h3>
-                <div class="extra-order-img"> 
-                  <div class="img-cover"> <img src="/images/temp/boad/1.jpg" alt=""></div>
+              <div>
+                <div class="popup-yacht-head">
+                  <h4>BOOK a YACHT</h4>
+                  <h3>AZIMUT 75 VIKTORIA</h3>
                 </div>
+                <div class="extra-order-img"> </div>
               </div>
               <div class="checkbox agreement">
                 <label>Согласен (на) на обработку <a href="#">персональных данных </a>
@@ -206,36 +189,38 @@
               </div>
             </div>
             <div class="col-6 cell-form">
-              <input class="serv-input" type="hidden" name="serv">
-              <input class="route-input" type="hidden" name="route">
-              <div class="input-box">
-                <input class="input-decorate" type="text" id="name" autocomplete="off">
-                <label class="label-animate" for="name">Ваше имя</label>
-              </div>
-              <div class="input-box">
-                <input class="phone input-decorate phone-null" type="text" id="phone-flag-null" autocomplete="off">
-              </div>
-              <div class="input-box date-input-container">
-                <input class="input-decorate input-date" type="text" id="date" autocomplete="off">
-                <label class="label-animate" for="date">Дата и время</label>
-              </div>
-              <div class="couple-input-box">
+              <div class="cell-form-container">
+                <input class="serv-input" type="hidden" name="serv">
+                <input class="route-input" type="hidden" name="route">
                 <div class="input-box">
-                  <input class="input-decorate" type="text" id="adult-guest" autocomplete="off">
-                  <label class="label-animate" for="adult-guest">Гости</label>
+                  <input class="input-decorate" type="text" id="name" autocomplete="off">
+                  <label class="label-animate" for="name">Ваше имя</label>
                 </div>
                 <div class="input-box">
-                  <input class="input-decorate" type="text" id="guest" autocomplete="off">
-                  <label class="label-animate" for="guest">Дети (3-12 лет)</label>
+                  <input class="phone input-decorate phone-null" type="text" id="phone-flag-null" autocomplete="off">
                 </div>
-              </div>
-              <div class="input-box">
-                <textarea class="input-decorate check-mail" autocomplete="off"></textarea>
-                <label class="label-animate">Ваше пожелания и комментарии</label>
-              </div>
-              <div class="couple-input-box couple-btn-box">
-                <div class="yachts-order-btn" data-id="services" data-text="Выбрать услугу" data-subtext="Выбрано" data-subsubtext="услуги"><span>Выбрать услугу</span><i></i></div>
-                <div class="yachts-order-btn" data-id="routes" data-text="Выбрать маршрут"><span>Выбрать маршрут</span><i></i></div>
+                <div class="input-box date-input-container">
+                  <input class="input-decorate input-date" type="text" id="date" autocomplete="off">
+                  <label class="label-animate" for="date">Дата и время</label>
+                </div>
+                <div class="couple-input-box">
+                  <div class="input-box">
+                    <input class="input-decorate" type="text" id="adult-guest" autocomplete="off">
+                    <label class="label-animate" for="adult-guest">Гости</label>
+                  </div>
+                  <div class="input-box">
+                    <input class="input-decorate" type="text" id="guest" autocomplete="off">
+                    <label class="label-animate" for="guest">Дети (3-12 лет)</label>
+                  </div>
+                </div>
+                <div class="input-box">
+                  <textarea class="input-decorate check-mail" autocomplete="off"></textarea>
+                  <label class="label-animate">Ваше пожелания и комментарии</label>
+                </div>
+                <div class="couple-input-box couple-btn-box">
+                  <div class="yachts-order-btn" data-id="services" data-text="Выбрать услугу" data-subtext="Выбрано" data-subsubtext="услуги"><span>Выбрать услугу</span><i></i></div>
+                  <div class="yachts-order-btn" data-id="routes" data-text="Выбрать маршрут"><span>Выбрать маршрут</span><i></i></div>
+                </div>
               </div>
               <div class="btn-container"> 
                   <div class="form-btn-container">

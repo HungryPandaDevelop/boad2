@@ -639,6 +639,7 @@ $('body').on('click', '.element-btn', function (e) {
     let activeIndex = $(this).attr('data-element');
 
     let text;
+    let img;
     if (activeIndex == 6) {
         if ($(this).parents('.offer-item').length) {
             text = $(this).parents('.offer-item').find('h3').text();
@@ -649,6 +650,22 @@ $('body').on('click', '.element-btn', function (e) {
         $('.kp-form h2 span').text(text);
         $('.kp-form').find('[name="your-prod"]').val(text.trim());
     }
+
+    if (activeIndex == 50) {
+
+        text = $(this).parents('.yachts-item').find('h3 a').text();
+        img = $(this).parents('.yachts-item').find('.yachts-img img').attr('src');
+
+
+        $('.popup-yacht-head-main h3').text(text);
+        $('.extra-order-img-yachts img').addClass('show').attr('src', img);
+        $('.yachts-input').val(text)
+        console.log('b', img)
+        // $('.kp-form').find('[name="your-prod"]').val(text.trim());
+    }
+
+
+
     $('[data-element="' + activeIndex + '"].element-show').addClass('show');
 
 
@@ -764,19 +781,36 @@ phone_mask();
 
 
 
-let checkboxTemplateServ = (title) => (`
-  <div class="custom-checkbox custom-checkbox-js"><i></i>
-    <div class="custom-checkbox-name"><b>${title}</b><span>from 350 AED per person</span></div>
+let checkboxTemplateServ = ({ title, price, img }) => (`
+  <div class="custom-checkbox custom-checkbox-js" data-img="${img}"><i></i>
+    <div class="custom-checkbox-name"><b>${title}</b><span>${price}</span></div>
   </div>
-  `)
+  `);
+let checkboxTemplateRoute = ({ title, time, img }) => (`
+  <div class="custom-checkbox custom-radio-js" data-img="${img.url}"><i></i>
+    <div class="custom-checkbox-name"><b>${title}</b><span>${time}</span></div>
+  </div>
+  `);
 
 $.ajax({
   url: 'https://lsb.rent/wp-json/get/serv?lang=ru',
   type: 'GET',
   success: function (response) {
-    response.forEach(item => {
-      let checkboxHTML = checkboxTemplateServ(item.title);
+    response.forEach((item) => {
+      let checkboxHTML = checkboxTemplateServ(item);
       $('.custom-checkbox-container').append(checkboxHTML)
+    })
+  }
+});
+$.ajax({
+  url: 'https://lsb.rent/wp-json/get/route?lang=ru',
+  type: 'GET',
+  success: function (response) {
+    console.log('response', response);
+
+    response.forEach((item) => {
+      let checkboxHTML = checkboxTemplateRoute(item);
+      $('.custom-radio-container').append(checkboxHTML)
     })
   }
 });
@@ -794,6 +828,7 @@ $('.book-form').on('click', function () {
 });
 
 let arrServ = [];
+let arrImg = [];
 let btnServices = $('.yachts-order-btn[data-id="services"]');
 let dataTextServices = btnServices.data('text');
 let dataSubTextServices = btnServices.data('subtext');
@@ -802,12 +837,16 @@ let dataSubSubTextServices = btnServices.data('subsubtext');
 
 $('body').on('click', '.custom-checkbox-js', function () {
   let name = $(this).find('b').text();
+  let img = $(this).data('img');
+
   if ($(this).hasClass('active')) {
     $(this).removeClass('active');
     arrServ = arrServ.filter(item => item !== name)
+    arrImg = arrImg.filter(item => item !== img)
   } else {
     $(this).addClass('active');
     arrServ.push(name);
+    arrImg.push(img);
   }
 
   $('.serv-input').val(arrServ);
@@ -820,18 +859,27 @@ $('body').on('click', '.custom-checkbox-js', function () {
       btnChoise.text(arrServ[0])
     }
     btnChoise.parent().addClass('active');
+    $('.book-form-serv').text('Выбрать');
 
+    $('.extra-order-img-serv img').addClass('show').attr('src', arrImg[arrImg.length - 1])
   } else {
     btnChoise.text(dataTextServices)
     btnChoise.parent().removeClass('active');
+    $('.book-form-serv').text('Закрыть');
+
+    $('.extra-order-img-serv img').removeClass('show').attr('src', '#')
   }
 
-  // console.log('arr', arrServ)
+
+
 });
 
 let btnRoute = $('.yachts-order-btn[data-id="routes"]');
 let dataTextRoute = btnRoute.data('text');
-$('.custom-radio-js').on('click', function () {
+
+$('body').on('click', '.custom-radio-js', function () {
+
+  let img;
   let name = $(this).find('b').text();
   let btnChoise = btnRoute.find('span');
 
@@ -840,16 +888,19 @@ $('.custom-radio-js').on('click', function () {
     $(this).removeClass('active');
     btnChoise.parent().removeClass('active');
     btnChoise.text(dataTextRoute);
+    $('.book-form-route').text('Закрыть');
+    img = null;
+    $('.extra-order-img-route img').removeClass('show').attr('src', img)
   } else {
     $('.custom-radio-js').removeClass('active');
     $(this).addClass('active');
     $('.route-input').val(name);
     btnChoise.parent().addClass('active');
     btnChoise.text(name);
+    $('.book-form-route').text('Выбрать');
+    img = $(this).data('img')
+    $('.extra-order-img-route img').addClass('show').attr('src', img)
   }
-
-
-
 
 });
 
@@ -1227,7 +1278,7 @@ let yachtsItemTileTemplate = ({
           </div>
         </div>
         <div class="btn-yachts-container">
-          <a class="btn btn--blue element-btn element-btn-yachts" data-element="3" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
+          <a class="btn btn--blue element-btn element-btn-yachts" data-element="50" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
           <a class="btn btn--blue-border" href="${link}">${lang === 'ru' ? 'Подробнее' : 'More'}</a>
         </div>
       </div>
@@ -1311,7 +1362,7 @@ let yachtsItemListTemplate = ({
         <div class="yachts-item-bottom">
           <div class="yachts-item-price">${yachts_price} AED/час</div>
           <div class="btn-yachts-container">
-            <a class="btn btn--blue element-btn element-btn-yachts" data-element="3" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
+            <a class="btn btn--blue element-btn element-btn-yachts" data-element="50" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
             <a class="btn btn--blue-border" href="${link}">${lang === 'ru' ? 'Подробнее' : 'More'}</a>
           </div>
         </div>

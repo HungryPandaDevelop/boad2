@@ -100,7 +100,7 @@ let yachtsItemTileTemplate = ({
           </div>
         </div>
         <div class="btn-yachts-container">
-          <a class="btn btn--blue element-btn element-btn-yachts" data-element="3" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
+          <a class="btn btn--blue element-btn element-btn-yachts" data-element="50" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
           <a class="btn btn--blue-border" href="${link}">${lang === 'ru' ? 'Подробнее' : 'More'}</a>
         </div>
       </div>
@@ -184,7 +184,7 @@ let yachtsItemListTemplate = ({
         <div class="yachts-item-bottom">
           <div class="yachts-item-price">${yachts_price} AED/час</div>
           <div class="btn-yachts-container">
-            <a class="btn btn--blue element-btn element-btn-yachts" data-element="3" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
+            <a class="btn btn--blue element-btn element-btn-yachts" data-element="50" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
             <a class="btn btn--blue-border" href="${link}">${lang === 'ru' ? 'Подробнее' : 'More'}</a>
           </div>
         </div>
