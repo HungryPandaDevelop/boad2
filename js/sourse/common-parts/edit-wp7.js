@@ -5,9 +5,15 @@ $('.wpcf7-form-control-wrap').each(function () {
 
 
 document.addEventListener('wpcf7mailsent', function (event) {
-
-  console.log('send wazap start', event.detail)
-  // if (event.detail.contactFormId === 1595) { // Замените 1234 н
+  console.log(event.detail.contactFormId)
+  let endPopup = $('.order-popup-part[data-id="end"]');
+  if (event.detail.contactFormId === 3169) {
+    endPopup.addClass('show')
+    setTimeout(() => {
+      endPopup.removeClass('show')
+    }, 2000)
+  }
+  // Замените 1234 н
   // var phoneNumber = "+79852826532"; // Замените на ваш номер телефона в международном формате
   // var message = "Спасибо за вашу заявку. Мы свяжемся с вами в ближайшее время.";
 
@@ -28,9 +34,6 @@ document.addEventListener('wpcf7mailsent', function (event) {
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-
-  console.log(messages);
-
 
   let payload = {
     // "chatId": "79852826532@c.us",
@@ -53,23 +56,19 @@ document.addEventListener('wpcf7mailsent', function (event) {
     }
   });
 
-  // Откройте ссылку в новом окне
 
-  // window.open(whatsappUrl, '_blank');
-  // }
 
 
 
   console.log('mail sent OK');
   // Stuff
+
+
+
   setTimeout(function () {
     $('.element-show').removeClass('show');
     $('.wpcf7-form').addClass('init');
   }, 1500);
-
-
-
-
 
 }, false);
 
@@ -80,7 +79,7 @@ document.addEventListener('wpcf7invalid', function (event) {
   // Stuff
   setTimeout(function () {
     $('.wpcf7-form').addClass('init');
-  }, 1500);
+  }, 4500);
 
 }, false);
 

@@ -1,3 +1,6 @@
+let langSite = $('header').data('lang');
+let closeText = langSite === 'ru' ? 'Закрыть' : 'Close';
+let choiseText = langSite === 'ru' ? 'Выбрать' : 'Choise';
 
 let checkboxTemplateServ = ({ title, price, img }) => (`
   <div class="custom-checkbox custom-checkbox-js" data-img="${img}"><i></i>
@@ -11,7 +14,7 @@ let checkboxTemplateRoute = ({ title, time, img }) => (`
   `);
 
 $.ajax({
-  url: 'https://lsb.rent/wp-json/get/serv?lang=ru',
+  url: 'https://lsb.rent/wp-json/get/serv?lang=' + langSite,
   type: 'GET',
   success: function (response) {
     response.forEach((item) => {
@@ -21,7 +24,7 @@ $.ajax({
   }
 });
 $.ajax({
-  url: 'https://lsb.rent/wp-json/get/route?lang=ru',
+  url: 'https://lsb.rent/wp-json/get/route?lang=' + langSite,
   type: 'GET',
   success: function (response) {
     console.log('response', response);
@@ -77,13 +80,14 @@ $('body').on('click', '.custom-checkbox-js', function () {
       btnChoise.text(arrServ[0])
     }
     btnChoise.parent().addClass('active');
-    $('.book-form-serv').text('Выбрать');
+
+    $('.book-form-serv').text(choiseText);
 
     $('.extra-order-img-serv img').addClass('show').attr('src', arrImg[arrImg.length - 1])
   } else {
     btnChoise.text(dataTextServices)
     btnChoise.parent().removeClass('active');
-    $('.book-form-serv').text('Закрыть');
+    $('.book-form-serv').text(closeText);
 
     $('.extra-order-img-serv img').removeClass('show').attr('src', '#')
   }
@@ -106,7 +110,7 @@ $('body').on('click', '.custom-radio-js', function () {
     $(this).removeClass('active');
     btnChoise.parent().removeClass('active');
     btnChoise.text(dataTextRoute);
-    $('.book-form-route').text('Закрыть');
+    $('.book-form-route').text(closeText);
     img = null;
     $('.extra-order-img-route img').removeClass('show').attr('src', img)
   } else {
@@ -115,7 +119,7 @@ $('body').on('click', '.custom-radio-js', function () {
     $('.route-input').val(name);
     btnChoise.parent().addClass('active');
     btnChoise.text(name);
-    $('.book-form-route').text('Выбрать');
+    $('.book-form-route').text(choiseText);
     img = $(this).data('img')
     $('.extra-order-img-route img').addClass('show').attr('src', img)
   }
