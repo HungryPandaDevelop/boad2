@@ -7,7 +7,7 @@ $('.wpcf7-form-control-wrap').each(function () {
 document.addEventListener('wpcf7mailsent', function (event) {
   console.log(event.detail.contactFormId)
   let endPopup = $('.order-popup-part[data-id="end"]');
-  if (event.detail.contactFormId === 3169) {
+  if (event.detail.contactFormId === 3169 || event.detail.contactFormId === 3170) {
     endPopup.addClass('show')
     setTimeout(() => {
       endPopup.removeClass('show')
