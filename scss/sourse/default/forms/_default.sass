@@ -5,7 +5,7 @@ input
 
 .input-decorate,
 .custom-select
-	padding: 12px 0px
+	padding: 12px 0px 4px
 	border: 0
 	font-family: inherit
 	font-size: $standartSize
@@ -76,24 +76,28 @@ input
 	padding-top: 30px
 	margin: 0 0 30px
 	// outline: 1px solid red
+	.iti__flag-container
+		top: 8px
 	input
 		// outline: 1px solid green
 	label
 		position: absolute
 		transition: all 0.3s ease
-		top: 39px
+		top: 43px
 		left: 0px
 		font-size: 13px
 		cursor: pointer
 		// outline: 1px solid white
-
 		text-transform: uppercase
 		font-weight: 500
+		span
+			text-transform: initial
+			font-size: 12px
 	textarea:focus + label,
 	textarea.input-empty + label,
 	input:focus + label,
 	input.input-empty + label
-		top: 0px
+		top: 20px
 		opacity: 0.5
 .agreement-box
 	text-align: right
@@ -115,7 +119,7 @@ input
 .date-input-container
 	&:after
 		content: ''
-		@include positionElement(18px,18px,0,14px,right, bottom)
+		@include positionElement(18px,18px,0,6px,right, bottom)
 		@include bgImageEl("../images/icons/calendar-white.svg")
 
 .country-select

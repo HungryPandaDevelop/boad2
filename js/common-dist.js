@@ -633,7 +633,7 @@ $(document).on('keyup', (evt) => {
 
 $('body').on('click', '.element-btn', function (e) {
     e.preventDefault();
-
+    $('.order-popup-part').removeClass('show')
     $('.element-show').removeClass('show');
     let activeIndex = $(this).attr('data-element');
 
@@ -786,11 +786,13 @@ let choiseText = langSite === 'ru' ? 'Выбрать' : 'Choise';
 let checkboxTemplateServ = ({ title, price, img }) => (`
   <div class="custom-checkbox custom-checkbox-js" data-img="${img}"><i></i>
     <div class="custom-checkbox-name"><b>${title}</b><span>${price}</span></div>
+    <img src="${img}" />
   </div>
   `);
 let checkboxTemplateRoute = ({ title, time, img }) => (`
   <div class="custom-checkbox custom-radio-js" data-img="${img.url}"><i></i>
     <div class="custom-checkbox-name"><b>${title}</b><span>${time}</span></div>
+    <img src="${img.url}" />
   </div>
   `);
 
@@ -821,8 +823,15 @@ $.ajax({
 
 $('.yachts-order-btn').on('click', function () {
   let idParts = $(this).data('id');
-
+  $('.order-popup-part').removeClass('show')
   $('.order-popup-part[data-id="' + idParts + '"]').addClass('show');
+
+  if ($(this).hasClass('active-btn')) {
+    $(this).removeClass('active-btn')
+  } else {
+    $(this).addClass('active-btn')
+  }
+
 });
 
 $('.book-form').on('click', function () {
@@ -855,26 +864,30 @@ $('body').on('click', '.custom-checkbox-js', function () {
   let btnChoise = btnServices.find('span');
   if (arrServ.length > 0) {
 
-    if (arrServ.length > 1) {
-      btnChoise.text(dataSubTextServices + ' ' + arrServ.length + ' ' + dataSubSubTextServices)
-    } else {
-      btnChoise.text(arrServ[0])
-    }
+    // if (arrServ.length > 1) {
+    //   btnChoise.text(dataSubTextServices + ' ' + arrServ.length + ' ' + dataSubSubTextServices)
+    // } else {
+    //   btnChoise.text(arrServ[0])
+    // }
     btnChoise.parent().addClass('active');
 
     $('.book-form-serv').text(choiseText);
 
-    $('.extra-order-img-serv img').addClass('show').attr('src', arrImg[arrImg.length - 1])
+    $('.extra-order-img-serv').addClass('show').find('img').attr('src', arrImg[arrImg.length - 1])
   } else {
-    btnChoise.text(dataTextServices)
+    // btnChoise.text(dataTextServices)
     btnChoise.parent().removeClass('active');
     $('.book-form-serv').text(closeText);
 
-    $('.extra-order-img-serv img').removeClass('show').attr('src', '#')
+    $('.extra-order-img-serv').removeClass('show').find('img').attr('src', '#')
   }
 
 
 
+});
+
+$('.close-extra-js').on('click', function () {
+  $('.order-popup-part').removeClass('show');
 });
 
 let btnRoute = $('.yachts-order-btn[data-id="routes"]');
@@ -890,19 +903,19 @@ $('body').on('click', '.custom-radio-js', function () {
     $('.route-input').val('');
     $(this).removeClass('active');
     btnChoise.parent().removeClass('active');
-    btnChoise.text(dataTextRoute);
+    // btnChoise.text(dataTextRoute);
     $('.book-form-route').text(closeText);
     img = null;
-    $('.extra-order-img-route img').removeClass('show').attr('src', img)
+    $('.extra-order-img-route').removeClass('show').find('img').attr('src', img)
   } else {
     $('.custom-radio-js').removeClass('active');
     $(this).addClass('active');
     $('.route-input').val(name);
     btnChoise.parent().addClass('active');
-    btnChoise.text(name);
+    // btnChoise.text(name);
     $('.book-form-route').text(choiseText);
     img = $(this).data('img')
-    $('.extra-order-img-route img').addClass('show').attr('src', img)
+    $('.extra-order-img-route').addClass('show').find('img').attr('src', img)
   }
 
 });

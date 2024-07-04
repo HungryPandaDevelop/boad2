@@ -14,7 +14,7 @@ $(document).on('keyup', (evt) => {
 
 $('body').on('click', '.element-btn', function (e) {
     e.preventDefault();
-
+    $('.order-popup-part').removeClass('show')
     $('.element-show').removeClass('show');
     let activeIndex = $(this).attr('data-element');
 

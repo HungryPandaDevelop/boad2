@@ -13,11 +13,11 @@
     font-size: 14px
     font-weight: 400
   .popup-container
-    max-width: 900px
+    max-width: 800px
   .main-grid
     padding: 0
   .cell-form
-    margin-top: -30px
+    margin-top: -36px
   .cell-img
     display: flex
     flex-direction: column
@@ -28,7 +28,7 @@
     margin: 0
   .couple-input-box
     display: flex
-    gap: 30px
+    gap: 15px
     .input-box,
     .yachts-order-btn
       width: 50%
@@ -46,19 +46,23 @@
   position: relative
   margin-top: 30px
   overflow: hidden
-  @include bgImageEl("../images/yacht-popup-logo.svg")
+  height: 280px
+  @include bgImageEl("../images/yacht-popup-logo.svg", 180px)
   img
     width: 100%
     display: none
-    &.show
+  &.show
+    background: none
+    img
       display: block
 .couple-btn-box
-  margin-top: 30px
+  margin-top: 44px
 .yachts-order-btn
   border-bottom: 1px solid $whiteColor
   position: relative
   text-transform: uppercase
   cursor: pointer
+  font-size: 13px
   span
     position: relative
     width: 80%
@@ -67,6 +71,9 @@
   i
     @include positionElement(20px,20px,0,0,right)
     @include bgImageEl("../images/arrows/carret-down-white.svg", 30px)
+  // .active-btn
+  //   i
+  //     transform: rotate(-90deg)
   &:hover,
   &.active
     color: $yellowColor
@@ -77,9 +84,27 @@
   height: 90px
 .custom-checkbox-container,
 .custom-radio-container
-  height: 450px
+  height: 320px
   position: relative
   overflow-y: auto
+  img
+    width: 100%
+    display: none
+  &::-webkit-scrollbar
+    width: 6px
+  /* Track */
+  &::-webkit-scrollbar-track
+    background: $blueColor
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb
+    background: #D9D9D9
+    border-radius: 15px
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover
+    background: #555
+
 .cell-form-container
   height: 480px
 .custom-checkbox
@@ -113,11 +138,13 @@
 
 .order-popup-part
   background-color: $blueColor
-  padding: 90px 30px
+  padding: 40px 25px
   @include positionElement(100%,100%,0,0,left,top,5)
   display: none
   &.show
     display: block
+  .couple-input-box
+    margin-top: 18px
 .order-popup-end-container
   height: 100%
   display: flex
@@ -159,3 +186,8 @@
     padding: 30px 15px
   .cell-form-container
     height: auto
+  .custom-checkbox.active
+    img
+      display: block
+  .custom-checkbox-container, .custom-radio-container
+    height: 355px

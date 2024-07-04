@@ -1165,7 +1165,7 @@ input {
 
 .input-decorate,
 .custom-select {
-  padding: 12px 0px;
+  padding: 12px 0px 4px;
   border: 0;
   font-family: inherit;
   font-size: 16px;
@@ -1308,22 +1308,29 @@ input {
   padding-top: 30px;
   margin: 0 0 30px;
 }
+.input-box .iti__flag-container {
+  top: 8px;
+}
 .input-box label {
   position: absolute;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  top: 39px;
+  top: 43px;
   left: 0px;
   font-size: 13px;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 500;
 }
+.input-box label span {
+  text-transform: initial;
+  font-size: 12px;
+}
 .input-box textarea:focus + label,
 .input-box textarea.input-empty + label,
 .input-box input:focus + label,
 .input-box input.input-empty + label {
-  top: 0px;
+  top: 20px;
   opacity: 0.5;
 }
 
@@ -1368,7 +1375,7 @@ input {
   position: absolute;
   height: 18px;
   right: 0;
-  bottom: 14px;
+  bottom: 6px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -2279,12 +2286,12 @@ input[type=range]:active + .range-num::before {
   width: 100%;
 }
 .iti label {
-  top: 11px;
+  top: 12px;
   left: 90px;
 }
 .iti input:focus + label,
 .iti input.input-empty + label {
-  top: -30px;
+  top: -10px;
 }
 
 .iti__country-list {
@@ -4270,7 +4277,7 @@ footer .social-default {
   width: 100%;
   height: auto;
   margin: auto;
-  padding: 90px 30px;
+  padding: 40px 25px;
   -webkit-transition: ease-out 0.5s;
   transition: ease-out 0.5s;
   overflow-y: auto;
@@ -4563,13 +4570,13 @@ footer .social-default {
   font-weight: 400;
 }
 .extra-order-popup .popup-container {
-  max-width: 900px;
+  max-width: 800px;
 }
 .extra-order-popup .main-grid {
   padding: 0;
 }
 .extra-order-popup .cell-form {
-  margin-top: -30px;
+  margin-top: -36px;
 }
 .extra-order-popup .cell-img {
   display: -webkit-box;
@@ -4593,7 +4600,7 @@ footer .social-default {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 30px;
+  gap: 15px;
 }
 .extra-order-popup .couple-input-box .input-box,
 .extra-order-popup .couple-input-box .yachts-order-btn {
@@ -4615,21 +4622,25 @@ footer .social-default {
   position: relative;
   margin-top: 30px;
   overflow: hidden;
+  height: 280px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 180px;
   background-image: url("../images/yacht-popup-logo.svg");
 }
 .extra-order-img img {
   width: 100%;
   display: none;
 }
-.extra-order-img img.show {
+.extra-order-img.show {
+  background: none;
+}
+.extra-order-img.show img {
   display: block;
 }
 
 .couple-btn-box {
-  margin-top: 30px;
+  margin-top: 44px;
 }
 
 .yachts-order-btn {
@@ -4637,6 +4648,7 @@ footer .social-default {
   position: relative;
   text-transform: uppercase;
   cursor: pointer;
+  font-size: 13px;
 }
 .yachts-order-btn span {
   position: relative;
@@ -4669,9 +4681,34 @@ footer .social-default {
 
 .custom-checkbox-container,
 .custom-radio-container {
-  height: 450px;
+  height: 320px;
   position: relative;
   overflow-y: auto;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.custom-checkbox-container img,
+.custom-radio-container img {
+  width: 100%;
+  display: none;
+}
+.custom-checkbox-container::-webkit-scrollbar,
+.custom-radio-container::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-checkbox-container::-webkit-scrollbar-track,
+.custom-radio-container::-webkit-scrollbar-track {
+  background: #14143C;
+}
+.custom-checkbox-container::-webkit-scrollbar-thumb,
+.custom-radio-container::-webkit-scrollbar-thumb {
+  background: #D9D9D9;
+  border-radius: 15px;
+}
+.custom-checkbox-container::-webkit-scrollbar-thumb:hover,
+.custom-radio-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .cell-form-container {
@@ -4719,7 +4756,7 @@ footer .social-default {
 
 .order-popup-part {
   background-color: #14143C;
-  padding: 90px 30px;
+  padding: 40px 25px;
   width: 100%;
   position: absolute;
   height: 100%;
@@ -4730,6 +4767,9 @@ footer .social-default {
 }
 .order-popup-part.show {
   display: block;
+}
+.order-popup-part .couple-input-box {
+  margin-top: 18px;
 }
 
 .order-popup-end-container {
@@ -4785,6 +4825,12 @@ footer .social-default {
   }
   .cell-form-container {
     height: auto;
+  }
+  .custom-checkbox.active img {
+    display: block;
+  }
+  .custom-checkbox-container, .custom-radio-container {
+    height: 355px;
   }
 }
 /*-----feedback----*/
