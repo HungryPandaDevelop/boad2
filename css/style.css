@@ -4667,6 +4667,10 @@ footer .social-default {
   background-size: 30px;
   background-image: url("../images/arrows/carret-down-white.svg");
 }
+.yachts-order-btn.active-btn i {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
 .yachts-order-btn:hover, .yachts-order-btn.active {
   color: #C19F56;
   border-color: #C19F56;

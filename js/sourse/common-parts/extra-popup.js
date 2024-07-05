@@ -42,19 +42,24 @@ $.ajax({
 
 $('.yachts-order-btn').on('click', function () {
   let idParts = $(this).data('id');
-  $('.order-popup-part').removeClass('show')
-  $('.order-popup-part[data-id="' + idParts + '"]').addClass('show');
 
+  // console.log($(this))
   if ($(this).hasClass('active-btn')) {
-    $(this).removeClass('active-btn')
-  } else {
-    $(this).addClass('active-btn')
+    $('.order-popup-part').removeClass('show')
+    $('.yachts-order-btn').removeClass('active-btn')
+  }
+  else {
+    $('.order-popup-part').removeClass('show')
+    $('.order-popup-part[data-id="' + idParts + '"]').addClass('show');
+    $('.yachts-order-btn').removeClass('active-btn')
+    $('.yachts-order-btn[data-id="' + idParts + '"]').addClass('active-btn');
   }
 
 });
 
 $('.book-form').on('click', function () {
   $('.order-popup-part').removeClass('show');
+  $('.yachts-order-btn').removeClass('active-btn')
 });
 
 let arrServ = [];
@@ -107,6 +112,7 @@ $('body').on('click', '.custom-checkbox-js', function () {
 
 $('.close-extra-js').on('click', function () {
   $('.order-popup-part').removeClass('show');
+  $('.yachts-order-btn').removeClass('active-btn')
 });
 
 let btnRoute = $('.yachts-order-btn[data-id="routes"]');

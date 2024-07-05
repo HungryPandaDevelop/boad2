@@ -16,6 +16,7 @@ $('body').on('click', '.element-btn', function (e) {
     e.preventDefault();
     $('.order-popup-part').removeClass('show')
     $('.element-show').removeClass('show');
+    $('.extra-order-img-yachts').removeClass('show')
     let activeIndex = $(this).attr('data-element');
 
     let text;
@@ -32,9 +33,20 @@ $('body').on('click', '.element-btn', function (e) {
     }
 
     if (activeIndex == 50) {
+        $('.extra-order-img-yachts').addClass('show')
+        if ($(this).hasClass('element-btn-yachts')) {
+            console.log('element-btn-yachts')
 
-        text = $(this).parents('.yachts-item').find('h3 a').text();
-        img = $(this).parents('.yachts-item').find('.yachts-img img').attr('src');
+            text = $(this).parents('.yachts-item').find('h3 a').text();
+            img = $(this).parents('.yachts-item').find('.yachts-img img').attr('src');
+
+        } else {
+
+            text = $(this).parents('.content').find('h1').text();
+            img = $(this).parents('.content').find('.yachts-detail-img img').attr('src');
+            console.log(text, img)
+        }
+
 
 
         $('.popup-yacht-head-main h3').text(text);

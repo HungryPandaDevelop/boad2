@@ -71,9 +71,9 @@
   i
     @include positionElement(20px,20px,0,0,right)
     @include bgImageEl("../images/arrows/carret-down-white.svg", 30px)
-  // .active-btn
-  //   i
-  //     transform: rotate(-90deg)
+  &.active-btn
+    i
+      transform: rotate(90deg)
   &:hover,
   &.active
     color: $yellowColor
