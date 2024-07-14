@@ -38,7 +38,7 @@ function phone_mask() {
 		//onlyCountries:['us','gb','ch','ca','do'],
 	});
 
-	let textPhone = $('header').data('lang') === 'ru' ? 'Ваш телефон' : 'Your phone';
+	let textPhone = $('header').data('lang') === 'ru' ? 'Ваш телефон*' : 'Your phone*';
 
 	$('.phone').after('<label class="label-animate" >' + textPhone + '</label>');
 	$('.phone').next().on('click', function () {

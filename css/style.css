@@ -362,6 +362,12 @@ section {
   display: none;
 }
 
+.open-popup {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
 @media (max-width: 768px) {
   section {
     padding: 57px 0 0px;
@@ -1341,6 +1347,11 @@ input {
   display: inline-block;
 }
 
+.agreement a {
+  position: relative;
+  z-index: 2;
+}
+
 .input-box-phone {
   position: relative;
 }
@@ -1522,6 +1533,8 @@ input {
   position: relative;
   z-index: 2;
   vertical-align: middle;
+  min-height: 20px;
+  display: inline-block;
 }
 .custom-select i {
   background-position: center;
@@ -4277,7 +4290,7 @@ footer .social-default {
   width: 100%;
   height: auto;
   margin: auto;
-  padding: 40px 25px;
+  padding: 25px 25px;
   -webkit-transition: ease-out 0.5s;
   transition: ease-out 0.5s;
   overflow-y: auto;
@@ -4593,8 +4606,23 @@ footer .social-default {
 .extra-order-popup .agreement {
   margin-bottom: 8px;
 }
-.extra-order-popup .input-box {
+.extra-order-popup .yachts-box {
   margin: 0;
+  padding-top: 25px;
+}
+.extra-order-popup .yachts-box label {
+  top: 35px;
+}
+.extra-order-popup .yachts-select label {
+  top: 12px;
+}
+.extra-order-popup .yachts-select label.active {
+  top: -4px;
+  opacity: 0.5;
+}
+.extra-order-popup .yachts-phone-box {
+  margin: 0;
+  padding-top: 25px;
 }
 .extra-order-popup .couple-input-box {
   display: -webkit-box;
@@ -4603,11 +4631,11 @@ footer .social-default {
   gap: 15px;
 }
 .extra-order-popup .couple-input-box .input-box,
-.extra-order-popup .couple-input-box .yachts-order-btn {
+.extra-order-popup .couple-input-box .yachts-order-btn-container {
   width: 50%;
 }
 .extra-order-popup .btn-container {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .extra-order-popup .btn {
   width: 190px;
@@ -4618,11 +4646,31 @@ footer .social-default {
   background: #14143C;
 }
 
+.yachts-serv-box,
+.yachts-route-box {
+  font-size: 12px;
+  min-height: 62px;
+  position: relative;
+  border-bottom: 1px solid #14143C;
+}
+.yachts-serv-box.active,
+.yachts-route-box.active {
+  border-color: #C19F56;
+}
+.yachts-serv-box ul,
+.yachts-route-box ul {
+  line-height: 1;
+}
+.yachts-serv-box li,
+.yachts-route-box li {
+  margin-bottom: 4px;
+}
+
 .extra-order-img {
   position: relative;
   margin-top: 30px;
   overflow: hidden;
-  height: 280px;
+  height: 240px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 180px;
@@ -4630,6 +4678,12 @@ footer .social-default {
 }
 .extra-order-img img {
   width: 100%;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: none;
 }
 .extra-order-img.show {
@@ -4640,7 +4694,7 @@ footer .social-default {
 }
 
 .couple-btn-box {
-  margin-top: 44px;
+  margin-top: 41px;
 }
 
 .yachts-order-btn {
@@ -4667,15 +4721,20 @@ footer .social-default {
   background-size: 30px;
   background-image: url("../images/arrows/carret-down-white.svg");
 }
-.yachts-order-btn.active-btn i {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-.yachts-order-btn:hover, .yachts-order-btn.active {
+.yachts-order-btn.active-btn {
   color: #C19F56;
   border-color: #C19F56;
 }
-.yachts-order-btn:hover i, .yachts-order-btn.active i {
+.yachts-order-btn.active-btn i {
+  background-image: url("../images/arrows/carret-down-yellow.svg");
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.yachts-order-btn.active {
+  color: #C19F56;
+  border-color: #14143C;
+}
+.yachts-order-btn.active i {
   background-image: url("../images/arrows/carret-down-yellow.svg");
 }
 
@@ -4685,7 +4744,7 @@ footer .social-default {
 
 .custom-checkbox-container,
 .custom-radio-container {
-  height: 320px;
+  height: 310px;
   position: relative;
   overflow-y: auto;
   /* Track */
@@ -4715,12 +4774,8 @@ footer .social-default {
   background: #555;
 }
 
-.cell-form-container {
-  height: 480px;
-}
-
 .custom-checkbox {
-  margin-bottom: 15px;
+  margin-bottom: 6px;
   cursor: pointer;
 }
 .custom-checkbox i {
@@ -4736,13 +4791,18 @@ footer .social-default {
 .custom-checkbox span {
   display: block;
 }
+.custom-checkbox span {
+  font-size: 10px;
+}
 .custom-checkbox .custom-checkbox-name,
 .custom-checkbox i {
   vertical-align: middle;
 }
 .custom-checkbox .custom-checkbox-name {
+  line-height: 1.05;
   display: inline-block;
   width: calc(100% - 45px);
+  font-size: 14px;
 }
 .custom-checkbox.active {
   color: #C19F56;
@@ -4758,9 +4818,13 @@ footer .social-default {
   border-radius: 100%;
 }
 
+.custom-checkbox-img {
+  display: none;
+}
+
 .order-popup-part {
   background-color: #14143C;
-  padding: 40px 25px;
+  padding: 25px 25px;
   width: 100%;
   position: absolute;
   height: 100%;
@@ -4773,7 +4837,10 @@ footer .social-default {
   display: block;
 }
 .order-popup-part .couple-input-box {
-  margin-top: 18px;
+  margin-top: 1px;
+}
+.order-popup-part .btn {
+  display: none;
 }
 
 .order-popup-end-container {
@@ -4803,8 +4870,31 @@ footer .social-default {
   text-transform: inherit;
 }
 
-.extra-order-popup .cell-form .agreement {
+.extra-order-popup .cell-form .agreement-box {
   display: none;
+}
+.extra-order-popup .yachts-order-btn.active.active-btn {
+  border-color: #C19F56;
+}
+
+.yachts-select .custom-select {
+  font-size: 12px;
+  color: #ffffff;
+}
+.yachts-select i {
+  width: 26px;
+  height: 26px;
+  margin-top: 7px;
+}
+.yachts-select ul {
+  border-radius: 0 !important;
+}
+.yachts-select ul li {
+  color: #14143C;
+}
+.yachts-select ul li:hover {
+  background: none;
+  color: #C19F56;
 }
 
 @media (max-width: 576px) {
@@ -4817,9 +4907,10 @@ footer .social-default {
   .extra-order-popup .cell-form {
     margin: 0;
   }
-  .extra-order-popup .cell-form .agreement {
+  .extra-order-popup .cell-form .agreement-box {
     display: block;
     margin-top: 15px;
+    font-size: 14px;
   }
   .yachts-order-btn {
     font-size: 12px;
@@ -4830,11 +4921,34 @@ footer .social-default {
   .cell-form-container {
     height: auto;
   }
-  .custom-checkbox.active img {
+  .custom-checkbox.active .custom-checkbox-img {
     display: block;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 8px;
   }
-  .custom-checkbox-container, .custom-radio-container {
-    height: 355px;
+  .custom-checkbox-container {
+    height: 346px;
+  }
+  .custom-radio-container {
+    height: 293px;
+  }
+  .order-popup-part[data-id=routes] .couple-input-box {
+    margin-top: 54px;
+  }
+  .popup-yacht-head {
+    height: 80px;
+  }
+  .extra-order-popup h4 {
+    max-width: 300px;
+  }
+  .btn-container {
+    margin-bottom: 20px;
+  }
+  .yachts-serv-box,
+  .yachts-route-box {
+    min-height: auto;
   }
 }
 /*-----feedback----*/
@@ -8782,6 +8896,29 @@ footer .social-default {
   height: 100px;
   background-color: #ffffff;
 }
+.yachts-detail-about .whatsapp-btn {
+  border: 1px solid #14143C;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 2px 0px 2px 21px;
+  border-radius: 30px;
+}
+.yachts-detail-about .whatsapp-btn span {
+  text-align: center;
+  font-weight: 700;
+}
+.yachts-detail-about .whatsapp-btn em {
+  font-style: normal;
+  display: block;
+}
+.yachts-detail-about .whatsapp-btn i {
+  width: 32px;
+  height: 32px;
+  margin-left: 10px;
+}
+.yachts-detail-about .whatsapp-btn:hover {
+  border-color: #C19F56;
+}
 
 .yachts-detail-about .main-full,
 .yachts-detail-adv {
@@ -8920,6 +9057,14 @@ footer .social-default {
     margin-top: 48px;
   }
 }
+@media (max-width: 620px) {
+  .yachts-detail-about .whatsapp-btn {
+    padding: 2px 0px 2px 11px;
+  }
+  .yachts-detail-controls a {
+    margin-left: 5px;
+  }
+}
 @media (max-width: 576px) {
   .yachts-main-detail {
     display: block;
@@ -8963,6 +9108,9 @@ footer .social-default {
   .yachts-detail-controls .btn {
     width: 160px;
   }
+  .yachts-detail-controls .whatsapp-btn {
+    display: none;
+  }
   .yachts-detail-controls--mobile {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -8970,8 +9118,10 @@ footer .social-default {
     width: 100%;
     padding-bottom: 15px;
   }
-  .yachts-detail-controls--mobile .btn {
+  .yachts-detail-controls--mobile .btn,
+  .yachts-detail-controls--mobile .whatsapp-btn {
     width: 48%;
+    text-align: center;
   }
   .yachts-detail-about {
     height: auto;

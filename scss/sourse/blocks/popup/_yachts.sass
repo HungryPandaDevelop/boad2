@@ -24,39 +24,65 @@
     justify-content: space-between
   .agreement
     margin-bottom: 8px
-  .input-box
+  .yachts-box
     margin: 0
+    padding-top: 25px
+    label
+      top: 35px
+  .yachts-select
+    label
+      top: 12px
+      &.active
+        top: -4px
+        opacity: 0.5
+  .yachts-phone-box
+    margin: 0
+    padding-top: 25px
   .couple-input-box
     display: flex
     gap: 15px
     .input-box,
-    .yachts-order-btn
+    .yachts-order-btn-container
       width: 50%
   .btn-container
-    margin-top: 30px
+    margin-top: 20px
   .btn
     width: 190px
+
   .cell-form .wpcf7-response-output
     position: absolute
     top: 320px
     background: $blueColor
 
+.yachts-serv-box,
+.yachts-route-box
+  font-size: 12px
+  min-height: 62px
+  position: relative
+  // overflow: hidden
+  border-bottom: 1px solid $blueColor
+  &.active
+    border-color: $yellowColor
+  ul
+    line-height: 1
+  li
+    margin-bottom: 4px
 .extra-order-img
-  // height: 234px
   position: relative
   margin-top: 30px
   overflow: hidden
-  height: 280px
+  height: 240px
   @include bgImageEl("../images/yacht-popup-logo.svg", 180px)
   img
-    width: 100%
+    @include positionElement(100%,100%,0,0)
+    object-fit: cover
     display: none
   &.show
     background: none
     img
       display: block
 .couple-btn-box
-  margin-top: 44px
+  margin-top: 41px
 .yachts-order-btn
   border-bottom: 1px solid $whiteColor
   position: relative
@@ -72,19 +98,22 @@
     @include positionElement(20px,20px,0,0,right)
     @include bgImageEl("../images/arrows/carret-down-white.svg", 30px)
   &.active-btn
-    i
-      transform: rotate(90deg)
-  &:hover,
-  &.active
     color: $yellowColor
     border-color: $yellowColor
+    i
+      background-image: url("../images/arrows/carret-down-yellow.svg")
+      transform: rotate(180deg)
+
+  &.active
+    color: $yellowColor
+    border-color: $blueColor
     i
       background-image: url("../images/arrows/carret-down-yellow.svg")
 .popup-yacht-head
   height: 90px
 .custom-checkbox-container,
 .custom-radio-container
-  height: 320px
+  height: 310px
   position: relative
   overflow-y: auto
   img
@@ -106,9 +135,9 @@
     background: #555
 
 .cell-form-container
-  height: 480px
+  // height: 480px
 .custom-checkbox
-  margin-bottom: 15px
+  margin-bottom: 6px
   cursor: pointer
   i
     display: inline-block
@@ -121,12 +150,16 @@
   em,
   span
     display: block
+  span
+    font-size: 10px
   .custom-checkbox-name,
   i
     vertical-align: middle
   .custom-checkbox-name
+    line-height: 1.05
     display: inline-block
     width: calc( 100% - 45px )
+    font-size: 14px
   &.active
     color: $yellowColor
     i
@@ -136,15 +169,20 @@
         background-color: $yellowColor
         border-radius: 100%
 
+.custom-checkbox-img
+  display: none
+
 .order-popup-part
   background-color: $blueColor
-  padding: 40px 25px
+  padding: 25px 25px
   @include positionElement(100%,100%,0,0,left,top,5)
   display: none
   &.show
     display: block
   .couple-input-box
-    margin-top: 18px
+    margin-top: 1px
+  .btn
+    display: none
 .order-popup-end-container
   height: 100%
   display: flex
@@ -165,9 +203,26 @@
     text-transform: inherit
 .extra-order-popup
   .cell-form
-    .agreement
+    .agreement-box
       display: none
-
+  .yachts-order-btn.active.active-btn
+    border-color: $yellowColor
+.yachts-select
+  .custom-select
+    font-size: 12px
+    color: $whiteColor
+  i
+    width: 26px
+    height: 26px
+    margin-top: 7px
+  ul
+    border-radius: 0 !important
+    // background-color: $blueColor
+    li
+      color: $blueColor
+      &:hover
+        background: none
+        color: $yellowColor
 @media (max-width: 576px)
   .extra-order-popup
     .cell-img
@@ -177,9 +232,10 @@
       display: none
     .cell-form
       margin: 0
-      .agreement
+      .agreement-box
         display: block
         margin-top: 15px
+        font-size: 14px
   .yachts-order-btn
     font-size: 12px
   .order-popup-part
@@ -187,7 +243,25 @@
   .cell-form-container
     height: auto
   .custom-checkbox.active
-    img
+    .custom-checkbox-img
       display: block
-  .custom-checkbox-container, .custom-radio-container
-    height: 355px
+      height: 200px
+      background-size: cover
+      background-position: center
+      margin-top: 8px
+  .custom-checkbox-container
+    height: 346px
+  .custom-radio-container
+    height: 293px
+  .order-popup-part[data-id="routes"]
+    .couple-input-box
+      margin-top: 54px
+  .popup-yacht-head
+    height: 80px
+  .extra-order-popup h4
+    max-width: 300px
+  .btn-container
+    margin-bottom: 20px
+  .yachts-serv-box,
+  .yachts-route-box
+    min-height: auto

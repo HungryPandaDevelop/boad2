@@ -233,7 +233,15 @@ $('.order-select-box').on('click', function () {
   $('.catalog-sort-mobile').removeClass('active');
 });
 
-
+$('.input-num').on('keypress', function (e) {
+  // Удаляем все символы, кроме цифр
+  if (e.which < 48 || e.which > 57) {
+    e.preventDefault();
+  }
+});
+$('.input-date').on('keypress', function (e) {
+  e.preventDefault();
+});
 
 // forma 7 submit
 

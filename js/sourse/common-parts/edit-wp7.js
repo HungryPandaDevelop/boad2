@@ -11,7 +11,7 @@ document.addEventListener('wpcf7mailsent', function (event) {
     endPopup.addClass('show')
     setTimeout(() => {
       endPopup.removeClass('show')
-    }, 2000)
+    }, 5000)
   }
   // Замените 1234 н
   // var phoneNumber = "+79852826532"; // Замените на ваш номер телефона в международном формате

@@ -1,19 +1,23 @@
 
 $('.close-js').on('click', function () {
+    $('body').removeClass('open-popup')
     $(this).parents('.element-show').removeClass('show');
 });
 $('.popup-overlay-js').on('click', function (e) {
+    $('body').removeClass('open-popup')
     $(this).parents('.element-show').removeClass('show');
 });
 
 $(document).on('keyup', (evt) => {
     if (evt.keyCode === 27) {
+        $('body').removeClass('open-popup')
         $('.element-show').removeClass('show');
     }
 });
 
 $('body').on('click', '.element-btn', function (e) {
     e.preventDefault();
+    $('body').addClass('open-popup')
     $('.order-popup-part').removeClass('show')
     $('.element-show').removeClass('show');
     $('.extra-order-img-yachts').removeClass('show')

@@ -4,8 +4,19 @@ $('.style-select').each(function () {
   const select = $(this);
   const selectedText = select.find('option:selected').text();
 
-  console.log('selectedText', selectedText)
-  const dataText = selectedText ? selectedText : select.data('text');
+  // let placeholder;
+  let placeholderObj = select.parents('.wpcf7-form-control-wrap').next('label');
+
+  if (select.hasClass('select-with-label')) {
+
+    // placeholder = placeholderObj.text();
+    placeholderObj.remove();
+
+    // console.log('placeholder', placeholderObj);
+  }
+
+  console.log('selectedText', placeholderObj.length)
+  const dataText = placeholderObj.length === 0 ? (selectedText ? selectedText : select.data('text')) : '';
   const dataClass = select.data('class') ?? '';
 
   let selectOptions = '';
@@ -21,8 +32,11 @@ $('.style-select').each(function () {
         </li>`;
   });
 
+  let labelHtml = placeholderObj.length ? placeholderObj[0].outerHTML : '';
+
   const customSelectBox = $(
     `<div class='custom-select ${dataClass}' >
+        ${placeholderObj ? labelHtml : ''}
         <span>${dataText}</span>
         <ul class='ln'>${selectOptions}</ul>
         <i></i>
@@ -54,8 +68,11 @@ $(document).on('click', '.custom-select li', function () {
   const parent = li.closest('.custom-select');
   const select = parent.next('.style-select');
 
+  parent.find('label').addClass('active')
   select.find('option').eq(index).prop('selected', true);
   parent.find('span').text(li.text());
+
+
 
   parent.find('li').removeClass('hide-selected');
   li.addClass('hide-selected');
