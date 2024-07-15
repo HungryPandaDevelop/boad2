@@ -14,6 +14,7 @@
     font-weight: 400
   .popup-container
     max-width: 800px
+    margin: 7% auto auto
   .main-grid
     padding: 0
   .cell-form
@@ -53,18 +54,21 @@
     position: absolute
     top: 320px
     background: $blueColor
-
+  .input-decorate
+    // font-size: 13px 
 .yachts-serv-box,
 .yachts-route-box
   font-size: 12px
   min-height: 62px
   position: relative
   // overflow: hidden
+  border-top: 1px solid $blueColor
   border-bottom: 1px solid $blueColor
+  line-height: 1
   &.active
-    border-color: $yellowColor
-  ul
-    line-height: 1
+    border-bottom-color: $yellowColor
+    margin-top: -2px
+    background-color: $blueColor
   li
     margin-bottom: 4px
 .extra-order-img
@@ -82,13 +86,15 @@
     img
       display: block
 .couple-btn-box
-  margin-top: 41px
+  margin-top: 42px
 .yachts-order-btn
   border-bottom: 1px solid $whiteColor
   position: relative
   text-transform: uppercase
   cursor: pointer
   font-size: 13px
+  font-weight: 500
+
   span
     position: relative
     width: 80%
@@ -97,18 +103,14 @@
   i
     @include positionElement(20px,20px,0,0,right)
     @include bgImageEl("../images/arrows/carret-down-white.svg", 30px)
-  &.active-btn
+  &.active-btn,
+  &.active
     color: $yellowColor
     border-color: $yellowColor
     i
       background-image: url("../images/arrows/carret-down-yellow.svg")
       transform: rotate(180deg)
 
-  &.active
-    color: $yellowColor
-    border-color: $blueColor
-    i
-      background-image: url("../images/arrows/carret-down-yellow.svg")
 .popup-yacht-head
   height: 90px
 .custom-checkbox-container,
@@ -205,16 +207,17 @@
   .cell-form
     .agreement-box
       display: none
-  .yachts-order-btn.active.active-btn
-    border-color: $yellowColor
+
 .yachts-select
   .custom-select
-    font-size: 12px
+    font-size: 16px
     color: $whiteColor
+    padding: 10px 0px 0px
   i
-    width: 26px
-    height: 26px
+    width: 20px
+    height: 20px
     margin-top: 7px
+    background-size: 30px
   ul
     border-radius: 0 !important
     // background-color: $blueColor
@@ -223,6 +226,12 @@
       &:hover
         background: none
         color: $yellowColor
+@media (max-width: 768px)
+  .yachts-select
+    .custom-select
+      font-size: 12px
+    // padding: 7px 0px 0px
+
 @media (max-width: 576px)
   .extra-order-popup
     .cell-img
@@ -236,8 +245,13 @@
         display: block
         margin-top: 15px
         font-size: 14px
-  .yachts-order-btn
-    font-size: 12px
+    .wpcf7-acceptance
+      font-size: 12px
+      .wpcf7-list-item
+        margin: 3px 0 0
+  .couple-btn-box
+    margin-top: 67px
+
   .order-popup-part
     padding: 30px 15px
   .cell-form-container
@@ -245,23 +259,20 @@
   .custom-checkbox.active
     .custom-checkbox-img
       display: block
-      height: 200px
+      height: 250px
       background-size: cover
       background-position: center
       margin-top: 8px
-  .custom-checkbox-container
-    height: 346px
+  .custom-checkbox-container,
   .custom-radio-container
-    height: 293px
-  .order-popup-part[data-id="routes"]
-    .couple-input-box
-      margin-top: 54px
+    height: 335px
+
+  .order-popup-part .couple-input-box
+    margin-top: 12px
+
   .popup-yacht-head
     height: 80px
   .extra-order-popup h4
     max-width: 300px
   .btn-container
     margin-bottom: 20px
-  .yachts-serv-box,
-  .yachts-route-box
-    min-height: auto

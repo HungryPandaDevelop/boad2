@@ -232,7 +232,9 @@ $('.close-sort-mobile').on('click', function () {
 $('.order-select-box').on('click', function () {
   $('.catalog-sort-mobile').removeClass('active');
 });
-
+$('.input-num').each(function () {
+  $(this).attr('inputmode', 'numeric');
+})
 $('.input-num').on('keypress', function (e) {
   // Удаляем все символы, кроме цифр
   if (e.which < 48 || e.which > 57) {

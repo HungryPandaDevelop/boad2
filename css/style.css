@@ -4315,6 +4315,17 @@ footer .social-default {
   max-width: 800px;
 }
 
+@media (max-width: 768px) {
+  .popup .input-decorate {
+    font-size: 12px;
+  }
+  .input-box label {
+    font-size: 12px;
+  }
+  .extra-order-popup .main-grid {
+    gap: 0 14px;
+  }
+}
 @media (max-width: 576px) {
   .popup-container {
     margin: auto;
@@ -4584,6 +4595,7 @@ footer .social-default {
 }
 .extra-order-popup .popup-container {
   max-width: 800px;
+  margin: 7% auto auto;
 }
 .extra-order-popup .main-grid {
   padding: 0;
@@ -4645,21 +4657,20 @@ footer .social-default {
   top: 320px;
   background: #14143C;
 }
-
 .yachts-serv-box,
 .yachts-route-box {
   font-size: 12px;
   min-height: 62px;
   position: relative;
+  border-top: 1px solid #14143C;
   border-bottom: 1px solid #14143C;
+  line-height: 1;
 }
 .yachts-serv-box.active,
 .yachts-route-box.active {
-  border-color: #C19F56;
-}
-.yachts-serv-box ul,
-.yachts-route-box ul {
-  line-height: 1;
+  border-bottom-color: #C19F56;
+  margin-top: -2px;
+  background-color: #14143C;
 }
 .yachts-serv-box li,
 .yachts-route-box li {
@@ -4694,7 +4705,7 @@ footer .social-default {
 }
 
 .couple-btn-box {
-  margin-top: 41px;
+  margin-top: 42px;
 }
 
 .yachts-order-btn {
@@ -4703,6 +4714,7 @@ footer .social-default {
   text-transform: uppercase;
   cursor: pointer;
   font-size: 13px;
+  font-weight: 500;
 }
 .yachts-order-btn span {
   position: relative;
@@ -4721,21 +4733,14 @@ footer .social-default {
   background-size: 30px;
   background-image: url("../images/arrows/carret-down-white.svg");
 }
-.yachts-order-btn.active-btn {
+.yachts-order-btn.active-btn, .yachts-order-btn.active {
   color: #C19F56;
   border-color: #C19F56;
 }
-.yachts-order-btn.active-btn i {
+.yachts-order-btn.active-btn i, .yachts-order-btn.active i {
   background-image: url("../images/arrows/carret-down-yellow.svg");
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
-}
-.yachts-order-btn.active {
-  color: #C19F56;
-  border-color: #14143C;
-}
-.yachts-order-btn.active i {
-  background-image: url("../images/arrows/carret-down-yellow.svg");
 }
 
 .popup-yacht-head {
@@ -4873,18 +4878,17 @@ footer .social-default {
 .extra-order-popup .cell-form .agreement-box {
   display: none;
 }
-.extra-order-popup .yachts-order-btn.active.active-btn {
-  border-color: #C19F56;
-}
 
 .yachts-select .custom-select {
-  font-size: 12px;
+  font-size: 16px;
   color: #ffffff;
+  padding: 10px 0px 0px;
 }
 .yachts-select i {
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
   margin-top: 7px;
+  background-size: 30px;
 }
 .yachts-select ul {
   border-radius: 0 !important;
@@ -4897,6 +4901,11 @@ footer .social-default {
   color: #C19F56;
 }
 
+@media (max-width: 768px) {
+  .yachts-select .custom-select {
+    font-size: 12px;
+  }
+}
 @media (max-width: 576px) {
   .extra-order-popup .cell-img .agreement {
     display: none;
@@ -4912,8 +4921,14 @@ footer .social-default {
     margin-top: 15px;
     font-size: 14px;
   }
-  .yachts-order-btn {
+  .extra-order-popup .wpcf7-acceptance {
     font-size: 12px;
+  }
+  .extra-order-popup .wpcf7-acceptance .wpcf7-list-item {
+    margin: 3px 0 0;
+  }
+  .couple-btn-box {
+    margin-top: 67px;
   }
   .order-popup-part {
     padding: 30px 15px;
@@ -4923,19 +4938,17 @@ footer .social-default {
   }
   .custom-checkbox.active .custom-checkbox-img {
     display: block;
-    height: 200px;
+    height: 250px;
     background-size: cover;
     background-position: center;
     margin-top: 8px;
   }
-  .custom-checkbox-container {
-    height: 346px;
-  }
+  .custom-checkbox-container,
   .custom-radio-container {
-    height: 293px;
+    height: 335px;
   }
-  .order-popup-part[data-id=routes] .couple-input-box {
-    margin-top: 54px;
+  .order-popup-part .couple-input-box {
+    margin-top: 12px;
   }
   .popup-yacht-head {
     height: 80px;
@@ -4945,10 +4958,6 @@ footer .social-default {
   }
   .btn-container {
     margin-bottom: 20px;
-  }
-  .yachts-serv-box,
-  .yachts-route-box {
-    min-height: auto;
   }
 }
 /*-----feedback----*/

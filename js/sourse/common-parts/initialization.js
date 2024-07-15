@@ -225,6 +225,7 @@ $('.input-date').each(function () {
   let thisEl = $(this);
   let dp = new AirDatepicker(this, {
     timepicker: true,
+    minDate: new Date(),
     timeFormat: 'hh:mm AA',
     onSelect({ date }) {
       thisEl.addClass('input-empty');
