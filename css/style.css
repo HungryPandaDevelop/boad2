@@ -4889,6 +4889,7 @@ footer .social-default {
   height: 20px;
   margin-top: 7px;
   background-size: 30px;
+  right: -4px;
 }
 .yachts-select ul {
   border-radius: 0 !important;
@@ -4904,6 +4905,30 @@ footer .social-default {
 @media (max-width: 768px) {
   .yachts-select .custom-select {
     font-size: 12px;
+  }
+  .popup-yacht-head {
+    height: 70px;
+  }
+  .order-popup-part .couple-input-box {
+    margin-top: 15px;
+  }
+  .extra-order-img {
+    height: 220px;
+    margin: 0 0 30px;
+  }
+  .extra-order-popup .cell-img {
+    display: block;
+  }
+  .extra-order-popup .agreement {
+    display: none;
+  }
+  .extra-order-popup .cell-form .agreement-box {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+  }
+  .couple-btn-box {
+    margin-top: 81px;
   }
 }
 @media (max-width: 576px) {
