@@ -386,14 +386,21 @@ $('.wpcf7-form-control-wrap').each(function () {
 
 
 document.addEventListener('wpcf7mailsent', function (event) {
-  console.log(event.detail.contactFormId)
+
   let endPopup = $('.order-popup-part[data-id="end"]');
+  let endPopupAll = $('.form-popup-end');
+
+  endPopupAll.addClass('show');
   if (event.detail.contactFormId === 3169 || event.detail.contactFormId === 3170) {
     endPopup.addClass('show')
     setTimeout(() => {
       endPopup.removeClass('show')
-    }, 5000)
-  }
+      endPopupAll.removeClass('show');
+
+    }, 5000);
+  };
+
+
   // Замените 1234 н
   // var phoneNumber = "+79852826532"; // Замените на ваш номер телефона в международном формате
   // var message = "Спасибо за вашу заявку. Мы свяжемся с вами в ближайшее время.";
@@ -449,7 +456,8 @@ document.addEventListener('wpcf7mailsent', function (event) {
   setTimeout(function () {
     $('.element-show').removeClass('show');
     $('.wpcf7-form').addClass('init');
-  }, 1500);
+    $('body').removeClass('open-popup')
+  }, 5000);
 
 }, false);
 
@@ -639,16 +647,19 @@ $(document).on('click', '.custom-select li', function () {
 $('.close-js').on('click', function () {
     $('body').removeClass('open-popup')
     $(this).parents('.element-show').removeClass('show');
+    $('.form-popup-end').removeClass('show');
 });
 $('.popup-overlay-js').on('click', function (e) {
     $('body').removeClass('open-popup')
     $(this).parents('.element-show').removeClass('show');
+    $('.form-popup-end').removeClass('show');
 });
 
 $(document).on('keyup', (evt) => {
     if (evt.keyCode === 27) {
         $('body').removeClass('open-popup')
         $('.element-show').removeClass('show');
+        $('.form-popup-end').removeClass('show');
     }
 });
 
@@ -1349,15 +1360,18 @@ let yachtsItemTileTemplate = ({
           </div>
         </div>
         <div class="btn-yachts-container">
-          <a class="btn btn--blue element-btn element-btn-yachts" data-element="50" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
-          <a class="btn btn--blue-border" href="${link}">${lang === 'ru' ? 'Подробнее' : 'More'}</a>
+          <a class="btn btn--blue element-btn element-btn-yachts" data-element="50" href="#">${lang === 'ru' ? 'Забронировать' : 'Book Now'}</a>
+           <a class="whatsapp-btn" target="_blank" onclick="ym(96996333,'reachGoal','${lang === 'ru' ? 'click-whatsapp-yacht-card-ru' : 'click-whatsapp-yacht-card-en'}'); return true;" href="https://wa.me/97145254242?text=Hi!%20I%20want%20to%20book a boat.">
+        <span><em>${lang === 'ru' ? 'Забронировать' : 'Book'}</em> WhatsApp</span>
+        <i></i>
+        </a> 
         </div>
       </div>
     </div>
   </div>
 `)
 };
-
+// <a class="btn btn--blue-border" href="${link}">${lang === 'ru' ? 'Подробнее' : 'More'}</a>
 let yachtsItemListTemplate = ({
   id,
   title,
@@ -1434,7 +1448,10 @@ let yachtsItemListTemplate = ({
           <div class="yachts-item-price">${yachts_price} AED/час</div>
           <div class="btn-yachts-container">
             <a class="btn btn--blue element-btn element-btn-yachts" data-element="50" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
-            <a class="btn btn--blue-border" href="${link}">${lang === 'ru' ? 'Подробнее' : 'More'}</a>
+            <a class="whatsapp-btn" target="_blank" onclick="ym(96996333,'reachGoal','${lang === 'ru' ? 'click-whatsapp-yacht-card-ru' : 'click-whatsapp-yacht-card-en'}'); return true;" href="https://wa.me/97145254242?text=Hi!%20I%20want%20to%20book a boat.">
+        <span><em>${lang === 'ru' ? 'Забронировать' : 'Book'}</em> WhatsApp</span>
+        <i></i>
+        </a> 
           </div>
         </div>
       </div>

@@ -1,3 +1,20 @@
 .popup-container
   .checkbox
     font-size: $smallSize
+
+.form-popup-end
+  @include positionElement(100%,100%,0,0, left, top, 3)
+  background-color: $blueColor
+  display: flex
+  padding: 15px 45px
+  display: none
+  h2,h3,h4
+    color: $whiteColor
+  h2
+    font-size: 31px
+  h3
+    font-size: 21px
+  &.show
+    display: flex
+.form-popup-end-container
+  margin: auto

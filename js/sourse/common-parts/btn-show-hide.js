@@ -2,16 +2,19 @@
 $('.close-js').on('click', function () {
     $('body').removeClass('open-popup')
     $(this).parents('.element-show').removeClass('show');
+    $('.form-popup-end').removeClass('show');
 });
 $('.popup-overlay-js').on('click', function (e) {
     $('body').removeClass('open-popup')
     $(this).parents('.element-show').removeClass('show');
+    $('.form-popup-end').removeClass('show');
 });
 
 $(document).on('keyup', (evt) => {
     if (evt.keyCode === 27) {
         $('body').removeClass('open-popup')
         $('.element-show').removeClass('show');
+        $('.form-popup-end').removeClass('show');
     }
 });
 

@@ -5,14 +5,21 @@ $('.wpcf7-form-control-wrap').each(function () {
 
 
 document.addEventListener('wpcf7mailsent', function (event) {
-  console.log(event.detail.contactFormId)
+
   let endPopup = $('.order-popup-part[data-id="end"]');
+  let endPopupAll = $('.form-popup-end');
+
+  endPopupAll.addClass('show');
   if (event.detail.contactFormId === 3169 || event.detail.contactFormId === 3170) {
     endPopup.addClass('show')
     setTimeout(() => {
       endPopup.removeClass('show')
-    }, 5000)
-  }
+      endPopupAll.removeClass('show');
+
+    }, 5000);
+  };
+
+
   // Замените 1234 н
   // var phoneNumber = "+79852826532"; // Замените на ваш номер телефона в международном формате
   // var message = "Спасибо за вашу заявку. Мы свяжемся с вами в ближайшее время.";
@@ -68,7 +75,8 @@ document.addEventListener('wpcf7mailsent', function (event) {
   setTimeout(function () {
     $('.element-show').removeClass('show');
     $('.wpcf7-form').addClass('init');
-  }, 1500);
+    $('body').removeClass('open-popup')
+  }, 5000);
 
 }, false);
 

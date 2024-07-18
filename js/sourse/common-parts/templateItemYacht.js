@@ -100,15 +100,18 @@ let yachtsItemTileTemplate = ({
           </div>
         </div>
         <div class="btn-yachts-container">
-          <a class="btn btn--blue element-btn element-btn-yachts" data-element="50" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
-          <a class="btn btn--blue-border" href="${link}">${lang === 'ru' ? 'Подробнее' : 'More'}</a>
+          <a class="btn btn--blue element-btn element-btn-yachts" data-element="50" href="#">${lang === 'ru' ? 'Забронировать' : 'Book Now'}</a>
+           <a class="whatsapp-btn" target="_blank" onclick="ym(96996333,'reachGoal','${lang === 'ru' ? 'click-whatsapp-yacht-card-ru' : 'click-whatsapp-yacht-card-en'}'); return true;" href="https://wa.me/97145254242?text=Hi!%20I%20want%20to%20book a boat.">
+        <span><em>${lang === 'ru' ? 'Забронировать' : 'Book'}</em> WhatsApp</span>
+        <i></i>
+        </a> 
         </div>
       </div>
     </div>
   </div>
 `)
 };
-
+// <a class="btn btn--blue-border" href="${link}">${lang === 'ru' ? 'Подробнее' : 'More'}</a>
 let yachtsItemListTemplate = ({
   id,
   title,
@@ -185,7 +188,10 @@ let yachtsItemListTemplate = ({
           <div class="yachts-item-price">${yachts_price} AED/час</div>
           <div class="btn-yachts-container">
             <a class="btn btn--blue element-btn element-btn-yachts" data-element="50" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
-            <a class="btn btn--blue-border" href="${link}">${lang === 'ru' ? 'Подробнее' : 'More'}</a>
+            <a class="whatsapp-btn" target="_blank" onclick="ym(96996333,'reachGoal','${lang === 'ru' ? 'click-whatsapp-yacht-card-ru' : 'click-whatsapp-yacht-card-en'}'); return true;" href="https://wa.me/97145254242?text=Hi!%20I%20want%20to%20book a boat.">
+        <span><em>${lang === 'ru' ? 'Забронировать' : 'Book'}</em> WhatsApp</span>
+        <i></i>
+        </a> 
           </div>
         </div>
       </div>

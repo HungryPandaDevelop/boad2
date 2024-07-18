@@ -68,6 +68,26 @@
       margin-left: 10px
     &:hover
       border-color: $yellowColor
+.btn-yachts-container
+  .whatsapp-btn
+    border: 1px solid $blueColor
+    text-decoration: none
+    font-size: 12px
+    padding: 2px 0px 2px 12px
+    border-radius: 30px
+    span
+      text-align: center
+      font-weight: 700
+      em
+        font-style: normal
+        display: block
+      i
+        width: 32px
+        height: 32px
+        margin-left: 10px
+      &:hover
+        border-color: $yellowColor
+
 .yachts-detail-about .main-full,
 .yachts-detail-adv
   display: flex
@@ -94,6 +114,7 @@
 .yachts-detail-controls--mobile
   display: none
 /* yachts-detail-tabs*/
+
 .list-includes-yachts
   margin-top: 60px
   h3
@@ -171,6 +192,9 @@
     margin-left: 5px
 
 @media (max-width: 576px)
+  .detail-tabs-item
+    iframe
+      width: 100%
   .yachts-main-detail
     display: block
     height: auto
