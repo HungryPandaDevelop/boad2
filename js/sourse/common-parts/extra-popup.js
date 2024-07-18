@@ -20,7 +20,7 @@ let checkboxTemplateRoute = ({ title, time, img }) => (`
   `);
 
 $.ajax({
-  url: 'https://lsb.rent/wp-json/get/serv?lang=' + langSite,
+  url: '/wp-json/get/serv?lang=' + langSite,
   type: 'GET',
   success: function (response) {
     response.forEach((item) => {
@@ -30,7 +30,7 @@ $.ajax({
   }
 });
 $.ajax({
-  url: 'https://lsb.rent/wp-json/get/route?lang=' + langSite,
+  url: '/wp-json/get/route?lang=' + langSite,
   type: 'GET',
   success: function (response) {
     console.log('response', response);
