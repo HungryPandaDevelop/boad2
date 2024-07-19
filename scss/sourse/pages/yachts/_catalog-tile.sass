@@ -28,14 +28,14 @@
         color: $yellowColor
 
 .yachts-item-info
-  padding: 20px
+  padding: 10px
 .yachts-item-price
   font-size: $largeSize
   color: $yellowColor
   font-weight: 700
 .yachts-item-img
   width: 100%
-  height: 320px
+  height: 250px
   display: block
   position: relative
   overflow: hidden
@@ -142,14 +142,21 @@
   gap: 12px
   .btn
     width: 50%
-    padding: 13px 8px
+    padding: 12px 8px
 @media (max-width: 992px)
   .yachts-item-img
-    height: 280px
+    height: 270px
 @media (max-width: 768px)
   .yachts-item-img
-    height: 320px
+    height: 290px
 @media (max-width: 576px)
+  .yachts-item
+    h3
+      font-size: 20px
+  .yachts-item-description
+    font-size: 12px
+  .yachts-item-price
+    font-size: 20px
   .yachts-item-img
     .yachts-img
       transform: scale(1)

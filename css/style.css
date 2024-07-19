@@ -190,9 +190,9 @@ h3 {
 .main-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr;
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr;
   grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 30px;
+  grid-column-gap: 20px;
   padding: 0 15px;
   max-width: 1280px;
   margin: 0 auto;
@@ -202,9 +202,9 @@ h3 {
 .main-grid-list {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr;
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr;
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: 30px;
+  grid-gap: 20px;
   padding: 0 15px;
   max-width: 1280px;
   margin: 0 auto;
@@ -214,18 +214,18 @@ h3 {
 .form-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr;
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr;
   grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 30px;
+  grid-column-gap: 20px;
 }
 
 .catalog-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr;
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr;
   grid-template-columns: repeat(12, 1fr);
   max-width: 1280px;
-  grid-gap: 30px;
+  grid-gap: 20px;
   max-width: 1280px;
   margin: 0 auto;
   position: relative;
@@ -8260,7 +8260,7 @@ footer .social-default {
 }
 
 .yachts-item-info {
-  padding: 20px;
+  padding: 10px;
 }
 
 .yachts-item-price {
@@ -8271,7 +8271,7 @@ footer .social-default {
 
 .yachts-item-img {
   width: 100%;
-  height: 320px;
+  height: 250px;
   display: block;
   position: relative;
   overflow: hidden;
@@ -8462,20 +8462,29 @@ footer .social-default {
 }
 .btn-yachts-container .btn {
   width: 50%;
-  padding: 13px 8px;
+  padding: 12px 8px;
 }
 
 @media (max-width: 992px) {
   .yachts-item-img {
-    height: 280px;
+    height: 270px;
   }
 }
 @media (max-width: 768px) {
   .yachts-item-img {
-    height: 320px;
+    height: 290px;
   }
 }
 @media (max-width: 576px) {
+  .yachts-item h3 {
+    font-size: 20px;
+  }
+  .yachts-item-description {
+    font-size: 12px;
+  }
+  .yachts-item-price {
+    font-size: 20px;
+  }
   .yachts-item-img .yachts-img {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -8993,24 +9002,28 @@ footer .social-default {
 .btn-yachts-container .whatsapp-btn {
   border: 1px solid #14143C;
   text-decoration: none;
-  font-size: 12px;
-  padding: 2px 0px 2px 12px;
+  font-size: 11px;
+  padding: 8px 0px 2px 7px;
   border-radius: 30px;
+  width: 50%;
+  text-align: center;
 }
 .btn-yachts-container .whatsapp-btn span {
   text-align: center;
   font-weight: 700;
+  line-height: 1.2;
 }
-.btn-yachts-container .whatsapp-btn span em {
+.btn-yachts-container .whatsapp-btn em {
   font-style: normal;
   display: block;
 }
-.btn-yachts-container .whatsapp-btn span i {
-  width: 32px;
-  height: 32px;
-  margin-left: 10px;
+.btn-yachts-container .whatsapp-btn i {
+  width: 20px;
+  height: 20px;
+  margin-left: 3px;
+  margin-right: 6px;
 }
-.btn-yachts-container .whatsapp-btn span:hover {
+.btn-yachts-container .whatsapp-btn:hover {
   border-color: #C19F56;
 }
 
@@ -9739,16 +9752,16 @@ footer .social-default {
 }
 
 .btn-item-plus {
-  width: 84px;
-  height: 84px;
-  line-height: 88px;
+  width: 64px;
+  height: 64px;
+  line-height: 68px;
   position: absolute;
 }
 .btn-item-plus .btn-item-plus-content {
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  background-color: #C19F56;
+  background-color: rgba(193, 159, 86, 0.8);
   color: #ffffff;
   font-size: 60px;
   display: -webkit-inline-box;
