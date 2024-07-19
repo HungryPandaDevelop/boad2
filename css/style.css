@@ -4635,7 +4635,7 @@ footer .social-default {
   padding: 0;
 }
 .extra-order-popup .cell-form {
-  margin-top: -36px;
+  position: relative;
 }
 .extra-order-popup .cell-img {
   display: -webkit-box;
@@ -4739,7 +4739,7 @@ footer .social-default {
 }
 
 .couple-btn-box {
-  margin-top: 42px;
+  margin-top: 1px;
 }
 
 .yachts-order-btn {
@@ -4773,6 +4773,8 @@ footer .social-default {
 }
 .yachts-order-btn.active-btn i, .yachts-order-btn.active i {
   background-image: url("../images/arrows/carret-down-yellow.svg");
+}
+.yachts-order-btn.active-btn i {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
@@ -4913,6 +4915,15 @@ footer .social-default {
   display: none;
 }
 
+.yachts-box-container {
+  height: 310px;
+}
+
+.yachts-box-container-inner {
+  position: relative;
+  top: -36px;
+}
+
 .yachts-select .custom-select {
   font-size: 16px;
   color: #ffffff;
@@ -4943,9 +4954,6 @@ footer .social-default {
   .popup-yacht-head {
     height: 70px;
   }
-  .order-popup-part .couple-input-box {
-    margin-top: 15px;
-  }
   .extra-order-img {
     height: 220px;
     margin: 0 0 30px;
@@ -4962,7 +4970,7 @@ footer .social-default {
     margin-top: 15px;
   }
   .couple-btn-box {
-    margin-top: 81px;
+    margin-top: 1px;
   }
 }
 @media (max-width: 576px) {
@@ -4973,7 +4981,7 @@ footer .social-default {
     display: none;
   }
   .extra-order-popup .cell-form {
-    margin: 0;
+    top: 0;
   }
   .extra-order-popup .cell-form .agreement-box {
     display: block;
@@ -4986,8 +4994,14 @@ footer .social-default {
   .extra-order-popup .wpcf7-acceptance .wpcf7-list-item {
     margin: 3px 0 0;
   }
+  .yachts-box-container-inner {
+    top: 0;
+  }
+  .yachts-box-container {
+    height: 335px;
+  }
   .couple-btn-box {
-    margin-top: 67px;
+    margin-top: 12px;
   }
   .order-popup-part {
     padding: 30px 15px;

@@ -18,7 +18,8 @@
   .main-grid
     padding: 0
   .cell-form
-    margin-top: -36px
+    // top: -36px
+    position: relative
   .cell-img
     display: flex
     flex-direction: column
@@ -86,7 +87,7 @@
     img
       display: block
 .couple-btn-box
-  margin-top: 42px
+  margin-top: 1px
 .yachts-order-btn
   border-bottom: 1px solid $whiteColor
   position: relative
@@ -109,6 +110,8 @@
     border-color: $yellowColor
     i
       background-image: url("../images/arrows/carret-down-yellow.svg")
+  &.active-btn
+    i
       transform: rotate(180deg)
 
 .popup-yacht-head
@@ -207,7 +210,11 @@
   .cell-form
     .agreement-box
       display: none
-
+.yachts-box-container
+  height: 310px
+.yachts-box-container-inner
+  position: relative
+  top: -36px
 .yachts-select
   .custom-select
     font-size: 16px
@@ -234,9 +241,7 @@
     // padding: 7px 0px 0px
   .popup-yacht-head
     height: 70px
-  .order-popup-part
-    .couple-input-box
-      margin-top: 15px
+
   .extra-order-img
     height: 220px
     margin: 0 0 30px
@@ -250,7 +255,7 @@
       text-align: left
       margin-top: 15px
   .couple-btn-box
-    margin-top: 81px
+    margin-top: 1px
 
 @media (max-width: 576px)
   .extra-order-popup
@@ -260,7 +265,7 @@
     .extra-order-img
       display: none
     .cell-form
-      margin: 0
+      top: 0
       .agreement-box
         display: block
         margin-top: 15px
@@ -269,8 +274,12 @@
       font-size: 12px
       .wpcf7-list-item
         margin: 3px 0 0
+  .yachts-box-container-inner
+    top: 0
+  .yachts-box-container
+    height: 335px
   .couple-btn-box
-    margin-top: 67px
+    margin-top: 12px
 
   .order-popup-part
     padding: 30px 15px
