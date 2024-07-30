@@ -280,6 +280,10 @@ $('.form-routes #wpcf7-f1588-o6 form').attr("onsubmit", "ym(96996333,'reachGoal'
 $('#wpcf7-f2338-o2 form').attr("onsubmit", "ym(96996333,'reachGoal','send-booking-additional-service-en'); return true;");
 $('#wpcf7-f1613-o2 form').attr("onsubmit", "ym(96996333,'reachGoal','send-booking-additional-service-ru'); return true;");
 
+
+$('#wpcf7-f3170-o5 form').attr("onsubmit", "ym(96996333,'reachGoal','send-booking-form-en'); return true;");
+$('#wpcf7-f3169-o5 form').attr("onsubmit", "ym(96996333,'reachGoal','send-booking-form-ru'); return true;");
+
 // MAIN PAGE BLOCK SALES
 $('.sale-description').each(function () {
   let defaultText = $(this).find('.btn').attr('href');

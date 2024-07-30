@@ -3750,7 +3750,7 @@ header .logo img {
   height: 90px;
 }
 
-footer {
+.footer {
   position: relative;
   overflow: hidden;
   background-color: #ffffff;
@@ -3758,83 +3758,83 @@ footer {
   font-size: 14px;
   display: none;
 }
-footer .main-grid {
+.footer .main-grid {
   border-top: 1px solid #E2E2E2;
   padding: 70px 15px 30px;
 }
-footer ul, footer li {
+.footer ul, .footer li {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-footer a {
+.footer a {
   text-decoration: none;
 }
-footer a:hover {
+.footer a:hover {
   color: #C19F56;
 }
-footer .logo-container {
+.footer .logo-container {
   margin: 0 0 15px;
 }
-footer .logo img {
+.footer .logo img {
   max-width: 140px;
   margin: 0 0 31px;
 }
-footer .search-main {
+.footer .search-main {
   margin-bottom: 30px;
 }
-footer .logo-text {
+.footer .logo-text {
   font-size: 14px;
   margin: 0 0 45px;
 }
-footer .footer-links li {
+.footer .footer-links li {
   margin-bottom: 11px;
 }
-footer .social {
+.footer .social {
   margin-top: 15px;
 }
-footer .ico-box {
+.footer .ico-box {
   display: inline-block;
 }
-footer .nav {
+.footer .nav {
   font-size: 16px;
   margin-bottom: 50px;
 }
-footer .nav li {
+.footer .nav li {
   margin-bottom: 12px;
 }
-footer .menu-item-has-children > a {
+.footer .menu-item-has-children > a {
   font-size: 18px;
   color: inherit;
   margin: 0 0 13px;
   text-transform: uppercase;
   font-weight: 600;
 }
-footer .menu-item-has-children > a:hover {
+.footer .menu-item-has-children > a:hover {
   color: #C19F56;
 }
-footer .menu-item-has-children.current-menu-item > a {
+.footer .menu-item-has-children.current-menu-item > a {
   color: #C19F56;
 }
-footer .nav-second {
+.footer .nav-second {
   text-transform: uppercase;
 }
-footer .nav-second a {
+.footer .nav-second a {
   font-weight: 600;
 }
-footer h3 {
+.footer h3 {
   font-size: 18px;
   color: inherit;
   margin: 0 0 13px;
   text-transform: uppercase;
 }
-footer h3 a {
+.footer h3 a {
   font-weight: 600;
 }
-footer .ico-box {
+.footer .ico-box {
   margin-right: 15px;
 }
-footer .social-default {
+.footer .social-default {
   margin-top: 30px;
   margin-bottom: 45px;
 }
@@ -3910,13 +3910,13 @@ footer .social-default {
   .footer-sm {
     display: block;
   }
-  footer .logo {
+  .footer .logo {
     margin-top: 180px;
   }
-  footer .logo-text {
+  .footer .logo-text {
     margin-bottom: 0;
   }
-  footer .search-main {
+  .footer .search-main {
     margin-top: 30px;
   }
   .footer-links {
@@ -4014,7 +4014,7 @@ footer .social-default {
   .footer-hidden-nav ul {
     display: none;
   }
-  footer .menu-item-has-children > a {
+  .footer .menu-item-has-children > a {
     font-size: 14px;
     margin: 0;
   }
