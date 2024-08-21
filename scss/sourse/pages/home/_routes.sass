@@ -4,7 +4,7 @@
 .routes-item-main
   background-color: $whiteColorSecond
   position: relative
-  height: 660px
+  // height: 660px
   display: flex
   flex-direction: column
   .time-tag,
@@ -28,11 +28,12 @@
       line-clamp: 2
       position: relative
       overflow: hidden
-  &:hover
-    .routes-item-main-text
-      max-height: 100px
-      // margin-top: 15px
-      opacity: 1
+
+  // &:hover
+  //   .routes-item-main-text
+  //     max-height: 100px
+  //     // margin-top: 15px
+  //     opacity: 1
 
 .routes-item-main-img
   position: relative
@@ -43,7 +44,8 @@
     @include positionElement(100%,100%,0,0)
     transform: scale(1)
   img
-    @include positionElement(100%,100%,0,0)
+    width: 100%
+    // @include positionElement(100%,100%,0,0)
   // &:hover
   //   .img-cover
   //     transform: scale(1.1)
@@ -54,12 +56,13 @@
 .routes-item-main-text
   position: relative
   transition: linear 0.25s
-  max-height: 0px
+  height: 70px
   overflow: hidden
   margin-top: 0
-  opacity: 0
+  // opacity: 0
   p
     margin: 0
+
 @media (max-width: 992px)
   .routes-item-main
     .btn-container

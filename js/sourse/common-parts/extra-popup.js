@@ -38,7 +38,12 @@ $.ajax({
     response.forEach((item) => {
       let checkboxHTML = checkboxTemplateRoute(item);
       $('.custom-radio-container').append(checkboxHTML)
-    })
+    });
+    let IndividualTour = langSite === 'ru' ?
+      { title: "Индивидуальный тур", time: "Вы можете спланировать собственный маршрут с нашим менеджером.", img: false } :
+      { title: "Individual tour", time: "You can plan your own route with our manager.", img: false };
+
+    $('.custom-radio-container').append(checkboxTemplateRoute(IndividualTour));
   }
 });
 

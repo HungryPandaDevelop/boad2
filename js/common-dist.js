@@ -27,7 +27,7 @@ let owlSale = $('.sale-carousel');
 owlSale.owlCarousel({
   items: 1,
   loop: true,
-  dots: false,
+  // dots: true,
   // autoHeight:true
   responsive: {
     0: {
@@ -35,7 +35,7 @@ owlSale.owlCarousel({
       nav: false,
     },
     991: {
-      dots: false,
+      dots: true,
       nav: true,
 
     }
@@ -701,7 +701,7 @@ $('body').on('click', '.element-btn', function (e) {
 
 
 
-        $('.popup-yacht-head-main h3').text(text);
+        $('.popup-yacht-head-main .popup-yacht-js-topic').text(text);
         $('.extra-order-img-yachts img').addClass('show').attr('src', img);
         $('.yachts-input').val(text)
         console.log('b', img)
@@ -864,7 +864,12 @@ $.ajax({
     response.forEach((item) => {
       let checkboxHTML = checkboxTemplateRoute(item);
       $('.custom-radio-container').append(checkboxHTML)
-    })
+    });
+    let IndividualTour = langSite === 'ru' ?
+      { title: "Индивидуальный тур", time: "Вы можете спланировать собственный маршрут с нашим менеджером.", img: false } :
+      { title: "Individual tour", time: "You can plan your own route with our manager.", img: false };
+
+    $('.custom-radio-container').append(checkboxTemplateRoute(IndividualTour));
   }
 });
 

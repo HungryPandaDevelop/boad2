@@ -56,7 +56,7 @@ $('body').on('click', '.element-btn', function (e) {
 
 
 
-        $('.popup-yacht-head-main h3').text(text);
+        $('.popup-yacht-head-main .popup-yacht-js-topic').text(text);
         $('.extra-order-img-yachts img').addClass('show').attr('src', img);
         $('.yachts-input').val(text)
         console.log('b', img)

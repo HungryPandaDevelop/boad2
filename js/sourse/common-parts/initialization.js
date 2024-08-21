@@ -20,7 +20,7 @@ let owlSale = $('.sale-carousel');
 owlSale.owlCarousel({
   items: 1,
   loop: true,
-  dots: false,
+  // dots: true,
   // autoHeight:true
   responsive: {
     0: {
@@ -28,7 +28,7 @@ owlSale.owlCarousel({
       nav: false,
     },
     991: {
-      dots: false,
+      dots: true,
       nav: true,
 
     }

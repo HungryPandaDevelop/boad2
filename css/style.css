@@ -3838,6 +3838,17 @@ header .logo img {
   margin-top: 30px;
   margin-bottom: 45px;
 }
+.footer .whatsapp-btn {
+  margin-top: 16px;
+}
+
+.feedback-topic {
+  font-size: 18px;
+  color: inherit;
+  margin: 0 0 13px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
 
 .footer-lg {
   display: block;
@@ -3939,23 +3950,23 @@ header .logo img {
   .footer-xs {
     display: block;
   }
-  footer {
+  .footer {
     text-align: center;
   }
-  footer .btn {
+  .footer .btn {
     width: 100%;
     max-width: 330px;
   }
-  footer .logo {
+  .footer .logo {
     display: block;
     width: 100%;
     margin: 0;
   }
-  footer .logo img {
+  .footer .logo img {
     max-width: 90px;
     margin-bottom: 30px;
   }
-  footer .logo-text {
+  .footer .logo-text {
     max-width: 300px;
     margin: 0 auto 30px;
   }
@@ -4616,8 +4627,10 @@ header .logo img {
   text-align: left;
   color: #ffffff;
 }
-.extra-order-popup h3 {
+.extra-order-popup h3,
+.extra-order-popup .popup-yacht-js-topic {
   font-size: 24px;
+  font-weight: 700;
 }
 .extra-order-popup h4 {
   font-size: 16px;
@@ -4785,7 +4798,7 @@ header .logo img {
 
 .custom-checkbox-container,
 .custom-radio-container {
-  height: 310px;
+  height: 338px;
   position: relative;
   overflow-y: auto;
   /* Track */
@@ -4840,7 +4853,7 @@ header .logo img {
   vertical-align: middle;
 }
 .custom-checkbox .custom-checkbox-name {
-  line-height: 1.05;
+  line-height: 1;
   display: inline-block;
   width: calc(100% - 45px);
   font-size: 14px;
@@ -4916,7 +4929,7 @@ header .logo img {
 }
 
 .yachts-box-container {
-  height: 310px;
+  height: 338px;
 }
 
 .yachts-box-container-inner {
@@ -4998,7 +5011,7 @@ header .logo img {
     top: 0;
   }
   .yachts-box-container {
-    height: 335px;
+    height: 303px;
   }
   .couple-btn-box {
     margin-top: 12px;
@@ -5018,7 +5031,7 @@ header .logo img {
   }
   .custom-checkbox-container,
   .custom-radio-container {
-    height: 335px;
+    height: 303px;
   }
   .order-popup-part .couple-input-box {
     margin-top: 12px;
@@ -5449,10 +5462,10 @@ header .logo img {
 }
 .sale .owl-dot.active,
 .sale .owl-dot:hover {
-  border-color: #14143C;
+  border-color: #ffffff;
 }
 .sale .owl-dots .owl-dot::after {
-  background-color: #14143C;
+  background-color: #ffffff;
 }
 
 @media (max-width: 998px) {
@@ -5588,7 +5601,7 @@ header .logo img {
 }
 .suitable-item h3 {
   color: inherit;
-  margin: 8px 0 15px;
+  margin: 0px 0 5px;
 }
 .suitable-item.extra .suitable-item-price {
   color: #ffffff;
@@ -5628,10 +5641,7 @@ header .logo img {
 
 .suitable-item-text {
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  line-clamp: 2;
+  line-height: 1.2;
   margin: 0 0 15px;
   font-size: 14px;
 }
@@ -5710,11 +5720,8 @@ header .logo img {
   .suitable-home-mobile .btn-adv-more {
     display: block;
   }
-  .suitable-item-text {
-    display: none;
-  }
   .suitable-item-info {
-    height: 180px;
+    height: 300px;
   }
   .suitable-item.extra {
     display: block;
@@ -5725,7 +5732,7 @@ header .logo img {
   }
   .suitable-item.extra .suitable-item-info {
     width: 100%;
-    height: 180px;
+    height: 300px;
   }
 }
 .warning-home .main-grid {
@@ -5867,7 +5874,6 @@ header .logo img {
 .routes-item-main {
   background-color: #f3f3f3;
   position: relative;
-  height: 660px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5904,10 +5910,6 @@ header .logo img {
   position: relative;
   overflow: hidden;
 }
-.routes-item-main:hover .routes-item-main-text {
-  max-height: 100px;
-  opacity: 1;
-}
 
 .routes-item-main-img {
   position: relative;
@@ -5926,10 +5928,6 @@ header .logo img {
 }
 .routes-item-main-img img {
   width: 100%;
-  position: absolute;
-  height: 100%;
-  left: 0;
-  top: 0;
 }
 
 .routes-item-main-info {
@@ -5941,10 +5939,9 @@ header .logo img {
   position: relative;
   -webkit-transition: linear 0.25s;
   transition: linear 0.25s;
-  max-height: 0px;
+  height: 70px;
   overflow: hidden;
   margin-top: 0;
-  opacity: 0;
 }
 .routes-item-main-text p {
   margin: 0;
@@ -5994,7 +5991,7 @@ header .logo img {
 
 .advantages-item {
   text-align: center;
-  width: 260px;
+  max-width: 260px;
   margin: 0 auto;
 }
 .advantages-item img {
@@ -6093,6 +6090,20 @@ header .logo img {
   .advantages-item-extra-1 .advantages-hint::after,
   .advantages-item-extra-2 .advantages-hint::after {
     left: calc(100% - 28px);
+  }
+  .advantages-item-extra-right .advantages-hint {
+    left: auto;
+    right: -15px;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .advantages-item-extra-right .advantages-hint::after {
+    left: calc(100% - 28px);
+  }
+}
+@media (max-width: 1280px) {
+  .advantages-item h3 {
+    font-size: 18px;
   }
 }
 @media (max-width: 992px) {
@@ -6285,7 +6296,6 @@ header .logo img {
     height: 440px;
   }
   .about-home-description {
-    height: 550px;
     padding: 30px 15px 45px;
     font-size: 16px;
     font-weight: 400;
@@ -6298,6 +6308,12 @@ header .logo img {
     height: 100%;
     left: 0;
     top: 0;
+  }
+  .about-home-description {
+    height: 430px;
+  }
+  [lang=ru] .about-home-description {
+    height: 460px;
   }
   .about-home-container {
     max-width: initial;
@@ -6375,6 +6391,19 @@ header .logo img {
   display: none;
 }
 
+.question-more i {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../images/arrows/arrow-down-white.svg");
+  position: relative;
+  top: -1px;
+}
+
 @media (max-width: 786px) {
   .question-home-tabs {
     margin-bottom: 45px;
@@ -6445,7 +6474,7 @@ header .logo img {
 }
 .team-home {
   height: 762px;
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 500;
   padding: 0;
   display: -webkit-box;
@@ -6475,8 +6504,8 @@ header .logo img {
 }
 
 .team-home-container {
-  max-width: 500px;
-  margin: auto;
+  max-width: 596px;
+  margin: auto 0;
   text-align: center;
 }
 
@@ -6484,7 +6513,7 @@ header .logo img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 15px;
+  padding: 0 30px;
 }
 
 .team-home-img {
@@ -6503,6 +6532,10 @@ header .logo img {
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("../images/logo-about.svg");
+}
+
+.team-home-text {
+  text-align: left;
 }
 
 @media (max-width: 1280px) {
@@ -6549,18 +6582,16 @@ header .logo img {
   }
   .team-home-description {
     width: 100%;
-    height: 378px;
+    height: auto;
   }
   .team-home-container {
     max-width: none;
+    padding: 40px 0px 30px;
   }
 }
 @media (max-width: 320px) {
   .team-home-img {
     height: 320px;
-  }
-  .team-home-description {
-    height: 460px;
   }
 }
 .partners {
@@ -7027,6 +7058,9 @@ header .logo img {
   }
 }
 @media (max-width: 576px) {
+  .detail-tabs-nav {
+    font-size: 12px;
+  }
   .detail-tabs-nav ul {
     width: 640px;
   }
@@ -9794,6 +9828,7 @@ header .logo img {
   padding: 30px 22px 50px;
   position: relative;
   margin-top: auto;
+  color: #ffffff;
 }
 
 .services-item-img {
@@ -10043,6 +10078,10 @@ header .logo img {
     position: relative;
   }
 }
+.hide-stub .advantages-item-extra-4 {
+  display: none;
+}
+
 @media (max-width: 1280px) {
   .services-main h1 {
     font-size: 38px;
@@ -10091,6 +10130,14 @@ header .logo img {
 }
 /*-----services-end-----*/
 /*-----routes-start-----*/
+.routes-part h2 {
+  color: #C19F56;
+}
+
+.question-home-footer p {
+  margin: 0 0 15px;
+}
+
 .routes-item {
   background-color: #f3f3f3;
   margin: 0 0 30px;
@@ -10393,7 +10440,7 @@ header .logo img {
   height: 100%;
 }
 .about-main .breadcrumbs {
-  margin-top: 78px;
+  margin-top: 128px;
 }
 
 .about-main-info {
@@ -10454,12 +10501,15 @@ header .logo img {
 
 @media (max-width: 1280px) {
   .about-main .breadcrumbs {
-    margin-top: 38px;
+    margin-top: 78px;
   }
 }
 @media (max-width: 768px) {
   .about-main {
     height: auto;
+  }
+  .about-main .breadcrumbs {
+    margin-top: 48px;
   }
   .about-main h1 {
     font-size: 48px;
@@ -10546,6 +10596,12 @@ header .logo img {
   }
   .search-tags {
     margin-top: 30px;
+  }
+  .search-result-topic {
+    font-size: 18px;
+  }
+  .search-result-item {
+    margin-bottom: 15px;
   }
 }
 /*---------------pages-end----*/
