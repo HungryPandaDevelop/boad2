@@ -425,7 +425,7 @@ document.addEventListener('wpcf7mailsent', function (event) {
 
   let payload = {
     // "chatId": "79852826532@c.us",
-    "chatId": "97145254242@c.us",
+    "chatId": "971565151724@c.us",
     "message": messages
   }
   let headers = {
@@ -1276,6 +1276,22 @@ $('.sale-description').each(function () {
 
 })
 // MAIN PAGE BLOCK SALES
+
+
+$('body').on('click', '.price-hint-bottom', function () {
+  $(this).next().addClass('active')
+});
+$('body').on('click', '.price-hint-popup .close-btn', function () {
+  $(this).parent().removeClass('active');
+});
+
+$(document).click(function (event) {
+  // Проверяем, если клик был не по элементу попапа и не по элементам внутри него
+  if (!$(event.target).closest('.price-hint-bottom').length) {
+    $('.price-hint-popup').removeClass('active'); // Удаляем класс 'active' у попапа
+    $('.overlay').hide(); // Скрываем оверлей или сам попап
+  }
+});
 //
 // $('h1').on('click',function(){
 //   localStorage.clear();
@@ -1299,7 +1315,8 @@ let yachtsItemTileTemplate = ({
   yachts_harakteristiki,
   yachts_galereya,
   lang,
-  refit_text
+  refit_text,
+  cenovaya_podskazka
 }, isFavorites) => {
   // console.log('l', yachts_harakteristiki)
   return (`
@@ -1335,7 +1352,18 @@ let yachtsItemTileTemplate = ({
             <div>${yachts_harakteristiki.yachts_char_element_1}</div>
           </li>
         </ul>
-        <div class="yachts-item-price">${yachts_price} AED/${lang === 'ru' ? 'час' : 'hour'}</div>
+        <div class="yachts-item-price-container">
+        ${cenovaya_podskazka?.vkl[0] === 'on' ? (`<div class="price-hint-top">${lang === 'ru' ? 'от' : 'starting from'}</div>`) : ''}
+          
+        <div class="yachts-item-price">${yachts_price} AED/${lang === 'ru' ? 'час' : 'hour'}*</div>
+        <div><div class="price-hint-bottom">
+      <span>${lang === 'ru' ? '*Применяются положения и условия.' : '*Terms and Conditons apply'}</span><i></i>
+      </div>
+    
+      <div class="price-hint-popup">
+        <div class="close-btn"></div>
+        ${cenovaya_podskazka?.text}
+      </div></div></div>
         <div class="yachts-item-adv">
           <div class="yachts-adv-icons"> 
             <div class="yachts-adv-icon yachts-adv-icon-1"></div>
@@ -1968,15 +1996,15 @@ let blogItemTileTemplate = ({
 }) => {
   // console.log('l', yachts_harakteristiki)
   return (`
-  <div class="col-4 col-sm-6 col-xs-12">
+  <div class="col-4 col-sm-6 col-xs-12" >
     <div class="blog-item">
       <a class="blog-item-img " href="${link}">
         <div class="img-cover" >
-          <img src="${img}" alt="">
+          <img  src="${img}" alt="image">
         </div>
       </a>
     <div class="blog-item-info">
-      <div class="blog-item-date">
+      <div class="blog-item-date" >
       ${date}
       </div>
       <h3>
@@ -1984,7 +2012,7 @@ let blogItemTileTemplate = ({
         ${title}
         </a>
       </h3>
-      <div class="blog-item-text">
+      <div class="blog-item-text" >
       ${text}
      </div>
       <div class="btn-container">
@@ -1992,8 +2020,9 @@ let blogItemTileTemplate = ({
         ${lang === 'ru' ? 'Прочитать' : 'Read'}      
         </a>
       </div>
-    </div>
-    </div>    
+    </div> 
+    </div> 
+
   </div>
 `)
 };

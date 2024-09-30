@@ -21,7 +21,8 @@ let yachtsItemTileTemplate = ({
   yachts_harakteristiki,
   yachts_galereya,
   lang,
-  refit_text
+  refit_text,
+  cenovaya_podskazka
 }, isFavorites) => {
   // console.log('l', yachts_harakteristiki)
   return (`
@@ -57,7 +58,18 @@ let yachtsItemTileTemplate = ({
             <div>${yachts_harakteristiki.yachts_char_element_1}</div>
           </li>
         </ul>
-        <div class="yachts-item-price">${yachts_price} AED/${lang === 'ru' ? 'час' : 'hour'}</div>
+        <div class="yachts-item-price-container">
+        ${cenovaya_podskazka?.vkl[0] === 'on' ? (`<div class="price-hint-top">${lang === 'ru' ? 'от' : 'starting from'}</div>`) : ''}
+          
+        <div class="yachts-item-price">${yachts_price} AED/${lang === 'ru' ? 'час' : 'hour'}*</div>
+        <div><div class="price-hint-bottom">
+      <span>${lang === 'ru' ? '*Применяются положения и условия.' : '*Terms and Conditons apply'}</span><i></i>
+      </div>
+    
+      <div class="price-hint-popup">
+        <div class="close-btn"></div>
+        ${cenovaya_podskazka?.text}
+      </div></div></div>
         <div class="yachts-item-adv">
           <div class="yachts-adv-icons"> 
             <div class="yachts-adv-icon yachts-adv-icon-1"></div>

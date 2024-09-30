@@ -1,0 +1,69 @@
+<div class="yachts-box-container">
+  [hidden yachts-name class:yachts-input autocomplete:off ]
+  [hidden yachts-serv class:serv-input autocomplete:off ]
+  [hidden yachts-route class:route-input autocomplete:off ]
+  <div class="couple-input-box">
+    <div class="input-box yachts-box">
+      [text* your-name id:your-name class:input-decorate class:require autocomplete:off ]
+      <label class="label-animate" for="your-name">Ваше имя*</label>
+    </div>
+    <div class="input-box yachts-box">
+      [text* your-email id:email class:input-decorate class:require]
+      <label class="label-animate" for="email  ">Ваш email*</label>
+    </div>
+  </div>
+  <div class="input-box yachts-phone-box">
+    [text* your-phones id:phone-three class:input-decorate class:require class:phone class:phone-three class:input-num
+    autocomplete:off ]
+  </div>
+
+  <div class="couple-input-box">
+    <div class="input-box yachts-box date-input-container">
+      [text* date id:your-date class:input-decorate class:input-date class:require disabled]
+      <label class="label-animate" for="your-date">Дата и время*</label>
+    </div>
+    <div class="input-box yachts-box yachts-select">
+      [select rent-time class:style-select class:select-with-label "1 час" "2 часа" "3 часа" "4 часа" ">4 часов" "1
+      день" "2 дня" "3 дня" ">3
+      дней"]
+      <label>Время аренды</label>
+    </div>
+  </div>
+
+  <div class="couple-input-box">
+    <div class="input-box yachts-box">
+      [text* adult-guest id:adult-guest class:input-decorate class:require class:input-num]
+      <label class="label-animate" for="adult-guest">Гости *</label>
+    </div>
+    <div class="input-box yachts-box">
+      [text children id:children class:input-decorate class:input-num]
+      <label class="label-animate" for="children">Дети <span>(*3-12 лет)</span></label>
+    </div>
+  </div>
+
+  <div class="input-box yachts-box">
+    [text your-message id:your-message class:input-decorate ]
+    <label for="your-message" class="label-animate">Ваши пожелания и комментарии</label>
+  </div>
+</div>
+<div class="couple-input-box couple-btn-box">
+  <div class="yachts-order-btn-container yachts-order-btn-container-serv">
+    <div class="yachts-order-btn" data-id="services" data-text="Choise services" data-subtext="Choise"
+      data-subsubtext="services"><span>Выбрать услугу</span><i></i>
+    </div>
+    <div class="yachts-serv-box"></div>
+  </div>
+  <div class="yachts-order-btn-container yachts-order-btn-container-route">
+    <div class="yachts-order-btn" data-id="routes" data-text="Choise route"><span>Выбрать маршрут</span><i></i>
+    </div>
+    <div class="yachts-route-box"></div>
+  </div>
+</div>
+<div class="btn-container">
+  [submit class:btn class:btn-send class:btn--yellow "забронировать яхту"]
+</div>
+<div class="agreement-box">
+  [acceptance accept-this default:on] Согласен (на) на обработку <a href="/politika-konfidencialnosti/">персональных
+    данных
+  </a>[/acceptance]
+</div>

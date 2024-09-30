@@ -47,6 +47,54 @@
   font-size: $largeSize
   color: $yellowColor
   font-weight: 700
+  line-height: 1.2
+.price-hint-top
+  font-size: 14px
+  font-weight: 500
+  color: $yellowColor
+.price-hint-bottom
+  font-size: 10px
+  color: $blueColor
+  font-weight: 500
+  text-decoration: underline
+  cursor: pointer
+  position: relative
+  // display: inline-block
+  span,i
+    vertical-align: top
+  &:hover
+    color: $yellowColor
+    i
+      background-image: url('../images/icons/warning-fill-yellow.svg')
+  i
+    @include  icoEl(10px, 10px, '../images/icons/warning-fill-blue.svg')
+    margin-left: 8px
+.price-hint-popup
+  @include positionElement(470px, auto, 0, auto, left, top, 2)
+  // min-height: 400px
+  padding: 14px
+  background-color: $whiteColor
+  font-size: 12px
+  padding-top: 20px
+  font-weight: 500
+  color: $blueColor
+  display: none
+  box-shadow: $shadowSecond
+  p
+    margin-bottom: 15px
+  &.active
+    display: block
+  h3
+    font-size: inherit
+  .close-btn
+    background-color: $blueColor
+    border-radius: 100%
+    width: 26px
+    height: 26px
+    position: absolute
+    right: 0
+    top: 0
+    margin: 8px
 .yachts-detail-about
   height: 100px
   background-color: $whiteColor
@@ -228,6 +276,7 @@
       display: none
   .yachts-detail-controls
     padding: 15px 0
+    height: 100px
     .btn
       width: 160px
     .whatsapp-btn
@@ -242,3 +291,5 @@
       text-align: center
   .yachts-detail-about
     height: auto
+  .price-hint-popup
+    width: 200%

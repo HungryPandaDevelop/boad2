@@ -102,6 +102,8 @@ section
 		margin: 0 5px
 		&:first-child
 			margin-left: 0
+	li
+		display: inline-block
 .content
 	position: relative
 	min-height: calc(100vh - 130px)
@@ -123,6 +125,10 @@ section
 	overflow: hidden
 	height: 100vh
 
+.meta-nav
+	visibility: hidden
+	position: absolute
+	bottom: 0
 @media (max-width: 768px)
 	section
 		padding: 57px 0 0px

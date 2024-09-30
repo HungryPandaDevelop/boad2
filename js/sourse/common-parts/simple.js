@@ -294,3 +294,19 @@ $('.sale-description').each(function () {
 
 })
 // MAIN PAGE BLOCK SALES
+
+
+$('body').on('click', '.price-hint-bottom', function () {
+  $(this).next().addClass('active')
+});
+$('body').on('click', '.price-hint-popup .close-btn', function () {
+  $(this).parent().removeClass('active');
+});
+
+$(document).click(function (event) {
+  // Проверяем, если клик был не по элементу попапа и не по элементам внутри него
+  if (!$(event.target).closest('.price-hint-bottom').length) {
+    $('.price-hint-popup').removeClass('active'); // Удаляем класс 'active' у попапа
+    $('.overlay').hide(); // Скрываем оверлей или сам попап
+  }
+});
