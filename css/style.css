@@ -157,18 +157,28 @@ h6 {
   font-weight: 700;
 }
 
+.h2,
+.h3,
+.h4,
+.h5 {
+  margin: 0;
+  padding: 0;
+  color: #14143C;
+  font-weight: 700;
+}
+
 h1 {
   font-size: 52px;
   line-height: 1.2;
   text-transform: uppercase;
 }
 
-h2 {
+h2, .h2 {
   font-size: 48px;
   text-transform: uppercase;
 }
 
-h3 {
+h3, .h3 {
   font-size: 28px;
   text-transform: uppercase;
 }
@@ -177,10 +187,10 @@ h3 {
   h1 {
     font-size: 48px;
   }
-  h2 {
+  h2, .h2 {
     font-size: 28px;
   }
-  h3 {
+  h3, .h3 {
     font-size: 24px;
   }
 }
@@ -191,6 +201,10 @@ h3 {
 }
 /*-----base-end----*/
 /*-----content-start----*/
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 .main-grid {
   display: -ms-grid;
   display: grid;
@@ -1224,6 +1238,10 @@ input {
 .custom-select::placeholder {
   font-weight: 300;
   color: rgba(255, 255, 255, 0.5);
+}
+.input-decorate:auto-fill,
+.custom-select:auto-fill {
+  background: none;
 }
 
 .phone::-webkit-input-placeholder {
@@ -4284,7 +4302,7 @@ header .logo img {
 .popup a:hover {
   color: #C19F56;
 }
-.popup h2, .popup h3 {
+.popup .h2, .popup .h3 {
   color: inherit;
   text-align: center;
 }
@@ -4628,13 +4646,13 @@ header .logo img {
   padding: 15px 45px;
   display: none;
 }
-.form-popup-end h2, .form-popup-end h3, .form-popup-end h4 {
+.form-popup-end .h2, .form-popup-end .h3, .form-popup-end .h4 {
   color: #ffffff;
 }
-.form-popup-end h2 {
+.form-popup-end .h2 {
   font-size: 31px;
 }
-.form-popup-end h3 {
+.form-popup-end .h3 {
   font-size: 21px;
 }
 .form-popup-end.show {
@@ -4647,22 +4665,22 @@ header .logo img {
   margin: auto;
 }
 
-.extra-order-popup h3,
-.extra-order-popup h4,
-.extra-order-popup h5 {
+.extra-order-popup .h3,
+.extra-order-popup .h4,
+.extra-order-popup .h5 {
   text-align: left;
   color: #ffffff;
 }
-.extra-order-popup h3,
+.extra-order-popup .h3,
 .extra-order-popup .popup-yacht-js-topic {
   font-size: 24px;
   font-weight: 700;
 }
-.extra-order-popup h4 {
+.extra-order-popup .h4 {
   font-size: 16px;
   text-transform: uppercase;
 }
-.extra-order-popup h5 {
+.extra-order-popup .h5 {
   font-size: 14px;
   font-weight: 400;
 }
@@ -4934,18 +4952,18 @@ header .logo img {
   width: 300px;
   margin: auto;
 }
-.order-popup-end h2 {
+.order-popup-end .h2 {
   font-size: 28px;
   text-align: left;
   margin-bottom: 20px;
 }
-.order-popup-end h3 {
+.order-popup-end .h3 {
   font-size: 16px;
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
-.order-popup-end h4 {
+.order-popup-end .h4 {
   font-weight: 400;
   text-transform: inherit;
 }
@@ -5065,7 +5083,7 @@ header .logo img {
   .popup-yacht-head {
     height: 80px;
   }
-  .extra-order-popup h4 {
+  .extra-order-popup .h4 {
     max-width: 300px;
   }
   .btn-container {
@@ -9061,6 +9079,7 @@ header .logo img {
   font-size: 14px;
   font-weight: 500;
   color: #C19F56;
+  display: none;
 }
 
 .price-hint-bottom {

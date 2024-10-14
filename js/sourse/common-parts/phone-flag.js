@@ -22,15 +22,36 @@ function phone_mask() {
 		//dropdownContainer:document.body,
 		//excludeCountries:['us'],
 		//formatOnDisplay:false,
-		// geoIpLookup:function(callback,){
-		// 	$.get('http://ipinfo.io',function(){},'jsonp').always(function(resp){
-		// 		var countryCode =(resp&&resp.country)?resp.country:'';
+		initialCountry: 'auto',
+		geoIpLookup: function (callback,) {
+			console.log('re', callback)
+			$.get('https://ipinfo.io', function () { }, 'jsonp').always(function (resp) {
 
-		// 		callback(countryCode);
-		// 		// console.log('selectedCountryData 2', selectedCountryData, selectedCountryPlaceholder)
+				var countryCode = (resp && resp.country) ? resp.country : '';
 
-		// 	});
-		// },
+				callback(countryCode);
+				console.log('countryCode', countryCode)
+				switch (countryCode) {
+					case 'RU': // Россия
+						$('input.phone').mask('+7 ddd ddd-dd-dd');
+						break;
+					case 'AE': // ОАЭ
+						$('input.phone').mask('+971 ddd ddd-ddd');
+						break;
+					case 'US': // США
+						$('input.phone').mask('+1 ddd ddd-dddd');
+						break;
+					case 'GB': // Великобритания
+						$('input.phone').mask('+44 ddddd ddddd');
+						break;
+					default: // Маска по умолчанию
+						$('input.phone').mask('+ddd ddd ddd dddd');
+						break;
+				}
+				// console.log('selectedCountryData 2', selectedCountryData, selectedCountryPlaceholder)
+
+			});
+		},
 		//hiddenInput:'full_number',
 		//initialCountry:'auto',
 		//localizedCountries:{'de':'Deutschland'},
