@@ -100,7 +100,7 @@ let yachtsItemTileTemplate = ({
             <div class="yachts-adv-icon yachts-adv-icon-3"></div>
               <span>
                 ${yachts_harakteristiki.yachts_char_element_8} <br/>
-                ${lang === 'ru' ? 'человека' : 'crew members'}
+                ${lang === 'ru' ? 'людей' : 'crew members'}
               </span>
           </div>
           <div class="yachts-adv-icons"> 
@@ -184,7 +184,7 @@ let yachtsItemListTemplate = ({
               <div class="yachts-adv-icon yachts-adv-icon-3"></div>
                 <span>
                   ${yachts_harakteristiki.yachts_char_element_8} <br/>
-                  ${lang === 'ru' ? 'человека' : 'crew members'}
+                  ${lang === 'ru' ? 'людей' : 'crew members'}
                 </span>
             </div>
             <div class="yachts-adv-icons"> 

@@ -5300,7 +5300,7 @@ header .logo img {
   margin-bottom: 30px;
   color: inherit;
 }
-.main-home h2 {
+.main-home .h2 {
   color: inherit;
   font-size: 14px;
   font-weight: 400;
@@ -7642,6 +7642,10 @@ header .logo img {
 }
 .feedback-mini .input-box .country-select {
   top: 13px;
+}
+.feedback-mini .input-box input:focus + label,
+.feedback-mini .input-box input.input-empty + label {
+  top: 8pxy;
 }
 .feedback-mini .agreement {
   font-size: 14px;
