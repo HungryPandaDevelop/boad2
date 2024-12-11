@@ -1340,6 +1340,21 @@ let yachtsItemTileTemplate = ({
   cenovaya_podskazka
 }, isFavorites) => {
   // console.log('l', yachts_harakteristiki)
+
+  function getPeopleLabel(number) {
+
+    if (number >= 11 && number <= 19) {
+      return `человек`;
+    } else if (number === 1) {
+      return `человек`;
+    } else if (number >= 2 && number <= 4) {
+      return `человека`;
+    } else {
+      return `человек`;
+    }
+  }
+
+
   return (`
   <div class="col-4 col-lg-6 col-sm-6 col-xs-12 yachts-item-wrapper">
     <div class="yachts-item">
@@ -1415,7 +1430,7 @@ let yachtsItemTileTemplate = ({
             <div class="yachts-adv-icon yachts-adv-icon-3"></div>
               <span>
                 ${yachts_harakteristiki.yachts_char_element_8} <br/>
-                ${lang === 'ru' ? 'людей' : 'crew members'}
+                ${lang === 'ru' ? getPeopleLabel(yachts_harakteristiki.yachts_char_element_8) : 'crew members'}
               </span>
           </div>
           <div class="yachts-adv-icons"> 
@@ -1428,7 +1443,7 @@ let yachtsItemTileTemplate = ({
         </div>
         <div class="btn-yachts-container">
           <a class="btn btn--blue element-btn element-btn-yachts" data-element="50" href="#">${lang === 'ru' ? 'Забронировать' : 'Book Now'}</a>
-           <a class="whatsapp-btn" target="_blank" onclick="ym(96996333,'reachGoal','${lang === 'ru' ? 'click-whatsapp-yacht-card-ru' : 'click-whatsapp-yacht-card-en'}'); return true;" href="https://wa.me/97145254242?text=Hi!%20I%20want%20to%20book a boat.">
+           <a class="whatsapp-btn" target="_blank" onclick="ym(96996333,'reachGoal','${lang === 'ru' ? 'click-whatsapp-yacht-card-ru' : 'click-whatsapp-yacht-card-en'}'); return true;" href="https://wa.me/97143999391?text=Hi!%20I%20want%20to%20book a boat.">
         <span><em>${lang === 'ru' ? 'Забронировать' : 'Book'}</em> WhatsApp</span>
         <i></i>
         </a> 
@@ -1499,7 +1514,7 @@ let yachtsItemListTemplate = ({
               <div class="yachts-adv-icon yachts-adv-icon-3"></div>
                 <span>
                   ${yachts_harakteristiki.yachts_char_element_8} <br/>
-                  ${lang === 'ru' ? 'людей' : 'crew members'}
+                  ${lang === 'ru' ? getPeopleLabel(yachts_harakteristiki.yachts_char_element_8) : 'crew members'}
                 </span>
             </div>
             <div class="yachts-adv-icons"> 
@@ -1515,7 +1530,7 @@ let yachtsItemListTemplate = ({
           <div class="yachts-item-price">${yachts_price} AED/час</div>
           <div class="btn-yachts-container">
             <a class="btn btn--blue element-btn element-btn-yachts" data-element="50" href="#">${lang === 'ru' ? 'Забронировать' : 'Book'}</a>
-            <a class="whatsapp-btn" target="_blank" onclick="ym(96996333,'reachGoal','${lang === 'ru' ? 'click-whatsapp-yacht-card-ru' : 'click-whatsapp-yacht-card-en'}'); return true;" href="https://wa.me/97145254242?text=Hi!%20I%20want%20to%20book a boat.">
+            <a class="whatsapp-btn" target="_blank" onclick="ym(96996333,'reachGoal','${lang === 'ru' ? 'click-whatsapp-yacht-card-ru' : 'click-whatsapp-yacht-card-en'}'); return true;" href="https://wa.me/97143999391?text=Hi!%20I%20want%20to%20book a boat.">
         <span><em>${lang === 'ru' ? 'Забронировать' : 'Book'}</em> WhatsApp</span>
         <i></i>
         </a> 
